@@ -1,9 +1,12 @@
 ﻿Public Class MainMenuForm
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MessageBox.Show("GGWP")
-        Dim f As New Test
-        f.Show()
 
-        'dasdsadsad
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MessageBox.Show("L in the Chat", "Ling gang guli guli gu li wa sha", MessageBoxButtons.OK, MessageBoxIcon.Question)
+
+        Dim f As New Test
+        f.ShowDialog() 'Prevent Main Menu Interaction until the form closed
+
+
     End Sub
+
 End Class

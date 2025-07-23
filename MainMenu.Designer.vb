@@ -38,9 +38,12 @@ Partial Class MainMenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 478)
+        Me.ClientSize = New System.Drawing.Size(706, 478)
         Me.Controls.Add(Me.Button1)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.MaximizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(724, 525)
         Me.Name = "MainMenuForm"
         Me.Text = "Main Menu"
         Me.ResumeLayout(False)
