@@ -22,10 +22,12 @@ Partial Class Test
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Test))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.StaffDataGrid = New System.Windows.Forms.DataGridView()
+        CType(Me.StaffDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -57,32 +59,36 @@ Partial Class Test
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Staff Name"
         '
-        'ListBox1
+        'StaffDataGrid
         '
-        Me.ListBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.StaffDataGrid.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 17
-        Me.ListBox1.Location = New System.Drawing.Point(12, 95)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(763, 361)
-        Me.ListBox1.TabIndex = 3
+        Me.StaffDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.StaffDataGrid.Location = New System.Drawing.Point(15, 91)
+        Me.StaffDataGrid.Margin = New System.Windows.Forms.Padding(6)
+        Me.StaffDataGrid.Name = "StaffDataGrid"
+        Me.StaffDataGrid.RowHeadersWidth = 51
+        Me.StaffDataGrid.RowTemplate.Height = 24
+        Me.StaffDataGrid.Size = New System.Drawing.Size(757, 372)
+        Me.StaffDataGrid.TabIndex = 3
         '
         'Test
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(787, 478)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.StaffDataGrid)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(805, 525)
         Me.Name = "Test"
         Me.Text = "Test"
+        CType(Me.StaffDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -91,5 +97,5 @@ Partial Class Test
     Friend WithEvents Label1 As Label
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents StaffDataGrid As DataGridView
 End Class
