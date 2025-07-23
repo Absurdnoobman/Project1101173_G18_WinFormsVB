@@ -32,7 +32,7 @@ Partial Class Test
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(21, 17)
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 38)
         Me.Label1.TabIndex = 0
@@ -42,7 +42,7 @@ Partial Class Test
         '
         Me.SearchTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.SearchTextBox.Location = New System.Drawing.Point(104, 71)
+        Me.SearchTextBox.Location = New System.Drawing.Point(97, 60)
         Me.SearchTextBox.MinimumSize = New System.Drawing.Size(150, 25)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(254, 25)
@@ -51,7 +51,7 @@ Partial Class Test
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 74)
+        Me.Label2.Location = New System.Drawing.Point(16, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(73, 17)
         Me.Label2.TabIndex = 2
@@ -64,9 +64,9 @@ Partial Class Test
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 17
-        Me.ListBox1.Location = New System.Drawing.Point(28, 112)
+        Me.ListBox1.Location = New System.Drawing.Point(12, 95)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(723, 344)
+        Me.ListBox1.Size = New System.Drawing.Size(763, 361)
         Me.ListBox1.TabIndex = 3
         '
         'Test
