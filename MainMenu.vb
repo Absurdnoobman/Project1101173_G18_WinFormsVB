@@ -3,5 +3,7 @@
         MessageBox.Show("GGWP")
         Dim f As New Test
         f.Show()
+
+        'dasdsadsad
     End Sub
 End Class
