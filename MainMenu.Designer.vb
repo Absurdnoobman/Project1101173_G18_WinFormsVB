@@ -22,26 +22,25 @@ Partial Class MainMenuForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.OpenStaffListButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button1
+        'OpenStaffListButton
         '
-        Me.Button1.Location = New System.Drawing.Point(44, 41)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(102, 54)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "TEST"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.OpenStaffListButton.Location = New System.Drawing.Point(44, 41)
+        Me.OpenStaffListButton.Name = "OpenStaffListButton"
+        Me.OpenStaffListButton.Size = New System.Drawing.Size(102, 54)
+        Me.OpenStaffListButton.TabIndex = 0
+        Me.OpenStaffListButton.Text = "Staff"
+        Me.OpenStaffListButton.UseVisualStyleBackColor = True
         '
         'MainMenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(706, 478)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.OpenStaffListButton)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(724, 525)
         Me.Name = "MainMenuForm"
@@ -50,5 +49,5 @@ Partial Class MainMenuForm
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents OpenStaffListButton As Button
 End Class

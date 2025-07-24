@@ -95,10 +95,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Test.Designer.vb">
-      <DependentUpon>Test.vb</DependentUpon>
+    <Compile Include="StaffCard.Designer.vb">
+      <DependentUpon>StaffCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Test.vb">
+    <Compile Include="StaffCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StaffList.Designer.vb">
+      <DependentUpon>StaffList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffList.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -112,8 +118,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.vb</DependentUpon>
+    <EmbeddedResource Include="StaffCard.resx">
+      <DependentUpon>StaffCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffList.resx">
+      <DependentUpon>StaffList.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
