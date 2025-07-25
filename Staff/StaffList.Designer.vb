@@ -30,6 +30,7 @@ Partial Class StaffList
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.flpStaffList = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -93,17 +94,30 @@ Partial Class StaffList
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.flpStaffList.AutoScroll = True
+        Me.flpStaffList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flpStaffList.Location = New System.Drawing.Point(12, 101)
         Me.flpStaffList.Name = "flpStaffList"
         Me.flpStaffList.Padding = New System.Windows.Forms.Padding(2)
         Me.flpStaffList.Size = New System.Drawing.Size(760, 436)
         Me.flpStaffList.TabIndex = 11
+        Me.flpStaffList.WrapContents = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(640, 63)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(132, 23)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Work in Progress"
         '
         'StaffList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(787, 549)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.flpStaffList)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ComboBox1)
@@ -112,6 +126,7 @@ Partial Class StaffList
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(805, 596)
@@ -129,4 +144,5 @@ Partial Class StaffList
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents flpStaffList As FlowLayoutPanel
+    Friend WithEvents Label4 As Label
 End Class

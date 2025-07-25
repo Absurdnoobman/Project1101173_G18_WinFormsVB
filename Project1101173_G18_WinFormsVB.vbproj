@@ -73,6 +73,25 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\WardCardVerticle.Designer.vb">
+      <DependentUpon>WardCardVerticle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\WardCardVerticle.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="models\Staff.vb" />
+    <Compile Include="Staff\CreateNewStaffForm.Designer.vb">
+      <DependentUpon>CreateNewStaffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\CreateNewStaffForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff\EditStaffForm.Designer.vb">
+      <DependentUpon>EditStaffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\EditStaffForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -95,20 +114,35 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="StaffCard.Designer.vb">
+    <Compile Include="Components\StaffCard.Designer.vb">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="StaffCard.vb">
+    <Compile Include="Components\StaffCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StaffList.Designer.vb">
+    <Compile Include="Staff\StaffList.Designer.vb">
       <DependentUpon>StaffList.vb</DependentUpon>
     </Compile>
-    <Compile Include="StaffList.vb">
+    <Compile Include="Staff\StaffList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ward.Designer.vb">
+      <DependentUpon>Ward.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ward.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Components\WardCardVerticle.resx">
+      <DependentUpon>WardCardVerticle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\CreateNewStaffForm.resx">
+      <DependentUpon>CreateNewStaffForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff\EditStaffForm.resx">
+      <DependentUpon>EditStaffForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
@@ -118,11 +152,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="StaffCard.resx">
+    <EmbeddedResource Include="Components\StaffCard.resx">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StaffList.resx">
+    <EmbeddedResource Include="Staff\StaffList.resx">
       <DependentUpon>StaffList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ward.resx">
+      <DependentUpon>Ward.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
