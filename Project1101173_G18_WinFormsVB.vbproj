@@ -73,29 +73,56 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\WardCardVerticle.Designer.vb">
+    <Compile Include="models\StaffQualification.vb" />
+    <Compile Include="models\StaffWorkExperience.vb" />
+    <Compile Include="models\Ward.vb" />
+    <Compile Include="View\Components\NewQualificationCard.Designer.vb">
+      <DependentUpon>NewQualificationCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Components\NewQualificationCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Components\NewWorkExperienceCard.Designer.vb">
+      <DependentUpon>NewWorkExperienceCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Components\NewWorkExperienceCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Components\WardCardVerticle.Designer.vb">
       <DependentUpon>WardCardVerticle.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\WardCardVerticle.vb">
+    <Compile Include="View\Components\WardCardVerticle.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="models\Staff.vb" />
-    <Compile Include="Staff\CreateNewStaffForm.Designer.vb">
+    <Compile Include="View\StaffQualification\AddNewQualificationForm.Designer.vb">
+      <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\StaffQualification\AddNewQualificationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StaffWorkExperience\AddNewWorkExperienceForm.Designer.vb">
+      <DependentUpon>AddNewWorkExperienceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\StaffWorkExperience\AddNewWorkExperienceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Staff\CreateNewStaffForm.Designer.vb">
       <DependentUpon>CreateNewStaffForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Staff\CreateNewStaffForm.vb">
+    <Compile Include="View\Staff\CreateNewStaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Staff\EditStaffForm.Designer.vb">
+    <Compile Include="View\Staff\EditStaffForm.Designer.vb">
       <DependentUpon>EditStaffForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Staff\EditStaffForm.vb">
+    <Compile Include="View\Staff\EditStaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.vb">
+    <Compile Include="View\MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.vb">
+    <Compile Include="View\MainMenu.Designer.vb">
       <DependentUpon>MainMenu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -114,36 +141,48 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Components\StaffCard.Designer.vb">
+    <Compile Include="View\Components\StaffCard.Designer.vb">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\StaffCard.vb">
+    <Compile Include="View\Components\StaffCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Staff\StaffList.Designer.vb">
+    <Compile Include="View\Staff\StaffList.Designer.vb">
       <DependentUpon>StaffList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Staff\StaffList.vb">
+    <Compile Include="View\Staff\StaffList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ward.Designer.vb">
-      <DependentUpon>Ward.vb</DependentUpon>
+    <Compile Include="View\WardForm.Designer.vb">
+      <DependentUpon>WardForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ward.vb">
+    <Compile Include="View\WardForm.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Components\WardCardVerticle.resx">
+    <EmbeddedResource Include="View\Components\NewQualificationCard.resx">
+      <DependentUpon>NewQualificationCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\NewWorkExperienceCard.resx">
+      <DependentUpon>NewWorkExperienceCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\WardCardVerticle.resx">
       <DependentUpon>WardCardVerticle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Staff\CreateNewStaffForm.resx">
+    <EmbeddedResource Include="View\StaffQualification\AddNewQualificationForm.resx">
+      <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffWorkExperience\AddNewWorkExperienceForm.resx">
+      <DependentUpon>AddNewWorkExperienceForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Staff\CreateNewStaffForm.resx">
       <DependentUpon>CreateNewStaffForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Staff\EditStaffForm.resx">
+    <EmbeddedResource Include="View\Staff\EditStaffForm.resx">
       <DependentUpon>EditStaffForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
+    <EmbeddedResource Include="View\MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -152,14 +191,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\StaffCard.resx">
+    <EmbeddedResource Include="View\Components\StaffCard.resx">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Staff\StaffList.resx">
+    <EmbeddedResource Include="View\Staff\StaffList.resx">
       <DependentUpon>StaffList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ward.resx">
-      <DependentUpon>Ward.vb</DependentUpon>
+    <EmbeddedResource Include="View\WardForm.resx">
+      <DependentUpon>WardForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
