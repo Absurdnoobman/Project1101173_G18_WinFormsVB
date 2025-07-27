@@ -153,12 +153,6 @@
     <Compile Include="View\Staff\StaffList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\WardForm.Designer.vb">
-      <DependentUpon>WardForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="View\WardForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\Components\NewQualificationCard.resx">
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Staff\StaffList.resx">
       <DependentUpon>StaffList.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\WardForm.resx">
-      <DependentUpon>WardForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

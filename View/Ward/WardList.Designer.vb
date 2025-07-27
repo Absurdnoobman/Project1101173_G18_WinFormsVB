@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class WardForm
+Partial Class WardAssignmentForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -47,7 +47,7 @@ Partial Class WardForm
         Me.flpWardList.TabIndex = 4
         Me.flpWardList.WrapContents = False
         '
-        'Ward
+        'WardAssignmentForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -55,8 +55,8 @@ Partial Class WardForm
         Me.Controls.Add(Me.flpWardList)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Name = "Ward"
-        Me.Text = "Ward"
+        Me.Name = "WardAssignmentForm"
+        Me.Text = "Assign to a Ward"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
