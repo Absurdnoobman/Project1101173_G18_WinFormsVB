@@ -44,10 +44,10 @@
         workExperiences.Add(newWorkExp)
 
         Dim card As New NewWorkExperienceCard With {.index = workExperiences.Count() - 1}
-        card.PositionLabel.Text = newWorkExp.position
-        card.OrganisationLabel.Text = newWorkExp.organisation
-        card.StartDateLabel.Text = newWorkExp.startDate.ToLongDateString
-        card.EndDateLabel.Text = newWorkExp.endDate.ToLongDateString
+        card.PositionLabel.Text = "As a(n) " & newWorkExp.position
+        card.OrganisationLabel.Text = "In " & newWorkExp.organisation
+        card.StartDateLabel.Text = "Start: " & newWorkExp.startDate.ToLongDateString
+        card.EndDateLabel.Text = "Finish: " & newWorkExp.endDate.ToLongDateString
 
         AddHandler card.OnRemoveButtonPressed, AddressOf HandleWorkExpCardRemoveEvent
 
@@ -64,7 +64,7 @@
 
     Private Sub HandleWorkExpCardRemoveEvent(sender As Object)
         Using card = DirectCast(sender, NewWorkExperienceCard)
-            qualifications.RemoveAt(card.index)
+            workExperiences.RemoveAt(card.index)
         End Using
     End Sub
 

@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub OpenWardButton_Click(sender As Object, e As MouseEventArgs) Handles OpenWardButton.Click
-        Dim f As New WardList
-        f.ShowDialog()
+        'Dim f As New WardList
+        'f.ShowDialog()
     End Sub
 End Class

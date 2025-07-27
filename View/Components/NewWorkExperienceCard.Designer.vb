@@ -67,9 +67,10 @@ Partial Class NewWorkExperienceCard
         '
         'RemoveButton
         '
-        Me.RemoveButton.Location = New System.Drawing.Point(186, 82)
+        Me.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.RemoveButton.Location = New System.Drawing.Point(195, 81)
         Me.RemoveButton.Name = "RemoveButton"
-        Me.RemoveButton.Size = New System.Drawing.Size(75, 23)
+        Me.RemoveButton.Size = New System.Drawing.Size(66, 24)
         Me.RemoveButton.TabIndex = 4
         Me.RemoveButton.Text = "Remove"
         Me.RemoveButton.UseVisualStyleBackColor = True
