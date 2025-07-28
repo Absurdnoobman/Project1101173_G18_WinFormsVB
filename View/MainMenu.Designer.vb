@@ -25,6 +25,8 @@ Partial Class MainMenuForm
         Me.OpenStaffListButton = New System.Windows.Forms.Button()
         Me.OpenWardButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.OpenPatientButton = New System.Windows.Forms.Button()
+        Me.WardAssignmentButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'OpenStaffListButton
@@ -56,11 +58,31 @@ Partial Class MainMenuForm
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Work in Progress"
         '
+        'OpenPatientButton
+        '
+        Me.OpenPatientButton.Location = New System.Drawing.Point(44, 161)
+        Me.OpenPatientButton.Name = "OpenPatientButton"
+        Me.OpenPatientButton.Size = New System.Drawing.Size(102, 54)
+        Me.OpenPatientButton.TabIndex = 3
+        Me.OpenPatientButton.Text = "Patient"
+        Me.OpenPatientButton.UseVisualStyleBackColor = True
+        '
+        'WardAssignmentButton
+        '
+        Me.WardAssignmentButton.Location = New System.Drawing.Point(152, 101)
+        Me.WardAssignmentButton.Name = "WardAssignmentButton"
+        Me.WardAssignmentButton.Size = New System.Drawing.Size(102, 54)
+        Me.WardAssignmentButton.TabIndex = 4
+        Me.WardAssignmentButton.Text = "Assign Staff to Ward"
+        Me.WardAssignmentButton.UseVisualStyleBackColor = True
+        '
         'MainMenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(706, 478)
+        Me.Controls.Add(Me.WardAssignmentButton)
+        Me.Controls.Add(Me.OpenPatientButton)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.OpenWardButton)
         Me.Controls.Add(Me.OpenStaffListButton)
@@ -77,4 +99,6 @@ Partial Class MainMenuForm
     Friend WithEvents OpenStaffListButton As Button
     Friend WithEvents OpenWardButton As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents OpenPatientButton As Button
+    Friend WithEvents WardAssignmentButton As Button
 End Class

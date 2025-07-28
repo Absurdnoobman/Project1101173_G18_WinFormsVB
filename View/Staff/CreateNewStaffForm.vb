@@ -17,11 +17,8 @@
 
         qualifications.Add(newQualification)
 
-        Dim card As New NewQualificationCard With {.index = qualifications.Count() - 1}
-        card.TypeLabel.Text = newQualification.type
-        card.InstitutionLabel.Text = newQualification.institution
-        card.DateLabel.Text = newQualification.QualificationDate.ToLongDateString
-
+        Dim card As New NewQualificationCard
+        card.SetData(newQualification, qualifications.Count() - 1)
         AddHandler card.OnRemoveButtonPressed, AddressOf HandleQualiCardRemoveEvent
 
         QualificationFLP.Controls.Add(card)
@@ -43,12 +40,8 @@
 
         workExperiences.Add(newWorkExp)
 
-        Dim card As New NewWorkExperienceCard With {.index = workExperiences.Count() - 1}
-        card.PositionLabel.Text = "As a(n) " & newWorkExp.position
-        card.OrganisationLabel.Text = "In " & newWorkExp.organisation
-        card.StartDateLabel.Text = "Start: " & newWorkExp.startDate.ToLongDateString
-        card.EndDateLabel.Text = "Finish: " & newWorkExp.endDate.ToLongDateString
-
+        Dim card As New NewWorkExperienceCard
+        card.SetData(newWorkExp, workExperiences.Count() - 1)
         AddHandler card.OnRemoveButtonPressed, AddressOf HandleWorkExpCardRemoveEvent
 
         WorksFLP.Controls.Add(card)

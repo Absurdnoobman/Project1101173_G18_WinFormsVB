@@ -6,4 +6,11 @@
         RaiseEvent OnRemoveButtonPressed(Me)
     End Sub
 
+    Public Sub SetData(qualification As StaffQualification, index As Integer)
+        Me.index = index
+        TypeLabel.Text = qualification.type
+        InstitutionLabel.Text = qualification.institution
+        DateLabel.Text = qualification.QualificationDate.ToLongDateString
+    End Sub
+
 End Class

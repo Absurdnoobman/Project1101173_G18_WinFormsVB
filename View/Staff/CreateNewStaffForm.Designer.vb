@@ -55,6 +55,8 @@ Partial Class CreateNewStaffForm
         Me.CreateButton = New System.Windows.Forms.Button()
         Me.WorksFLP = New System.Windows.Forms.FlowLayoutPanel()
         Me.QualificationFLP = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.StaffNumberTextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -62,7 +64,7 @@ Partial Class CreateNewStaffForm
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 569)
+        Me.Label1.Location = New System.Drawing.Point(12, 627)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(132, 23)
         Me.Label1.TabIndex = 3
@@ -311,7 +313,7 @@ Partial Class CreateNewStaffForm
         '
         'AddNewWorkExpButton
         '
-        Me.AddNewWorkExpButton.Location = New System.Drawing.Point(30, 435)
+        Me.AddNewWorkExpButton.Location = New System.Drawing.Point(30, 452)
         Me.AddNewWorkExpButton.Name = "AddNewWorkExpButton"
         Me.AddNewWorkExpButton.Size = New System.Drawing.Size(135, 56)
         Me.AddNewWorkExpButton.TabIndex = 37
@@ -320,7 +322,7 @@ Partial Class CreateNewStaffForm
         '
         'CreateButton
         '
-        Me.CreateButton.Location = New System.Drawing.Point(597, 563)
+        Me.CreateButton.Location = New System.Drawing.Point(597, 621)
         Me.CreateButton.Name = "CreateButton"
         Me.CreateButton.Size = New System.Drawing.Size(91, 26)
         Me.CreateButton.TabIndex = 40
@@ -331,9 +333,9 @@ Partial Class CreateNewStaffForm
         '
         Me.WorksFLP.AutoScroll = True
         Me.WorksFLP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.WorksFLP.Location = New System.Drawing.Point(169, 435)
+        Me.WorksFLP.Location = New System.Drawing.Point(169, 452)
         Me.WorksFLP.Name = "WorksFLP"
-        Me.WorksFLP.Size = New System.Drawing.Size(482, 122)
+        Me.WorksFLP.Size = New System.Drawing.Size(482, 139)
         Me.WorksFLP.TabIndex = 39
         Me.WorksFLP.WrapContents = False
         '
@@ -343,15 +345,33 @@ Partial Class CreateNewStaffForm
         Me.QualificationFLP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.QualificationFLP.Location = New System.Drawing.Point(169, 307)
         Me.QualificationFLP.Name = "QualificationFLP"
-        Me.QualificationFLP.Size = New System.Drawing.Size(482, 122)
+        Me.QualificationFLP.Size = New System.Drawing.Size(482, 139)
         Me.QualificationFLP.TabIndex = 38
         Me.QualificationFLP.WrapContents = False
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(341, 18)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(86, 17)
+        Me.Label16.TabIndex = 41
+        Me.Label16.Text = "Staff Number"
+        '
+        'StaffNumberTextBox
+        '
+        Me.StaffNumberTextBox.Location = New System.Drawing.Point(435, 15)
+        Me.StaffNumberTextBox.Name = "StaffNumberTextBox"
+        Me.StaffNumberTextBox.Size = New System.Drawing.Size(98, 25)
+        Me.StaffNumberTextBox.TabIndex = 42
         '
         'CreateNewStaffForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 601)
+        Me.ClientSize = New System.Drawing.Size(700, 659)
+        Me.Controls.Add(Me.StaffNumberTextBox)
+        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.AddNewWorkExpButton)
         Me.Controls.Add(Me.CreateButton)
         Me.Controls.Add(Me.WorksFLP)
@@ -428,4 +448,6 @@ Partial Class CreateNewStaffForm
     Friend WithEvents CreateButton As Button
     Friend WithEvents WorksFLP As FlowLayoutPanel
     Friend WithEvents QualificationFLP As FlowLayoutPanel
+    Friend WithEvents Label16 As Label
+    Friend WithEvents StaffNumberTextBox As TextBox
 End Class
