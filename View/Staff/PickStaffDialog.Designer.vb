@@ -24,7 +24,7 @@ Partial Class PickStaffDialog
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.SearchByLabel = New System.Windows.Forms.Label()
         Me.SearchByComboBox = New System.Windows.Forms.ComboBox()
         Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -46,14 +46,14 @@ Partial Class PickStaffDialog
         Me.SearchTextBox.Size = New System.Drawing.Size(261, 25)
         Me.SearchTextBox.TabIndex = 1
         '
-        'Label2
+        'SearchByLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(352, 18)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 17)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Search By"
+        Me.SearchByLabel.AutoSize = True
+        Me.SearchByLabel.Location = New System.Drawing.Point(352, 18)
+        Me.SearchByLabel.Name = "SearchByLabel"
+        Me.SearchByLabel.Size = New System.Drawing.Size(64, 17)
+        Me.SearchByLabel.TabIndex = 2
+        Me.SearchByLabel.Text = "Search By"
         '
         'SearchByComboBox
         '
@@ -91,7 +91,7 @@ Partial Class PickStaffDialog
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.StaffFLP)
         Me.Controls.Add(Me.SearchByComboBox)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.SearchByLabel)
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -107,7 +107,7 @@ Partial Class PickStaffDialog
 
     Friend WithEvents Label1 As Label
     Friend WithEvents SearchTextBox As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents SearchByLabel As Label
     Friend WithEvents SearchByComboBox As ComboBox
     Friend WithEvents StaffFLP As FlowLayoutPanel
     Friend WithEvents Button1 As Button

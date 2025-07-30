@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -73,6 +76,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\PatientLocalDoctor.vb" />
+    <Compile Include="models\PatientNextOfKin.vb" />
     <Compile Include="models\Patient.vb" />
     <Compile Include="models\StaffQualification.vb" />
     <Compile Include="models\StaffWorkExperience.vb" />
@@ -106,6 +111,12 @@
       <DependentUpon>CreatePatientForm.vb</DependentUpon>
     </Compile>
     <Compile Include="View\Patient\CreatePatientForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Patient\ExamineAppointmentForm.Designer.vb">
+      <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Patient\ExamineAppointmentForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\StaffQualification\AddNewQualificationForm.Designer.vb">
@@ -143,6 +154,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -201,6 +213,9 @@
     <EmbeddedResource Include="View\Patient\CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Patient\ExamineAppointmentForm.resx">
+      <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\StaffQualification\AddNewQualificationForm.resx">
       <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +254,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

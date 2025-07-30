@@ -27,6 +27,8 @@ Partial Class MainMenuForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.OpenPatientButton = New System.Windows.Forms.Button()
         Me.WardAssignmentButton = New System.Windows.Forms.Button()
+        Me.MakeAppointmentButton = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'OpenStaffListButton
@@ -64,7 +66,7 @@ Partial Class MainMenuForm
         Me.OpenPatientButton.Name = "OpenPatientButton"
         Me.OpenPatientButton.Size = New System.Drawing.Size(102, 54)
         Me.OpenPatientButton.TabIndex = 3
-        Me.OpenPatientButton.Text = "Patient"
+        Me.OpenPatientButton.Text = "Create a Patient Record"
         Me.OpenPatientButton.UseVisualStyleBackColor = True
         '
         'WardAssignmentButton
@@ -76,11 +78,31 @@ Partial Class MainMenuForm
         Me.WardAssignmentButton.Text = "Assign Staff to Ward"
         Me.WardAssignmentButton.UseVisualStyleBackColor = True
         '
+        'MakeAppointmentButton
+        '
+        Me.MakeAppointmentButton.Location = New System.Drawing.Point(152, 162)
+        Me.MakeAppointmentButton.Name = "MakeAppointmentButton"
+        Me.MakeAppointmentButton.Size = New System.Drawing.Size(102, 53)
+        Me.MakeAppointmentButton.TabIndex = 5
+        Me.MakeAppointmentButton.Text = "Make a Appointment"
+        Me.MakeAppointmentButton.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(260, 162)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(102, 53)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Appointments"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'MainMenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(706, 478)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.MakeAppointmentButton)
         Me.Controls.Add(Me.WardAssignmentButton)
         Me.Controls.Add(Me.OpenPatientButton)
         Me.Controls.Add(Me.Label1)
@@ -101,4 +123,6 @@ Partial Class MainMenuForm
     Friend WithEvents Label1 As Label
     Friend WithEvents OpenPatientButton As Button
     Friend WithEvents WardAssignmentButton As Button
+    Friend WithEvents MakeAppointmentButton As Button
+    Friend WithEvents Button2 As Button
 End Class

@@ -30,6 +30,8 @@ Partial Class WardDetailForm
         Me.LocationLabel = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ExtNumberLabel = New System.Windows.Forms.Label()
+        Me.WeekBeginingComboBox = New System.Windows.Forms.ComboBox()
+        Me.EditAssignmentButton = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -68,9 +70,9 @@ Partial Class WardDetailForm
         Me.WeekLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WeekLabel.Location = New System.Drawing.Point(431, 22)
         Me.WeekLabel.Name = "WeekLabel"
-        Me.WeekLabel.Size = New System.Drawing.Size(121, 17)
+        Me.WeekLabel.Size = New System.Drawing.Size(106, 17)
         Me.WeekLabel.TabIndex = 3
-        Me.WeekLabel.Text = "Week begining: ---"
+        Me.WeekLabel.Text = "Week begining: "
         '
         'ChargeNurseLabel
         '
@@ -96,12 +98,12 @@ Partial Class WardDetailForm
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 108)
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 115)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(669, 355)
+        Me.DataGridView1.Size = New System.Drawing.Size(669, 310)
         Me.DataGridView1.TabIndex = 6
         '
         'ExtNumberLabel
@@ -113,11 +115,31 @@ Partial Class WardDetailForm
         Me.ExtNumberLabel.TabIndex = 7
         Me.ExtNumberLabel.Text = "Extended Number: ---"
         '
+        'WeekBeginingComboBox
+        '
+        Me.WeekBeginingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.WeekBeginingComboBox.FormattingEnabled = True
+        Me.WeekBeginingComboBox.Location = New System.Drawing.Point(543, 19)
+        Me.WeekBeginingComboBox.Name = "WeekBeginingComboBox"
+        Me.WeekBeginingComboBox.Size = New System.Drawing.Size(142, 25)
+        Me.WeekBeginingComboBox.TabIndex = 8
+        '
+        'EditAssignmentButton
+        '
+        Me.EditAssignmentButton.Location = New System.Drawing.Point(543, 431)
+        Me.EditAssignmentButton.Name = "EditAssignmentButton"
+        Me.EditAssignmentButton.Size = New System.Drawing.Size(142, 32)
+        Me.EditAssignmentButton.TabIndex = 9
+        Me.EditAssignmentButton.Text = "Edit Assignment"
+        Me.EditAssignmentButton.UseVisualStyleBackColor = True
+        '
         'WardDetailForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 478)
+        Me.Controls.Add(Me.EditAssignmentButton)
+        Me.Controls.Add(Me.WeekBeginingComboBox)
         Me.Controls.Add(Me.ExtNumberLabel)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.LocationLabel)
@@ -146,4 +168,6 @@ Partial Class WardDetailForm
     Friend WithEvents LocationLabel As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ExtNumberLabel As Label
+    Friend WithEvents WeekBeginingComboBox As ComboBox
+    Friend WithEvents EditAssignmentButton As Button
 End Class

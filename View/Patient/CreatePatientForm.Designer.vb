@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CreatePatientForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class CreatePatientForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -42,6 +42,7 @@ Partial Class CreatePatientForm
         Me.DateOfBirthDTP = New System.Windows.Forms.DateTimePicker()
         Me.DateRegisteredDTP = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ResetNextOfKinButton = New System.Windows.Forms.Button()
         Me.AddressNOKTextBox = New System.Windows.Forms.TextBox()
         Me.TelephoneNOKTextBox = New System.Windows.Forms.TextBox()
         Me.RelationshipNOKTextBox = New System.Windows.Forms.TextBox()
@@ -52,6 +53,7 @@ Partial Class CreatePatientForm
         Me.Label9 = New System.Windows.Forms.Label()
         Me.AddButton = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ResetLocalDoctorButton = New System.Windows.Forms.Button()
         Me.AddressLDTTextBox = New System.Windows.Forms.TextBox()
         Me.TelephoneLDTTextBox = New System.Windows.Forms.TextBox()
         Me.ClinicNumberLDTTextBox = New System.Windows.Forms.TextBox()
@@ -194,7 +196,9 @@ Partial Class CreatePatientForm
         '
         'SexComboBox
         '
+        Me.SexComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SexComboBox.FormattingEnabled = True
+        Me.SexComboBox.Items.AddRange(New Object() {"Male", "Female", "Orther"})
         Me.SexComboBox.Location = New System.Drawing.Point(422, 87)
         Me.SexComboBox.Name = "SexComboBox"
         Me.SexComboBox.Size = New System.Drawing.Size(231, 25)
@@ -202,7 +206,9 @@ Partial Class CreatePatientForm
         '
         'MaritalStatusComboBox
         '
+        Me.MaritalStatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.MaritalStatusComboBox.FormattingEnabled = True
+        Me.MaritalStatusComboBox.Items.AddRange(New Object() {"Single", "Married", "Single (Divorced)"})
         Me.MaritalStatusComboBox.Location = New System.Drawing.Point(422, 156)
         Me.MaritalStatusComboBox.Name = "MaritalStatusComboBox"
         Me.MaritalStatusComboBox.Size = New System.Drawing.Size(231, 25)
@@ -224,6 +230,7 @@ Partial Class CreatePatientForm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ResetNextOfKinButton)
         Me.GroupBox1.Controls.Add(Me.AddressNOKTextBox)
         Me.GroupBox1.Controls.Add(Me.TelephoneNOKTextBox)
         Me.GroupBox1.Controls.Add(Me.RelationshipNOKTextBox)
@@ -241,12 +248,21 @@ Partial Class CreatePatientForm
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Next-Of-Kin Details"
         '
+        'ResetNextOfKinButton
+        '
+        Me.ResetNextOfKinButton.Location = New System.Drawing.Point(575, 87)
+        Me.ResetNextOfKinButton.Name = "ResetNextOfKinButton"
+        Me.ResetNextOfKinButton.Size = New System.Drawing.Size(75, 23)
+        Me.ResetNextOfKinButton.TabIndex = 8
+        Me.ResetNextOfKinButton.Text = "Reset"
+        Me.ResetNextOfKinButton.UseVisualStyleBackColor = True
+        '
         'AddressNOKTextBox
         '
         Me.AddressNOKTextBox.Location = New System.Drawing.Point(363, 21)
         Me.AddressNOKTextBox.Multiline = True
         Me.AddressNOKTextBox.Name = "AddressNOKTextBox"
-        Me.AddressNOKTextBox.Size = New System.Drawing.Size(231, 87)
+        Me.AddressNOKTextBox.Size = New System.Drawing.Size(197, 87)
         Me.AddressNOKTextBox.TabIndex = 7
         '
         'TelephoneNOKTextBox
@@ -317,6 +333,7 @@ Partial Class CreatePatientForm
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ResetLocalDoctorButton)
         Me.GroupBox2.Controls.Add(Me.AddressLDTTextBox)
         Me.GroupBox2.Controls.Add(Me.TelephoneLDTTextBox)
         Me.GroupBox2.Controls.Add(Me.ClinicNumberLDTTextBox)
@@ -333,12 +350,21 @@ Partial Class CreatePatientForm
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Local Doctor Details"
         '
+        'ResetLocalDoctorButton
+        '
+        Me.ResetLocalDoctorButton.Location = New System.Drawing.Point(575, 92)
+        Me.ResetLocalDoctorButton.Name = "ResetLocalDoctorButton"
+        Me.ResetLocalDoctorButton.Size = New System.Drawing.Size(75, 23)
+        Me.ResetLocalDoctorButton.TabIndex = 9
+        Me.ResetLocalDoctorButton.Text = "Reset"
+        Me.ResetLocalDoctorButton.UseVisualStyleBackColor = True
+        '
         'AddressLDTTextBox
         '
         Me.AddressLDTTextBox.Location = New System.Drawing.Point(360, 25)
         Me.AddressLDTTextBox.Multiline = True
         Me.AddressLDTTextBox.Name = "AddressLDTTextBox"
-        Me.AddressLDTTextBox.Size = New System.Drawing.Size(231, 89)
+        Me.AddressLDTTextBox.Size = New System.Drawing.Size(200, 89)
         Me.AddressLDTTextBox.TabIndex = 7
         '
         'TelephoneLDTTextBox
@@ -489,4 +515,6 @@ Partial Class CreatePatientForm
     Friend WithEvents Label16 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents ResetButton As Button
+    Friend WithEvents ResetNextOfKinButton As Button
+    Friend WithEvents ResetLocalDoctorButton As Button
 End Class
