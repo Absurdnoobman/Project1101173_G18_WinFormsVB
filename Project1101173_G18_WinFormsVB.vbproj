@@ -119,6 +119,18 @@
     <Compile Include="View\Patient\ExamineAppointmentForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\Patient\PatientAllocation.Designer.vb">
+      <DependentUpon>PatientAllocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Patient\PatientAllocation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Patient\PickPatientDialog.Designer.vb">
+      <DependentUpon>PickPatientDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\Patient\PickPatientDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\StaffQualification\AddNewQualificationForm.Designer.vb">
       <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
     </Compile>
@@ -215,6 +227,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Patient\ExamineAppointmentForm.resx">
       <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Patient\PatientAllocation.resx">
+      <DependentUpon>PatientAllocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Patient\PickPatientDialog.resx">
+      <DependentUpon>PickPatientDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StaffQualification\AddNewQualificationForm.resx">
       <DependentUpon>AddNewQualificationForm.vb</DependentUpon>

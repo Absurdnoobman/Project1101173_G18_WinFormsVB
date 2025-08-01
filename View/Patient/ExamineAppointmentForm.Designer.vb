@@ -160,7 +160,7 @@ Partial Class ExamineAppointmentForm
         Me.Controls.Add(Me.PatientFLP)
         Me.Controls.Add(Me.SelectPatientButton)
         Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "ExamineAppointmentForm"
         Me.Text = "Make an Appointment"

@@ -27,7 +27,7 @@ Partial Class PickStaffDialog
         Me.SearchByLabel = New System.Windows.Forms.Label()
         Me.SearchByComboBox = New System.Windows.Forms.ComboBox()
         Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ConfirmButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -74,21 +74,21 @@ Partial Class PickStaffDialog
         Me.StaffFLP.TabIndex = 4
         Me.StaffFLP.WrapContents = False
         '
-        'Button1
+        'ConfirmButton
         '
-        Me.Button1.Location = New System.Drawing.Point(545, 427)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(139, 36)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Confirm"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ConfirmButton.Location = New System.Drawing.Point(545, 427)
+        Me.ConfirmButton.Name = "ConfirmButton"
+        Me.ConfirmButton.Size = New System.Drawing.Size(139, 36)
+        Me.ConfirmButton.TabIndex = 5
+        Me.ConfirmButton.Text = "Confirm"
+        Me.ConfirmButton.UseVisualStyleBackColor = True
         '
         'PickStaffDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 478)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ConfirmButton)
         Me.Controls.Add(Me.StaffFLP)
         Me.Controls.Add(Me.SearchByComboBox)
         Me.Controls.Add(Me.SearchByLabel)
@@ -110,5 +110,5 @@ Partial Class PickStaffDialog
     Friend WithEvents SearchByLabel As Label
     Friend WithEvents SearchByComboBox As ComboBox
     Friend WithEvents StaffFLP As FlowLayoutPanel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ConfirmButton As Button
 End Class
