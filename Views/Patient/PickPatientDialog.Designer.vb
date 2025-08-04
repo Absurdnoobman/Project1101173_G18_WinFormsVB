@@ -42,6 +42,7 @@ Partial Class PickPatientDialog
         'PatientFLP
         '
         Me.PatientFLP.AutoScroll = True
+        Me.PatientFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PatientFLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.PatientFLP.Location = New System.Drawing.Point(16, 46)
         Me.PatientFLP.Name = "PatientFLP"

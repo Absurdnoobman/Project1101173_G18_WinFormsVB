@@ -56,6 +56,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -76,89 +77,108 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\VisibilityStatus.vb" />
     <Compile Include="models\PatientLocalDoctor.vb" />
     <Compile Include="models\PatientNextOfKin.vb" />
     <Compile Include="models\Patient.vb" />
     <Compile Include="models\StaffQualification.vb" />
     <Compile Include="models\StaffWorkExperience.vb" />
     <Compile Include="models\Ward.vb" />
-    <Compile Include="View\Components\NewQualificationCard.Designer.vb">
+    <Compile Include="Views\Components\NewQualificationCard.Designer.vb">
       <DependentUpon>NewQualificationCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\NewQualificationCard.vb">
+    <Compile Include="Views\Components\NewQualificationCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Components\NewWorkExperienceCard.Designer.vb">
+    <Compile Include="Views\Components\NewWorkExperienceCard.Designer.vb">
       <DependentUpon>NewWorkExperienceCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\NewWorkExperienceCard.vb">
+    <Compile Include="Views\Components\NewWorkExperienceCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="models\Staff.vb" />
-    <Compile Include="View\Components\SelectedStaffCardWithShift.Designer.vb">
+    <Compile Include="Views\Components\FilterCard.Designer.vb">
+      <DependentUpon>FilterCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\FilterCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\PatientAllocationCard.Designer.vb">
+      <DependentUpon>PatientAllocationCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\PatientAllocationCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\SelectedStaffCardWithShift.Designer.vb">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\SelectedStaffCardWithShift.vb">
+    <Compile Include="Views\Components\SelectedStaffCardWithShift.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Components\StaffCardWithCheckBox.Designer.vb">
+    <Compile Include="Views\Components\StaffCardWithCheckBox.Designer.vb">
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\StaffCardWithCheckBox.vb">
+    <Compile Include="Views\Components\StaffCardWithCheckBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Patient\CreatePatientForm.Designer.vb">
+    <Compile Include="Views\Patient\PatientAppointment.Designer.vb">
+      <DependentUpon>PatientAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patient\PatientAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Patient\CreatePatientForm.Designer.vb">
       <DependentUpon>CreatePatientForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Patient\CreatePatientForm.vb">
+    <Compile Include="Views\Patient\CreatePatientForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Patient\ExamineAppointmentForm.Designer.vb">
+    <Compile Include="Views\Patient\ExamineAppointmentForm.Designer.vb">
       <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Patient\ExamineAppointmentForm.vb">
+    <Compile Include="Views\Patient\ExamineAppointmentForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Patient\PatientAllocation.Designer.vb">
+    <Compile Include="Views\Patient\PatientAllocation.Designer.vb">
       <DependentUpon>PatientAllocation.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Patient\PatientAllocation.vb">
+    <Compile Include="Views\Patient\PatientAllocation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Patient\PickPatientDialog.Designer.vb">
+    <Compile Include="Views\Patient\PickPatientDialog.Designer.vb">
       <DependentUpon>PickPatientDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Patient\PickPatientDialog.vb">
+    <Compile Include="Views\Patient\PickPatientDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\StaffQualification\AddNewQualificationForm.Designer.vb">
+    <Compile Include="Views\StaffQualification\AddNewQualificationForm.Designer.vb">
       <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\StaffQualification\AddNewQualificationForm.vb">
+    <Compile Include="Views\StaffQualification\AddNewQualificationForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\StaffWorkExperience\AddNewWorkExperienceForm.Designer.vb">
+    <Compile Include="Views\StaffWorkExperience\AddNewWorkExperienceForm.Designer.vb">
       <DependentUpon>AddNewWorkExperienceForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\StaffWorkExperience\AddNewWorkExperienceForm.vb">
+    <Compile Include="Views\StaffWorkExperience\AddNewWorkExperienceForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Staff\CreateNewStaffForm.Designer.vb">
+    <Compile Include="Views\Staff\CreateNewStaffForm.Designer.vb">
       <DependentUpon>CreateNewStaffForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\CreateNewStaffForm.vb">
+    <Compile Include="Views\Staff\CreateNewStaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Staff\EditStaffForm.Designer.vb">
+    <Compile Include="Views\Staff\EditStaffForm.Designer.vb">
       <DependentUpon>EditStaffForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\EditStaffForm.vb">
+    <Compile Include="Views\Staff\EditStaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MainMenu.vb">
+    <Compile Include="Views\MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MainMenu.Designer.vb">
+    <Compile Include="Views\MainMenu.Designer.vb">
       <DependentUpon>MainMenu.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -178,75 +198,84 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="View\Components\StaffCard.Designer.vb">
+    <Compile Include="Views\Components\StaffCard.Designer.vb">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Components\StaffCard.vb">
+    <Compile Include="Views\Components\StaffCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\Staff\PickStaffDialog.Designer.vb">
+    <Compile Include="Views\Staff\PickStaffDialog.Designer.vb">
       <DependentUpon>PickStaffDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\PickStaffDialog.vb">
+    <Compile Include="Views\Staff\PickStaffDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Staff\StaffList.Designer.vb">
+    <Compile Include="Views\Staff\StaffList.Designer.vb">
       <DependentUpon>StaffList.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Staff\StaffList.vb">
+    <Compile Include="Views\Staff\StaffList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Ward\StaffWardAssignmentForm.Designer.vb">
+    <Compile Include="Views\Ward\StaffWardAssignmentForm.Designer.vb">
       <DependentUpon>StaffWardAssignmentForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Ward\StaffWardAssignmentForm.vb">
+    <Compile Include="Views\Ward\StaffWardAssignmentForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Ward\WardDetail.Designer.vb">
+    <Compile Include="Views\Ward\WardDetail.Designer.vb">
       <DependentUpon>WardDetail.vb</DependentUpon>
     </Compile>
-    <Compile Include="View\Ward\WardDetail.vb">
+    <Compile Include="Views\Ward\WardDetail.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\Components\NewQualificationCard.resx">
+    <EmbeddedResource Include="Views\Components\NewQualificationCard.resx">
       <DependentUpon>NewQualificationCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Components\NewWorkExperienceCard.resx">
+    <EmbeddedResource Include="Views\Components\NewWorkExperienceCard.resx">
       <DependentUpon>NewWorkExperienceCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Components\SelectedStaffCardWithShift.resx">
+    <EmbeddedResource Include="Views\Components\FilterCard.resx">
+      <DependentUpon>FilterCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\PatientAllocationCard.resx">
+      <DependentUpon>PatientAllocationCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\SelectedStaffCardWithShift.resx">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Components\StaffCardWithCheckBox.resx">
+    <EmbeddedResource Include="Views\Components\StaffCardWithCheckBox.resx">
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Patient\CreatePatientForm.resx">
+    <EmbeddedResource Include="Views\Patient\PatientAppointment.resx">
+      <DependentUpon>PatientAppointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patient\CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Patient\ExamineAppointmentForm.resx">
+    <EmbeddedResource Include="Views\Patient\ExamineAppointmentForm.resx">
       <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Patient\PatientAllocation.resx">
+    <EmbeddedResource Include="Views\Patient\PatientAllocation.resx">
       <DependentUpon>PatientAllocation.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Patient\PickPatientDialog.resx">
+    <EmbeddedResource Include="Views\Patient\PickPatientDialog.resx">
       <DependentUpon>PickPatientDialog.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StaffQualification\AddNewQualificationForm.resx">
+    <EmbeddedResource Include="Views\StaffQualification\AddNewQualificationForm.resx">
       <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StaffWorkExperience\AddNewWorkExperienceForm.resx">
+    <EmbeddedResource Include="Views\StaffWorkExperience\AddNewWorkExperienceForm.resx">
       <DependentUpon>AddNewWorkExperienceForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Staff\CreateNewStaffForm.resx">
+    <EmbeddedResource Include="Views\Staff\CreateNewStaffForm.resx">
       <DependentUpon>CreateNewStaffForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Staff\EditStaffForm.resx">
+    <EmbeddedResource Include="Views\Staff\EditStaffForm.resx">
       <DependentUpon>EditStaffForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainMenu.resx">
+    <EmbeddedResource Include="Views\MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -255,19 +284,19 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Components\StaffCard.resx">
+    <EmbeddedResource Include="Views\Components\StaffCard.resx">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Staff\PickStaffDialog.resx">
+    <EmbeddedResource Include="Views\Staff\PickStaffDialog.resx">
       <DependentUpon>PickStaffDialog.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Staff\StaffList.resx">
+    <EmbeddedResource Include="Views\Staff\StaffList.resx">
       <DependentUpon>StaffList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Ward\StaffWardAssignmentForm.resx">
+    <EmbeddedResource Include="Views\Ward\StaffWardAssignmentForm.resx">
       <DependentUpon>StaffWardAssignmentForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Ward\WardDetail.resx">
+    <EmbeddedResource Include="Views\Ward\WardDetail.resx">
       <DependentUpon>WardDetail.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

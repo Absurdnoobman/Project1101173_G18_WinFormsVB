@@ -29,8 +29,12 @@ Partial Class StaffList
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.flpStaffList = New System.Windows.Forms.FlowLayoutPanel()
+        Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.OrderByComboBox = New System.Windows.Forms.ComboBox()
+        Me.FilterFLP = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.AddFilterButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -64,9 +68,9 @@ Partial Class StaffList
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(628, 27)
+        Me.Button1.Location = New System.Drawing.Point(628, 24)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(144, 23)
+        Me.Button1.Size = New System.Drawing.Size(144, 26)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Create Staff Record"
         Me.Button1.UseVisualStyleBackColor = True
@@ -89,39 +93,80 @@ Partial Class StaffList
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Search By"
         '
-        'flpStaffList
+        'StaffFLP
         '
-        Me.flpStaffList.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.StaffFLP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.flpStaffList.AutoScroll = True
-        Me.flpStaffList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flpStaffList.Location = New System.Drawing.Point(12, 101)
-        Me.flpStaffList.Name = "flpStaffList"
-        Me.flpStaffList.Padding = New System.Windows.Forms.Padding(2)
-        Me.flpStaffList.Size = New System.Drawing.Size(760, 436)
-        Me.flpStaffList.TabIndex = 11
-        Me.flpStaffList.WrapContents = False
+        Me.StaffFLP.AutoScroll = True
+        Me.StaffFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.StaffFLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.StaffFLP.Location = New System.Drawing.Point(12, 168)
+        Me.StaffFLP.Name = "StaffFLP"
+        Me.StaffFLP.Padding = New System.Windows.Forms.Padding(2)
+        Me.StaffFLP.Size = New System.Drawing.Size(760, 369)
+        Me.StaffFLP.TabIndex = 11
+        Me.StaffFLP.WrapContents = False
         '
         'Label4
         '
-        Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(640, 63)
+        Me.Label4.Location = New System.Drawing.Point(544, 63)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(132, 23)
+        Me.Label4.Size = New System.Drawing.Size(60, 17)
         Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Work in Progress"
+        Me.Label4.Text = "Order By"
+        '
+        'OrderByComboBox
+        '
+        Me.OrderByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.OrderByComboBox.FormattingEnabled = True
+        Me.OrderByComboBox.Location = New System.Drawing.Point(610, 60)
+        Me.OrderByComboBox.Name = "OrderByComboBox"
+        Me.OrderByComboBox.Size = New System.Drawing.Size(121, 25)
+        Me.OrderByComboBox.TabIndex = 13
+        '
+        'FilterFLP
+        '
+        Me.FilterFLP.AutoScroll = True
+        Me.FilterFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.FilterFLP.Location = New System.Drawing.Point(93, 99)
+        Me.FilterFLP.Name = "FilterFLP"
+        Me.FilterFLP.Padding = New System.Windows.Forms.Padding(3)
+        Me.FilterFLP.Size = New System.Drawing.Size(679, 63)
+        Me.FilterFLP.TabIndex = 14
+        Me.FilterFLP.WrapContents = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(12, 99)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(40, 20)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "filter"
+        '
+        'AddFilterButton
+        '
+        Me.AddFilterButton.Location = New System.Drawing.Point(12, 122)
+        Me.AddFilterButton.Name = "AddFilterButton"
+        Me.AddFilterButton.Size = New System.Drawing.Size(75, 23)
+        Me.AddFilterButton.TabIndex = 16
+        Me.AddFilterButton.Text = "Add"
+        Me.AddFilterButton.UseVisualStyleBackColor = True
         '
         'StaffList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(787, 549)
+        Me.Controls.Add(Me.AddFilterButton)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.FilterFLP)
+        Me.Controls.Add(Me.OrderByComboBox)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.flpStaffList)
+        Me.Controls.Add(Me.StaffFLP)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button1)
@@ -146,6 +191,10 @@ Partial Class StaffList
     Friend WithEvents Button1 As Button
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents flpStaffList As FlowLayoutPanel
+    Friend WithEvents StaffFLP As FlowLayoutPanel
     Friend WithEvents Label4 As Label
+    Friend WithEvents OrderByComboBox As ComboBox
+    Friend WithEvents FilterFLP As FlowLayoutPanel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents AddFilterButton As Button
 End Class

@@ -3,6 +3,7 @@
         FirstNameLabel.Text = s.firstname
         SurnameLabel.Text = s.surname
         StaffIdLabel.Text = s.id
+        PositionLabel.Text = s.position
     End Sub
 
     Private Function Test() As Integer
@@ -14,4 +15,5 @@
         Dim f As New EditStaffForm
         f.ShowDialog()
     End Sub
+
 End Class

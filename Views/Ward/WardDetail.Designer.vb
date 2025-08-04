@@ -32,6 +32,10 @@ Partial Class WardDetailForm
         Me.ExtNumberLabel = New System.Windows.Forms.Label()
         Me.WeekBeginingComboBox = New System.Windows.Forms.ComboBox()
         Me.EditAssignmentButton = New System.Windows.Forms.Button()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -98,12 +102,12 @@ Partial Class WardDetailForm
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 115)
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 150)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(669, 310)
+        Me.DataGridView1.Size = New System.Drawing.Size(669, 275)
         Me.DataGridView1.TabIndex = 6
         '
         'ExtNumberLabel
@@ -133,11 +137,52 @@ Partial Class WardDetailForm
         Me.EditAssignmentButton.Text = "Edit Assignment"
         Me.EditAssignmentButton.UseVisualStyleBackColor = True
         '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(101, 88)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(584, 56)
+        Me.FlowLayoutPanel1.TabIndex = 10
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(20, 88)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 17)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Filter"
+        '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button1.Location = New System.Drawing.Point(20, 109)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "add"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(16, 431)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 17)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Records 69/69"
+        '
         'WardDetailForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 478)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.EditAssignmentButton)
         Me.Controls.Add(Me.WeekBeginingComboBox)
         Me.Controls.Add(Me.ExtNumberLabel)
@@ -170,4 +215,8 @@ Partial Class WardDetailForm
     Friend WithEvents ExtNumberLabel As Label
     Friend WithEvents WeekBeginingComboBox As ComboBox
     Friend WithEvents EditAssignmentButton As Button
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
 End Class

@@ -27,6 +27,7 @@ Partial Class StaffCard
         Me.DeleteButton = New System.Windows.Forms.Button()
         Me.EditButton = New System.Windows.Forms.Button()
         Me.StaffIdLabel = New System.Windows.Forms.Label()
+        Me.PositionLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'FirstNameLabel
@@ -53,7 +54,7 @@ Partial Class StaffCard
         '
         'DeleteButton
         '
-        Me.DeleteButton.Location = New System.Drawing.Point(634, 30)
+        Me.DeleteButton.Location = New System.Drawing.Point(637, 26)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(75, 23)
         Me.DeleteButton.TabIndex = 2
@@ -62,7 +63,7 @@ Partial Class StaffCard
         '
         'EditButton
         '
-        Me.EditButton.Location = New System.Drawing.Point(553, 30)
+        Me.EditButton.Location = New System.Drawing.Point(556, 26)
         Me.EditButton.Name = "EditButton"
         Me.EditButton.Size = New System.Drawing.Size(75, 23)
         Me.EditButton.TabIndex = 3
@@ -79,11 +80,21 @@ Partial Class StaffCard
         Me.StaffIdLabel.TabIndex = 4
         Me.StaffIdLabel.Text = "S---"
         '
+        'PositionLabel
+        '
+        Me.PositionLabel.AutoSize = True
+        Me.PositionLabel.Location = New System.Drawing.Point(298, 12)
+        Me.PositionLabel.Name = "PositionLabel"
+        Me.PositionLabel.Size = New System.Drawing.Size(55, 17)
+        Me.PositionLabel.TabIndex = 5
+        Me.PositionLabel.Text = "position"
+        '
         'StaffCard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Controls.Add(Me.PositionLabel)
         Me.Controls.Add(Me.StaffIdLabel)
         Me.Controls.Add(Me.EditButton)
         Me.Controls.Add(Me.DeleteButton)
@@ -103,4 +114,5 @@ Partial Class StaffCard
     Friend WithEvents DeleteButton As Button
     Friend WithEvents EditButton As Button
     Friend WithEvents StaffIdLabel As Label
+    Friend WithEvents PositionLabel As Label
 End Class

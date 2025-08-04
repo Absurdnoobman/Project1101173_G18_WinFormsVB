@@ -8,10 +8,10 @@
 
     Public Sub SetData(workExp As StaffWorkExperience, index As Integer)
         Me.index = index
-        PositionLabel.Text = "As a(n) " & workExp.position
-        OrganisationLabel.Text = "In " & workExp.organisation
-        StartDateLabel.Text = "Start: " & workExp.startDate.ToLongDateString
-        EndDateLabel.Text = "Finish: " & workExp.endDate.ToLongDateString
+        PositionLabel.Text = $"As a(n) {workExp.position}"
+        OrganisationLabel.Text = $"In {workExp.organisation}"
+        StartDateLabel.Text = $"Start: {workExp.startDate.ToLongDateString}"
+        EndDateLabel.Text = $"Finish: {workExp.endDate.ToLongDateString}"
     End Sub
 
 End Class

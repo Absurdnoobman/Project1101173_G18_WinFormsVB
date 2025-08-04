@@ -67,6 +67,7 @@ Partial Class PickStaffDialog
         'StaffFLP
         '
         Me.StaffFLP.AutoScroll = True
+        Me.StaffFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.StaffFLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.StaffFLP.Location = New System.Drawing.Point(16, 46)
         Me.StaffFLP.Name = "StaffFLP"

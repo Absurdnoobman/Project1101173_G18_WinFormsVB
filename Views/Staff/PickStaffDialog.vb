@@ -1,4 +1,5 @@
-﻿Public Class PickPatientDialog
+﻿Public Class PickStaffDialog
+
     Private _isMultiplePick As Boolean
     Private _filterByColumn As String
     Private _filterValue As Object
@@ -37,31 +38,41 @@
     End Sub
 
     ''' <summary>
-    '''     Return A Form with allow user to choose a multiple objects
+    '''     Return A <see cref="Form"/> which allow user to choose a multiple staff
     ''' </summary>
     ''' <returns></returns>
-    Public Shared Function MultiplePick() As PickPatientDialog
-        Return New PickPatientDialog(True)
+    Public Shared Function MultiplePick() As PickStaffDialog
+        Return New PickStaffDialog(True)
     End Function
 
+    Public Shared Function FilterByRole(role As String) As PickStaffDialog
+        Return New PickStaffDialog("role", role)
+    End Function
+
+
     Private Sub PickStaffDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PatientFLP.Controls.Clear()
+        StaffFLP.Controls.Clear()
 
         If _isMultiplePick Then
-            Text = "Pick Patients"
+            Text = "Pick Staff"
         Else
-            Text = "Pick a Patient"
+            Text = "Pick one staff"
         End If
 
-        Dim dt As New List(Of Patient) From {
-            New Patient With {.id = "2344", .Firstname = "Mannee", .Surname = "jolo in squad"},
-            New Patient With {.id = "4433", .Firstname = "GG", .Surname = "WP"}
+        Dim dt As New List(Of Staff) From {
+            New Staff With {.id = "S990", .firstname = "Mannee", .surname = "jolo in squad"},
+            New Staff With {.id = "S490", .firstname = "GG", .surname = "WP"}
         }
 
-        For Each patient In dt
-
+        For Each staff In dt
+            Dim card As New StaffCardWithCheckBox
+            card.SetData(staff)
+            StaffFLP.Controls.Add(card)
         Next
 
     End Sub
 
+    Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
+
+    End Sub
 End Class

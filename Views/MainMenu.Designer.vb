@@ -29,6 +29,7 @@ Partial Class MainMenuForm
         Me.WardAssignmentButton = New System.Windows.Forms.Button()
         Me.MakeAppointmentButton = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.AllocationButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'OpenStaffListButton
@@ -96,11 +97,21 @@ Partial Class MainMenuForm
         Me.Button2.Text = "Appointments"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'AllocationButton
+        '
+        Me.AllocationButton.Location = New System.Drawing.Point(44, 221)
+        Me.AllocationButton.Name = "AllocationButton"
+        Me.AllocationButton.Size = New System.Drawing.Size(102, 53)
+        Me.AllocationButton.TabIndex = 7
+        Me.AllocationButton.Text = "Allocation"
+        Me.AllocationButton.UseVisualStyleBackColor = True
+        '
         'MainMenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(706, 478)
+        Me.Controls.Add(Me.AllocationButton)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.MakeAppointmentButton)
         Me.Controls.Add(Me.WardAssignmentButton)
@@ -125,4 +136,5 @@ Partial Class MainMenuForm
     Friend WithEvents WardAssignmentButton As Button
     Friend WithEvents MakeAppointmentButton As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents AllocationButton As Button
 End Class

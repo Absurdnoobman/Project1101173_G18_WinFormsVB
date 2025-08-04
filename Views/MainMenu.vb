@@ -26,4 +26,9 @@
         Dim f As New ExamineAppointmentForm
         f.ShowDialog()
     End Sub
+
+    Private Sub AllocationButton_Click(sender As Object, e As EventArgs) Handles AllocationButton.Click
+        Dim f As New PatientAllocation
+        f.Show()
+    End Sub
 End Class

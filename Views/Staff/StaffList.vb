@@ -4,7 +4,8 @@
     End Sub
 
     Private Sub StaffList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        flpStaffList.Controls.Clear()
+        StaffFLP.Controls.Clear()
+        FilterFLP.Controls.Clear()
 
         ' DUMMY DATA For Testing Purposes
         Dim data As New List(Of Staff) From {
@@ -20,12 +21,17 @@
         For Each staff In data
             Dim card As New StaffCard
             card.SetData(staff)
-            flpStaffList.Controls.Add(card)
+            StaffFLP.Controls.Add(card)
         Next
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim f As New CreateNewStaffForm
         f.ShowDialog()
+    End Sub
+
+    Private Sub AddFilterButton_Click(sender As Object, e As EventArgs) Handles AddFilterButton.Click
+        Dim filterCard As New FilterCard
+        FilterFLP.Controls.Add(filterCard)
     End Sub
 End Class
