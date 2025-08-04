@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\VisibilityStatus.vb" />
+    <Compile Include="models\PatientAllocation.vb" />
     <Compile Include="models\PatientLocalDoctor.vb" />
     <Compile Include="models\PatientNextOfKin.vb" />
     <Compile Include="models\Patient.vb" />
@@ -139,10 +140,10 @@
     <Compile Include="Views\Patient\ExamineAppointmentForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Patient\PatientAllocation.Designer.vb">
-      <DependentUpon>PatientAllocation.vb</DependentUpon>
+    <Compile Include="Views\Patient\PatientAllocationList.Designer.vb">
+      <DependentUpon>PatientAllocationList.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Patient\PatientAllocation.vb">
+    <Compile Include="Views\Patient\PatientAllocationList.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Patient\PickPatientDialog.Designer.vb">
@@ -257,8 +258,8 @@
     <EmbeddedResource Include="Views\Patient\ExamineAppointmentForm.resx">
       <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Patient\PatientAllocation.resx">
-      <DependentUpon>PatientAllocation.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Patient\PatientAllocationList.resx">
+      <DependentUpon>PatientAllocationList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PickPatientDialog.resx">
       <DependentUpon>PickPatientDialog.vb</DependentUpon>

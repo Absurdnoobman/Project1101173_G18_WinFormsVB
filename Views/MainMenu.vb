@@ -28,7 +28,7 @@
     End Sub
 
     Private Sub AllocationButton_Click(sender As Object, e As EventArgs) Handles AllocationButton.Click
-        Dim f As New PatientAllocation
+        Dim f As New PatientAllocationList
         f.Show()
     End Sub
 End Class

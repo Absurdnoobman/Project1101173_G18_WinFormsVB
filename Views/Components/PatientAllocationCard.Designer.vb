@@ -27,6 +27,9 @@ Partial Class PatientAllocationCard
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.DatePlacedLabel = New System.Windows.Forms.Label()
+        Me.LeaveLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'PatientLabel
@@ -53,7 +56,7 @@ Partial Class PatientAllocationCard
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(258, 19)
+        Me.Label1.Location = New System.Drawing.Point(266, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(30, 17)
         Me.Label1.TabIndex = 2
@@ -79,11 +82,41 @@ Partial Class PatientAllocationCard
         Me.Button2.Text = "Delete"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(14, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(72, 17)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "On Waiting"
+        '
+        'DatePlacedLabel
+        '
+        Me.DatePlacedLabel.AutoSize = True
+        Me.DatePlacedLabel.Location = New System.Drawing.Point(155, 59)
+        Me.DatePlacedLabel.Name = "DatePlacedLabel"
+        Me.DatePlacedLabel.Size = New System.Drawing.Size(77, 17)
+        Me.DatePlacedLabel.TabIndex = 6
+        Me.DatePlacedLabel.Text = "Date Placed"
+        '
+        'LeaveLabel
+        '
+        Me.LeaveLabel.AutoSize = True
+        Me.LeaveLabel.Location = New System.Drawing.Point(317, 59)
+        Me.LeaveLabel.Name = "LeaveLabel"
+        Me.LeaveLabel.Size = New System.Drawing.Size(133, 17)
+        Me.LeaveLabel.TabIndex = 7
+        Me.LeaveLabel.Text = "Expected Date Leave "
+        '
         'PatientAllocationCard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Controls.Add(Me.LeaveLabel)
+        Me.Controls.Add(Me.DatePlacedLabel)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
@@ -103,4 +136,7 @@ Partial Class PatientAllocationCard
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents DatePlacedLabel As Label
+    Friend WithEvents LeaveLabel As Label
 End Class

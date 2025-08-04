@@ -1,4 +1,4 @@
-﻿Public Class PatientAllocation
+﻿Public Class PatientAllocationList
     Private Sub PatientAllocation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ToggleVisibilityWardElements(Visibility.Hidden)
         AllocationFLP.Hide()
