@@ -1,5 +1,7 @@
 ﻿Public Class StaffCard
+    Dim thisStaff As Staff
     Public Sub SetData(s As Staff)
+        thisStaff = s
         FirstNameLabel.Text = s.firstname
         SurnameLabel.Text = s.surname
         StaffIdLabel.Text = s.id
@@ -12,7 +14,7 @@
     End Function
 
     Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
-        Dim f As New EditStaffForm
+        Dim f = EditStaffForm.WithData(thisStaff)
         f.ShowDialog()
     End Sub
 

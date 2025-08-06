@@ -78,13 +78,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\VisibilityStatus.vb" />
+    <Compile Include="libs\Auth.vb" />
+    <Compile Include="libs\Authenticatable.vb" />
+    <Compile Include="libs\Hash.vb" />
+    <Compile Include="libs\TEST.vb" />
+    <Compile Include="models\Appointment.vb" />
     <Compile Include="models\PatientAllocation.vb" />
     <Compile Include="models\PatientLocalDoctor.vb" />
     <Compile Include="models\PatientNextOfKin.vb" />
     <Compile Include="models\Patient.vb" />
+    <Compile Include="models\PharmaceuticalSupply.vb" />
     <Compile Include="models\StaffQualification.vb" />
     <Compile Include="models\StaffWorkExperience.vb" />
     <Compile Include="models\Ward.vb" />
+    <Compile Include="Views\Appointment\AppointmentList.Designer.vb">
+      <DependentUpon>AppointmentList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appointment\AppointmentList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Components\NewQualificationCard.Designer.vb">
       <DependentUpon>NewQualificationCard.vb</DependentUpon>
     </Compile>
@@ -121,6 +133,12 @@
     </Compile>
     <Compile Include="Views\Components\StaffCardWithCheckBox.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Patient\PatientAppointment.Designer.vb">
       <DependentUpon>PatientAppointment.vb</DependentUpon>
@@ -231,6 +249,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\Appointment\AppointmentList.resx">
+      <DependentUpon>AppointmentList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\NewQualificationCard.resx">
       <DependentUpon>NewQualificationCard.vb</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\StaffCardWithCheckBox.resx">
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PatientAppointment.resx">
       <DependentUpon>PatientAppointment.vb</DependentUpon>

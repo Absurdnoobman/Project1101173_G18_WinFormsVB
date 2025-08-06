@@ -31,4 +31,12 @@
         Dim f As New PatientAllocationList
         f.Show()
     End Sub
+
+    Private Sub MainMenuForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim f As New LoginForm
+        Dim result = f.ShowDialog()
+        If result = DialogResult.No Or result = DialogResult.Cancel Then
+            Dispose()
+        End If
+    End Sub
 End Class
