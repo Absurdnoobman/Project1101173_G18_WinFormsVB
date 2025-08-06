@@ -3,6 +3,9 @@
 		SupplyIdTextBox.Clear()
 		NameTextBox.Clear()
 		TypeComboBox.SelectedIndex = 0
-
+		DescTextBox.Clear()
+		ReorderLevelTextBox.Clear()
+		QuatityTextBox.Clear()
+		CostPerUnitTextBox.Clear()
 	End Sub
 End Class

@@ -27,12 +27,12 @@ Partial Class CreateSupplyForm
 		Me.SupplyIdTextBox = New System.Windows.Forms.TextBox()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.NameTextBox = New System.Windows.Forms.TextBox()
-		Me.TextBox1 = New System.Windows.Forms.TextBox()
+		Me.DescTextBox = New System.Windows.Forms.TextBox()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label5 = New System.Windows.Forms.Label()
-		Me.TextBox2 = New System.Windows.Forms.TextBox()
+		Me.ReorderLevelTextBox = New System.Windows.Forms.TextBox()
 		Me.Label6 = New System.Windows.Forms.Label()
-		Me.TextBox3 = New System.Windows.Forms.TextBox()
+		Me.QuatityTextBox = New System.Windows.Forms.TextBox()
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.TypeComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label8 = New System.Windows.Forms.Label()
@@ -83,13 +83,13 @@ Partial Class CreateSupplyForm
 		Me.NameTextBox.Size = New System.Drawing.Size(226, 25)
 		Me.NameTextBox.TabIndex = 4
 		'
-		'TextBox1
+		'DescTextBox
 		'
-		Me.TextBox1.Location = New System.Drawing.Point(123, 96)
-		Me.TextBox1.Multiline = True
-		Me.TextBox1.Name = "TextBox1"
-		Me.TextBox1.Size = New System.Drawing.Size(435, 70)
-		Me.TextBox1.TabIndex = 6
+		Me.DescTextBox.Location = New System.Drawing.Point(123, 96)
+		Me.DescTextBox.Multiline = True
+		Me.DescTextBox.Name = "DescTextBox"
+		Me.DescTextBox.Size = New System.Drawing.Size(435, 70)
+		Me.DescTextBox.TabIndex = 6
 		'
 		'Label4
 		'
@@ -109,12 +109,12 @@ Partial Class CreateSupplyForm
 		Me.Label5.TabIndex = 7
 		Me.Label5.Text = "Reorder Level"
 		'
-		'TextBox2
+		'ReorderLevelTextBox
 		'
-		Me.TextBox2.Location = New System.Drawing.Point(123, 183)
-		Me.TextBox2.Name = "TextBox2"
-		Me.TextBox2.Size = New System.Drawing.Size(132, 25)
-		Me.TextBox2.TabIndex = 8
+		Me.ReorderLevelTextBox.Location = New System.Drawing.Point(123, 183)
+		Me.ReorderLevelTextBox.Name = "ReorderLevelTextBox"
+		Me.ReorderLevelTextBox.Size = New System.Drawing.Size(132, 25)
+		Me.ReorderLevelTextBox.TabIndex = 8
 		'
 		'Label6
 		'
@@ -125,12 +125,12 @@ Partial Class CreateSupplyForm
 		Me.Label6.TabIndex = 9
 		Me.Label6.Text = "Quatity"
 		'
-		'TextBox3
+		'QuatityTextBox
 		'
-		Me.TextBox3.Location = New System.Drawing.Point(378, 183)
-		Me.TextBox3.Name = "TextBox3"
-		Me.TextBox3.Size = New System.Drawing.Size(132, 25)
-		Me.TextBox3.TabIndex = 10
+		Me.QuatityTextBox.Location = New System.Drawing.Point(378, 183)
+		Me.QuatityTextBox.Name = "QuatityTextBox"
+		Me.QuatityTextBox.Size = New System.Drawing.Size(132, 25)
+		Me.QuatityTextBox.TabIndex = 10
 		'
 		'Label7
 		'
@@ -198,11 +198,11 @@ Partial Class CreateSupplyForm
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.TypeComboBox)
 		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.TextBox3)
+		Me.Controls.Add(Me.QuatityTextBox)
 		Me.Controls.Add(Me.Label6)
-		Me.Controls.Add(Me.TextBox2)
+		Me.Controls.Add(Me.ReorderLevelTextBox)
 		Me.Controls.Add(Me.Label5)
-		Me.Controls.Add(Me.TextBox1)
+		Me.Controls.Add(Me.DescTextBox)
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.NameTextBox)
 		Me.Controls.Add(Me.Label3)
@@ -225,12 +225,12 @@ Partial Class CreateSupplyForm
 	Friend WithEvents SupplyIdTextBox As TextBox
 	Friend WithEvents Label3 As Label
 	Friend WithEvents NameTextBox As TextBox
-	Friend WithEvents TextBox1 As TextBox
+	Friend WithEvents DescTextBox As TextBox
 	Friend WithEvents Label4 As Label
 	Friend WithEvents Label5 As Label
-	Friend WithEvents TextBox2 As TextBox
+	Friend WithEvents ReorderLevelTextBox As TextBox
 	Friend WithEvents Label6 As Label
-	Friend WithEvents TextBox3 As TextBox
+	Friend WithEvents QuatityTextBox As TextBox
 	Friend WithEvents Label7 As Label
 	Friend WithEvents TypeComboBox As ComboBox
 	Friend WithEvents Label8 As Label
