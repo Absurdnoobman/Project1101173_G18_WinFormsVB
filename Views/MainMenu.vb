@@ -39,4 +39,9 @@
             Dispose()
         End If
     End Sub
+
+    Private Sub SupplyButton_Click(sender As Object, e As EventArgs) Handles SupplyButton.Click
+        Dim f As New CreateSupplyForm
+        f.ShowDialog()
+    End Sub
 End Class

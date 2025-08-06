@@ -113,7 +113,7 @@ Partial Class MainMenuForm
 		Me.SupplyButton.Name = "SupplyButton"
 		Me.SupplyButton.Size = New System.Drawing.Size(102, 53)
 		Me.SupplyButton.TabIndex = 8
-		Me.SupplyButton.Text = "Supply"
+		Me.SupplyButton.Text = "Create a Supply"
 		Me.SupplyButton.UseVisualStyleBackColor = True
 		'
 		'MainMenuForm
