@@ -54,7 +54,7 @@ Partial Class CreateSupplyForm
 		'Label2
 		'
 		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(349, 19)
+		Me.Label2.Location = New System.Drawing.Point(349, 17)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(63, 17)
 		Me.Label2.TabIndex = 1

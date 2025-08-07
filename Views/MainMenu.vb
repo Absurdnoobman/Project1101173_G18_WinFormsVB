@@ -38,10 +38,26 @@
         If result = DialogResult.No Or result = DialogResult.Cancel Then
             Dispose()
         End If
+
     End Sub
 
-    Private Sub SupplyButton_Click(sender As Object, e As EventArgs) Handles SupplyButton.Click
+    Private Sub NewSupplyButton_Click(sender As Object, e As EventArgs) Handles NewSupplyButton.Click
         Dim f As New CreateSupplyForm
+        f.ShowDialog()
+    End Sub
+
+    Private Sub MedicationButton_Click(sender As Object, e As EventArgs) Handles MedicationButton.Click
+        Dim f As New MedicationForm
+        f.ShowDialog()
+    End Sub
+
+    Private Sub NewPharmaSupplyButton_Click(sender As Object, e As EventArgs) Handles NewPharmaSupplyButton.Click
+        Dim f As New CreateNewPharmaceuticalSupply
+        f.ShowDialog()
+    End Sub
+
+    Private Sub ReviewStaffButton_Click(sender As Object, e As EventArgs) Handles ReviewStaffButton.Click
+        Dim f As New StaffReviewForm
         f.ShowDialog()
     End Sub
 End Class

@@ -30,7 +30,11 @@ Partial Class MainMenuForm
 		Me.MakeAppointmentButton = New System.Windows.Forms.Button()
 		Me.Button2 = New System.Windows.Forms.Button()
 		Me.AllocationButton = New System.Windows.Forms.Button()
-		Me.SupplyButton = New System.Windows.Forms.Button()
+		Me.NewSupplyButton = New System.Windows.Forms.Button()
+		Me.UserLabel = New System.Windows.Forms.Label()
+		Me.MedicationButton = New System.Windows.Forms.Button()
+		Me.NewPharmaSupplyButton = New System.Windows.Forms.Button()
+		Me.ReviewStaffButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'OpenStaffListButton
@@ -56,7 +60,7 @@ Partial Class MainMenuForm
 		Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(562, 446)
+		Me.Label1.Location = New System.Drawing.Point(562, 523)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(132, 23)
 		Me.Label1.TabIndex = 2
@@ -107,21 +111,64 @@ Partial Class MainMenuForm
 		Me.AllocationButton.Text = "Patient Allocation"
 		Me.AllocationButton.UseVisualStyleBackColor = True
 		'
-		'SupplyButton
+		'NewSupplyButton
 		'
-		Me.SupplyButton.Location = New System.Drawing.Point(44, 280)
-		Me.SupplyButton.Name = "SupplyButton"
-		Me.SupplyButton.Size = New System.Drawing.Size(102, 53)
-		Me.SupplyButton.TabIndex = 8
-		Me.SupplyButton.Text = "Create a Supply"
-		Me.SupplyButton.UseVisualStyleBackColor = True
+		Me.NewSupplyButton.Location = New System.Drawing.Point(44, 339)
+		Me.NewSupplyButton.Name = "NewSupplyButton"
+		Me.NewSupplyButton.Size = New System.Drawing.Size(102, 70)
+		Me.NewSupplyButton.TabIndex = 8
+		Me.NewSupplyButton.Text = "Create a Supply"
+		Me.NewSupplyButton.UseVisualStyleBackColor = True
+		'
+		'UserLabel
+		'
+		Me.UserLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+		Me.UserLabel.AutoSize = True
+		Me.UserLabel.Location = New System.Drawing.Point(12, 527)
+		Me.UserLabel.Name = "UserLabel"
+		Me.UserLabel.Size = New System.Drawing.Size(46, 17)
+		Me.UserLabel.TabIndex = 9
+		Me.UserLabel.Text = "Label2"
+		'
+		'MedicationButton
+		'
+		Me.MedicationButton.Location = New System.Drawing.Point(44, 280)
+		Me.MedicationButton.Name = "MedicationButton"
+		Me.MedicationButton.RightToLeft = System.Windows.Forms.RightToLeft.No
+		Me.MedicationButton.Size = New System.Drawing.Size(102, 53)
+		Me.MedicationButton.TabIndex = 10
+		Me.MedicationButton.Text = "Medication Record"
+		Me.MedicationButton.UseVisualStyleBackColor = True
+		'
+		'NewPharmaSupplyButton
+		'
+		Me.NewPharmaSupplyButton.Location = New System.Drawing.Point(152, 339)
+		Me.NewPharmaSupplyButton.Name = "NewPharmaSupplyButton"
+		Me.NewPharmaSupplyButton.Size = New System.Drawing.Size(102, 70)
+		Me.NewPharmaSupplyButton.TabIndex = 11
+		Me.NewPharmaSupplyButton.Text = "Create a Pharmaticeul Supply"
+		Me.NewPharmaSupplyButton.UseVisualStyleBackColor = True
+		'
+		'ReviewStaffButton
+		'
+		Me.ReviewStaffButton.Location = New System.Drawing.Point(44, 415)
+		Me.ReviewStaffButton.Name = "ReviewStaffButton"
+		Me.ReviewStaffButton.RightToLeft = System.Windows.Forms.RightToLeft.No
+		Me.ReviewStaffButton.Size = New System.Drawing.Size(102, 53)
+		Me.ReviewStaffButton.TabIndex = 12
+		Me.ReviewStaffButton.Text = "Review Staff"
+		Me.ReviewStaffButton.UseVisualStyleBackColor = True
 		'
 		'MainMenuForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(706, 478)
-		Me.Controls.Add(Me.SupplyButton)
+		Me.ClientSize = New System.Drawing.Size(706, 555)
+		Me.Controls.Add(Me.ReviewStaffButton)
+		Me.Controls.Add(Me.NewPharmaSupplyButton)
+		Me.Controls.Add(Me.MedicationButton)
+		Me.Controls.Add(Me.UserLabel)
+		Me.Controls.Add(Me.NewSupplyButton)
 		Me.Controls.Add(Me.AllocationButton)
 		Me.Controls.Add(Me.Button2)
 		Me.Controls.Add(Me.MakeAppointmentButton)
@@ -148,5 +195,9 @@ Partial Class MainMenuForm
     Friend WithEvents MakeAppointmentButton As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents AllocationButton As Button
-    Friend WithEvents SupplyButton As Button
+    Friend WithEvents NewSupplyButton As Button
+	Friend WithEvents UserLabel As Label
+	Friend WithEvents MedicationButton As Button
+	Friend WithEvents NewPharmaSupplyButton As Button
+	Friend WithEvents ReviewStaffButton As Button
 End Class

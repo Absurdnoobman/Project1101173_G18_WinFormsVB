@@ -122,6 +122,12 @@
     <Compile Include="Views\Components\PatientAllocationCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.Designer.vb">
+      <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Components\SelectedStaffCardWithShift.Designer.vb">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
     </Compile>
@@ -134,10 +140,22 @@
     <Compile Include="Views\Components\StaffCardWithCheckBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Extended module\StaffReviewForm.Designer.vb">
+      <DependentUpon>StaffReviewForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Extended module\StaffReviewForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Medication\MedicationForm.Designer.vb">
+      <DependentUpon>MedicationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Medication\MedicationForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Patient\PatientAppointment.Designer.vb">
@@ -168,6 +186,12 @@
       <DependentUpon>PickPatientDialog.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Patient\PickPatientDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.Designer.vb">
+      <DependentUpon>CreateNewPharmaceuticalSupply.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\StaffQualification\AddNewQualificationForm.Designer.vb">
@@ -235,6 +259,12 @@
     <Compile Include="Views\Staff\StaffList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Supplier\SupplierList.Designer.vb">
+      <DependentUpon>SupplierList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Supplier\SupplierList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Supply\CreateSupplyForm.Designer.vb">
       <DependentUpon>CreateSupplyForm.vb</DependentUpon>
     </Compile>
@@ -270,14 +300,23 @@
     <EmbeddedResource Include="Views\Components\PatientAllocationCard.resx">
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\PharmaceuticalSupplyCardWithOption.resx">
+      <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\SelectedStaffCardWithShift.resx">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\StaffCardWithCheckBox.resx">
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Extended module\StaffReviewForm.resx">
+      <DependentUpon>StaffReviewForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Medication\MedicationForm.resx">
+      <DependentUpon>MedicationForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PatientAppointment.resx">
       <DependentUpon>PatientAppointment.vb</DependentUpon>
@@ -293,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PickPatientDialog.resx">
       <DependentUpon>PickPatientDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.resx">
+      <DependentUpon>CreateNewPharmaceuticalSupply.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StaffQualification\AddNewQualificationForm.resx">
       <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
@@ -324,6 +366,9 @@
     <EmbeddedResource Include="Views\Staff\StaffList.resx">
       <DependentUpon>StaffList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Supplier\SupplierList.resx">
+      <DependentUpon>SupplierList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Supply\CreateSupplyForm.resx">
       <DependentUpon>CreateSupplyForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -347,8 +392,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Supplier\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

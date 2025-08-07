@@ -42,7 +42,6 @@ Partial Class CreateNewStaffForm
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.SalaryTextBox = New System.Windows.Forms.TextBox()
 		Me.Label11 = New System.Windows.Forms.Label()
-		Me.Label12 = New System.Windows.Forms.Label()
 		Me.PaymentTypeComboBox = New System.Windows.Forms.ComboBox()
 		Me.ContactTypeComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label13 = New System.Windows.Forms.Label()
@@ -57,6 +56,9 @@ Partial Class CreateNewStaffForm
 		Me.Label16 = New System.Windows.Forms.Label()
 		Me.StaffNumberTextBox = New System.Windows.Forms.TextBox()
 		Me.SalaryScaleComboBox = New System.Windows.Forms.ComboBox()
+		Me.Label12 = New System.Windows.Forms.Label()
+		Me.Label17 = New System.Windows.Forms.Label()
+		Me.PasswordTextBox = New System.Windows.Forms.TextBox()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -64,7 +66,7 @@ Partial Class CreateNewStaffForm
 		Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(12, 627)
+		Me.Label1.Location = New System.Drawing.Point(12, 652)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(132, 23)
 		Me.Label1.TabIndex = 3
@@ -231,15 +233,6 @@ Partial Class CreateNewStaffForm
 		Me.Label11.TabIndex = 28
 		Me.Label11.Text = "Salary Scale"
 		'
-		'Label12
-		'
-		Me.Label12.AutoSize = True
-		Me.Label12.Location = New System.Drawing.Point(341, 257)
-		Me.Label12.Name = "Label12"
-		Me.Label12.Size = New System.Drawing.Size(88, 17)
-		Me.Label12.TabIndex = 29
-		Me.Label12.Text = "Payment Type"
-		'
 		'PaymentTypeComboBox
 		'
 		Me.PaymentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -315,7 +308,8 @@ Partial Class CreateNewStaffForm
 		'
 		'CreateButton
 		'
-		Me.CreateButton.Location = New System.Drawing.Point(597, 621)
+		Me.CreateButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.CreateButton.Location = New System.Drawing.Point(597, 646)
 		Me.CreateButton.Name = "CreateButton"
 		Me.CreateButton.Size = New System.Drawing.Size(91, 26)
 		Me.CreateButton.TabIndex = 40
@@ -345,9 +339,10 @@ Partial Class CreateNewStaffForm
 		'Label16
 		'
 		Me.Label16.AutoSize = True
+		Me.Label16.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Label16.Location = New System.Drawing.Point(341, 18)
 		Me.Label16.Name = "Label16"
-		Me.Label16.Size = New System.Drawing.Size(86, 17)
+		Me.Label16.Size = New System.Drawing.Size(89, 17)
 		Me.Label16.TabIndex = 41
 		Me.Label16.Text = "Staff Number"
 		'
@@ -368,11 +363,39 @@ Partial Class CreateNewStaffForm
 		Me.SalaryScaleComboBox.Size = New System.Drawing.Size(174, 25)
 		Me.SalaryScaleComboBox.TabIndex = 43
 		'
+		'Label12
+		'
+		Me.Label12.AutoSize = True
+		Me.Label12.Location = New System.Drawing.Point(341, 257)
+		Me.Label12.Name = "Label12"
+		Me.Label12.Size = New System.Drawing.Size(88, 17)
+		Me.Label12.TabIndex = 29
+		Me.Label12.Text = "Payment Type"
+		'
+		'Label17
+		'
+		Me.Label17.AutoSize = True
+		Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label17.Location = New System.Drawing.Point(25, 610)
+		Me.Label17.Name = "Label17"
+		Me.Label17.Size = New System.Drawing.Size(66, 17)
+		Me.Label17.TabIndex = 44
+		Me.Label17.Text = "Password"
+		'
+		'PasswordTextBox
+		'
+		Me.PasswordTextBox.Location = New System.Drawing.Point(97, 607)
+		Me.PasswordTextBox.Name = "PasswordTextBox"
+		Me.PasswordTextBox.Size = New System.Drawing.Size(472, 25)
+		Me.PasswordTextBox.TabIndex = 45
+		'
 		'CreateNewStaffForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(700, 659)
+		Me.ClientSize = New System.Drawing.Size(700, 684)
+		Me.Controls.Add(Me.PasswordTextBox)
+		Me.Controls.Add(Me.Label17)
 		Me.Controls.Add(Me.SalaryScaleComboBox)
 		Me.Controls.Add(Me.StaffNumberTextBox)
 		Me.Controls.Add(Me.Label16)
@@ -438,7 +461,6 @@ Partial Class CreateNewStaffForm
     Friend WithEvents Label10 As Label
     Friend WithEvents SalaryTextBox As TextBox
 	Friend WithEvents Label11 As Label
-	Friend WithEvents Label12 As Label
 	Friend WithEvents PaymentTypeComboBox As ComboBox
 	Friend WithEvents ContactTypeComboBox As ComboBox
 	Friend WithEvents Label13 As Label
@@ -453,4 +475,7 @@ Partial Class CreateNewStaffForm
 	Friend WithEvents Label16 As Label
 	Friend WithEvents StaffNumberTextBox As TextBox
 	Friend WithEvents SalaryScaleComboBox As ComboBox
+	Friend WithEvents Label12 As Label
+	Friend WithEvents Label17 As Label
+	Friend WithEvents PasswordTextBox As TextBox
 End Class
