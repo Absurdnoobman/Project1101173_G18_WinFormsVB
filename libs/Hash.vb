@@ -2,6 +2,7 @@
 Imports System.Text
 
 Public Class Hash
+
     ''' <summary>
     ''' Make a hashed and salted password 
     ''' </summary>
@@ -17,24 +18,25 @@ Public Class Hash
 
         ' Combine
         Dim salt As String = Convert.ToBase64String(saltBytes)
-        Dim saltedPassword As String = salt & password
 
         ' Hash the salted password
-        Using sha256 As SHA256 = SHA256.Create()
-            Dim hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword))
-            Dim hash = Convert.ToBase64String(hashBytes)
+        Using pbkdf2 As New Rfc2898DeriveBytes(password, saltBytes, My.Settings.iteration_count)
+            ' Gen the hash (output size can increase for stronger security)
+            Dim hashBytes As Byte() = pbkdf2.GetBytes(64)
+            Dim hash As String = Convert.ToBase64String(hashBytes)
 
+            ' Return the salt and hash as Base64 strings
             Return (salt, hash)
         End Using
     End Function
 
     Public Shared Function Check(plainPassword As String, salt As String, storedHash As String) As Boolean
-        Dim saltedPassword = salt & plainPassword
-        Using sha256 As SHA256 = SHA256.Create()
-            Dim computedHash = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword))
-            Dim computed = Convert.ToBase64String(computedHash)
+        Dim saltBytes As Byte() = Convert.FromBase64String(salt)
+        Using pbkdf2 As New Rfc2898DeriveBytes(plainPassword, saltBytes, My.Settings.iteration_count)
+            Dim hashByte As Byte() = pbkdf2.GetBytes(64)
+            Dim hash As String = Convert.ToBase64String(hashByte)
 
-            Return computed = storedHash 'Important check
+            Return hash = storedHash 'Check??!!
 
         End Using
     End Function
