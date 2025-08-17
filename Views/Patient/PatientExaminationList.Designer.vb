@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PatientAppointment
+Partial Class PatientExaminationList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -55,7 +55,7 @@ Partial Class PatientAppointment
 		Me.FlowLayoutPanel1.Size = New System.Drawing.Size(620, 41)
 		Me.FlowLayoutPanel1.TabIndex = 2
 		'
-		'PatientAppointment
+		'PatientExaminationList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -65,8 +65,8 @@ Partial Class PatientAppointment
 		Me.Controls.Add(Me.DataGridView1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
-		Me.Name = "PatientAppointment"
-		Me.Text = "Patient's Appointment list"
+		Me.Name = "PatientExaminationList"
+		Me.Text = "Patient's Examination list"
 		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 

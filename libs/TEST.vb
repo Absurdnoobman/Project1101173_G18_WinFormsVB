@@ -1,4 +1,6 @@
-﻿''' <summary>
+﻿Imports System.Data.SqlClient
+
+''' <summary>
 ''' FOR TESTING PURPOSE ONLY!
 ''' </summary>
 Public Class TEST
@@ -29,4 +31,8 @@ Public Class TEST
 		End Select
 		Return Nothing
 	End Function
+
+	Private Sub Ass()
+
+	End Sub
 End Class
