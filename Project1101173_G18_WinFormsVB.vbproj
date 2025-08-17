@@ -97,6 +97,12 @@
     <Compile Include="Views\Appointment\AppointmentList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Components\ggggCard.Designer.vb">
+      <DependentUpon>ggggCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\ggggCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Components\NewQualificationCard.Designer.vb">
       <DependentUpon>NewQualificationCard.vb</DependentUpon>
     </Compile>
@@ -116,10 +122,10 @@
     <Compile Include="Views\Components\FilterCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Components\PatientAllocationCard.Designer.vb">
+    <Compile Include="Views\Components\Patient\PatientAllocationCard.Designer.vb">
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Components\PatientAllocationCard.vb">
+    <Compile Include="Views\Components\Patient\PatientAllocationCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.Designer.vb">
@@ -128,16 +134,16 @@
     <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Components\SelectedStaffCardWithShift.Designer.vb">
+    <Compile Include="Views\Components\Staff\SelectedStaffCardWithShift.Designer.vb">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Components\SelectedStaffCardWithShift.vb">
+    <Compile Include="Views\Components\Staff\SelectedStaffCardWithShift.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Components\StaffCardWithCheckBox.Designer.vb">
+    <Compile Include="Views\Components\Staff\StaffCardWithCheckBox.Designer.vb">
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Components\StaffCardWithCheckBox.vb">
+    <Compile Include="Views\Components\Staff\StaffCardWithCheckBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Extended module\StaffReviewForm.Designer.vb">
@@ -170,10 +176,10 @@
     <Compile Include="Views\Patient\CreatePatientForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Patient\ExamineAppointmentForm.Designer.vb">
-      <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
+    <Compile Include="Views\Patient\ExaminationForm.Designer.vb">
+      <DependentUpon>ExaminationForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Patient\ExamineAppointmentForm.vb">
+    <Compile Include="Views\Patient\ExaminationForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Patient\PatientAllocationList.Designer.vb">
@@ -241,10 +247,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Views\Components\StaffCard.Designer.vb">
+    <Compile Include="Views\Components\Staff\StaffCard.Designer.vb">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Components\StaffCard.vb">
+    <Compile Include="Views\Components\Staff\StaffCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Staff\PickStaffDialog.Designer.vb">
@@ -288,6 +294,9 @@
     <EmbeddedResource Include="Views\Appointment\AppointmentList.resx">
       <DependentUpon>AppointmentList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\ggggCard.resx">
+      <DependentUpon>ggggCard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\NewQualificationCard.resx">
       <DependentUpon>NewQualificationCard.vb</DependentUpon>
     </EmbeddedResource>
@@ -297,16 +306,16 @@
     <EmbeddedResource Include="Views\Components\FilterCard.resx">
       <DependentUpon>FilterCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Components\PatientAllocationCard.resx">
+    <EmbeddedResource Include="Views\Components\Patient\PatientAllocationCard.resx">
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\PharmaceuticalSupplyCardWithOption.resx">
       <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Components\SelectedStaffCardWithShift.resx">
+    <EmbeddedResource Include="Views\Components\Staff\SelectedStaffCardWithShift.resx">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Components\StaffCardWithCheckBox.resx">
+    <EmbeddedResource Include="Views\Components\Staff\StaffCardWithCheckBox.resx">
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Extended module\StaffReviewForm.resx">
@@ -324,8 +333,8 @@
     <EmbeddedResource Include="Views\Patient\CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Patient\ExamineAppointmentForm.resx">
-      <DependentUpon>ExamineAppointmentForm.vb</DependentUpon>
+    <EmbeddedResource Include="Views\Patient\ExaminationForm.resx">
+      <DependentUpon>ExaminationForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PatientAllocationList.resx">
       <DependentUpon>PatientAllocationList.vb</DependentUpon>
@@ -357,7 +366,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Components\StaffCard.resx">
+    <EmbeddedResource Include="Views\Components\Staff\StaffCard.resx">
       <DependentUpon>StaffCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Staff\PickStaffDialog.resx">

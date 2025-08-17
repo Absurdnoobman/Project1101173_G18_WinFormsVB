@@ -23,7 +23,7 @@
     End Sub
 
     Private Sub MakeAppointmentButton_Click(sender As Object, e As EventArgs) Handles MakeAppointmentButton.Click
-        Dim f As New ExamineAppointmentForm
+        Dim f As New ExaminationForm
         f.ShowDialog()
     End Sub
 

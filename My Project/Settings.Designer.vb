@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("24690")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("16942")>  _
         Public ReadOnly Property iteration_count() As Integer
             Get
                 Return CType(Me("iteration_count"),Integer)

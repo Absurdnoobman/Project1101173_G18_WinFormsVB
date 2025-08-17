@@ -1,4 +1,4 @@
-﻿Public Class ExamineAppointmentForm
+﻿Public Class ExaminationForm
     Private patient As Patient
     Private consultant As Staff
 

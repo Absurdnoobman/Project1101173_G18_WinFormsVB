@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="iteration_count" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">24690</Value>
+      <Value Profile="(Default)">16942</Value>
     </Setting>
   </Settings>
 </SettingsFile>
