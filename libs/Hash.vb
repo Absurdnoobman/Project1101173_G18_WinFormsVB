@@ -29,8 +29,22 @@ Public Class Hash
 		End Using
 	End Function
 
+	Public Shared Function Make(password As String, salt As String) As String
+		Dim saltBytes As Byte() = Convert.FromBase64String(salt)
+		' Hash the salted password
+		Using pbkdf2 As New Rfc2898DeriveBytes(password, saltBytes, My.Settings.iteration_count)
+			' Gen the hash (output size can increase for stronger security)
+			Dim hashBytes As Byte() = pbkdf2.GetBytes(64)
+			Dim hash As String = Convert.ToBase64String(hashBytes)
+
+			' Return the salt and hash as Base64 strings
+			Return hash
+		End Using
+	End Function
+
 	Public Shared Function Check(plainPassword As String, salt As String, storedHash As String) As Boolean
 		Dim saltBytes As Byte() = Convert.FromBase64String(salt)
+
 		Using pbkdf2 As New Rfc2898DeriveBytes(plainPassword, saltBytes, My.Settings.iteration_count)
 			Dim hashByte As Byte() = pbkdf2.GetBytes(64)
 			Dim hash As String = Convert.ToBase64String(hashByte)
@@ -38,5 +52,6 @@ Public Class Hash
 			Return hash = storedHash 'Check??!!
 
 		End Using
+
 	End Function
 End Class

@@ -60,8 +60,8 @@
         End If
 
         Dim dt As New List(Of Staff) From {
-            New Staff With {.id = "S990", .firstname = "Mannee", .surname = "jolo in squad"},
-            New Staff With {.id = "S490", .firstname = "GG", .surname = "WP"}
+            New Staff With {.Id = "S990", .firstname = "Mannee", .surname = "jolo in squad"},
+            New Staff With {.Id = "S490", .firstname = "GG", .surname = "WP"}
         }
 
         For Each staff In dt

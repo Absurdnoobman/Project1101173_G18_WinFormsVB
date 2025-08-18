@@ -1,20 +1,20 @@
 ﻿Public Class Staff
     Inherits Authenticatable
 
-    Public id As String
+    Public staff_num As String
     Public firstname As String
     Public surname As String
     Public address As String
     Public telephone As String
     Public sex As String
-    Public dateOfBirth As Date
-    Public nationalInsuranceNumber As String
+    Public date_of_birth As Date
+    Public national_insurance_num As String
 
     Public salary As Double
-    Public salaryScale As String
+    Public salary_scale As String
     Public position As String
-    Public contractType As String
-    Public paymentType As String
-    Public hoursPerWeeks As UInteger
+    Public contract_type As String
+    Public payment_type As String
+    Public hours_per_week As UInteger
 
 End Class

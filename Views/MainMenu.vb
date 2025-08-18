@@ -1,4 +1,6 @@
-﻿Public Class MainMenuForm
+﻿Imports Microsoft.Extensions.Configuration
+
+Public Class MainMenuForm
     '
     'f.ShowDialog() Prevents Main Menu Interaction until the f form closed
     '

@@ -1,5 +1,5 @@
 ﻿Public Class Authenticatable
-    Public Property id As String
+    Public Property Id As String
     Public Property PasswordHash As String
 
     Public Property Salt As String

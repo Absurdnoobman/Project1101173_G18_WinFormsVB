@@ -31,7 +31,7 @@ Partial Class MainMenuForm
 		Me.Button2 = New System.Windows.Forms.Button()
 		Me.AllocationButton = New System.Windows.Forms.Button()
 		Me.NewSupplyButton = New System.Windows.Forms.Button()
-		Me.UserLabel = New System.Windows.Forms.Label()
+		Me.Label2 = New System.Windows.Forms.Label()
 		Me.MedicationButton = New System.Windows.Forms.Button()
 		Me.NewPharmaSupplyButton = New System.Windows.Forms.Button()
 		Me.ReviewStaffButton = New System.Windows.Forms.Button()
@@ -120,15 +120,15 @@ Partial Class MainMenuForm
 		Me.NewSupplyButton.Text = "Create a Supply"
 		Me.NewSupplyButton.UseVisualStyleBackColor = True
 		'
-		'UserLabel
+		'Label2
 		'
-		Me.UserLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.UserLabel.AutoSize = True
-		Me.UserLabel.Location = New System.Drawing.Point(12, 527)
-		Me.UserLabel.Name = "UserLabel"
-		Me.UserLabel.Size = New System.Drawing.Size(46, 17)
-		Me.UserLabel.TabIndex = 9
-		Me.UserLabel.Text = "Label2"
+		Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+		Me.Label2.AutoSize = True
+		Me.Label2.Location = New System.Drawing.Point(12, 527)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(46, 17)
+		Me.Label2.TabIndex = 9
+		Me.Label2.Text = "Label2"
 		'
 		'MedicationButton
 		'
@@ -167,7 +167,7 @@ Partial Class MainMenuForm
 		Me.Controls.Add(Me.ReviewStaffButton)
 		Me.Controls.Add(Me.NewPharmaSupplyButton)
 		Me.Controls.Add(Me.MedicationButton)
-		Me.Controls.Add(Me.UserLabel)
+		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.NewSupplyButton)
 		Me.Controls.Add(Me.AllocationButton)
 		Me.Controls.Add(Me.Button2)
@@ -196,7 +196,7 @@ Partial Class MainMenuForm
     Friend WithEvents Button2 As Button
     Friend WithEvents AllocationButton As Button
     Friend WithEvents NewSupplyButton As Button
-	Friend WithEvents UserLabel As Label
+	Friend WithEvents Label2 As Label
 	Friend WithEvents MedicationButton As Button
 	Friend WithEvents NewPharmaSupplyButton As Button
 	Friend WithEvents ReviewStaffButton As Button

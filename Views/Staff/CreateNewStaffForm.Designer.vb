@@ -34,7 +34,7 @@ Partial Class CreateNewStaffForm
 		Me.SexComboBox = New System.Windows.Forms.ComboBox()
 		Me.DateOfBrithDTP = New System.Windows.Forms.DateTimePicker()
 		Me.Label7 = New System.Windows.Forms.Label()
-		Me.TelphoneTextBox = New System.Windows.Forms.TextBox()
+		Me.TelephoneTextBox = New System.Windows.Forms.TextBox()
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.NINTextBox = New System.Windows.Forms.TextBox()
 		Me.PositionComboBox = New System.Windows.Forms.ComboBox()
@@ -43,7 +43,7 @@ Partial Class CreateNewStaffForm
 		Me.SalaryTextBox = New System.Windows.Forms.TextBox()
 		Me.Label11 = New System.Windows.Forms.Label()
 		Me.PaymentTypeComboBox = New System.Windows.Forms.ComboBox()
-		Me.ContactTypeComboBox = New System.Windows.Forms.ComboBox()
+		Me.ContractTypeComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label13 = New System.Windows.Forms.Label()
 		Me.Label14 = New System.Windows.Forms.Label()
 		Me.HPWTextBox = New System.Windows.Forms.TextBox()
@@ -166,12 +166,12 @@ Partial Class CreateNewStaffForm
 		Me.Label7.TabIndex = 17
 		Me.Label7.Text = "Tel. Number"
 		'
-		'TelphoneTextBox
+		'TelephoneTextBox
 		'
-		Me.TelphoneTextBox.Location = New System.Drawing.Point(144, 148)
-		Me.TelphoneTextBox.Name = "TelphoneTextBox"
-		Me.TelphoneTextBox.Size = New System.Drawing.Size(173, 25)
-		Me.TelphoneTextBox.TabIndex = 16
+		Me.TelephoneTextBox.Location = New System.Drawing.Point(144, 148)
+		Me.TelephoneTextBox.Name = "TelephoneTextBox"
+		Me.TelephoneTextBox.Size = New System.Drawing.Size(173, 25)
+		Me.TelephoneTextBox.TabIndex = 16
 		'
 		'Label8
 		'
@@ -243,15 +243,15 @@ Partial Class CreateNewStaffForm
 		Me.PaymentTypeComboBox.Size = New System.Drawing.Size(173, 25)
 		Me.PaymentTypeComboBox.TabIndex = 30
 		'
-		'ContactTypeComboBox
+		'ContractTypeComboBox
 		'
-		Me.ContactTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.ContactTypeComboBox.FormattingEnabled = True
-		Me.ContactTypeComboBox.Items.AddRange(New Object() {"Temporary", "Permanent"})
-		Me.ContactTypeComboBox.Location = New System.Drawing.Point(144, 223)
-		Me.ContactTypeComboBox.Name = "ContactTypeComboBox"
-		Me.ContactTypeComboBox.Size = New System.Drawing.Size(173, 25)
-		Me.ContactTypeComboBox.TabIndex = 31
+		Me.ContractTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.ContractTypeComboBox.FormattingEnabled = True
+		Me.ContractTypeComboBox.Items.AddRange(New Object() {"Temporary", "Permanent"})
+		Me.ContractTypeComboBox.Location = New System.Drawing.Point(144, 223)
+		Me.ContractTypeComboBox.Name = "ContractTypeComboBox"
+		Me.ContractTypeComboBox.Size = New System.Drawing.Size(173, 25)
+		Me.ContractTypeComboBox.TabIndex = 31
 		'
 		'Label13
 		'
@@ -408,7 +408,7 @@ Partial Class CreateNewStaffForm
 		Me.Controls.Add(Me.Label14)
 		Me.Controls.Add(Me.HPWTextBox)
 		Me.Controls.Add(Me.Label13)
-		Me.Controls.Add(Me.ContactTypeComboBox)
+		Me.Controls.Add(Me.ContractTypeComboBox)
 		Me.Controls.Add(Me.PaymentTypeComboBox)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.Label11)
@@ -419,7 +419,7 @@ Partial Class CreateNewStaffForm
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.NINTextBox)
 		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.TelphoneTextBox)
+		Me.Controls.Add(Me.TelephoneTextBox)
 		Me.Controls.Add(Me.DateOfBrithDTP)
 		Me.Controls.Add(Me.SexComboBox)
 		Me.Controls.Add(Me.Label6)
@@ -453,7 +453,7 @@ Partial Class CreateNewStaffForm
     Friend WithEvents SexComboBox As ComboBox
     Friend WithEvents DateOfBrithDTP As DateTimePicker
     Friend WithEvents Label7 As Label
-    Friend WithEvents TelphoneTextBox As TextBox
+    Friend WithEvents TelephoneTextBox As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents NINTextBox As TextBox
     Friend WithEvents PositionComboBox As ComboBox
@@ -462,7 +462,7 @@ Partial Class CreateNewStaffForm
     Friend WithEvents SalaryTextBox As TextBox
 	Friend WithEvents Label11 As Label
 	Friend WithEvents PaymentTypeComboBox As ComboBox
-	Friend WithEvents ContactTypeComboBox As ComboBox
+	Friend WithEvents ContractTypeComboBox As ComboBox
 	Friend WithEvents Label13 As Label
 	Friend WithEvents Label14 As Label
 	Friend WithEvents HPWTextBox As TextBox

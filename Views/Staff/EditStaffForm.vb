@@ -6,22 +6,22 @@
 		' This call is required by the designer.
 		InitializeComponent()
 
-		StaffNumberTextBox.Text = staff.id
+		StaffNumberTextBox.Text = staff.Id
 		FirstnameTextBox.Text = staff.firstname
 		SurnameTextBox.Text = staff.surname
 
 		AddressTextBox.Text = staff.address
 		TelphoneTextBox.Text = staff.telephone
 		SexComboBox.SelectedItem = staff.sex
-		DateOfBrithDTP.Value = staff.dateOfBirth
-		NINTextBox.Text = staff.nationalInsuranceNumber
+		DateOfBrithDTP.Value = staff.date_of_birth
+		NINTextBox.Text = staff.national_insurance_num
 
 		SalaryTextBox.Text = CStr(staff.salary)
 		PositionComboBox.SelectedItem = staff.position
-		SalaryScaleComboBox.SelectedItem = staff.salaryScale
-		ContactTypeComboBox.SelectedItem = staff.contractType
-		PaymentTypeComboBox.SelectedItem = staff.paymentType
-		HPWTextBox.Text = CStr(staff.hoursPerWeeks)
+		SalaryScaleComboBox.SelectedItem = staff.salary_scale
+		ContactTypeComboBox.SelectedItem = staff.contract_type
+		PaymentTypeComboBox.SelectedItem = staff.payment_type
+		HPWTextBox.Text = CStr(staff.hours_per_week)
 
 	End Sub
 

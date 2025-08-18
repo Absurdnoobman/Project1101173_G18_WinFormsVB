@@ -13,6 +13,7 @@ Public Class Auth
 		' Get User in Database
 		' For now this is testing so not the real function
 		Dim user As Staff = TEST_FindStaff(staffNumber)
+		'Dim t_user As Staff = TEST_FindStaffAsync(staffNumber)
 
 		' Check If true
 		If user IsNot Nothing AndAlso user.AttemptLogin(password) Then

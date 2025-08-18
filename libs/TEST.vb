@@ -9,7 +9,7 @@ Public Class TEST
 			Case "S999"
 				Dim pwd = Hash.Make("admin")
 				Return New Staff With {
-					.id = "S999",
+					.Id = "S999",
 					.PasswordHash = pwd.Hash, 'Hard Coded password is no go
 					.Salt = pwd.Salt,
 					.firstname = "Admin",
@@ -19,7 +19,7 @@ Public Class TEST
 			Case "S123"
 				Dim pwd = Hash.Make("charge_nurse")
 				Return New Staff With {
-					.id = "S123",
+					.Id = "S123",
 					.PasswordHash = pwd.Hash,
 					.Salt = pwd.Salt,
 					.firstname = "Zoe",
@@ -32,7 +32,13 @@ Public Class TEST
 		Return Nothing
 	End Function
 
-	Private Sub Ass()
+	Public Function TEST_FindStaffFromDB(id As String)
+		Dim db As New Schema()
 
-	End Sub
+		Return db.Query(Of Staff, Object)(
+			"SELECT * FROM Staffs WHERE staff_number = @staff_num",
+			New With {.staff_num = id}
+		).First()
+
+	End Function
 End Class
