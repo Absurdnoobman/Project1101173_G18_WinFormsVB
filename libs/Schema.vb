@@ -26,8 +26,12 @@ Public Class Schema
 
 	End Sub
 
+	Public Sub New(connectionString As String)
+		_connectionString = connectionString
+	End Sub
+
 	''' <summary>
-	'''		Query Database with the type casting capability.
+	'''		Query a database with the type casting capability.
 	''' </summary>
 	''' <typeparam name="TModel">Type constraint of Model to cast</typeparam>
 	''' <typeparam name="TParam"> Can pass an Object</typeparam>
@@ -43,11 +47,12 @@ Public Class Schema
 
 				db_conn.Open()
 
-				result = db_conn.Query(Of TModel)(command, param).ToList()
+				result = db_conn.Query(Of TModel)(cmd.CommandText, param).ToList()
 
 				db_conn.Close()
 			End Using
 		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
 			Throw ex
 		End Try
 		Return result
@@ -80,7 +85,8 @@ Public Class Schema
 			Return True
 
 		Catch ex As Exception
-			MessageBox.Show(ex.Message)
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
+			Throw ex
 		End Try
 		Return False
 	End Function
@@ -90,7 +96,8 @@ Public Class Schema
 		Optional columns As String = "*",
 		Optional whereClauseStr As String = ""
 	) As List(Of Dictionary(Of String, Object))
-		Dim result As New List(Of Dictionary(Of String, Object))
+
+		Dim result As IEnumerable(Of Object)
 
 		If Not String.IsNullOrEmpty(whereClauseStr) Then
 			whereClauseStr = $"WHERE {whereClauseStr}"
@@ -103,55 +110,61 @@ Public Class Schema
 
 				db_conn.Open()
 
-				result = db_conn.Query(Command)
+				result = db_conn.Query(cmd.CommandText)
 
 				db_conn.Close()
 			End Using
 		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
 			Throw ex
 		End Try
-		Return result
+
+		' create a new dic to copy the value. slow but mutable 
+		Return result.Select(
+			Function(row) New Dictionary(Of String, Object)(CType(row, IDictionary(Of String, Object)))
+		).ToList()
 
 	End Function
 
-	Public Function QueryInsert(
+	Public Function Insert(Of TValues)(
 		intoTable As String,
-		values As Object
+		values As List(Of TValues)
 	) As Boolean
 
-		Dim props As List(Of String) = values.GetType().GetProperties().Select(Function(p) p.Name).ToList()
+		Dim props As List(Of String) = GetType(TValues).GetProperties().Select(Function(p) p.Name).ToList()
 		Dim colNames As String = String.Join(", ", props)
 		Dim paramNames = String.Join(", ", props.Select(Function(p) $"@{p}"))
 
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
-				cmd.CommandText = $"INSERT INTO {intoTable} ({colNames}) VALUES {paramNames}"
+				cmd.CommandText = $"INSERT INTO {intoTable} ({colNames}) VALUES ({paramNames})"
 
 				db_conn.Open()
 
-				db_conn.Execute(cmd.CommandText, values)
+				Dim count = db_conn.Execute(cmd.CommandText, values)
 
 				db_conn.Close()
+
+				Return count = values.Count
 			End Using
 
-			Return True
-
 		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
 			Throw ex
 		End Try
 		Return False
 	End Function
 
-	Public Function Delete(fromTable As String, record_identifier As String, id_value As Object) As Boolean
+	Public Function Delete(Of TValue)(fromTable As String, record_identifier As String, id_value As TValue) As Boolean
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
-				cmd.CommandText = $"DELETE FROM {fromTable} WHERE {record_identifier} = {id_value}"
+				cmd.CommandText = $"DELETE FROM {fromTable} WHERE {record_identifier} = @v"
 
 				db_conn.Open()
 
-				db_conn.Execute(cmd.CommandText)
+				db_conn.Execute(cmd.CommandText, New With {.v = id_value})
 
 				db_conn.Close()
 			End Using
@@ -159,6 +172,7 @@ Public Class Schema
 			Return True
 
 		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
 			Throw ex
 		End Try
 		Return False

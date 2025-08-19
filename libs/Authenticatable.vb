@@ -1,7 +1,6 @@
 ﻿Public Class Authenticatable
     Public Property Id As String
     Public Property PasswordHash As String
-
     Public Property Salt As String
 
     Public Function AttemptLogin(password As String) As Boolean

@@ -8,14 +8,16 @@
         PositionLabel.Text = s.position
     End Sub
 
-    Private Function Test() As Integer
-
-        Return 69
-    End Function
-
     Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
         Dim f = EditStaffForm.WithData(thisStaff)
         f.ShowDialog()
     End Sub
 
+    Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
+        Dim db As New Schema
+        If Not db.Delete("Staffs", "staff_number", thisStaff.staff_number) Then
+            MessageBox.Show("Failed to delete a record.")
+        End If
+        Dispose()
+    End Sub
 End Class

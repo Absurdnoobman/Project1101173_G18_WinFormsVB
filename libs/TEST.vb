@@ -1,5 +1,5 @@
 ﻿''' <summary>
-''' FOR TESTING PURPOSE ONLY!
+''' FOR TESTING PURPOSE ONLY!!!!
 ''' </summary>
 Public Class TEST
 	Public Shared Function TEST_FindStaff(id As String) As Staff
@@ -30,7 +30,7 @@ Public Class TEST
 		Return Nothing
 	End Function
 
-	Public Function TEST_FindStaffFromDB(id As String) As Staff
+	Public Shared Function TEST_FindStaffFromDB(id As String) As Staff
 		Dim db As New Schema()
 		Try
 			Dim user = db.Query(Of Staff, Object)(
@@ -38,7 +38,7 @@ Public Class TEST
 				New With {.staff_num = id}
 			).First()
 
-			Dim password = db.QuerySelect("Passwords", "Passwords.salt, Password.hashed", $"Passwords.staff_num = {user.staff_number}").First
+			Dim password = db.QuerySelect("Passwords", "salt, hashed", $"staff_num = '{user.staff_number}'").First
 
 			user.Salt = password("salt")
 			user.PasswordHash = password("hashed")

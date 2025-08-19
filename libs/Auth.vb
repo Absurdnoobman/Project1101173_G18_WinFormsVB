@@ -10,10 +10,12 @@ Public Class Auth
 	''' <param name="password"></param>
 	''' <returns> return false if can not login or incorrect credential. </returns>
 	Public Shared Function Attempt(staffNumber As String, password As String) As Boolean
-		' Get User in Database
-		' For now this is testing so not the real function
-		Dim user As Staff = TEST_FindStaff(staffNumber)
-		'Dim t_user As Staff = TEST_FindStaffAsync(staffNumber)
+
+		'Get User in Database
+		'For now, this is testing so not the real function.
+
+		'Dim user As Staff = TEST_FindStaff(staffNumber)
+		Dim user As Staff = TEST_FindStaffFromDB(staffNumber)
 
 		' Check If true
 		If user IsNot Nothing AndAlso user.AttemptLogin(password) Then
