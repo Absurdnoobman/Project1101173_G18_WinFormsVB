@@ -26,6 +26,14 @@ Public Class Schema
 
 	End Sub
 
+	''' <summary>
+	'''		Query Database with the type casting capability.
+	''' </summary>
+	''' <typeparam name="TModel">Type constraint of Model to cast</typeparam>
+	''' <typeparam name="TParam"> Can pass an Object</typeparam>
+	''' <param name="command"></param>
+	''' <param name="param"></param>
+	''' <returns></returns>
 	Public Function Query(Of TModel, TParam)(command As String, Optional param As TParam = Nothing) As List(Of TModel)
 		Dim result As New List(Of TModel)
 		Try
@@ -40,13 +48,7 @@ Public Class Schema
 				db_conn.Close()
 			End Using
 		Catch ex As Exception
-			MessageBox.Show(
-				text:=$"{ex.Message} {ex.HelpLink}",
-				icon:=MessageBoxIcon.Error,
-				caption:="Failed Internal SQL",
-				buttons:=MessageBoxButtons.OK
-				)
-			Throw
+			Throw ex
 		End Try
 		Return result
 	End Function
@@ -59,7 +61,10 @@ Public Class Schema
 	''' <returns>
 	'''		return True if success
 	''' </returns>
-	Public Function NonSelectQuery(command As String, Optional param As Object = Nothing) As Boolean
+	Public Function NonSelectQuery(
+		command As String,
+		Optional param As Object = Nothing
+	) As Boolean
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
@@ -71,26 +76,30 @@ Public Class Schema
 
 				db_conn.Close()
 			End Using
+
 			Return True
+
 		Catch ex As Exception
-			MessageBox.Show(
-				text:=$"{ex.Message} \n {ex.HelpLink}",
-				icon:=MessageBoxIcon.Error,
-				caption:="Failed Internal SQL",
-				buttons:=MessageBoxButtons.OK
-			)
-			Return False
-			Throw
+			MessageBox.Show(ex.Message)
 		End Try
+		Return False
 	End Function
 
-	Public Function QuerySelect(fromTable As String, Optional columns As String = "*") As List(Of Dictionary(Of String, Object))
+	Public Function QuerySelect(
+		fromTable As String,
+		Optional columns As String = "*",
+		Optional whereClauseStr As String = ""
+	) As List(Of Dictionary(Of String, Object))
 		Dim result As New List(Of Dictionary(Of String, Object))
+
+		If Not String.IsNullOrEmpty(whereClauseStr) Then
+			whereClauseStr = $"WHERE {whereClauseStr}"
+		End If
 
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
-				cmd.CommandText = $"SELECT {columns} FROM {fromTable}"
+				cmd.CommandText = $"SELECT {columns} FROM {fromTable} {whereClauseStr}"
 
 				db_conn.Open()
 
@@ -99,38 +108,58 @@ Public Class Schema
 				db_conn.Close()
 			End Using
 		Catch ex As Exception
-			MessageBox.Show(
-				text:=$"{ex.Message} \n {ex.HelpLink}",
-				icon:=MessageBoxIcon.Error,
-				caption:="Failed Internal SQL",
-				buttons:=MessageBoxButtons.OK
-				)
-			Throw
+			Throw ex
 		End Try
 		Return result
 
 	End Function
 
-	Public Function QueryInsert(intoTable As String, values As List(Of Tuple)) As Boolean
+	Public Function QueryInsert(
+		intoTable As String,
+		values As Object
+	) As Boolean
+
+		Dim props As List(Of String) = values.GetType().GetProperties().Select(Function(p) p.Name).ToList()
+		Dim colNames As String = String.Join(", ", props)
+		Dim paramNames = String.Join(", ", props.Select(Function(p) $"@{p}"))
+
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
-				cmd.CommandText = $"INSERT INTO {intoTable} VALUES {values}"
+				cmd.CommandText = $"INSERT INTO {intoTable} ({colNames}) VALUES {paramNames}"
 
 				db_conn.Open()
 
-				cmd.ExecuteNonQuery()
+				db_conn.Execute(cmd.CommandText, values)
 
 				db_conn.Close()
 			End Using
+
+			Return True
+
 		Catch ex As Exception
-			MessageBox.Show(
-				text:=$"{ex.Message} \n {ex.HelpLink}",
-				icon:=MessageBoxIcon.Error,
-				caption:="Failed Internal SQL",
-				buttons:=MessageBoxButtons.OK
-				)
-			Throw
+			Throw ex
+		End Try
+		Return False
+	End Function
+
+	Public Function Delete(fromTable As String, record_identifier As String, id_value As Object) As Boolean
+		Try
+			Using db_conn As New SqlConnection(_connectionString)
+				Dim cmd = db_conn.CreateCommand()
+				cmd.CommandText = $"DELETE FROM {fromTable} WHERE {record_identifier} = {id_value}"
+
+				db_conn.Open()
+
+				db_conn.Execute(cmd.CommandText)
+
+				db_conn.Close()
+			End Using
+
+			Return True
+
+		Catch ex As Exception
+			Throw ex
 		End Try
 		Return False
 	End Function

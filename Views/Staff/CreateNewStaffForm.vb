@@ -96,7 +96,7 @@
                     .salary = salary, .salary_scale = salary_scale,
                     .payment = payment, .contract = contract,
                     .hours_per_week = hours_per_week
-                }
+               }
             ) Then
             MessageBox.Show("Failed to insert.")
             Exit Sub

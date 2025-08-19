@@ -1,7 +1,7 @@
 ﻿Public Class Staff
     Inherits Authenticatable
 
-    Public staff_num As String
+    Public staff_number As String
     Public firstname As String
     Public surname As String
     Public address As String

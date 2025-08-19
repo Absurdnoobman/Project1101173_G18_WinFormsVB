@@ -4,7 +4,7 @@
         thisStaff = s
         FirstNameLabel.Text = s.firstname
         SurnameLabel.Text = s.surname
-        StaffIdLabel.Text = s.Id
+        StaffIdLabel.Text = s.staff_number
         PositionLabel.Text = s.position
     End Sub
 

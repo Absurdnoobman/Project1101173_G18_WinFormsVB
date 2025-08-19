@@ -8,15 +8,23 @@
         FilterFLP.Controls.Clear()
 
         ' DUMMY DATA For Testing Purposes
-        Dim data As New List(Of Staff) From {
-            New Staff With {.Id = "S666", .firstname = "Moira", .surname = "Samuel"},
-            New Staff With {.Id = "S969", .firstname = "Ben", .surname = "Dover"},
-            New Staff With {.Id = "S123", .firstname = "Justin", .surname = "Case"},
-            New Staff With {.Id = "S555", .firstname = "Ella", .surname = "Vader"},
-            New Staff With {.Id = "S---", .firstname = "Bill", .surname = "Board"},
-            New Staff With {.Id = "S---", .firstname = "Walter", .surname = "White"},
-            New Staff With {.Id = "S---", .firstname = "Joe", .surname = "Mama"}
-        }
+        'Dim data As New List(Of Staff) From {
+        '    New Staff With {.Id = "S666", .firstname = "Moira", .surname = "Samuel"},
+        '    New Staff With {.Id = "S969", .firstname = "Ben", .surname = "Dover"},
+        '    New Staff With {.Id = "S123", .firstname = "Justin", .surname = "Case"},
+        '    New Staff With {.Id = "S555", .firstname = "Ella", .surname = "Vader"},
+        '    New Staff With {.Id = "S---", .firstname = "Bill", .surname = "Board"},
+        '    New Staff With {.Id = "S---", .firstname = "Walter", .surname = "White"},
+        '    New Staff With {.Id = "S---", .firstname = "Joe", .surname = "Mama"}
+        '}
+
+        ' TODO: Query WorkExp and Qualification
+        Dim db As New Schema
+        Dim data As List(Of Staff) = db.Query(Of Staff, Object)(
+            "
+            SELECT * FROM Staffs
+            "
+        )
 
         For Each staff In data
             Dim card As New StaffCard
