@@ -37,7 +37,9 @@ Public Class Schema
 	''' <typeparam name="TParam"> Can pass an Object</typeparam>
 	''' <param name="command"></param>
 	''' <param name="param"></param>
-	''' <returns></returns>
+	''' <returns>
+	''' 
+	''' </returns>
 	Public Function Query(Of TModel, TParam)(command As String, Optional param As TParam = Nothing) As List(Of TModel)
 		Dim result As New List(Of TModel)
 		Try
@@ -52,7 +54,7 @@ Public Class Schema
 				db_conn.Close()
 			End Using
 		Catch ex As Exception
-			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
 			Throw ex
 		End Try
 		Return result
@@ -85,7 +87,7 @@ Public Class Schema
 			Return True
 
 		Catch ex As Exception
-			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
 			Throw ex
 		End Try
 		Return False
@@ -115,7 +117,7 @@ Public Class Schema
 				db_conn.Close()
 			End Using
 		Catch ex As Exception
-			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
 			Throw ex
 		End Try
 
@@ -150,7 +152,7 @@ Public Class Schema
 			End Using
 
 		Catch ex As Exception
-			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
 			Throw ex
 		End Try
 		Return False
@@ -172,9 +174,40 @@ Public Class Schema
 			Return True
 
 		Catch ex As Exception
-			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
 			Throw ex
 		End Try
 		Return False
+	End Function
+
+	Public Function Update(Of TValue)(
+		fromTable As String,
+		record_identifier As String, id_value As TValue,
+		updates As Dictionary(Of String, Object)
+	) As Boolean
+		Try
+			Using db_conn As New SqlConnection(_connectionString)
+				Dim setClauses = String.Join(", ", updates.Keys.Select(Function(k) $"{k} = @{k}"))
+
+				Dim sql = $"UPDATE {fromTable} SET {setClauses} WHERE {record_identifier} = @id"
+
+				' DynamicParameters Class Provided By Dapper
+				Dim parameters = New DynamicParameters(updates)
+				parameters.Add("@id", id_value)
+
+				db_conn.Open()
+
+				db_conn.Execute(sql, parameters)
+
+				db_conn.Close()
+
+				Return True
+			End Using
+
+		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message)
+			Throw
+			Return False
+		End Try
 	End Function
 End Class

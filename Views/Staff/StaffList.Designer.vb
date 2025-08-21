@@ -26,7 +26,7 @@ Partial Class StaffList
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.SearchTextBox = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.Button1 = New System.Windows.Forms.Button()
+		Me.CreateStaffButton = New System.Windows.Forms.Button()
 		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
@@ -35,6 +35,7 @@ Partial Class StaffList
 		Me.FilterFLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.AddFilterButton = New System.Windows.Forms.Button()
+		Me.RefreshButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -66,14 +67,14 @@ Partial Class StaffList
 		Me.Label2.TabIndex = 2
 		Me.Label2.Text = "Search"
 		'
-		'Button1
+		'CreateStaffButton
 		'
-		Me.Button1.Location = New System.Drawing.Point(628, 24)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(144, 26)
-		Me.Button1.TabIndex = 6
-		Me.Button1.Text = "Create Staff Record"
-		Me.Button1.UseVisualStyleBackColor = True
+		Me.CreateStaffButton.Location = New System.Drawing.Point(628, 24)
+		Me.CreateStaffButton.Name = "CreateStaffButton"
+		Me.CreateStaffButton.Size = New System.Drawing.Size(144, 26)
+		Me.CreateStaffButton.TabIndex = 6
+		Me.CreateStaffButton.Text = "Create Staff Record"
+		Me.CreateStaffButton.UseVisualStyleBackColor = True
 		'
 		'ComboBox1
 		'
@@ -104,7 +105,7 @@ Partial Class StaffList
 		Me.StaffFLP.Location = New System.Drawing.Point(12, 168)
 		Me.StaffFLP.Name = "StaffFLP"
 		Me.StaffFLP.Padding = New System.Windows.Forms.Padding(2)
-		Me.StaffFLP.Size = New System.Drawing.Size(760, 369)
+		Me.StaffFLP.Size = New System.Drawing.Size(781, 416)
 		Me.StaffFLP.TabIndex = 11
 		Me.StaffFLP.WrapContents = False
 		'
@@ -133,7 +134,7 @@ Partial Class StaffList
 		Me.FilterFLP.Location = New System.Drawing.Point(93, 99)
 		Me.FilterFLP.Name = "FilterFLP"
 		Me.FilterFLP.Padding = New System.Windows.Forms.Padding(3)
-		Me.FilterFLP.Size = New System.Drawing.Size(679, 63)
+		Me.FilterFLP.Size = New System.Drawing.Size(586, 63)
 		Me.FilterFLP.TabIndex = 14
 		Me.FilterFLP.WrapContents = False
 		'
@@ -157,11 +158,21 @@ Partial Class StaffList
 		Me.AddFilterButton.Text = "Add"
 		Me.AddFilterButton.UseVisualStyleBackColor = True
 		'
+		'RefreshButton
+		'
+		Me.RefreshButton.Location = New System.Drawing.Point(706, 99)
+		Me.RefreshButton.Name = "RefreshButton"
+		Me.RefreshButton.Size = New System.Drawing.Size(87, 31)
+		Me.RefreshButton.TabIndex = 17
+		Me.RefreshButton.Text = "Refresh"
+		Me.RefreshButton.UseVisualStyleBackColor = True
+		'
 		'StaffList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(787, 549)
+		Me.ClientSize = New System.Drawing.Size(805, 596)
+		Me.Controls.Add(Me.RefreshButton)
 		Me.Controls.Add(Me.AddFilterButton)
 		Me.Controls.Add(Me.Label5)
 		Me.Controls.Add(Me.FilterFLP)
@@ -170,7 +181,7 @@ Partial Class StaffList
 		Me.Controls.Add(Me.StaffFLP)
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.ComboBox1)
-		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.CreateStaffButton)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.SearchTextBox)
 		Me.Controls.Add(Me.Label1)
@@ -189,7 +200,7 @@ Partial Class StaffList
 	Friend WithEvents Label1 As Label
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents CreateStaffButton As Button
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents StaffFLP As FlowLayoutPanel
@@ -198,4 +209,5 @@ Partial Class StaffList
     Friend WithEvents FilterFLP As FlowLayoutPanel
     Friend WithEvents Label5 As Label
     Friend WithEvents AddFilterButton As Button
+	Friend WithEvents RefreshButton As Button
 End Class

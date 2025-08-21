@@ -7,18 +7,25 @@
         StaffFLP.Controls.Clear()
         FilterFLP.Controls.Clear()
 
-        ' DUMMY DATA For Testing Purposes
-        'Dim data As New List(Of Staff) From {
-        '    New Staff With {.Id = "S666", .firstname = "Moira", .surname = "Samuel"},
-        '    New Staff With {.Id = "S969", .firstname = "Ben", .surname = "Dover"},
-        '    New Staff With {.Id = "S123", .firstname = "Justin", .surname = "Case"},
-        '    New Staff With {.Id = "S555", .firstname = "Ella", .surname = "Vader"},
-        '    New Staff With {.Id = "S---", .firstname = "Bill", .surname = "Board"},
-        '    New Staff With {.Id = "S---", .firstname = "Walter", .surname = "White"},
-        '    New Staff With {.Id = "S---", .firstname = "Joe", .surname = "Mama"}
-        '}
+        RenderStaffList()
 
         ' TODO: Query WorkExp and Qualification
+
+    End Sub
+
+    Private Sub CreateStaffButton_Click(sender As Object, e As EventArgs) Handles CreateStaffButton.Click
+        Dim f As New CreateNewStaffForm
+        f.ShowDialog()
+    End Sub
+
+    Private Sub AddFilterButton_Click(sender As Object, e As EventArgs) Handles AddFilterButton.Click
+        Dim filterCard As New FilterCard
+        FilterFLP.Controls.Add(filterCard)
+    End Sub
+
+    Private Sub RenderStaffList()
+        StaffFLP.Controls.Clear()
+
         Dim db As New Schema
         Dim data As List(Of Staff) = db.Query(Of Staff, Object)(
             "
@@ -31,15 +38,10 @@
             card.SetData(staff)
             StaffFLP.Controls.Add(card)
         Next
+
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim f As New CreateNewStaffForm
-        f.ShowDialog()
-    End Sub
-
-    Private Sub AddFilterButton_Click(sender As Object, e As EventArgs) Handles AddFilterButton.Click
-        Dim filterCard As New FilterCard
-        FilterFLP.Controls.Add(filterCard)
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+        RenderStaffList()
     End Sub
 End Class

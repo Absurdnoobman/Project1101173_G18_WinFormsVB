@@ -1,8 +1,14 @@
-﻿Public Class PickStaffDialog
+﻿Imports System.Runtime.Remoting.Messaging
+
+Public Class PickStaffDialog
 
     Private _isMultiplePick As Boolean
     Private _filterByColumn As String
     Private _filterValue As Object
+
+    Private _staffs As List(Of Staff)
+
+    Public result As List(Of Staff)
 
     Private Sub New(isMultiple As Boolean)
         ' This call is required by the designer.
@@ -20,7 +26,7 @@
         _filterByColumn = column
         _filterValue = value
 
-        SearchByLabel.Text = "Filter: '" & column & "' == '" & value & "'"
+        SearchByLabel.Text = $"Filter: {column} == {value}"
         SearchByComboBox.Hide()
     End Sub
 
@@ -33,7 +39,7 @@
         _filterByColumn = column
         _filterValue = value
 
-        SearchByLabel.Text = "Filter: '" & column & "' == '" & value & "'"
+        SearchByLabel.Text = $"Filter: {column} == {value}"
         SearchByComboBox.Hide()
     End Sub
 
@@ -45,8 +51,8 @@
         Return New PickStaffDialog(True)
     End Function
 
-    Public Shared Function FilterByRole(role As String) As PickStaffDialog
-        Return New PickStaffDialog("role", role)
+    Public Shared Function FilterByPosition(position As String) As PickStaffDialog
+        Return New PickStaffDialog("position", position)
     End Function
 
 
@@ -59,20 +65,37 @@
             Text = "Pick one staff"
         End If
 
-        Dim dt As New List(Of Staff) From {
-            New Staff With {.Id = "S990", .firstname = "Mannee", .surname = "jolo in squad"},
-            New Staff With {.Id = "S490", .firstname = "GG", .surname = "WP"}
-        }
+        Try
+            Dim db As New Schema
 
-        For Each staff In dt
-            Dim card As New StaffCardWithCheckBox
-            card.SetData(staff)
-            StaffFLP.Controls.Add(card)
-        Next
+            _staffs = db.Query(Of Staff, Object)(
+                "SELECT * FROM Staffs"
+            )
+
+            For Each staff In _staffs
+                Dim card As New StaffCardWithCheckBox
+                card.SetData(staff)
+                StaffFLP.Controls.Add(card)
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
+            DialogResult = DialogResult.Abort
+            Dispose()
+        End Try
 
     End Sub
 
     Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
+        Dim selected_card As List(Of StaffCardWithCheckBox) = StaffFLP.Controls.Cast(Of StaffCardWithCheckBox).ToList().FindAll(
+            Function(c) c.isSelected
+        )
+        Dim selected_staff_num As List(Of String) = selected_card.Select(
+            Function(c) c.StaffNumberLabel.Text
+        )
 
+        result = _staffs.FindAll(Function(s) selected_staff_num.Contains(s.staff_number))
+
+        Close()
     End Sub
 End Class

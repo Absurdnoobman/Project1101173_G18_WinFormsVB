@@ -6,12 +6,12 @@
 		' This call is required by the designer.
 		InitializeComponent()
 
-		StaffNumberTextBox.Text = staff.Id
+		StaffNumberTextBox.Text = staff.staff_number
 		FirstnameTextBox.Text = staff.firstname
 		SurnameTextBox.Text = staff.surname
 
 		AddressTextBox.Text = staff.address
-		TelphoneTextBox.Text = staff.telephone
+		TelephoneTextBox.Text = staff.telephone
 		SexComboBox.SelectedItem = staff.sex
 		DateOfBrithDTP.Value = staff.date_of_birth
 		NINTextBox.Text = staff.national_insurance_num
@@ -19,7 +19,7 @@
 		SalaryTextBox.Text = CStr(staff.salary)
 		PositionComboBox.SelectedItem = staff.position
 		SalaryScaleComboBox.SelectedItem = staff.salary_scale
-		ContactTypeComboBox.SelectedItem = staff.contract_type
+		ContractTypeComboBox.SelectedItem = staff.contract_type
 		PaymentTypeComboBox.SelectedItem = staff.payment_type
 		HPWTextBox.Text = CStr(staff.hours_per_week)
 
@@ -85,5 +85,53 @@
 		Using card = DirectCast(sender, NewWorkExperienceCard)
 			workExperiences.RemoveAt(card.index)
 		End Using
+	End Sub
+
+	Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
+		Dim staff_num = StaffNumberTextBox.Text
+		Dim firstname = FirstnameTextBox.Text
+		Dim surname = SurnameTextBox.Text
+		Dim sex = SexComboBox.SelectedItem
+		Dim dob = DateOfBrithDTP.Value
+		Dim address = AddressTextBox.Text
+		Dim telephone = TelephoneTextBox.Text
+		Dim nin = NINTextBox.Text
+
+		Dim position = PositionComboBox.SelectedItem
+		Dim contract = ContractTypeComboBox.SelectedItem
+		Dim hours_per_week = HPWTextBox.Text
+		Dim payment = PaymentTypeComboBox.SelectedItem
+		Dim salary_scale = SalaryScaleComboBox.SelectedItem
+		Dim salary = SalaryTextBox.Text
+
+		Dim db As New Schema
+
+		If Not db.Update("Staffs", "staff_number", staff_num,
+				New Dictionary(Of String, Object) From {
+					{"firstname", firstname},
+					{"surname", surname},
+					{"sex", sex},
+					{"address", address},
+					{"date_of_birth", dob},
+					{"telephone", telephone},
+					{"national_insurance_num", nin},
+					{"position", position},
+					{"contract_type", contract},
+					{"salary", salary},
+					{"salary_scale", salary_scale},
+					{"hours_per_week", hours_per_week},
+					{"payment_type", payment}
+				}
+			) Then
+			MessageBox.Show("Fail to update")
+			Exit Sub
+		Else
+			MessageBox.Show("Update Successful")
+
+			Dispose()
+		End If
+
+
+
 	End Sub
 End Class
