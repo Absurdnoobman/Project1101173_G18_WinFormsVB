@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Imports Dapper
+Imports Microsoft.Data.SqlClient
 Imports Microsoft.Extensions.Configuration
+Imports SqlConnection = Microsoft.Data.SqlClient.SqlConnection
+Imports SqlDataAdapter = Microsoft.Data.SqlClient.SqlDataAdapter
 
 Public Class Schema
 	Private ReadOnly _connectionString As String
@@ -61,6 +64,48 @@ Public Class Schema
 	End Function
 
 	''' <summary>
+	'''  So much stuff going on.
+	''' </summary>
+	''' <typeparam name="TModel1"> Owner Class </typeparam>
+	''' <typeparam name="TModel2"> Class </typeparam>
+	''' <typeparam name="TReturnModel"> Model Class to return </typeparam>
+	''' <typeparam name="TParam"></typeparam>
+	''' <param name="command"></param>
+	''' <param name="mapFunc"></param>
+	''' <param name="fk"> foreign key of TModel2 that is a primary key of TModel1 (Default is "Id") </param>
+	''' <param name="param"></param>
+	''' <returns></returns>
+	Public Function QueryMulti(Of TModel1, TModel2, TReturnModel, TParam)(
+		command As String,
+		mapFunc As Func(Of TModel1, TModel2, TReturnModel),
+		Optional fk As String = "Id",
+		Optional param As TParam = Nothing
+	) As List(Of TReturnModel)
+		Dim result As New List(Of TReturnModel)
+		Try
+			Using db_conn As New SqlConnection(_connectionString)
+				Dim cmd = db_conn.CreateCommand()
+				cmd.CommandText = command
+
+				db_conn.Open()
+
+				result = db_conn.Query(
+					cmd.CommandText,
+					mapFunc,
+					param,
+					splitOn:=fk
+					).ToList()
+
+				db_conn.Close()
+			End Using
+		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
+			Throw ex
+		End Try
+		Return result
+	End Function
+
+	''' <summary>
 	''' Same as <c> SqlCommand.ExecuteNonQuery() </c>
 	''' </summary>
 	''' <param name="command"></param>
@@ -93,7 +138,7 @@ Public Class Schema
 		Return False
 	End Function
 
-	Public Function QuerySelect(
+	Public Function SelectQuery(
 		fromTable As String,
 		Optional columns As String = "*",
 		Optional whereClauseStr As String = ""
@@ -209,5 +254,12 @@ Public Class Schema
 			Throw
 			Return False
 		End Try
+	End Function
+
+	Public Function GetDataSet(selectCommand As String) As DataSet
+		Dim adapter As New SqlDataAdapter(selectCommand, _connectionString)
+		Dim source As New DataSet
+		adapter.Fill(source)
+		Return source
 	End Function
 End Class

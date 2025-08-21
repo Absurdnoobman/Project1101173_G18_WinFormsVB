@@ -17,7 +17,7 @@
 				New With {.staff_num = staffNumber}
 			).First()
 
-			Dim pwd = db.QuerySelect("Passwords", "salt, hashed", $"staff_num = '{user.staff_number}'").First
+			Dim pwd = db.SelectQuery("Passwords", "salt, hashed", $"staff_num = '{user.staff_number}'").First
 
 			user.Salt = pwd("salt")
 			user.PasswordHash = pwd("hashed")

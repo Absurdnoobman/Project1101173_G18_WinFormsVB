@@ -38,7 +38,7 @@
 		Dim newQualification As New StaffQualification With {
 			.type = AddnewQualiForm.TypeTextBox.Text,
 			.institution = AddnewQualiForm.InstitutionTextBox.Text,
-			.QualificationDate = AddnewQualiForm.DateTimePicker.Value
+			.qualified_date = AddnewQualiForm.DateTimePicker.Value
 		}
 
 		qualifications.Add(newQualification)
@@ -60,8 +60,8 @@
 		Dim newWorkExp As New StaffWorkExperience With {
 			.position = AddNewWorkExpForm.PositionTextBox.Text,
 			.organisation = AddNewWorkExpForm.OrganisationTextBox.Text,
-			.startDate = AddNewWorkExpForm.StartDateTimePicker.Value,
-			.endDate = AddNewWorkExpForm.EndDateTimePicker.Value
+			.start_date = AddNewWorkExpForm.StartDateTimePicker.Value,
+			.end_date = AddNewWorkExpForm.EndDateTimePicker.Value
 		}
 
 		workExperiences.Add(newWorkExp)

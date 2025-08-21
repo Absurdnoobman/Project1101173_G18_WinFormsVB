@@ -2,7 +2,7 @@
 
     Private _staff As Staff
 
-    Public Property NewProperty() As Staff
+    Public Property Staff As Staff
         Get
             Return _staff
         End Get
@@ -10,6 +10,8 @@
             _staff = value
         End Set
     End Property
+
+    Public shift As String
 
     Public Sub SetData(staff As Staff)
         _staff = staff
@@ -24,5 +26,9 @@
     Private Sub RemoveButton_Click(sender As Object, e As EventArgs) Handles RemoveButton.Click
         Dispose()
 
+    End Sub
+
+    Private Sub ShiftComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ShiftComboBox.SelectedIndexChanged
+        shift = ShiftComboBox.SelectedItem
     End Sub
 End Class

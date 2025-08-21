@@ -10,7 +10,7 @@
         Me.index = index
         TypeLabel.Text = qualification.type
         InstitutionLabel.Text = qualification.institution
-        DateLabel.Text = qualification.QualificationDate.ToLongDateString
+        DateLabel.Text = qualification.qualified_date.ToLongDateString
     End Sub
 
 End Class

@@ -7,7 +7,7 @@
     End Sub
 
     Private Sub SelectConsultantButton_Click(sender As Object, e As EventArgs) Handles SelectConsultantButton.Click
-        Dim f As PickStaffDialog = PickStaffDialog.FilterByRole("consultant")
+        Dim f As PickStaffDialog = PickStaffDialog.FilterByPosition("consultant")
         Dim result = f.ShowDialog()
     End Sub
 

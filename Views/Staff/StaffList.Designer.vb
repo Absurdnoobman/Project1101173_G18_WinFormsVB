@@ -27,7 +27,7 @@ Partial Class StaffList
 		Me.SearchTextBox = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.CreateStaffButton = New System.Windows.Forms.Button()
-		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+		Me.SearchByComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Label4 = New System.Windows.Forms.Label()
@@ -36,6 +36,7 @@ Partial Class StaffList
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.AddFilterButton = New System.Windows.Forms.Button()
 		Me.RefreshButton = New System.Windows.Forms.Button()
+		Me.OrderComboBox = New System.Windows.Forms.ComboBox()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -76,14 +77,14 @@ Partial Class StaffList
 		Me.CreateStaffButton.Text = "Create Staff Record"
 		Me.CreateStaffButton.UseVisualStyleBackColor = True
 		'
-		'ComboBox1
+		'SearchByComboBox
 		'
-		Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Location = New System.Drawing.Point(406, 60)
-		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(121, 25)
-		Me.ComboBox1.TabIndex = 9
+		Me.SearchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.SearchByComboBox.FormattingEnabled = True
+		Me.SearchByComboBox.Location = New System.Drawing.Point(406, 60)
+		Me.SearchByComboBox.Name = "SearchByComboBox"
+		Me.SearchByComboBox.Size = New System.Drawing.Size(121, 25)
+		Me.SearchByComboBox.TabIndex = 9
 		'
 		'Label3
 		'
@@ -124,7 +125,7 @@ Partial Class StaffList
 		Me.OrderByComboBox.FormattingEnabled = True
 		Me.OrderByComboBox.Location = New System.Drawing.Point(610, 60)
 		Me.OrderByComboBox.Name = "OrderByComboBox"
-		Me.OrderByComboBox.Size = New System.Drawing.Size(121, 25)
+		Me.OrderByComboBox.Size = New System.Drawing.Size(103, 25)
 		Me.OrderByComboBox.TabIndex = 13
 		'
 		'FilterFLP
@@ -167,11 +168,22 @@ Partial Class StaffList
 		Me.RefreshButton.Text = "Refresh"
 		Me.RefreshButton.UseVisualStyleBackColor = True
 		'
+		'OrderComboBox
+		'
+		Me.OrderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.OrderComboBox.FormattingEnabled = True
+		Me.OrderComboBox.Items.AddRange(New Object() {"ACS", "DCS"})
+		Me.OrderComboBox.Location = New System.Drawing.Point(720, 60)
+		Me.OrderComboBox.Name = "OrderComboBox"
+		Me.OrderComboBox.Size = New System.Drawing.Size(73, 25)
+		Me.OrderComboBox.TabIndex = 18
+		'
 		'StaffList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(805, 596)
+		Me.Controls.Add(Me.OrderComboBox)
 		Me.Controls.Add(Me.RefreshButton)
 		Me.Controls.Add(Me.AddFilterButton)
 		Me.Controls.Add(Me.Label5)
@@ -180,7 +192,7 @@ Partial Class StaffList
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.StaffFLP)
 		Me.Controls.Add(Me.Label3)
-		Me.Controls.Add(Me.ComboBox1)
+		Me.Controls.Add(Me.SearchByComboBox)
 		Me.Controls.Add(Me.CreateStaffButton)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.SearchTextBox)
@@ -201,7 +213,7 @@ Partial Class StaffList
     Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents CreateStaffButton As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents SearchByComboBox As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents StaffFLP As FlowLayoutPanel
     Friend WithEvents Label4 As Label
@@ -210,4 +222,5 @@ Partial Class StaffList
     Friend WithEvents Label5 As Label
     Friend WithEvents AddFilterButton As Button
 	Friend WithEvents RefreshButton As Button
+	Friend WithEvents OrderComboBox As ComboBox
 End Class

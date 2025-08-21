@@ -1,8 +1,8 @@
 ﻿Public Class StaffWorkExperience
     Public id As UInteger
-    Public staff_number As String
+    Public staff As Staff
     Public organisation As String
     Public position As String
-    Public startDate As Date
-    Public endDate As Date
+    Public start_date As Date
+    Public end_date As Date
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class StaffCardWithCheckBox
     Public isSelected As Boolean = False
     Public Sub SetData(staff As Staff)
-        StaffNumberLabel.Text = staff.Id
+        StaffNumberLabel.Text = staff.staff_number
         FirstnameLabel.Text = staff.firstname
         SurnameLabel.Text = staff.surname
     End Sub

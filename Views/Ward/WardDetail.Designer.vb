@@ -23,20 +23,20 @@ Partial Class WardDetailForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+		Me.WardComboBox = New System.Windows.Forms.ComboBox()
 		Me.NameLabel = New System.Windows.Forms.Label()
 		Me.WeekLabel = New System.Windows.Forms.Label()
 		Me.ChargeNurseLabel = New System.Windows.Forms.Label()
 		Me.LocationLabel = New System.Windows.Forms.Label()
-		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+		Me.StaffDataGridView = New System.Windows.Forms.DataGridView()
 		Me.ExtNumberLabel = New System.Windows.Forms.Label()
 		Me.WeekBeginingComboBox = New System.Windows.Forms.ComboBox()
 		Me.EditAssignmentButton = New System.Windows.Forms.Button()
 		Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Button1 = New System.Windows.Forms.Button()
-		Me.Label3 = New System.Windows.Forms.Label()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.RecordCountLabel = New System.Windows.Forms.Label()
+		CType(Me.StaffDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -49,14 +49,14 @@ Partial Class WardDetailForm
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Ward"
 		'
-		'ComboBox1
+		'WardComboBox
 		'
-		Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Location = New System.Drawing.Point(59, 15)
-		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(121, 25)
-		Me.ComboBox1.TabIndex = 1
+		Me.WardComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.WardComboBox.FormattingEnabled = True
+		Me.WardComboBox.Location = New System.Drawing.Point(59, 15)
+		Me.WardComboBox.Name = "WardComboBox"
+		Me.WardComboBox.Size = New System.Drawing.Size(121, 25)
+		Me.WardComboBox.TabIndex = 1
 		'
 		'NameLabel
 		'
@@ -96,19 +96,21 @@ Partial Class WardDetailForm
 		Me.LocationLabel.TabIndex = 5
 		Me.LocationLabel.Text = "Location: ---"
 		'
-		'DataGridView1
+		'StaffDataGridView
 		'
-		Me.DataGridView1.AllowUserToAddRows = False
-		Me.DataGridView1.AllowUserToDeleteRows = False
-		Me.DataGridView1.AllowUserToOrderColumns = True
-		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(16, 150)
-		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.ReadOnly = True
-		Me.DataGridView1.RowHeadersWidth = 51
-		Me.DataGridView1.RowTemplate.Height = 24
-		Me.DataGridView1.Size = New System.Drawing.Size(669, 275)
-		Me.DataGridView1.TabIndex = 6
+		Me.StaffDataGridView.AllowUserToAddRows = False
+		Me.StaffDataGridView.AllowUserToDeleteRows = False
+		Me.StaffDataGridView.AllowUserToOrderColumns = True
+		Me.StaffDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.StaffDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+		Me.StaffDataGridView.Location = New System.Drawing.Point(16, 150)
+		Me.StaffDataGridView.Name = "StaffDataGridView"
+		Me.StaffDataGridView.ReadOnly = True
+		Me.StaffDataGridView.RowHeadersWidth = 51
+		Me.StaffDataGridView.RowTemplate.DefaultCellStyle.NullValue = "(none)"
+		Me.StaffDataGridView.RowTemplate.Height = 24
+		Me.StaffDataGridView.Size = New System.Drawing.Size(669, 275)
+		Me.StaffDataGridView.TabIndex = 6
 		'
 		'ExtNumberLabel
 		'
@@ -165,14 +167,14 @@ Partial Class WardDetailForm
 		Me.Button1.Text = "add"
 		Me.Button1.UseVisualStyleBackColor = True
 		'
-		'Label3
+		'RecordCountLabel
 		'
-		Me.Label3.AutoSize = True
-		Me.Label3.Location = New System.Drawing.Point(16, 431)
-		Me.Label3.Name = "Label3"
-		Me.Label3.Size = New System.Drawing.Size(93, 17)
-		Me.Label3.TabIndex = 13
-		Me.Label3.Text = "Records 69/69"
+		Me.RecordCountLabel.AutoSize = True
+		Me.RecordCountLabel.Location = New System.Drawing.Point(16, 431)
+		Me.RecordCountLabel.Name = "RecordCountLabel"
+		Me.RecordCountLabel.Size = New System.Drawing.Size(75, 17)
+		Me.RecordCountLabel.TabIndex = 13
+		Me.RecordCountLabel.Text = "Records ---"
 		'
 		'WardDetailForm
 		'
@@ -180,19 +182,19 @@ Partial Class WardDetailForm
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.Control
 		Me.ClientSize = New System.Drawing.Size(700, 478)
-		Me.Controls.Add(Me.Label3)
+		Me.Controls.Add(Me.RecordCountLabel)
 		Me.Controls.Add(Me.Button1)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.FlowLayoutPanel1)
 		Me.Controls.Add(Me.EditAssignmentButton)
 		Me.Controls.Add(Me.WeekBeginingComboBox)
 		Me.Controls.Add(Me.ExtNumberLabel)
-		Me.Controls.Add(Me.DataGridView1)
+		Me.Controls.Add(Me.StaffDataGridView)
 		Me.Controls.Add(Me.LocationLabel)
 		Me.Controls.Add(Me.ChargeNurseLabel)
 		Me.Controls.Add(Me.WeekLabel)
 		Me.Controls.Add(Me.NameLabel)
-		Me.Controls.Add(Me.ComboBox1)
+		Me.Controls.Add(Me.WardComboBox)
 		Me.Controls.Add(Me.Label1)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -200,24 +202,24 @@ Partial Class WardDetailForm
 		Me.Name = "WardDetailForm"
 		Me.Padding = New System.Windows.Forms.Padding(12)
 		Me.Text = "Ward Details"
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.StaffDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
 	End Sub
 
 	Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents WardComboBox As ComboBox
     Friend WithEvents NameLabel As Label
     Friend WithEvents WeekLabel As Label
     Friend WithEvents ChargeNurseLabel As Label
     Friend WithEvents LocationLabel As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents StaffDataGridView As DataGridView
     Friend WithEvents ExtNumberLabel As Label
     Friend WithEvents WeekBeginingComboBox As ComboBox
     Friend WithEvents EditAssignmentButton As Button
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label3 As Label
+    Friend WithEvents RecordCountLabel As Label
 End Class

@@ -87,15 +87,26 @@ Public Class PickStaffDialog
     End Sub
 
     Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
+
         Dim selected_card As List(Of StaffCardWithCheckBox) = StaffFLP.Controls.Cast(Of StaffCardWithCheckBox).ToList().FindAll(
             Function(c) c.isSelected
         )
+
+        If selected_card.Count = 0 Then
+            DialogResult = DialogResult.Cancel
+            Close()
+            Exit Sub
+        End If
+
         Dim selected_staff_num As List(Of String) = selected_card.Select(
             Function(c) c.StaffNumberLabel.Text
+        ).ToList()
+
+        result = _staffs.FindAll(
+            Function(s) selected_staff_num.Contains(s.staff_number)
         )
 
-        result = _staffs.FindAll(Function(s) selected_staff_num.Contains(s.staff_number))
-
+        DialogResult = DialogResult.OK
         Close()
     End Sub
 End Class

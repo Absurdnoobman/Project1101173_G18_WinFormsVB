@@ -251,18 +251,20 @@
     <Compile Include="libs\AppConfig.vb" />
     <Compile Include="libs\Auth.vb" />
     <Compile Include="libs\Authenticatable.vb" />
+    <Compile Include="libs\maps.vb" />
     <Compile Include="libs\Schema.vb" />
     <Compile Include="libs\Hash.vb" />
     <Compile Include="libs\TEST.vb" />
-    <Compile Include="models\Appointment.vb" />
-    <Compile Include="models\PatientAllocation.vb" />
-    <Compile Include="models\PatientLocalDoctor.vb" />
-    <Compile Include="models\PatientNextOfKin.vb" />
-    <Compile Include="models\Patient.vb" />
-    <Compile Include="models\PharmaceuticalSupply.vb" />
-    <Compile Include="models\StaffQualification.vb" />
-    <Compile Include="models\StaffWorkExperience.vb" />
-    <Compile Include="models\Ward.vb" />
+    <Compile Include="Models\Appointment.vb" />
+    <Compile Include="Models\PatientAllocation.vb" />
+    <Compile Include="Models\PatientLocalDoctor.vb" />
+    <Compile Include="Models\PatientNextOfKin.vb" />
+    <Compile Include="Models\Patient.vb" />
+    <Compile Include="Models\PharmaceuticalSupply.vb" />
+    <Compile Include="Models\StaffQualification.vb" />
+    <Compile Include="Models\StaffWorkExperience.vb" />
+    <Compile Include="Models\Supplier.vb" />
+    <Compile Include="Models\Ward.vb" />
     <Compile Include="Views\Appointment\AppointmentList.Designer.vb">
       <DependentUpon>AppointmentList.vb</DependentUpon>
     </Compile>
@@ -287,7 +289,7 @@
     <Compile Include="Views\Components\NewWorkExperienceCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="models\Staff.vb" />
+    <Compile Include="Models\Staff.vb" />
     <Compile Include="Views\Components\FilterCard.Designer.vb">
       <DependentUpon>FilterCard.vb</DependentUpon>
     </Compile>
@@ -449,6 +451,12 @@
     <Compile Include="Views\Supply\CreateSupplyForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Ward\EditStaffWardAssignmentForm.Designer.vb">
+      <DependentUpon>EditStaffWardAssignmentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ward\EditStaffWardAssignmentForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Ward\StaffWardAssignmentForm.Designer.vb">
       <DependentUpon>StaffWardAssignmentForm.vb</DependentUpon>
     </Compile>
@@ -552,6 +560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Supply\CreateSupplyForm.resx">
       <DependentUpon>CreateSupplyForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Ward\EditStaffWardAssignmentForm.resx">
+      <DependentUpon>EditStaffWardAssignmentForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Ward\StaffWardAssignmentForm.resx">
       <DependentUpon>StaffWardAssignmentForm.vb</DependentUpon>

@@ -38,7 +38,7 @@ Public Class TEST
 				New With {.staff_num = id}
 			).First()
 
-			Dim password = db.QuerySelect("Passwords", "salt, hashed", $"staff_num = '{user.staff_number}'").First
+			Dim password = db.SelectQuery("Passwords", "salt, hashed", $"staff_num = '{user.staff_number}'").First
 
 			user.Salt = password("salt")
 			user.PasswordHash = password("hashed")

@@ -10,8 +10,8 @@
         Me.index = index
         PositionLabel.Text = $"As a(n) {workExp.position}"
         OrganisationLabel.Text = $"In {workExp.organisation}"
-        StartDateLabel.Text = $"Start: {workExp.startDate.ToLongDateString}"
-        EndDateLabel.Text = $"Finish: {workExp.endDate.ToLongDateString}"
+        StartDateLabel.Text = $"Start: {workExp.start_date.ToLongDateString}"
+        EndDateLabel.Text = $"Finish: {workExp.end_date.ToLongDateString}"
     End Sub
 
 End Class

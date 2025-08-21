@@ -12,7 +12,7 @@
 		Dim newQualification As New StaffQualification With {
 			.type = AddnewQualiForm.TypeTextBox.Text,
 			.institution = AddnewQualiForm.InstitutionTextBox.Text,
-			.QualificationDate = AddnewQualiForm.DateTimePicker.Value
+			.qualified_date = AddnewQualiForm.DateTimePicker.Value
 		}
 
 		qualifications.Add(newQualification)
@@ -34,8 +34,8 @@
 		Dim newWorkExp As New StaffWorkExperience With {
 			.position = AddNewWorkExpForm.PositionTextBox.Text,
 			.organisation = AddNewWorkExpForm.OrganisationTextBox.Text,
-			.startDate = AddNewWorkExpForm.StartDateTimePicker.Value,
-			.endDate = AddNewWorkExpForm.EndDateTimePicker.Value
+			.start_date = AddNewWorkExpForm.StartDateTimePicker.Value,
+			.end_date = AddNewWorkExpForm.EndDateTimePicker.Value
 		}
 
 		workExperiences.Add(newWorkExp)
@@ -114,9 +114,38 @@
 			Exit Sub
 		End If
 
-		Dispose()
-
 		' TODO: WorkExp and Qualification
+
+		For Each qualification In qualifications
+			If Not db.NonSelectQuery(
+					"INSERT INTO Qualifications VALUES (@staff_num, @type, @institution, @qualified_date)",
+					New With {
+						.staff_num = staff_num,
+						.type = qualification.type,
+						.institution = qualification.institution,
+						.qualified_date = qualification.qualified_date
+					}
+				) Then
+				MessageBox.Show($"Failed to insert qualification.{vbNewLine}{qualification.institution} {qualification.type}")
+			End If
+		Next
+
+		For Each workExp In workExperiences
+			If Not db.NonSelectQuery(
+					"INSERT INTO WorkExperiences VALUES (@staff_num, @position, @organisation, @start_date, @end_date)",
+					New With {
+						.staff_num = staff_num,
+						.position = workExp.position,
+						.organisation = workExp.organisation,
+						.start_date = workExp.start_date,
+						.end_date = workExp.end_date
+					}
+				) Then
+				MessageBox.Show($"Failed to insert qualification.{vbNewLine}{workExp.position}, {workExp.organisation}")
+			End If
+		Next
+
+		Dispose()
 	End Sub
 
 	Public Sub ValidateInput()

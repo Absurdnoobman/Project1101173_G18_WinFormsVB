@@ -49,13 +49,13 @@ Partial Class StaffWardAssignmentForm
 		Me.StaffFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.StaffFLP.Location = New System.Drawing.Point(16, 38)
 		Me.StaffFLP.Name = "StaffFLP"
-		Me.StaffFLP.Size = New System.Drawing.Size(428, 425)
+		Me.StaffFLP.Size = New System.Drawing.Size(457, 425)
 		Me.StaffFLP.TabIndex = 1
 		'
 		'PickStaffButton
 		'
 		Me.PickStaffButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.PickStaffButton.Location = New System.Drawing.Point(308, 9)
+		Me.PickStaffButton.Location = New System.Drawing.Point(337, 9)
 		Me.PickStaffButton.Name = "PickStaffButton"
 		Me.PickStaffButton.Size = New System.Drawing.Size(136, 23)
 		Me.PickStaffButton.TabIndex = 2
@@ -66,7 +66,7 @@ Partial Class StaffWardAssignmentForm
 		'
 		Me.Label2.AutoSize = True
 		Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(479, 101)
+		Me.Label2.Location = New System.Drawing.Point(489, 100)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(122, 23)
 		Me.Label2.TabIndex = 3
@@ -76,14 +76,14 @@ Partial Class StaffWardAssignmentForm
 		'
 		Me.WardsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.WardsComboBox.FormattingEnabled = True
-		Me.WardsComboBox.Location = New System.Drawing.Point(483, 127)
+		Me.WardsComboBox.Location = New System.Drawing.Point(493, 126)
 		Me.WardsComboBox.Name = "WardsComboBox"
 		Me.WardsComboBox.Size = New System.Drawing.Size(237, 25)
 		Me.WardsComboBox.TabIndex = 5
 		'
 		'ConfirmButton
 		'
-		Me.ConfirmButton.Location = New System.Drawing.Point(483, 168)
+		Me.ConfirmButton.Location = New System.Drawing.Point(493, 167)
 		Me.ConfirmButton.Name = "ConfirmButton"
 		Me.ConfirmButton.Size = New System.Drawing.Size(237, 28)
 		Me.ConfirmButton.TabIndex = 6
@@ -92,7 +92,7 @@ Partial Class StaffWardAssignmentForm
 		'
 		'ResetButton
 		'
-		Me.ResetButton.Location = New System.Drawing.Point(483, 202)
+		Me.ResetButton.Location = New System.Drawing.Point(493, 201)
 		Me.ResetButton.Name = "ResetButton"
 		Me.ResetButton.Size = New System.Drawing.Size(237, 28)
 		Me.ResetButton.TabIndex = 7
@@ -103,7 +103,7 @@ Partial Class StaffWardAssignmentForm
 		'
 		Me.Label3.AutoSize = True
 		Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label3.Location = New System.Drawing.Point(479, 38)
+		Me.Label3.Location = New System.Drawing.Point(489, 37)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(123, 23)
 		Me.Label3.TabIndex = 8
@@ -111,7 +111,7 @@ Partial Class StaffWardAssignmentForm
 		'
 		'DateWeekBeginingDTP
 		'
-		Me.DateWeekBeginingDTP.Location = New System.Drawing.Point(483, 65)
+		Me.DateWeekBeginingDTP.Location = New System.Drawing.Point(493, 64)
 		Me.DateWeekBeginingDTP.Name = "DateWeekBeginingDTP"
 		Me.DateWeekBeginingDTP.Size = New System.Drawing.Size(237, 25)
 		Me.DateWeekBeginingDTP.TabIndex = 9
