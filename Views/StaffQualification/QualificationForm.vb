@@ -1,4 +1,6 @@
-﻿Public Class AddNewQualificationForm
+﻿Public Class QualificationForm
+
+    Public qualification As StaffQualification
 
     Private Sub CancelButton_Click(sender As Object, e As EventArgs) Handles CancelButton.Click
         DialogResult = DialogResult.Cancel
@@ -12,6 +14,11 @@
         End If
 
         DialogResult = DialogResult.OK
+        qualification = New StaffQualification With {
+            .type = TypeTextBox.Text,
+            .institution = InstitutionTextBox.Text,
+            .qualified_date = DateTimePicker.Value
+        }
         Close()
     End Sub
 

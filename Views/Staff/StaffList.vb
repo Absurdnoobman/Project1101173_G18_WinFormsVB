@@ -1,32 +1,38 @@
-﻿Public Class StaffList
-    Private Function filter(s As Staff) As Boolean
-        Dim search As String = SearchTextBox.Text
-        Dim search_by As String = SearchByComboBox.SelectedItem.ToString()
+﻿Imports Dapper
 
-        Dim propInfo = s.GetType().GetField(search_by)
-        If propInfo IsNot Nothing Then
-            Dim propValue = propInfo.GetValue(s)
-            If propValue IsNot Nothing Then
-                Dim valueStr As String = propValue.ToString()
-                ' Case-insensitive match like SQL LIKE '%search%'
-                Return valueStr.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0
-            End If
-        End If
-        Return False
-    End Function
+Public Class StaffList
+    'Private Function filter(s As Staff) As Boolean
+
+    'End Function
 
     Private _staffs As List(Of Staff)
     Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
         If SearchByComboBox.SelectedIndex = -1 Then Exit Sub
         If String.IsNullOrEmpty(SearchTextBox.Text) Then RenderStaffList(_staffs)
 
+        Dim db As New Schema
+        Try
+            Dim search = $"%{SearchTextBox.Text}%"
+            Dim result As New List(Of Staff)
+            Select Case CStr(SearchByComboBox.SelectedItem)
+                Case "Name"
+                    result = db.Query(Of Staff, Object)("SELECT * FROM Staffs WHERE firstname LIKE @s OR surname LIKE @s", New With {.s = search})
+                    RenderStaffList(result)
+                Case "Firstname"
 
+                Case "Lastname"
 
-        Dim result = _staffs.FindAll(
-            Function(s) filter(s)
-        )
-
-        RenderStaffList(result)
+                Case Else
+                    Exit Sub
+            End Select
+        Catch ex As Exception
+            MessageBox.Show(
+                text:="Can not search",
+                caption:="Fatal Error!",
+                icon:=MessageBoxIcon.Error,
+                buttons:=MessageBoxButtons.OK
+            )
+        End Try
     End Sub
 
     Private Sub StaffList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -52,11 +58,6 @@
         End Try
 
         RenderStaffList(_staffs)
-
-
-        SearchByComboBox.Items.AddRange(
-            GetType(Staff).GetFields.Select(Function(f) f.Name).ToArray
-        )
 
         ' TODO: Query WorkExp and Qualification
 

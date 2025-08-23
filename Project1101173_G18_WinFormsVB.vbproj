@@ -17,6 +17,9 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>4417111_browser_laptop_on_web_browsing_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -374,16 +377,16 @@
     <Compile Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\StaffQualification\AddNewQualificationForm.Designer.vb">
-      <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
+    <Compile Include="Views\StaffQualification\QualificationForm.Designer.vb">
+      <DependentUpon>QualificationForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\StaffQualification\AddNewQualificationForm.vb">
+    <Compile Include="Views\StaffQualification\QualificationForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\StaffWorkExperience\AddNewWorkExperienceForm.Designer.vb">
-      <DependentUpon>AddNewWorkExperienceForm.vb</DependentUpon>
+    <Compile Include="Views\StaffWorkExperience\WorkExperienceForm.Designer.vb">
+      <DependentUpon>WorkExperienceForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\StaffWorkExperience\AddNewWorkExperienceForm.vb">
+    <Compile Include="Views\StaffWorkExperience\WorkExperienceForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Staff\CreateNewStaffForm.Designer.vb">
@@ -525,11 +528,11 @@
     <EmbeddedResource Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.resx">
       <DependentUpon>CreateNewPharmaceuticalSupply.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StaffQualification\AddNewQualificationForm.resx">
-      <DependentUpon>AddNewQualificationForm.vb</DependentUpon>
+    <EmbeddedResource Include="Views\StaffQualification\QualificationForm.resx">
+      <DependentUpon>QualificationForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\StaffWorkExperience\AddNewWorkExperienceForm.resx">
-      <DependentUpon>AddNewWorkExperienceForm.vb</DependentUpon>
+    <EmbeddedResource Include="Views\StaffWorkExperience\WorkExperienceForm.resx">
+      <DependentUpon>WorkExperienceForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Staff\CreateNewStaffForm.resx">
       <DependentUpon>CreateNewStaffForm.vb</DependentUpon>
@@ -596,6 +599,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="4417111_browser_laptop_on_web_browsing_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

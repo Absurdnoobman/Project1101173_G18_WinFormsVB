@@ -81,6 +81,7 @@ Partial Class StaffList
 		'
 		Me.SearchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.SearchByComboBox.FormattingEnabled = True
+		Me.SearchByComboBox.Items.AddRange(New Object() {"Name", "Firstname", "Lastname", "Address"})
 		Me.SearchByComboBox.Location = New System.Drawing.Point(406, 60)
 		Me.SearchByComboBox.Name = "SearchByComboBox"
 		Me.SearchByComboBox.Size = New System.Drawing.Size(121, 25)

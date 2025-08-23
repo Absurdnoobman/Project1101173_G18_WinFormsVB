@@ -103,7 +103,7 @@ Partial Class StaffCard
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Name = "StaffCard"
 		Me.Padding = New System.Windows.Forms.Padding(12)
-		Me.Size = New System.Drawing.Size(727, 80)
+		Me.Size = New System.Drawing.Size(752, 80)
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 

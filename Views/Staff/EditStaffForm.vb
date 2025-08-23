@@ -1,10 +1,15 @@
-﻿Public Class EditStaffForm
+﻿Imports System.Runtime.Remoting.Channels
+
+Public Class EditStaffForm
+	Public thisStaff As Staff
 	Public qualifications As New List(Of StaffQualification)
 	Public workExperiences As New List(Of StaffWorkExperience)
 
-	Private Sub New(staff As Staff)
+	Private Sub New(staff As Staff, quali As List(Of StaffQualification), workExps As List(Of StaffWorkExperience))
 		' This call is required by the designer.
 		InitializeComponent()
+
+		thisStaff = staff
 
 		StaffNumberTextBox.Text = staff.staff_number
 		FirstnameTextBox.Text = staff.firstname
@@ -23,17 +28,33 @@
 		PaymentTypeComboBox.SelectedItem = staff.payment_type
 		HPWTextBox.Text = CStr(staff.hours_per_week)
 
+		qualifications = quali
+		workExperiences = workExps
+
+		For Each qualification In qualifications
+			Dim card As New NewQualificationCard
+			card.SetData(qualification, qualifications.Count() - 1)
+			AddHandler card.OnRemoveButtonPressed, AddressOf HandleQualiCardRemoveEvent
+			QualificationFLP.Controls.Add(card)
+		Next
+
+		For Each workExp In workExperiences
+			Dim card As New NewWorkExperienceCard
+			card.SetData(workExp, workExperiences.Count() - 1)
+			AddHandler card.OnRemoveButtonPressed, AddressOf HandleWorkExpCardRemoveEvent
+			WorksFLP.Controls.Add(card)
+		Next
 	End Sub
 
-	Public Shared Function WithData(staff As Staff) As EditStaffForm
-		Return New EditStaffForm(staff)
+	Public Shared Function WithData(staff As Staff, qualifications As List(Of StaffQualification), workExps As List(Of StaffWorkExperience)) As EditStaffForm
+		Return New EditStaffForm(staff, qualifications, workExps)
 	End Function
 
 	Private Sub AddNewQualiButton_Click(sender As Object, e As EventArgs)
-		Dim AddnewQualiForm As New AddNewQualificationForm
+		Dim AddnewQualiForm As New QualificationForm
 
 		Dim result = AddnewQualiForm.ShowDialog()
-		If result = DialogResult.Cancel Then Return
+		If result = DialogResult.Cancel Then Exit Sub
 
 		Dim newQualification As New StaffQualification With {
 			.type = AddnewQualiForm.TypeTextBox.Text,
@@ -52,7 +73,7 @@
 	End Sub
 
 	Private Sub AddNewWorkExpButton_Click(sender As Object, e As EventArgs)
-		Dim AddNewWorkExpForm As New AddNewWorkExperienceForm
+		Dim AddNewWorkExpForm As New WorkExperienceForm
 
 		Dim result = AddNewWorkExpForm.ShowDialog()
 		If result = DialogResult.Cancel Then Return
@@ -79,6 +100,24 @@
 		Using card = DirectCast(sender, NewQualificationCard)
 			qualifications.RemoveAt(card.index)
 		End Using
+	End Sub
+
+	Private Sub HandleQualiCardEditEvent(sender As Object)
+		'Using card = DirectCast(sender, NewQualificationCard)
+		'	Dim d As New QualificationForm
+		'	d.AddButton.Text = "Edit"
+		'	d.TypeTextBox.Text = card.thisQualification.type
+		'	d.InstitutionTextBox.Text = card.thisQualification.institution
+		'	d.DateTimePicker.Value = card.thisQualification.qualified_date
+
+		'	Dim result = d.qualification
+
+
+		'End Using
+	End Sub
+
+	Private Sub HandleWorkExpCardEditEvent(sender As Object)
+		' TODO
 	End Sub
 
 	Private Sub HandleWorkExpCardRemoveEvent(sender As Object)
@@ -130,8 +169,6 @@
 
 			Dispose()
 		End If
-
-
 
 	End Sub
 End Class

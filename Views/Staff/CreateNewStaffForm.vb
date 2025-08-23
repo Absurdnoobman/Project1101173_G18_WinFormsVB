@@ -4,7 +4,7 @@
 	Public workExperiences As New List(Of StaffWorkExperience)
 
 	Private Sub AddNewQualiButton_Click(sender As Object, e As EventArgs) Handles AddNewQualiButton.Click
-		Dim AddnewQualiForm As New AddNewQualificationForm
+		Dim AddnewQualiForm As New QualificationForm
 
 		Dim result = AddnewQualiForm.ShowDialog()
 		If result = DialogResult.Cancel Then Return
@@ -26,7 +26,7 @@
 	End Sub
 
 	Private Sub AddNewWorkExpButton_Click(sender As Object, e As EventArgs) Handles AddNewWorkExpButton.Click
-		Dim AddNewWorkExpForm As New AddNewWorkExperienceForm
+		Dim AddNewWorkExpForm As New WorkExperienceForm
 
 		Dim result = AddNewWorkExpForm.ShowDialog()
 		If result = DialogResult.Cancel Then Return
@@ -45,7 +45,6 @@
 		AddHandler card.OnRemoveButtonPressed, AddressOf HandleWorkExpCardRemoveEvent
 
 		WorksFLP.Controls.Add(card)
-
 
 	End Sub
 
@@ -71,7 +70,7 @@
 		Dim dob = DateOfBrithDTP.Value
 		Dim address = AddressTextBox.Text
 		Dim telephone = TelephoneTextBox.Text
-		Dim nin = NINTextBox.Text
+		Dim nin = NINTextBox.Text.ToUpper()
 
 		Dim position = PositionComboBox.SelectedItem
 		Dim contract = ContractTypeComboBox.SelectedItem
@@ -156,5 +155,9 @@
 			MessageBox.Show("Firstname and Surname exceeded 255 characters")
 		End If
 		' More to come 
+	End Sub
+
+	Private Sub ShowPwdCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles ShowPwdCheckBox.CheckedChanged
+		PasswordTextBox.UseSystemPasswordChar = Not ShowPwdCheckBox.Checked
 	End Sub
 End Class

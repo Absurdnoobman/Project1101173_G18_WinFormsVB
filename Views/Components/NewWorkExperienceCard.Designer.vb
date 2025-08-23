@@ -22,81 +22,94 @@ Partial Class NewWorkExperienceCard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PositionLabel = New System.Windows.Forms.Label()
-        Me.OrganisationLabel = New System.Windows.Forms.Label()
-        Me.StartDateLabel = New System.Windows.Forms.Label()
-        Me.EndDateLabel = New System.Windows.Forms.Label()
-        Me.RemoveButton = New System.Windows.Forms.Button()
-        Me.SuspendLayout()
-        '
-        'PositionLabel
-        '
-        Me.PositionLabel.AutoSize = True
-        Me.PositionLabel.Location = New System.Drawing.Point(8, 8)
-        Me.PositionLabel.Name = "PositionLabel"
-        Me.PositionLabel.Size = New System.Drawing.Size(52, 17)
-        Me.PositionLabel.TabIndex = 0
-        Me.PositionLabel.Text = "As a ___"
-        '
-        'OrganisationLabel
-        '
-        Me.OrganisationLabel.AutoSize = True
-        Me.OrganisationLabel.Location = New System.Drawing.Point(8, 30)
-        Me.OrganisationLabel.Name = "OrganisationLabel"
-        Me.OrganisationLabel.Size = New System.Drawing.Size(18, 17)
-        Me.OrganisationLabel.TabIndex = 1
-        Me.OrganisationLabel.Text = "In"
-        '
-        'StartDateLabel
-        '
-        Me.StartDateLabel.AutoSize = True
-        Me.StartDateLabel.Location = New System.Drawing.Point(8, 53)
-        Me.StartDateLabel.Name = "StartDateLabel"
-        Me.StartDateLabel.Size = New System.Drawing.Size(62, 17)
-        Me.StartDateLabel.TabIndex = 2
-        Me.StartDateLabel.Text = "StartDate"
-        '
-        'EndDateLabel
-        '
-        Me.EndDateLabel.AutoSize = True
-        Me.EndDateLabel.Location = New System.Drawing.Point(8, 74)
-        Me.EndDateLabel.Name = "EndDateLabel"
-        Me.EndDateLabel.Size = New System.Drawing.Size(82, 17)
-        Me.EndDateLabel.TabIndex = 3
-        Me.EndDateLabel.Text = "FinishedDate"
-        '
-        'RemoveButton
-        '
-        Me.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.RemoveButton.Location = New System.Drawing.Point(195, 81)
-        Me.RemoveButton.Name = "RemoveButton"
-        Me.RemoveButton.Size = New System.Drawing.Size(66, 24)
-        Me.RemoveButton.TabIndex = 4
-        Me.RemoveButton.Text = "Remove"
-        Me.RemoveButton.UseVisualStyleBackColor = True
-        '
-        'NewWorkExperienceCard
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Controls.Add(Me.RemoveButton)
-        Me.Controls.Add(Me.EndDateLabel)
-        Me.Controls.Add(Me.StartDateLabel)
-        Me.Controls.Add(Me.OrganisationLabel)
-        Me.Controls.Add(Me.PositionLabel)
-        Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Name = "NewWorkExperienceCard"
-        Me.Padding = New System.Windows.Forms.Padding(4)
-        Me.Size = New System.Drawing.Size(268, 112)
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+		Me.PositionLabel = New System.Windows.Forms.Label()
+		Me.OrganisationLabel = New System.Windows.Forms.Label()
+		Me.StartDateLabel = New System.Windows.Forms.Label()
+		Me.EndDateLabel = New System.Windows.Forms.Label()
+		Me.RemoveButton = New System.Windows.Forms.Button()
+		Me.EditButton = New System.Windows.Forms.Button()
+		Me.SuspendLayout()
+		'
+		'PositionLabel
+		'
+		Me.PositionLabel.AutoSize = True
+		Me.PositionLabel.Location = New System.Drawing.Point(8, 8)
+		Me.PositionLabel.Name = "PositionLabel"
+		Me.PositionLabel.Size = New System.Drawing.Size(52, 17)
+		Me.PositionLabel.TabIndex = 0
+		Me.PositionLabel.Text = "As a ___"
+		'
+		'OrganisationLabel
+		'
+		Me.OrganisationLabel.AutoSize = True
+		Me.OrganisationLabel.Location = New System.Drawing.Point(8, 30)
+		Me.OrganisationLabel.Name = "OrganisationLabel"
+		Me.OrganisationLabel.Size = New System.Drawing.Size(18, 17)
+		Me.OrganisationLabel.TabIndex = 1
+		Me.OrganisationLabel.Text = "In"
+		'
+		'StartDateLabel
+		'
+		Me.StartDateLabel.AutoSize = True
+		Me.StartDateLabel.Location = New System.Drawing.Point(8, 53)
+		Me.StartDateLabel.Name = "StartDateLabel"
+		Me.StartDateLabel.Size = New System.Drawing.Size(62, 17)
+		Me.StartDateLabel.TabIndex = 2
+		Me.StartDateLabel.Text = "StartDate"
+		'
+		'EndDateLabel
+		'
+		Me.EndDateLabel.AutoSize = True
+		Me.EndDateLabel.Location = New System.Drawing.Point(8, 74)
+		Me.EndDateLabel.Name = "EndDateLabel"
+		Me.EndDateLabel.Size = New System.Drawing.Size(82, 17)
+		Me.EndDateLabel.TabIndex = 3
+		Me.EndDateLabel.Text = "FinishedDate"
+		'
+		'RemoveButton
+		'
+		Me.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.RemoveButton.Location = New System.Drawing.Point(195, 81)
+		Me.RemoveButton.Name = "RemoveButton"
+		Me.RemoveButton.Size = New System.Drawing.Size(66, 24)
+		Me.RemoveButton.TabIndex = 4
+		Me.RemoveButton.Text = "Remove"
+		Me.RemoveButton.UseVisualStyleBackColor = True
+		'
+		'EditButton
+		'
+		Me.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.EditButton.Location = New System.Drawing.Point(123, 81)
+		Me.EditButton.Name = "EditButton"
+		Me.EditButton.Size = New System.Drawing.Size(66, 24)
+		Me.EditButton.TabIndex = 5
+		Me.EditButton.Text = "Edit"
+		Me.EditButton.UseVisualStyleBackColor = True
+		'
+		'NewWorkExperienceCard
+		'
+		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.Controls.Add(Me.EditButton)
+		Me.Controls.Add(Me.RemoveButton)
+		Me.Controls.Add(Me.EndDateLabel)
+		Me.Controls.Add(Me.StartDateLabel)
+		Me.Controls.Add(Me.OrganisationLabel)
+		Me.Controls.Add(Me.PositionLabel)
+		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Name = "NewWorkExperienceCard"
+		Me.Padding = New System.Windows.Forms.Padding(4)
+		Me.Size = New System.Drawing.Size(268, 112)
+		Me.ResumeLayout(False)
+		Me.PerformLayout()
 
-    End Sub
+	End Sub
 
-    Friend WithEvents PositionLabel As Label
+	Friend WithEvents PositionLabel As Label
     Friend WithEvents OrganisationLabel As Label
     Friend WithEvents StartDateLabel As Label
     Friend WithEvents EndDateLabel As Label
     Friend WithEvents RemoveButton As Button
+    Friend WithEvents EditButton As Button
 End Class

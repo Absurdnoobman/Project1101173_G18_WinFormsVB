@@ -59,6 +59,8 @@ Partial Class CreateNewStaffForm
 		Me.Label12 = New System.Windows.Forms.Label()
 		Me.Label17 = New System.Windows.Forms.Label()
 		Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+		Me.Label18 = New System.Windows.Forms.Label()
+		Me.ShowPwdCheckBox = New System.Windows.Forms.CheckBox()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -193,7 +195,7 @@ Partial Class CreateNewStaffForm
 		'
 		Me.PositionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.PositionComboBox.FormattingEnabled = True
-		Me.PositionComboBox.Items.AddRange(New Object() {"Charge Nurse", "Medical Director", "Personnel Officer", "Staff", "Consultant", "Doctor", "Nurse", "Orther"})
+		Me.PositionComboBox.Items.AddRange(New Object() {"Charge Nurse", "Staff Nurse", "Nurse", "Personnel Officer", "Medical Director", "Staff", "Consultant", "Doctor", "Other"})
 		Me.PositionComboBox.Location = New System.Drawing.Point(144, 192)
 		Me.PositionComboBox.Name = "PositionComboBox"
 		Me.PositionComboBox.Size = New System.Drawing.Size(173, 25)
@@ -386,14 +388,37 @@ Partial Class CreateNewStaffForm
 		'
 		Me.PasswordTextBox.Location = New System.Drawing.Point(97, 607)
 		Me.PasswordTextBox.Name = "PasswordTextBox"
-		Me.PasswordTextBox.Size = New System.Drawing.Size(472, 25)
+		Me.PasswordTextBox.Size = New System.Drawing.Size(416, 25)
 		Me.PasswordTextBox.TabIndex = 45
+		Me.PasswordTextBox.UseSystemPasswordChar = True
+		'
+		'Label18
+		'
+		Me.Label18.AutoSize = True
+		Me.Label18.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label18.Location = New System.Drawing.Point(539, 18)
+		Me.Label18.Name = "Label18"
+		Me.Label18.Size = New System.Drawing.Size(128, 17)
+		Me.Label18.TabIndex = 46
+		Me.Label18.Text = "(Can not be changed)"
+		'
+		'ShowPwdCheckBox
+		'
+		Me.ShowPwdCheckBox.AutoSize = True
+		Me.ShowPwdCheckBox.Location = New System.Drawing.Point(530, 609)
+		Me.ShowPwdCheckBox.Name = "ShowPwdCheckBox"
+		Me.ShowPwdCheckBox.Size = New System.Drawing.Size(121, 21)
+		Me.ShowPwdCheckBox.TabIndex = 47
+		Me.ShowPwdCheckBox.Text = "Show Password"
+		Me.ShowPwdCheckBox.UseVisualStyleBackColor = True
 		'
 		'CreateNewStaffForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(700, 684)
+		Me.Controls.Add(Me.ShowPwdCheckBox)
+		Me.Controls.Add(Me.Label18)
 		Me.Controls.Add(Me.PasswordTextBox)
 		Me.Controls.Add(Me.Label17)
 		Me.Controls.Add(Me.SalaryScaleComboBox)
@@ -478,4 +503,6 @@ Partial Class CreateNewStaffForm
 	Friend WithEvents Label12 As Label
 	Friend WithEvents Label17 As Label
 	Friend WithEvents PasswordTextBox As TextBox
+	Friend WithEvents Label18 As Label
+	Friend WithEvents ShowPwdCheckBox As CheckBox
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class AddNewWorkExperienceForm
+﻿Public Class WorkExperienceForm
 
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
         PositionTextBox.ResetText()

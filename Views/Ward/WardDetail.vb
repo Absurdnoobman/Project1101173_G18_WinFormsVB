@@ -29,7 +29,7 @@
 
 		Dim db As New Schema
 		Try
-			Dim result = db.SelectQuery("Works_in", "week_beginning", $" ward_num = {CInt(WardComboBox.SelectedItem)}")
+			Dim result = db.SelectQuery("Works_in", "week_beginning", $" ward_num = {CInt(WardComboBox.SelectedItem)}", "DISTINCT")
 			Dim weeks = result.Select(
 				Function(r) r("week_beginning")
 			).ToArray()
@@ -56,11 +56,13 @@
 		Dim db As New Schema
 		Try
 			Dim dt_set = db.GetDataSet(
-				"
+				$"
 				SELECT w.staff_num AS ""Staff No."", s.firstname + ' ' + s.surname AS ""Name"", s.address AS ""Address"", s.telephone AS ""Tel No."", s.position AS ""Position"", w.shift AS ""Shift""
 				FROM Works_in w, Staffs s
-				WHERE w.staff_num = s.staff_number
-				"
+				WHERE w.staff_num = s.staff_number AND week_beginning = @week 
+				", New Dictionary(Of String, Object) From {
+					{"@week", Date.Parse(WeekBeginingComboBox.SelectedItem)}
+				}
 			)
 
 			StaffDataGridView.DataSource = dt_set.Tables.Item(0)
@@ -77,6 +79,6 @@
 	End Sub
 
 	Private Sub EditAssignmentButton_Click(sender As Object, e As EventArgs) Handles EditAssignmentButton.Click
-
+		' TODO
 	End Sub
 End Class

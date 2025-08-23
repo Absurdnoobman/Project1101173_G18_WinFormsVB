@@ -14,8 +14,6 @@ Public Class Hash
 		Using rng As New RNGCryptoServiceProvider()
 			rng.GetBytes(saltBytes)
 		End Using
-
-		' Combine
 		Dim salt As String = Convert.ToBase64String(saltBytes)
 
 		' Hash the salted password

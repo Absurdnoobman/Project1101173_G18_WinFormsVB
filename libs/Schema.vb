@@ -1,5 +1,4 @@
-﻿Imports System.Data.SqlClient
-Imports Dapper
+﻿Imports Dapper
 Imports Microsoft.Data.SqlClient
 Imports Microsoft.Extensions.Configuration
 Imports SqlConnection = Microsoft.Data.SqlClient.SqlConnection
@@ -14,17 +13,27 @@ Public Class Schema
 			.AddUserSecrets(Of Schema)() _
 			.Build()
 
-		Dim env = Environment.GetEnvironmentVariable("CONNECTION_STRING")
-		If String.IsNullOrEmpty(env) Then
+		Dim env As String = Environment.GetEnvironmentVariable("CONNECTION_STRING")
+		Dim l_env As String = Environment.GetEnvironmentVariable("LOCAL_CONNECTION_STRING")
+
+		If String.IsNullOrEmpty(env) And String.IsNullOrEmpty(l_env) Then
 			Throw New InvalidOperationException("CONNECTION_STRING environment variable not set.")
-		Else
+		End If
+
+		If Not String.IsNullOrEmpty(l_env) Then
+			_connectionString = l_env
+			Exit Sub
+		End If
+
+		If Not String.IsNullOrEmpty(env) Then
 			_connectionString = env
 			Exit Sub
 		End If
 
-
 		If String.IsNullOrEmpty(config("ConnectionStrings:default")) Then
 			Throw New InvalidOperationException("Connection string missing in user-secrets.")
+		Else
+			_connectionString = config("ConnectionStrings:default")
 		End If
 
 	End Sub
@@ -111,7 +120,7 @@ Public Class Schema
 	''' <param name="command"></param>
 	''' <param name="param"></param>
 	''' <returns>
-	'''		return True if success
+	'''		return <see langword="True"/> if success
 	''' </returns>
 	Public Function NonSelectQuery(
 		command As String,
@@ -141,7 +150,8 @@ Public Class Schema
 	Public Function SelectQuery(
 		fromTable As String,
 		Optional columns As String = "*",
-		Optional whereClauseStr As String = ""
+		Optional whereClauseStr As String = "",
+		Optional selectOption As String = ""
 	) As List(Of Dictionary(Of String, Object))
 
 		Dim result As IEnumerable(Of Object)
@@ -153,7 +163,7 @@ Public Class Schema
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
-				cmd.CommandText = $"SELECT {columns} FROM {fromTable} {whereClauseStr}"
+				cmd.CommandText = $"SELECT {selectOption}  {columns} FROM {fromTable} {whereClauseStr}"
 
 				db_conn.Open()
 
@@ -173,12 +183,22 @@ Public Class Schema
 
 	End Function
 
-	Public Function Insert(Of TValues)(
+	''' <summary>
+	''' Insert Short-handed with all columns. <br />
+	''' Can not insert some columns.
+	''' </summary>
+	''' <typeparam name="T">anonymous type or model class</typeparam>
+	''' <param name="intoTable">Table name</param>
+	''' <param name="values"> a list of anonymous type or model object that has values for insertion.</param>
+	''' <returns>
+	'''		return <see langword="True"/> if success.
+	''' </returns>
+	Public Function FullInsert(Of T)(
 		intoTable As String,
-		values As List(Of TValues)
+		values As List(Of T)
 	) As Boolean
 
-		Dim props As List(Of String) = GetType(TValues).GetProperties().Select(Function(p) p.Name).ToList()
+		Dim props As List(Of String) = GetType(T).GetProperties().Select(Function(p) p.Name).ToList()
 		Dim colNames As String = String.Join(", ", props)
 		Dim paramNames = String.Join(", ", props.Select(Function(p) $"@{p}"))
 
@@ -203,7 +223,7 @@ Public Class Schema
 		Return False
 	End Function
 
-	Public Function Delete(Of TValue)(fromTable As String, record_identifier As String, id_value As TValue) As Boolean
+	Public Function Delete(Of T)(fromTable As String, record_identifier As String, id_value As T) As Boolean
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
@@ -225,9 +245,9 @@ Public Class Schema
 		Return False
 	End Function
 
-	Public Function Update(Of TValue)(
+	Public Function Update(Of T)(
 		fromTable As String,
-		record_identifier As String, id_value As TValue,
+		record_identifier As String, id_value As T,
 		updates As Dictionary(Of String, Object)
 	) As Boolean
 		Try
@@ -237,12 +257,12 @@ Public Class Schema
 				Dim sql = $"UPDATE {fromTable} SET {setClauses} WHERE {record_identifier} = @id"
 
 				' DynamicParameters Class Provided By Dapper
-				Dim parameters = New DynamicParameters(updates)
-				parameters.Add("@id", id_value)
+				'Dim parameters = New DynamicParameters(updates)
+				'parameters.Add("@id", id_value)
 
 				db_conn.Open()
 
-				db_conn.Execute(sql, parameters)
+				db_conn.Execute(sql, New With {.id = id_value})
 
 				db_conn.Close()
 
@@ -256,8 +276,20 @@ Public Class Schema
 		End Try
 	End Function
 
-	Public Function GetDataSet(selectCommand As String) As DataSet
-		Dim adapter As New SqlDataAdapter(selectCommand, _connectionString)
+	Public Function GetDataSet(selectCommand As String, Optional params As Dictionary(Of String, Object) = Nothing) As DataSet
+		Dim cmd As New SqlCommand With {
+			.Connection = New SqlConnection(_connectionString),
+			.CommandText = selectCommand
+		}
+
+		If params IsNot Nothing Then
+			For Each param In params
+				cmd.Parameters.AddWithValue(param.Key, param.Value)
+			Next
+		End If
+
+		Dim adapter As New SqlDataAdapter(cmd)
+
 		Dim source As New DataSet
 		adapter.Fill(source)
 		Return source
