@@ -4,6 +4,9 @@ Imports Microsoft.Extensions.Configuration
 Imports SqlConnection = Microsoft.Data.SqlClient.SqlConnection
 Imports SqlDataAdapter = Microsoft.Data.SqlClient.SqlDataAdapter
 
+''' <summary>
+''' All-in-one solution for database access in this project. Powered By <see cref="Dapper"/>
+''' </summary>
 Public Class Schema
 	Private ReadOnly _connectionString As String
 
@@ -99,9 +102,9 @@ Public Class Schema
 				db_conn.Open()
 
 				result = db_conn.Query(
-					cmd.CommandText,
-					mapFunc,
-					param,
+					sql:=cmd.CommandText,
+					map:=mapFunc,
+					param:=param,
 					splitOn:=fk
 					).ToList()
 
@@ -142,9 +145,8 @@ Public Class Schema
 
 		Catch ex As Exception
 			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
-			Throw ex
+			Return False
 		End Try
-		Return False
 	End Function
 
 	Public Function SelectQuery(
@@ -257,12 +259,12 @@ Public Class Schema
 				Dim sql = $"UPDATE {fromTable} SET {setClauses} WHERE {record_identifier} = @id"
 
 				' DynamicParameters Class Provided By Dapper
-				'Dim parameters = New DynamicParameters(updates)
-				'parameters.Add("@id", id_value)
+				Dim parameters = New DynamicParameters(updates)
+				parameters.Add("@id", id_value)
 
 				db_conn.Open()
 
-				db_conn.Execute(sql, New With {.id = id_value})
+				db_conn.Execute(sql, parameters)
 
 				db_conn.Close()
 

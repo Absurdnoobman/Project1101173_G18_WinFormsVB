@@ -28,6 +28,7 @@ Partial Class StaffCard
 		Me.EditButton = New System.Windows.Forms.Button()
 		Me.StaffIdLabel = New System.Windows.Forms.Label()
 		Me.PositionLabel = New System.Windows.Forms.Label()
+		Me.AddressLabel = New System.Windows.Forms.Label()
 		Me.SuspendLayout()
 		'
 		'FirstNameLabel
@@ -89,11 +90,21 @@ Partial Class StaffCard
 		Me.PositionLabel.TabIndex = 5
 		Me.PositionLabel.Text = "position"
 		'
+		'AddressLabel
+		'
+		Me.AddressLabel.AutoSize = True
+		Me.AddressLabel.Location = New System.Drawing.Point(16, 49)
+		Me.AddressLabel.Name = "AddressLabel"
+		Me.AddressLabel.Size = New System.Drawing.Size(56, 17)
+		Me.AddressLabel.TabIndex = 6
+		Me.AddressLabel.Text = "Address"
+		'
 		'StaffCard
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.Controls.Add(Me.AddressLabel)
 		Me.Controls.Add(Me.PositionLabel)
 		Me.Controls.Add(Me.StaffIdLabel)
 		Me.Controls.Add(Me.EditButton)
@@ -115,4 +126,5 @@ Partial Class StaffCard
     Friend WithEvents EditButton As Button
     Friend WithEvents StaffIdLabel As Label
     Friend WithEvents PositionLabel As Label
+	Friend WithEvents AddressLabel As Label
 End Class

@@ -1,5 +1,5 @@
 ﻿Public Class StaffQualification
-    Public id As UInteger
+    Public id As Integer
     Public staff As Staff
     Public qualified_date As Date
     Public type As String

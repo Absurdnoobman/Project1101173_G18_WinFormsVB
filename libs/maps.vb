@@ -4,13 +4,13 @@
         Return ward
     End Function
 
-    Public Shared Function StaffQualification(staff As Staff, qualification As StaffQualification) As StaffQualification
-        qualification.staff = staff
+    Public Shared Function StaffQualification(s As Staff, qualification As StaffQualification) As StaffQualification
+        qualification.staff = s
         Return qualification
     End Function
 
-    Public Shared Function StaffWorkExp(staff As Staff, workExp As StaffWorkExperience) As StaffWorkExperience
-        workExp.staff = staff
+    Public Shared Function StaffWorkExp(s As Staff, workExp As StaffWorkExperience) As StaffWorkExperience
+        workExp.staff = s
         Return workExp
     End Function
 End Class

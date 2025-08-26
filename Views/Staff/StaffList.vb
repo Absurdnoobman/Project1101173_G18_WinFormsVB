@@ -15,13 +15,18 @@ Public Class StaffList
             Dim search = $"%{SearchTextBox.Text}%"
             Dim result As New List(Of Staff)
             Select Case CStr(SearchByComboBox.SelectedItem)
-                Case "Name"
+                Case "Fullname"
                     result = db.Query(Of Staff, Object)("SELECT * FROM Staffs WHERE firstname LIKE @s OR surname LIKE @s", New With {.s = search})
                     RenderStaffList(result)
                 Case "Firstname"
-
+                    result = db.Query(Of Staff, Object)("SELECT * FROM Staffs WHERE firstname LIKE @s", New With {.s = search})
+                    RenderStaffList(result)
                 Case "Lastname"
-
+                    result = db.Query(Of Staff, Object)("SELECT * FROM Staffs WHERE surname LIKE @s", New With {.s = search})
+                    RenderStaffList(result)
+                Case "Staff Number"
+                    result = db.Query(Of Staff, Object)("SELECT * FROM Staffs WHERE staff_number LIKE @s", New With {.s = search})
+                    RenderStaffList(result)
                 Case Else
                     Exit Sub
             End Select
@@ -42,9 +47,7 @@ Public Class StaffList
         Dim db As New Schema
         Try
             _staffs = db.Query(Of Staff, Object)(
-                "
-                SELECT * FROM Staffs
-                "
+                "SELECT * FROM Staffs"
             )
 
         Catch ex As Exception
@@ -58,6 +61,8 @@ Public Class StaffList
         End Try
 
         RenderStaffList(_staffs)
+
+        SearchByComboBox.SelectedIndex = 0
 
         ' TODO: Query WorkExp and Qualification
 

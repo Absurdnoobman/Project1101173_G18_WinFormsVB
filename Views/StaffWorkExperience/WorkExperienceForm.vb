@@ -1,5 +1,7 @@
 ﻿Public Class WorkExperienceForm
 
+    Public workExp As StaffWorkExperience
+
     Private Sub ResetButton_Click(sender As Object, e As EventArgs) Handles ResetButton.Click
         PositionTextBox.ResetText()
         OrganisationTextBox.ResetText()
@@ -14,5 +16,13 @@
 
     Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
         DialogResult = DialogResult.OK
+        workExp = New StaffWorkExperience With {
+            .position = PositionTextBox.Text,
+            .organisation = OrganisationTextBox.Text,
+            .start_date = StartDateTimePicker.Value,
+            .end_date = EndDateTimePicker.Value
+        }
+
+        Close()
     End Sub
 End Class

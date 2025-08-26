@@ -70,7 +70,7 @@ Partial Class StaffList
 		'
 		'CreateStaffButton
 		'
-		Me.CreateStaffButton.Location = New System.Drawing.Point(628, 24)
+		Me.CreateStaffButton.Location = New System.Drawing.Point(649, 21)
 		Me.CreateStaffButton.Name = "CreateStaffButton"
 		Me.CreateStaffButton.Size = New System.Drawing.Size(144, 26)
 		Me.CreateStaffButton.TabIndex = 6
@@ -81,7 +81,7 @@ Partial Class StaffList
 		'
 		Me.SearchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.SearchByComboBox.FormattingEnabled = True
-		Me.SearchByComboBox.Items.AddRange(New Object() {"Name", "Firstname", "Lastname", "Address"})
+		Me.SearchByComboBox.Items.AddRange(New Object() {"Staff Number", "Fullname", "Firstname", "Lastname", "Address"})
 		Me.SearchByComboBox.Location = New System.Drawing.Point(406, 60)
 		Me.SearchByComboBox.Name = "SearchByComboBox"
 		Me.SearchByComboBox.Size = New System.Drawing.Size(121, 25)
@@ -124,6 +124,7 @@ Partial Class StaffList
 		'
 		Me.OrderByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.OrderByComboBox.FormattingEnabled = True
+		Me.OrderByComboBox.Items.AddRange(New Object() {"Staff Number"})
 		Me.OrderByComboBox.Location = New System.Drawing.Point(610, 60)
 		Me.OrderByComboBox.Name = "OrderByComboBox"
 		Me.OrderByComboBox.Size = New System.Drawing.Size(103, 25)
@@ -136,7 +137,7 @@ Partial Class StaffList
 		Me.FilterFLP.Location = New System.Drawing.Point(93, 99)
 		Me.FilterFLP.Name = "FilterFLP"
 		Me.FilterFLP.Padding = New System.Windows.Forms.Padding(3)
-		Me.FilterFLP.Size = New System.Drawing.Size(586, 63)
+		Me.FilterFLP.Size = New System.Drawing.Size(607, 63)
 		Me.FilterFLP.TabIndex = 14
 		Me.FilterFLP.WrapContents = False
 		'

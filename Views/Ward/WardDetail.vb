@@ -69,6 +69,8 @@
 
 			StaffDataGridView.Refresh()
 
+			CountRecord()
+
 		Catch ex As Exception
 			MessageBox.Show("Internal Error." & vbNewLine & If(Debugger.IsAttached, ex.Message, ""))
 		End Try

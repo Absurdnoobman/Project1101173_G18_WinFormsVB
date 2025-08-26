@@ -111,6 +111,7 @@ Partial Class StaffWardAssignmentForm
 		'
 		'DateWeekBeginingDTP
 		'
+		Me.DateWeekBeginingDTP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
 		Me.DateWeekBeginingDTP.Location = New System.Drawing.Point(493, 64)
 		Me.DateWeekBeginingDTP.Name = "DateWeekBeginingDTP"
 		Me.DateWeekBeginingDTP.Size = New System.Drawing.Size(237, 25)

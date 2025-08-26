@@ -1,26 +1,14 @@
 ﻿Public Class CreateNewStaffForm
 
-	Public qualifications As New List(Of StaffQualification)
-	Public workExperiences As New List(Of StaffWorkExperience)
-
 	Private Sub AddNewQualiButton_Click(sender As Object, e As EventArgs) Handles AddNewQualiButton.Click
 		Dim AddnewQualiForm As New QualificationForm
 
 		Dim result = AddnewQualiForm.ShowDialog()
 		If result = DialogResult.Cancel Then Return
 
-		Dim newQualification As New StaffQualification With {
-			.type = AddnewQualiForm.TypeTextBox.Text,
-			.institution = AddnewQualiForm.InstitutionTextBox.Text,
-			.qualified_date = AddnewQualiForm.DateTimePicker.Value
-		}
+		Dim newQualification = AddnewQualiForm.qualification
 
-		qualifications.Add(newQualification)
-
-		Dim card As New NewQualificationCard
-		card.SetData(newQualification, qualifications.Count() - 1)
-		AddHandler card.OnRemoveButtonPressed, AddressOf HandleQualiCardRemoveEvent
-
+		Dim card As New NewQualificationCard(newQualification, CardStatus.NewlyAdded)
 		QualificationFLP.Controls.Add(card)
 
 	End Sub
@@ -31,33 +19,11 @@
 		Dim result = AddNewWorkExpForm.ShowDialog()
 		If result = DialogResult.Cancel Then Return
 
-		Dim newWorkExp As New StaffWorkExperience With {
-			.position = AddNewWorkExpForm.PositionTextBox.Text,
-			.organisation = AddNewWorkExpForm.OrganisationTextBox.Text,
-			.start_date = AddNewWorkExpForm.StartDateTimePicker.Value,
-			.end_date = AddNewWorkExpForm.EndDateTimePicker.Value
-		}
+		Dim newWorkExp = AddNewWorkExpForm.workExp
 
-		workExperiences.Add(newWorkExp)
-
-		Dim card As New NewWorkExperienceCard
-		card.SetData(newWorkExp, workExperiences.Count() - 1)
-		AddHandler card.OnRemoveButtonPressed, AddressOf HandleWorkExpCardRemoveEvent
-
+		Dim card As New NewWorkExperienceCard(newWorkExp, CardStatus.NewlyAdded)
 		WorksFLP.Controls.Add(card)
 
-	End Sub
-
-	Private Sub HandleQualiCardRemoveEvent(sender As Object)
-		Using card = DirectCast(sender, NewQualificationCard)
-			qualifications.RemoveAt(card.index)
-		End Using
-	End Sub
-
-	Private Sub HandleWorkExpCardRemoveEvent(sender As Object)
-		Using card = DirectCast(sender, NewWorkExperienceCard)
-			workExperiences.RemoveAt(card.index)
-		End Using
 	End Sub
 
 	Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
@@ -115,7 +81,8 @@
 
 		' TODO: WorkExp and Qualification
 
-		For Each qualification In qualifications
+		For Each card In QualificationFLP.Controls
+			Dim qualification = DirectCast(card, NewQualificationCard).thisQualification
 			If Not db.NonSelectQuery(
 					"INSERT INTO Qualifications VALUES (@staff_num, @type, @institution, @qualified_date)",
 					New With {
@@ -129,7 +96,8 @@
 			End If
 		Next
 
-		For Each workExp In workExperiences
+		For Each card In WorksFLP.Controls.Cast(Of NewWorkExperienceCard)
+			Dim workExp = card.thisWorkExp
 			If Not db.NonSelectQuery(
 					"INSERT INTO WorkExperiences VALUES (@staff_num, @position, @organisation, @start_date, @end_date)",
 					New With {
@@ -158,6 +126,6 @@
 	End Sub
 
 	Private Sub ShowPwdCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles ShowPwdCheckBox.CheckedChanged
-		PasswordTextBox.UseSystemPasswordChar = Not ShowPwdCheckBox.Checked
+		PasswordTextBox.UseSystemPasswordChar = Not ShowPwdCheckBox.Checked ' Toggle Show Password
 	End Sub
 End Class

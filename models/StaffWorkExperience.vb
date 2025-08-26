@@ -1,5 +1,5 @@
 ﻿Public Class StaffWorkExperience
-    Public id As UInteger
+    Public id As Integer
     Public staff As Staff
     Public organisation As String
     Public position As String

@@ -250,6 +250,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\CardStatus.vb" />
     <Compile Include="Enums\VisibilityStatus.vb" />
     <Compile Include="libs\AppConfig.vb" />
     <Compile Include="libs\Auth.vb" />
