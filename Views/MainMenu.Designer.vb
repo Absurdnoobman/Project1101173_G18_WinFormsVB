@@ -90,7 +90,7 @@ Partial Class MainMenuForm
 		Me.MakeAppointmentButton.Name = "MakeAppointmentButton"
 		Me.MakeAppointmentButton.Size = New System.Drawing.Size(102, 53)
 		Me.MakeAppointmentButton.TabIndex = 5
-		Me.MakeAppointmentButton.Text = "Make a Appointment"
+		Me.MakeAppointmentButton.Text = "Make a Examination"
 		Me.MakeAppointmentButton.UseVisualStyleBackColor = True
 		'
 		'Button2

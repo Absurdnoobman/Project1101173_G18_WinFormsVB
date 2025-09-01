@@ -1,6 +1,4 @@
-﻿Imports System.Runtime.Remoting.Messaging
-
-Public Class PickStaffDialog
+﻿Public Class PickStaffDialog
 
     Private _isMultiplePick As Boolean
     Private _filterByColumn As String
@@ -71,6 +69,11 @@ Public Class PickStaffDialog
             _staffs = db.Query(Of Staff, Object)(
                 "SELECT * FROM Staffs"
             )
+            If _filterByColumn IsNot Nothing And _filterValue IsNot Nothing Then
+                _staffs = db.Query(Of Staff, Object)(
+                    $"SELECT * FROM Staffs WHERE {_filterByColumn} = @v", New With {.v = _filterValue}
+                )
+            End If
 
             For Each staff In _staffs
                 Dim card As New StaffCardWithCheckBox

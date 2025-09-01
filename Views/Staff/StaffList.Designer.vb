@@ -37,6 +37,8 @@ Partial Class StaffList
 		Me.AddFilterButton = New System.Windows.Forms.Button()
 		Me.RefreshButton = New System.Windows.Forms.Button()
 		Me.OrderComboBox = New System.Windows.Forms.ComboBox()
+		Me.ApplyFilterButton = New System.Windows.Forms.Button()
+		Me.LogicModeButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -124,7 +126,6 @@ Partial Class StaffList
 		'
 		Me.OrderByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.OrderByComboBox.FormattingEnabled = True
-		Me.OrderByComboBox.Items.AddRange(New Object() {"Staff Number"})
 		Me.OrderByComboBox.Location = New System.Drawing.Point(610, 60)
 		Me.OrderByComboBox.Name = "OrderByComboBox"
 		Me.OrderByComboBox.Size = New System.Drawing.Size(103, 25)
@@ -144,17 +145,17 @@ Partial Class StaffList
 		'Label5
 		'
 		Me.Label5.AutoSize = True
-		Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(12, 99)
+		Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(12, 94)
 		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(40, 20)
+		Me.Label5.Size = New System.Drawing.Size(41, 20)
 		Me.Label5.TabIndex = 15
 		Me.Label5.Text = "filter"
 		'
 		'AddFilterButton
 		'
 		Me.AddFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.AddFilterButton.Location = New System.Drawing.Point(12, 122)
+		Me.AddFilterButton.Location = New System.Drawing.Point(12, 139)
 		Me.AddFilterButton.Name = "AddFilterButton"
 		Me.AddFilterButton.Size = New System.Drawing.Size(75, 23)
 		Me.AddFilterButton.TabIndex = 16
@@ -174,17 +175,38 @@ Partial Class StaffList
 		'
 		Me.OrderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.OrderComboBox.FormattingEnabled = True
-		Me.OrderComboBox.Items.AddRange(New Object() {"ACS", "DCS"})
 		Me.OrderComboBox.Location = New System.Drawing.Point(720, 60)
 		Me.OrderComboBox.Name = "OrderComboBox"
 		Me.OrderComboBox.Size = New System.Drawing.Size(73, 25)
 		Me.OrderComboBox.TabIndex = 18
+		'
+		'ApplyFilterButton
+		'
+		Me.ApplyFilterButton.Location = New System.Drawing.Point(706, 131)
+		Me.ApplyFilterButton.Name = "ApplyFilterButton"
+		Me.ApplyFilterButton.Size = New System.Drawing.Size(87, 31)
+		Me.ApplyFilterButton.TabIndex = 19
+		Me.ApplyFilterButton.Text = "Apply"
+		Me.ApplyFilterButton.UseVisualStyleBackColor = True
+		'
+		'LogicModeButton
+		'
+		Me.LogicModeButton.Enabled = False
+		Me.LogicModeButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.LogicModeButton.Location = New System.Drawing.Point(12, 117)
+		Me.LogicModeButton.Name = "LogicModeButton"
+		Me.LogicModeButton.Size = New System.Drawing.Size(75, 23)
+		Me.LogicModeButton.TabIndex = 20
+		Me.LogicModeButton.Text = "AND"
+		Me.LogicModeButton.UseVisualStyleBackColor = True
 		'
 		'StaffList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(805, 596)
+		Me.Controls.Add(Me.LogicModeButton)
+		Me.Controls.Add(Me.ApplyFilterButton)
 		Me.Controls.Add(Me.OrderComboBox)
 		Me.Controls.Add(Me.RefreshButton)
 		Me.Controls.Add(Me.AddFilterButton)
@@ -225,4 +247,6 @@ Partial Class StaffList
     Friend WithEvents AddFilterButton As Button
 	Friend WithEvents RefreshButton As Button
 	Friend WithEvents OrderComboBox As ComboBox
+	Friend WithEvents ApplyFilterButton As Button
+	Friend WithEvents LogicModeButton As Button
 End Class

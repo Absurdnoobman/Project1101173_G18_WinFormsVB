@@ -76,6 +76,39 @@ Public Class Schema
 	End Function
 
 	''' <summary>
+	''' Normal Query Non-casting.
+	''' </summary>
+	''' <typeparam name="TParam"></typeparam>
+	''' <param name="command"></param>
+	''' <param name="param"></param>
+	''' <returns>
+	'''	a List of row as a <see cref="Dictionary(Of TKey, TValue)"/>
+	''' </returns>
+	Public Function Query(Of TParam)(command As String, Optional param As TParam = Nothing) As List(Of Dictionary(Of String, Object))
+		Dim result As IEnumerable(Of Object)
+		Try
+			Using db_conn As New SqlConnection(_connectionString)
+				Dim cmd = db_conn.CreateCommand()
+				cmd.CommandText = command
+
+				db_conn.Open()
+
+				result = db_conn.Query(cmd.CommandText, param)
+
+				db_conn.Close()
+			End Using
+		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
+			Throw ex
+		End Try
+
+		Return result.Select(
+			Function(row) New Dictionary(Of String, Object)(CType(row, IDictionary(Of String, Object)))
+		).ToList()
+
+	End Function
+
+	''' <summary>
 	'''  So much stuff going on.
 	''' </summary>
 	''' <typeparam name="TModel1"> Owner Class </typeparam>
@@ -153,7 +186,9 @@ Public Class Schema
 		fromTable As String,
 		Optional columns As String = "*",
 		Optional whereClauseStr As String = "",
-		Optional selectOption As String = ""
+		Optional selectOption As String = "",
+		Optional orderByColumns As String = "",
+		Optional orderOption As String = "ASC"
 	) As List(Of Dictionary(Of String, Object))
 
 		Dim result As IEnumerable(Of Object)
@@ -162,10 +197,14 @@ Public Class Schema
 			whereClauseStr = $"WHERE {whereClauseStr}"
 		End If
 
+		If Not String.IsNullOrEmpty(orderByColumns) Then
+			orderByColumns = $"ORDER BY {orderByColumns} {orderOption}"
+		End If
+
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
 				Dim cmd = db_conn.CreateCommand()
-				cmd.CommandText = $"SELECT {selectOption}  {columns} FROM {fromTable} {whereClauseStr}"
+				cmd.CommandText = $"SELECT {selectOption}  {columns} FROM {fromTable} {whereClauseStr} {orderByColumns}"
 
 				db_conn.Open()
 

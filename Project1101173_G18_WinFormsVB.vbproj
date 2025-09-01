@@ -251,10 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\CardStatus.vb" />
+    <Compile Include="Enums\SearchMode.vb" />
     <Compile Include="Enums\VisibilityStatus.vb" />
     <Compile Include="libs\AppConfig.vb" />
     <Compile Include="libs\Auth.vb" />
     <Compile Include="libs\Authenticatable.vb" />
+    <Compile Include="libs\EntityAttribute.vb" />
     <Compile Include="libs\maps.vb" />
     <Compile Include="libs\Schema.vb" />
     <Compile Include="libs\Hash.vb" />
@@ -306,11 +308,23 @@
     <Compile Include="Views\Components\Patient\PatientAllocationCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Components\Patient\PatientLargeCard.Designer.vb">
+      <DependentUpon>PatientLargeCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Patient\PatientLargeCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.Designer.vb">
       <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\SearchPopUp.Designer.vb">
+      <DependentUpon>SearchPopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\SearchPopUp.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Components\Staff\SelectedStaffCardWithShift.Designer.vb">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
@@ -322,6 +336,12 @@
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\Staff\StaffCardWithCheckBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\Staff\StaffConsultantCard.Designer.vb">
+      <DependentUpon>StaffConsultantCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Staff\StaffConsultantCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Extended module\StaffReviewForm.Designer.vb">
@@ -493,14 +513,23 @@
     <EmbeddedResource Include="Views\Components\Patient\PatientAllocationCard.resx">
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Patient\PatientLargeCard.resx">
+      <DependentUpon>PatientLargeCard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\PharmaceuticalSupplyCardWithOption.resx">
       <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\SearchPopUp.resx">
+      <DependentUpon>SearchPopUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Staff\SelectedStaffCardWithShift.resx">
       <DependentUpon>SelectedStaffCardWithShift.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Staff\StaffCardWithCheckBox.resx">
       <DependentUpon>StaffCardWithCheckBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Staff\StaffConsultantCard.resx">
+      <DependentUpon>StaffConsultantCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Extended module\StaffReviewForm.resx">
       <DependentUpon>StaffReviewForm.vb</DependentUpon>

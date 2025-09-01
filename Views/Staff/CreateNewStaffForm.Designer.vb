@@ -22,7 +22,6 @@ Partial Class CreateNewStaffForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-		Me.Label1 = New System.Windows.Forms.Label()
 		Me.FirstnameTextBox = New System.Windows.Forms.TextBox()
 		Me.SurnameTextBox = New System.Windows.Forms.TextBox()
 		Me.AddressTextBox = New System.Windows.Forms.TextBox()
@@ -62,17 +61,6 @@ Partial Class CreateNewStaffForm
 		Me.Label18 = New System.Windows.Forms.Label()
 		Me.ShowPwdCheckBox = New System.Windows.Forms.CheckBox()
 		Me.SuspendLayout()
-		'
-		'Label1
-		'
-		Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.Label1.AutoSize = True
-		Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(12, 652)
-		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(132, 23)
-		Me.Label1.TabIndex = 3
-		Me.Label1.Text = "Work in Progress"
 		'
 		'FirstnameTextBox
 		'
@@ -455,7 +443,6 @@ Partial Class CreateNewStaffForm
 		Me.Controls.Add(Me.AddressTextBox)
 		Me.Controls.Add(Me.SurnameTextBox)
 		Me.Controls.Add(Me.FirstnameTextBox)
-		Me.Controls.Add(Me.Label1)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
 		Me.MaximizeBox = False
@@ -465,10 +452,8 @@ Partial Class CreateNewStaffForm
 		Me.PerformLayout()
 
 	End Sub
-
-	Friend WithEvents Label1 As Label
-    Friend WithEvents FirstnameTextBox As TextBox
-    Friend WithEvents SurnameTextBox As TextBox
+	Friend WithEvents FirstnameTextBox As TextBox
+	Friend WithEvents SurnameTextBox As TextBox
     Friend WithEvents AddressTextBox As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

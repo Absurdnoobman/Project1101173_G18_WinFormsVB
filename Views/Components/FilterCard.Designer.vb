@@ -1,88 +1,92 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FilterCard
-    Inherits System.Windows.Forms.UserControl
+	Inherits System.Windows.Forms.UserControl
 
-    'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'UserControl overrides dispose to clean up the component list.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+	'Required by the Windows Form Designer
+	Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
-    Private Sub InitializeComponent()
-        Me.RemoveButton = New System.Windows.Forms.Button()
-        Me.ValueComboBox = New System.Windows.Forms.ComboBox()
-        Me.TypeComboBox = New System.Windows.Forms.ComboBox()
-        Me.ColumnComboBox = New System.Windows.Forms.ComboBox()
-        Me.SuspendLayout()
-        '
-        'RemoveButton
-        '
-        Me.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.RemoveButton.Location = New System.Drawing.Point(352, 5)
-        Me.RemoveButton.Name = "RemoveButton"
-        Me.RemoveButton.Size = New System.Drawing.Size(75, 23)
-        Me.RemoveButton.TabIndex = 7
-        Me.RemoveButton.Text = "Remove"
-        Me.RemoveButton.UseVisualStyleBackColor = True
-        '
-        'ValueComboBox
-        '
-        Me.ValueComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ValueComboBox.FormattingEnabled = True
-        Me.ValueComboBox.Location = New System.Drawing.Point(224, 4)
-        Me.ValueComboBox.Name = "ValueComboBox"
-        Me.ValueComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.ValueComboBox.TabIndex = 6
-        '
-        'TypeComboBox
-        '
-        Me.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.TypeComboBox.FormattingEnabled = True
-        Me.TypeComboBox.Location = New System.Drawing.Point(133, 4)
-        Me.TypeComboBox.Name = "TypeComboBox"
-        Me.TypeComboBox.Size = New System.Drawing.Size(85, 24)
-        Me.TypeComboBox.TabIndex = 5
-        '
-        'ColumnComboBox
-        '
-        Me.ColumnComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ColumnComboBox.FormattingEnabled = True
-        Me.ColumnComboBox.Location = New System.Drawing.Point(6, 4)
-        Me.ColumnComboBox.Name = "ColumnComboBox"
-        Me.ColumnComboBox.Size = New System.Drawing.Size(121, 24)
-        Me.ColumnComboBox.TabIndex = 4
-        '
-        'FilterCard
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Controls.Add(Me.RemoveButton)
-        Me.Controls.Add(Me.ValueComboBox)
-        Me.Controls.Add(Me.TypeComboBox)
-        Me.Controls.Add(Me.ColumnComboBox)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.Name = "FilterCard"
-        Me.Size = New System.Drawing.Size(431, 48)
-        Me.ResumeLayout(False)
+	'NOTE: The following procedure is required by the Windows Form Designer
+	'It can be modified using the Windows Form Designer.  
+	'Do not modify it using the code editor.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
+		Me.RemoveButton = New System.Windows.Forms.Button()
+		Me.FieldComboBox = New System.Windows.Forms.ComboBox()
+		Me.EntityComboBox = New System.Windows.Forms.ComboBox()
+		Me.CustomSearchSlotFLP = New System.Windows.Forms.FlowLayoutPanel()
+		Me.SuspendLayout()
+		'
+		'RemoveButton
+		'
+		Me.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.RemoveButton.Location = New System.Drawing.Point(353, 5)
+		Me.RemoveButton.Name = "RemoveButton"
+		Me.RemoveButton.Size = New System.Drawing.Size(66, 24)
+		Me.RemoveButton.TabIndex = 7
+		Me.RemoveButton.Text = "Remove"
+		Me.RemoveButton.UseVisualStyleBackColor = True
+		'
+		'FieldComboBox
+		'
+		Me.FieldComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.FieldComboBox.FormattingEnabled = True
+		Me.FieldComboBox.Location = New System.Drawing.Point(103, 4)
+		Me.FieldComboBox.Name = "FieldComboBox"
+		Me.FieldComboBox.Size = New System.Drawing.Size(78, 25)
+		Me.FieldComboBox.TabIndex = 5
+		'
+		'EntityComboBox
+		'
+		Me.EntityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.EntityComboBox.FormattingEnabled = True
+		Me.EntityComboBox.Location = New System.Drawing.Point(5, 4)
+		Me.EntityComboBox.Name = "EntityComboBox"
+		Me.EntityComboBox.Size = New System.Drawing.Size(92, 25)
+		Me.EntityComboBox.TabIndex = 4
+		'
+		'CustomSearchSlotFLP
+		'
+		Me.CustomSearchSlotFLP.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+			Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.CustomSearchSlotFLP.Location = New System.Drawing.Point(184, 5)
+		Me.CustomSearchSlotFLP.Margin = New System.Windows.Forms.Padding(0)
+		Me.CustomSearchSlotFLP.Name = "CustomSearchSlotFLP"
+		Me.CustomSearchSlotFLP.Size = New System.Drawing.Size(163, 25)
+		Me.CustomSearchSlotFLP.TabIndex = 8
+		Me.CustomSearchSlotFLP.WrapContents = False
+		'
+		'FilterCard
+		'
+		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.Controls.Add(Me.CustomSearchSlotFLP)
+		Me.Controls.Add(Me.RemoveButton)
+		Me.Controls.Add(Me.FieldComboBox)
+		Me.Controls.Add(Me.EntityComboBox)
+		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Margin = New System.Windows.Forms.Padding(4)
+		Me.Name = "FilterCard"
+		Me.Size = New System.Drawing.Size(422, 45)
+		Me.ResumeLayout(False)
 
-    End Sub
+	End Sub
 
-    Friend WithEvents RemoveButton As Button
-    Friend WithEvents ValueComboBox As ComboBox
-    Friend WithEvents TypeComboBox As ComboBox
-    Friend WithEvents ColumnComboBox As ComboBox
+	Friend WithEvents RemoveButton As Button
+	Friend WithEvents FieldComboBox As ComboBox
+	Friend WithEvents EntityComboBox As ComboBox
+	Friend WithEvents CustomSearchSlotFLP As FlowLayoutPanel
 End Class

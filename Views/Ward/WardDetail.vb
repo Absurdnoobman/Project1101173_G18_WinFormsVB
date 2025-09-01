@@ -83,4 +83,5 @@
 	Private Sub EditAssignmentButton_Click(sender As Object, e As EventArgs) Handles EditAssignmentButton.Click
 		' TODO
 	End Sub
+
 End Class

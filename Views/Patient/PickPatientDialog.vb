@@ -11,6 +11,7 @@
         _isMultiplePick = False
         _filterByColumn = ""
 
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
     Private Sub New(isMultiple As Boolean)
@@ -19,6 +20,7 @@
 
         _isMultiplePick = isMultiple
 
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
 

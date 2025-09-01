@@ -102,22 +102,22 @@
 		Dim db As New Schema
 
 		If Not db.Update("Staffs", "staff_number", staff_num,
-				New Dictionary(Of String, Object) From {
-					{"firstname", firstname},
-					{"surname", surname},
-					{"sex", sex},
-					{"address", address},
-					{"date_of_birth", dob},
-					{"telephone", telephone},
-					{"national_insurance_num", nin},
-					{"position", position},
-					{"contract_type", contract},
-					{"salary", salary},
-					{"salary_scale", salary_scale},
-					{"hours_per_week", hours_per_week},
-					{"payment_type", payment}
-				}
-			) Then
+			New Dictionary(Of String, Object) From {
+				{"firstname", firstname},
+				{"surname", surname},
+				{"sex", sex},
+				{"address", address},
+				{"date_of_birth", dob},
+				{"telephone", telephone},
+				{"national_insurance_num", nin},
+				{"position", position},
+				{"contract_type", contract},
+				{"salary", salary},
+				{"salary_scale", salary_scale},
+				{"hours_per_week", hours_per_week},
+				{"payment_type", payment}
+			}
+		) Then
 			MessageBox.Show("Fail to update")
 			Exit Sub
 		Else

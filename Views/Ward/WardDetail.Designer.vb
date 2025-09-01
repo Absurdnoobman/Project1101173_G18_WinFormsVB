@@ -132,6 +132,7 @@ Partial Class WardDetailForm
 		'
 		'EditAssignmentButton
 		'
+		Me.EditAssignmentButton.Enabled = False
 		Me.EditAssignmentButton.Location = New System.Drawing.Point(543, 431)
 		Me.EditAssignmentButton.Name = "EditAssignmentButton"
 		Me.EditAssignmentButton.Size = New System.Drawing.Size(142, 32)
