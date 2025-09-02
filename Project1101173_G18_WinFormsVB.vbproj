@@ -277,6 +277,18 @@
     <Compile Include="Views\Appointment\AppointmentList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Appointment\NewAppointmentForm.Designer.vb">
+      <DependentUpon>NewAppointmentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Appointment\NewAppointmentForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Components\Appointment\AppointmentCard.Designer.vb">
+      <DependentUpon>AppointmentCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Appointment\AppointmentCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Components\ggggCard.Designer.vb">
       <DependentUpon>ggggCard.vb</DependentUpon>
     </Compile>
@@ -306,6 +318,12 @@
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\Patient\PatientAllocationCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\Patient\PatientCardWithCheckBox.Designer.vb">
+      <DependentUpon>PatientCardWithCheckBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Patient\PatientCardWithCheckBox.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Components\Patient\PatientLargeCard.Designer.vb">
@@ -498,6 +516,12 @@
     <EmbeddedResource Include="Views\Appointment\AppointmentList.resx">
       <DependentUpon>AppointmentList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Appointment\NewAppointmentForm.resx">
+      <DependentUpon>NewAppointmentForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Appointment\AppointmentCard.resx">
+      <DependentUpon>AppointmentCard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\ggggCard.resx">
       <DependentUpon>ggggCard.vb</DependentUpon>
     </EmbeddedResource>
@@ -512,6 +536,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Patient\PatientAllocationCard.resx">
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Patient\PatientCardWithCheckBox.resx">
+      <DependentUpon>PatientCardWithCheckBox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Patient\PatientLargeCard.resx">
       <DependentUpon>PatientLargeCard.vb</DependentUpon>
@@ -632,6 +659,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="4417111_browser_laptop_on_web_browsing_icon.ico" />
+    <None Include="Resources\fi-snslxs-minecraft-pickaxe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

@@ -101,6 +101,7 @@ Partial Class WardDetailForm
 		Me.StaffDataGridView.AllowUserToAddRows = False
 		Me.StaffDataGridView.AllowUserToDeleteRows = False
 		Me.StaffDataGridView.AllowUserToOrderColumns = True
+		Me.StaffDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.StaffDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.StaffDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
 		Me.StaffDataGridView.Location = New System.Drawing.Point(16, 150)

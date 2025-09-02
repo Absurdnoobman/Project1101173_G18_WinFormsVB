@@ -41,6 +41,10 @@ Public Class MainMenuForm
             Dispose()
         End If
 
+        If Auth.User() IsNot Nothing Then
+            Label2.Text = $"Welcome {Auth.User.firstname}, Position: {Auth.User.position}"
+        End If
+
     End Sub
 
     Private Sub NewSupplyButton_Click(sender As Object, e As EventArgs) Handles NewSupplyButton.Click
@@ -60,6 +64,11 @@ Public Class MainMenuForm
 
     Private Sub ReviewStaffButton_Click(sender As Object, e As EventArgs) Handles ReviewStaffButton.Click
         Dim f As New StaffReviewForm
+        f.ShowDialog()
+    End Sub
+
+    Private Sub AppointmentButton_Click(sender As Object, e As EventArgs) Handles AppointmentButton.Click
+        Dim f As New AppointmentList
         f.ShowDialog()
     End Sub
 End Class

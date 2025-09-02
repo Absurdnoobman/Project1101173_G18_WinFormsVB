@@ -22,13 +22,14 @@ Partial Class MainMenuForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenuForm))
 		Me.OpenStaffListButton = New System.Windows.Forms.Button()
 		Me.OpenWardButton = New System.Windows.Forms.Button()
-		Me.Label1 = New System.Windows.Forms.Label()
+		Me.WIPLabel = New System.Windows.Forms.Label()
 		Me.OpenPatientButton = New System.Windows.Forms.Button()
 		Me.WardAssignmentButton = New System.Windows.Forms.Button()
 		Me.MakeAppointmentButton = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
+		Me.AppointmentButton = New System.Windows.Forms.Button()
 		Me.AllocationButton = New System.Windows.Forms.Button()
 		Me.NewSupplyButton = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
@@ -55,16 +56,16 @@ Partial Class MainMenuForm
 		Me.OpenWardButton.Text = "Ward"
 		Me.OpenWardButton.UseVisualStyleBackColor = True
 		'
-		'Label1
+		'WIPLabel
 		'
-		Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.Label1.AutoSize = True
-		Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(562, 523)
-		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(132, 23)
-		Me.Label1.TabIndex = 2
-		Me.Label1.Text = "Work in Progress"
+		Me.WIPLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.WIPLabel.AutoSize = True
+		Me.WIPLabel.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.WIPLabel.Location = New System.Drawing.Point(562, 523)
+		Me.WIPLabel.Name = "WIPLabel"
+		Me.WIPLabel.Size = New System.Drawing.Size(132, 23)
+		Me.WIPLabel.TabIndex = 2
+		Me.WIPLabel.Text = "Work in Progress"
 		'
 		'OpenPatientButton
 		'
@@ -93,14 +94,14 @@ Partial Class MainMenuForm
 		Me.MakeAppointmentButton.Text = "Make a Examination"
 		Me.MakeAppointmentButton.UseVisualStyleBackColor = True
 		'
-		'Button2
+		'AppointmentButton
 		'
-		Me.Button2.Location = New System.Drawing.Point(260, 162)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(102, 53)
-		Me.Button2.TabIndex = 6
-		Me.Button2.Text = "Appointments"
-		Me.Button2.UseVisualStyleBackColor = True
+		Me.AppointmentButton.Location = New System.Drawing.Point(260, 162)
+		Me.AppointmentButton.Name = "AppointmentButton"
+		Me.AppointmentButton.Size = New System.Drawing.Size(102, 53)
+		Me.AppointmentButton.TabIndex = 6
+		Me.AppointmentButton.Text = "Appointments"
+		Me.AppointmentButton.UseVisualStyleBackColor = True
 		'
 		'AllocationButton
 		'
@@ -170,14 +171,15 @@ Partial Class MainMenuForm
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.NewSupplyButton)
 		Me.Controls.Add(Me.AllocationButton)
-		Me.Controls.Add(Me.Button2)
+		Me.Controls.Add(Me.AppointmentButton)
 		Me.Controls.Add(Me.MakeAppointmentButton)
 		Me.Controls.Add(Me.WardAssignmentButton)
 		Me.Controls.Add(Me.OpenPatientButton)
-		Me.Controls.Add(Me.Label1)
+		Me.Controls.Add(Me.WIPLabel)
 		Me.Controls.Add(Me.OpenWardButton)
 		Me.Controls.Add(Me.OpenStaffListButton)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.MinimumSize = New System.Drawing.Size(724, 525)
 		Me.Name = "MainMenuForm"
@@ -189,11 +191,11 @@ Partial Class MainMenuForm
 
 	Friend WithEvents OpenStaffListButton As Button
     Friend WithEvents OpenWardButton As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents WIPLabel As Label
     Friend WithEvents OpenPatientButton As Button
     Friend WithEvents WardAssignmentButton As Button
     Friend WithEvents MakeAppointmentButton As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents AppointmentButton As Button
     Friend WithEvents AllocationButton As Button
     Friend WithEvents NewSupplyButton As Button
 	Friend WithEvents Label2 As Label

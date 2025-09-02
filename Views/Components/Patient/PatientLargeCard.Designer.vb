@@ -22,17 +22,69 @@ Partial Class PatientLargeCard
 	'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
+		Me.FullnameLabel = New System.Windows.Forms.Label()
+		Me.PatientNumberLabel = New System.Windows.Forms.Label()
+		Me.TelephoneLabel = New System.Windows.Forms.Label()
+		Me.AddressLabel = New System.Windows.Forms.Label()
 		Me.SuspendLayout()
+		'
+		'FullnameLabel
+		'
+		Me.FullnameLabel.AutoSize = True
+		Me.FullnameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.FullnameLabel.Location = New System.Drawing.Point(130, 16)
+		Me.FullnameLabel.Name = "FullnameLabel"
+		Me.FullnameLabel.Size = New System.Drawing.Size(80, 23)
+		Me.FullnameLabel.TabIndex = 3
+		Me.FullnameLabel.Text = "Fullname"
+		'
+		'PatientNumberLabel
+		'
+		Me.PatientNumberLabel.AutoSize = True
+		Me.PatientNumberLabel.Font = New System.Drawing.Font("Cascadia Code", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.PatientNumberLabel.Location = New System.Drawing.Point(15, 12)
+		Me.PatientNumberLabel.Name = "PatientNumberLabel"
+		Me.PatientNumberLabel.Size = New System.Drawing.Size(84, 27)
+		Me.PatientNumberLabel.TabIndex = 2
+		Me.PatientNumberLabel.Text = "P-----"
+		'
+		'TelephoneLabel
+		'
+		Me.TelephoneLabel.AutoSize = True
+		Me.TelephoneLabel.Location = New System.Drawing.Point(17, 89)
+		Me.TelephoneLabel.Name = "TelephoneLabel"
+		Me.TelephoneLabel.Size = New System.Drawing.Size(68, 17)
+		Me.TelephoneLabel.TabIndex = 5
+		Me.TelephoneLabel.Text = "Telephone"
+		'
+		'AddressLabel
+		'
+		Me.AddressLabel.AutoSize = True
+		Me.AddressLabel.Location = New System.Drawing.Point(17, 58)
+		Me.AddressLabel.Name = "AddressLabel"
+		Me.AddressLabel.Size = New System.Drawing.Size(56, 17)
+		Me.AddressLabel.TabIndex = 4
+		Me.AddressLabel.Text = "Address"
 		'
 		'PatientLargeCard
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.Controls.Add(Me.TelephoneLabel)
+		Me.Controls.Add(Me.AddressLabel)
+		Me.Controls.Add(Me.FullnameLabel)
+		Me.Controls.Add(Me.PatientNumberLabel)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Name = "PatientLargeCard"
+		Me.Padding = New System.Windows.Forms.Padding(12)
 		Me.Size = New System.Drawing.Size(529, 141)
 		Me.ResumeLayout(False)
+		Me.PerformLayout()
 
 	End Sub
 
+	Friend WithEvents FullnameLabel As Label
+	Friend WithEvents PatientNumberLabel As Label
+	Friend WithEvents TelephoneLabel As Label
+	Friend WithEvents AddressLabel As Label
 End Class

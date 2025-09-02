@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AppointmentList
 	Inherits System.Windows.Forms.Form
 
 	'Form overrides dispose to clean up the component list.
-	<System.Diagnostics.DebuggerNonUserCode()> _
+	<System.Diagnostics.DebuggerNonUserCode()>
 	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 		Try
 			If disposing AndAlso components IsNot Nothing Then
@@ -20,102 +20,192 @@ Partial Class AppointmentList
 	'NOTE: The following procedure is required by the Windows Form Designer
 	'It can be modified using the Windows Form Designer.  
 	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()> _
+	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppointmentList))
 		Me.SearchTextBox = New System.Windows.Forms.TextBox()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.AddFilterButton = New System.Windows.Forms.Button()
-		Me.Label5 = New System.Windows.Forms.Label()
-		Me.FilterFLP = New System.Windows.Forms.FlowLayoutPanel()
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.MakeAppointmentButton = New System.Windows.Forms.Button()
+		Me.Label2 = New System.Windows.Forms.Label()
+		Me.Label3 = New System.Windows.Forms.Label()
+		Me.OrderByComboBox = New System.Windows.Forms.ComboBox()
+		Me.OrderComboBox = New System.Windows.Forms.ComboBox()
+		Me.SearchByComboBox = New System.Windows.Forms.ComboBox()
+		Me.Label4 = New System.Windows.Forms.Label()
+		Me.AppointmentDGV = New System.Windows.Forms.DataGridView()
+		Me.RefreshButton = New System.Windows.Forms.Button()
+		Me.Button1 = New System.Windows.Forms.Button()
+		Me.Button2 = New System.Windows.Forms.Button()
+		CType(Me.AppointmentDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
-		'
-		'DataGridView1
-		'
-		Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.DataGridView1.Location = New System.Drawing.Point(9, 118)
-		Me.DataGridView1.Name = "DataGridView1"
-		Me.DataGridView1.ReadOnly = True
-		Me.DataGridView1.RowHeadersWidth = 51
-		Me.DataGridView1.RowTemplate.Height = 24
-		Me.DataGridView1.Size = New System.Drawing.Size(682, 351)
-		Me.DataGridView1.TabIndex = 0
 		'
 		'SearchTextBox
 		'
-		Me.SearchTextBox.Location = New System.Drawing.Point(169, 15)
+		Me.SearchTextBox.Location = New System.Drawing.Point(65, 47)
 		Me.SearchTextBox.Name = "SearchTextBox"
-		Me.SearchTextBox.Size = New System.Drawing.Size(264, 25)
+		Me.SearchTextBox.Size = New System.Drawing.Size(223, 25)
 		Me.SearchTextBox.TabIndex = 1
 		'
 		'Label1
 		'
 		Me.Label1.AutoSize = True
-		Me.Label1.Location = New System.Drawing.Point(9, 18)
+		Me.Label1.Location = New System.Drawing.Point(12, 50)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(154, 17)
+		Me.Label1.Size = New System.Drawing.Size(47, 17)
 		Me.Label1.TabIndex = 2
-		Me.Label1.Text = "Search by patient's name"
+		Me.Label1.Text = "Search"
 		'
-		'AddFilterButton
+		'MakeAppointmentButton
 		'
-		Me.AddFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.AddFilterButton.Location = New System.Drawing.Point(11, 72)
-		Me.AddFilterButton.Name = "AddFilterButton"
-		Me.AddFilterButton.Size = New System.Drawing.Size(75, 23)
-		Me.AddFilterButton.TabIndex = 19
-		Me.AddFilterButton.Text = "Add"
-		Me.AddFilterButton.UseVisualStyleBackColor = True
+		Me.MakeAppointmentButton.Location = New System.Drawing.Point(587, 13)
+		Me.MakeAppointmentButton.Name = "MakeAppointmentButton"
+		Me.MakeAppointmentButton.Size = New System.Drawing.Size(154, 28)
+		Me.MakeAppointmentButton.TabIndex = 3
+		Me.MakeAppointmentButton.Text = "Make An Appointment"
+		Me.MakeAppointmentButton.UseVisualStyleBackColor = True
 		'
-		'Label5
+		'Label2
 		'
-		Me.Label5.AutoSize = True
-		Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(11, 49)
-		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(40, 20)
-		Me.Label5.TabIndex = 18
-		Me.Label5.Text = "filter"
+		Me.Label2.AutoSize = True
+		Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label2.Location = New System.Drawing.Point(10, 10)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(146, 28)
+		Me.Label2.TabIndex = 4
+		Me.Label2.Text = "Appointments"
 		'
-		'FilterFLP
+		'Label3
 		'
-		Me.FilterFLP.AutoScroll = True
-		Me.FilterFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.FilterFLP.Location = New System.Drawing.Point(92, 49)
-		Me.FilterFLP.Name = "FilterFLP"
-		Me.FilterFLP.Padding = New System.Windows.Forms.Padding(3)
-		Me.FilterFLP.Size = New System.Drawing.Size(599, 63)
-		Me.FilterFLP.TabIndex = 17
-		Me.FilterFLP.WrapContents = False
+		Me.Label3.AutoSize = True
+		Me.Label3.Location = New System.Drawing.Point(485, 50)
+		Me.Label3.Name = "Label3"
+		Me.Label3.Size = New System.Drawing.Size(60, 17)
+		Me.Label3.TabIndex = 6
+		Me.Label3.Text = "Order By"
+		'
+		'OrderByComboBox
+		'
+		Me.OrderByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.OrderByComboBox.FormattingEnabled = True
+		Me.OrderByComboBox.Location = New System.Drawing.Point(551, 47)
+		Me.OrderByComboBox.Name = "OrderByComboBox"
+		Me.OrderByComboBox.Size = New System.Drawing.Size(105, 25)
+		Me.OrderByComboBox.TabIndex = 8
+		'
+		'OrderComboBox
+		'
+		Me.OrderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.OrderComboBox.FormattingEnabled = True
+		Me.OrderComboBox.Location = New System.Drawing.Point(662, 47)
+		Me.OrderComboBox.Name = "OrderComboBox"
+		Me.OrderComboBox.Size = New System.Drawing.Size(79, 25)
+		Me.OrderComboBox.TabIndex = 9
+		'
+		'SearchByComboBox
+		'
+		Me.SearchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.SearchByComboBox.FormattingEnabled = True
+		Me.SearchByComboBox.Location = New System.Drawing.Point(376, 47)
+		Me.SearchByComboBox.Name = "SearchByComboBox"
+		Me.SearchByComboBox.Size = New System.Drawing.Size(94, 25)
+		Me.SearchByComboBox.TabIndex = 10
+		'
+		'Label4
+		'
+		Me.Label4.AutoSize = True
+		Me.Label4.Location = New System.Drawing.Point(306, 50)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(64, 17)
+		Me.Label4.TabIndex = 11
+		Me.Label4.Text = "Search By"
+		'
+		'AppointmentDGV
+		'
+		Me.AppointmentDGV.AllowUserToAddRows = False
+		Me.AppointmentDGV.AllowUserToDeleteRows = False
+		Me.AppointmentDGV.AllowUserToOrderColumns = True
+		Me.AppointmentDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.AppointmentDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.AppointmentDGV.Location = New System.Drawing.Point(10, 87)
+		Me.AppointmentDGV.Name = "AppointmentDGV"
+		Me.AppointmentDGV.ReadOnly = True
+		Me.AppointmentDGV.RowHeadersWidth = 51
+		Me.AppointmentDGV.RowTemplate.Height = 24
+		Me.AppointmentDGV.Size = New System.Drawing.Size(731, 342)
+		Me.AppointmentDGV.TabIndex = 12
+		'
+		'RefreshButton
+		'
+		Me.RefreshButton.Location = New System.Drawing.Point(10, 436)
+		Me.RefreshButton.Name = "RefreshButton"
+		Me.RefreshButton.Size = New System.Drawing.Size(90, 33)
+		Me.RefreshButton.TabIndex = 13
+		Me.RefreshButton.Text = "Refresh"
+		Me.RefreshButton.UseVisualStyleBackColor = True
+		'
+		'Button1
+		'
+		Me.Button1.Enabled = False
+		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.Button1.Location = New System.Drawing.Point(665, 436)
+		Me.Button1.Name = "Button1"
+		Me.Button1.Size = New System.Drawing.Size(75, 33)
+		Me.Button1.TabIndex = 14
+		Me.Button1.Text = "Edit"
+		Me.Button1.UseVisualStyleBackColor = True
+		'
+		'Button2
+		'
+		Me.Button2.Enabled = False
+		Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.Button2.Location = New System.Drawing.Point(587, 435)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(75, 34)
+		Me.Button2.TabIndex = 15
+		Me.Button2.Text = "Delete"
+		Me.Button2.UseVisualStyleBackColor = True
 		'
 		'AppointmentList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(700, 478)
-		Me.Controls.Add(Me.AddFilterButton)
-		Me.Controls.Add(Me.Label5)
-		Me.Controls.Add(Me.FilterFLP)
+		Me.ClientSize = New System.Drawing.Size(750, 478)
+		Me.Controls.Add(Me.Button2)
+		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.RefreshButton)
+		Me.Controls.Add(Me.AppointmentDGV)
+		Me.Controls.Add(Me.Label4)
+		Me.Controls.Add(Me.SearchByComboBox)
+		Me.Controls.Add(Me.OrderComboBox)
+		Me.Controls.Add(Me.OrderByComboBox)
+		Me.Controls.Add(Me.Label3)
+		Me.Controls.Add(Me.Label2)
+		Me.Controls.Add(Me.MakeAppointmentButton)
 		Me.Controls.Add(Me.Label1)
 		Me.Controls.Add(Me.SearchTextBox)
-		Me.Controls.Add(Me.DataGridView1)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.Name = "AppointmentList"
 		Me.Padding = New System.Windows.Forms.Padding(6)
 		Me.Text = "Appointments"
-		CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.AppointmentDGV, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
 	End Sub
-
-	Friend WithEvents DataGridView1 As DataGridView
 	Friend WithEvents SearchTextBox As TextBox
 	Friend WithEvents Label1 As Label
-	Friend WithEvents AddFilterButton As Button
-	Friend WithEvents Label5 As Label
-	Friend WithEvents FilterFLP As FlowLayoutPanel
+	Friend WithEvents MakeAppointmentButton As Button
+	Friend WithEvents Label2 As Label
+	Friend WithEvents Label3 As Label
+	Friend WithEvents OrderByComboBox As ComboBox
+	Friend WithEvents OrderComboBox As ComboBox
+	Friend WithEvents SearchByComboBox As ComboBox
+	Friend WithEvents Label4 As Label
+	Friend WithEvents AppointmentDGV As DataGridView
+	Friend WithEvents RefreshButton As Button
+	Friend WithEvents Button1 As Button
+	Friend WithEvents Button2 As Button
 End Class

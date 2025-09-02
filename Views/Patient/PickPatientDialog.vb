@@ -3,6 +3,10 @@
     Private _filterByColumn As String
     Private _filterValue As Object
 
+    Private _patients As List(Of Patient)
+
+    Public result As List(Of Patient)
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -65,15 +69,56 @@
             Text = "Pick a Patient"
         End If
 
-        Dim dt As New List(Of Patient) From {
-            New Patient With {.id = "2344", .Firstname = "Mannee", .Surname = "jolo in squad"},
-            New Patient With {.id = "4433", .Firstname = "GG", .Surname = "WP"}
-        }
+        Dim db As New Schema
+        Try
+            _patients = db.Query(Of Patient, Object)("SELECT * FROM Patients")
+            If _filterByColumn IsNot Nothing And _filterValue IsNot Nothing Then
+                _patients = db.Query(Of Patient, Object)(
+                    $"SELECT * FROM Patients WHERE {_filterByColumn} = @v", New With {.v = _filterValue}
+                )
+            End If
 
-        For Each patient In dt
-
-        Next
+            For Each patient In _patients
+                Dim card As New PatientCardWithCheckBox
+                card.SetData(patient)
+                PatientFLP.Controls.Add(card)
+            Next
+        Catch ex As Exception
+            MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
+            DialogResult = DialogResult.Abort
+            Dispose()
+        End Try
 
     End Sub
 
+    Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
+        Dim selected_card As List(Of PatientCardWithCheckBox) = PatientFLP.Controls.Cast(Of PatientCardWithCheckBox).ToList().FindAll(
+            Function(c) c.isSelected
+        )
+
+        If selected_card.Count = 0 Then
+            DialogResult = DialogResult.Cancel
+            Close()
+            Exit Sub
+        End If
+
+        Dim selected_patient_num As List(Of String) = selected_card.Select(
+            Function(c) c.PatientNumberLabel.Text
+        ).ToList()
+
+        result = _patients.FindAll(
+            Function(p) selected_patient_num.Contains(p.patient_number)
+        )
+
+        DialogResult = DialogResult.OK
+        Close()
+    End Sub
+
+    Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+
+    End Sub
+
+    Private Sub SearchByComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SearchByComboBox.SelectedIndexChanged
+
+    End Sub
 End Class

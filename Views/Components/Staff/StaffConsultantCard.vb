@@ -13,8 +13,8 @@
 		TelephoneLabel.Text = staff.telephone
 
 		If ward IsNot Nothing Then
-			WardLabel.Text = $"Ward {ward.ward_number}: {ward.name}"
-			WeekLabel.Text = $"{week.ToShortDateString}"
+			WardLabel.Text = $"Currently Assigned to Ward {ward.ward_number}: {ward.name}"
+			WeekLabel.Text = $"{week.ToLongDateString}"
 		Else
 			WardLabel.Text = "Currently has not been Assign to ward."
 			WeekLabel.Text = ""
