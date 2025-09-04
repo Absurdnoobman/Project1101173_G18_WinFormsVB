@@ -36,6 +36,7 @@ Partial Class MainMenuForm
 		Me.MedicationButton = New System.Windows.Forms.Button()
 		Me.NewPharmaSupplyButton = New System.Windows.Forms.Button()
 		Me.ReviewStaffButton = New System.Windows.Forms.Button()
+		Me.NewAllocationButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'OpenStaffListButton
@@ -160,11 +161,21 @@ Partial Class MainMenuForm
 		Me.ReviewStaffButton.Text = "Review Staff"
 		Me.ReviewStaffButton.UseVisualStyleBackColor = True
 		'
+		'NewAllocationButton
+		'
+		Me.NewAllocationButton.Location = New System.Drawing.Point(152, 221)
+		Me.NewAllocationButton.Name = "NewAllocationButton"
+		Me.NewAllocationButton.Size = New System.Drawing.Size(102, 53)
+		Me.NewAllocationButton.TabIndex = 13
+		Me.NewAllocationButton.Text = "New Allocation"
+		Me.NewAllocationButton.UseVisualStyleBackColor = True
+		'
 		'MainMenuForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(706, 555)
+		Me.Controls.Add(Me.NewAllocationButton)
 		Me.Controls.Add(Me.ReviewStaffButton)
 		Me.Controls.Add(Me.NewPharmaSupplyButton)
 		Me.Controls.Add(Me.MedicationButton)
@@ -183,7 +194,7 @@ Partial Class MainMenuForm
 		Me.MaximizeBox = False
 		Me.MinimumSize = New System.Drawing.Size(724, 525)
 		Me.Name = "MainMenuForm"
-		Me.Text = "Main Menu"
+		Me.Text = "Main Menu (DEBUG)"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -202,4 +213,5 @@ Partial Class MainMenuForm
 	Friend WithEvents MedicationButton As Button
 	Friend WithEvents NewPharmaSupplyButton As Button
 	Friend WithEvents ReviewStaffButton As Button
+	Friend WithEvents NewAllocationButton As Button
 End Class

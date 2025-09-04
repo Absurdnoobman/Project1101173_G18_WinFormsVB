@@ -251,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\CardStatus.vb" />
+    <Compile Include="Enums\HandleEmptyMode.vb" />
     <Compile Include="Enums\SearchMode.vb" />
     <Compile Include="Enums\VisibilityStatus.vb" />
     <Compile Include="libs\AppConfig.vb" />
@@ -261,8 +262,9 @@
     <Compile Include="libs\Schema.vb" />
     <Compile Include="libs\Hash.vb" />
     <Compile Include="libs\TEST.vb" />
+    <Compile Include="libs\WardComboBoxItem.vb" />
     <Compile Include="Models\Appointment.vb" />
-    <Compile Include="Models\PatientAllocation.vb" />
+    <Compile Include="Models\Admission.vb" />
     <Compile Include="Models\PatientLocalDoctor.vb" />
     <Compile Include="Models\PatientNextOfKin.vb" />
     <Compile Include="Models\Patient.vb" />
@@ -318,6 +320,12 @@
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\Patient\PatientAllocationCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\Patient\PatientAllocationCardWithOption.Designer.vb">
+      <DependentUpon>PatientAllocationCardWithOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Patient\PatientAllocationCardWithOption.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Components\Patient\PatientCardWithCheckBox.Designer.vb">
@@ -378,6 +386,12 @@
       <DependentUpon>MedicationForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Medication\MedicationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Patient\NewPatientAllocationForm.Designer.vb">
+      <DependentUpon>NewPatientAllocationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patient\NewPatientAllocationForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Patient\PatientExaminationList.Designer.vb">
@@ -537,6 +551,9 @@
     <EmbeddedResource Include="Views\Components\Patient\PatientAllocationCard.resx">
       <DependentUpon>PatientAllocationCard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Patient\PatientAllocationCardWithOption.resx">
+      <DependentUpon>PatientAllocationCardWithOption.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Patient\PatientCardWithCheckBox.resx">
       <DependentUpon>PatientCardWithCheckBox.vb</DependentUpon>
     </EmbeddedResource>
@@ -566,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Medication\MedicationForm.resx">
       <DependentUpon>MedicationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patient\NewPatientAllocationForm.resx">
+      <DependentUpon>NewPatientAllocationForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PatientExaminationList.resx">
       <DependentUpon>PatientExaminationList.vb</DependentUpon>

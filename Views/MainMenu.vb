@@ -71,4 +71,9 @@ Public Class MainMenuForm
         Dim f As New AppointmentList
         f.ShowDialog()
     End Sub
+
+    Private Sub NewAllocationButton_Click(sender As Object, e As EventArgs) Handles NewAllocationButton.Click
+        Dim f As New NewPatientAllocationForm
+        f.ShowDialog()
+    End Sub
 End Class

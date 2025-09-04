@@ -22,6 +22,7 @@ Partial Class PatientAllocationList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PatientAllocationList))
 		Me.WardComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
@@ -35,6 +36,7 @@ Partial Class PatientAllocationList
 		Me.ChargeNurseFullnameLabel = New System.Windows.Forms.Label()
 		Me.RecordsNumberLabel = New System.Windows.Forms.Label()
 		Me.AllocationDGV = New System.Windows.Forms.DataGridView()
+		Me.EditAllocationButton = New System.Windows.Forms.Button()
 		Me.ChargeNurseFLP.SuspendLayout()
 		CType(Me.AllocationDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
@@ -98,7 +100,7 @@ Partial Class PatientAllocationList
 		'
 		Me.LocationLabel.AutoSize = True
 		Me.LocationLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.LocationLabel.Location = New System.Drawing.Point(28, 91)
+		Me.LocationLabel.Location = New System.Drawing.Point(29, 91)
 		Me.LocationLabel.Name = "LocationLabel"
 		Me.LocationLabel.Size = New System.Drawing.Size(67, 20)
 		Me.LocationLabel.TabIndex = 6
@@ -150,6 +152,7 @@ Partial Class PatientAllocationList
 		'
 		'RecordsNumberLabel
 		'
+		Me.RecordsNumberLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
 		Me.RecordsNumberLabel.AutoSize = True
 		Me.RecordsNumberLabel.Location = New System.Drawing.Point(29, 436)
 		Me.RecordsNumberLabel.Name = "RecordsNumberLabel"
@@ -165,6 +168,7 @@ Partial Class PatientAllocationList
 		Me.AllocationDGV.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
 			Or System.Windows.Forms.AnchorStyles.Left) _
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.AllocationDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.AllocationDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.AllocationDGV.Location = New System.Drawing.Point(20, 135)
 		Me.AllocationDGV.Name = "AllocationDGV"
@@ -174,11 +178,23 @@ Partial Class PatientAllocationList
 		Me.AllocationDGV.Size = New System.Drawing.Size(710, 288)
 		Me.AllocationDGV.TabIndex = 11
 		'
+		'EditAllocationButton
+		'
+		Me.EditAllocationButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.EditAllocationButton.Enabled = False
+		Me.EditAllocationButton.Location = New System.Drawing.Point(586, 430)
+		Me.EditAllocationButton.Name = "EditAllocationButton"
+		Me.EditAllocationButton.Size = New System.Drawing.Size(143, 39)
+		Me.EditAllocationButton.TabIndex = 12
+		Me.EditAllocationButton.Text = "Edit Allocation"
+		Me.EditAllocationButton.UseVisualStyleBackColor = True
+		'
 		'PatientAllocationList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(753, 478)
+		Me.Controls.Add(Me.EditAllocationButton)
 		Me.Controls.Add(Me.AllocationDGV)
 		Me.Controls.Add(Me.RecordsNumberLabel)
 		Me.Controls.Add(Me.ChargeNurseFLP)
@@ -192,6 +208,7 @@ Partial Class PatientAllocationList
 		Me.Controls.Add(Me.WardComboBox)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.Name = "PatientAllocationList"
 		Me.Padding = New System.Windows.Forms.Padding(5, 6, 5, 6)
@@ -217,4 +234,5 @@ Partial Class PatientAllocationList
     Friend WithEvents ChargeNurseFullnameLabel As Label
 	Friend WithEvents RecordsNumberLabel As Label
 	Friend WithEvents AllocationDGV As DataGridView
+	Friend WithEvents EditAllocationButton As Button
 End Class

@@ -1,4 +1,4 @@
-﻿Public Enum CardStatus
+﻿Public Enum CardStatus As UShort
 	Original
 	NewlyAdded
 	Edited

@@ -26,7 +26,7 @@
         MaritalStatusComboBox.SelectedIndex = -1
         TelephoneTextBox.Clear()
         DateOfBirthDTP.Value = Date.Today
-        DateRegisteredDTP.Value = Date.Today
+        'DateRegisteredDTP.Value = Date.Today
 
         ' CLEAR all Text input in Next-of-kin Detail
         FullnameNOKTextBox.Clear()
@@ -57,7 +57,7 @@
         Dim telephone = TelephoneTextBox.Text
         Dim dob = DateOfBirthDTP.Value
         Dim marital_status As String = MaritalStatusComboBox.SelectedItem
-        Dim date_registered As Date = DateRegisteredDTP.Value
+        'Dim date_registered As Date = DateRegisteredDTP.Value
 
         ' Next of kin
         Dim fullnameNOK = FullnameNOKTextBox.Text

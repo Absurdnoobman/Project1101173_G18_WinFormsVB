@@ -45,12 +45,15 @@ Partial Class StaffWardAssignmentForm
 		'
 		'StaffFLP
 		'
+		Me.StaffFLP.AutoScroll = True
 		Me.StaffFLP.BackColor = System.Drawing.SystemColors.ActiveBorder
 		Me.StaffFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.StaffFLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
 		Me.StaffFLP.Location = New System.Drawing.Point(16, 38)
 		Me.StaffFLP.Name = "StaffFLP"
 		Me.StaffFLP.Size = New System.Drawing.Size(457, 425)
 		Me.StaffFLP.TabIndex = 1
+		Me.StaffFLP.WrapContents = False
 		'
 		'PickStaffButton
 		'

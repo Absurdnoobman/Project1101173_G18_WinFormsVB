@@ -44,6 +44,7 @@
 
 	Private Sub DisplayWardDetail(ward_num As Integer)
 		Dim ward = _wards.Find(Function(w) w.ward_number = ward_num)
+
 		NameLabel.Text = $"Name: {ward.name}"
 		LocationLabel.Text = $"Location: {ward.location}"
 		ExtNumberLabel.Text = $"Telephone Ext. : {ward.telephone_ext}"
@@ -69,7 +70,7 @@
 
 			StaffDataGridView.Refresh()
 
-			CountRecord()
+			'CountRecord()
 
 		Catch ex As Exception
 			MessageBox.Show("Internal Error." & vbNewLine & If(Debugger.IsAttached, ex.Message, ""))
@@ -84,4 +85,7 @@
 		' TODO
 	End Sub
 
+	Private Sub StaffDataGridView_DataSourceChanged(sender As Object, e As EventArgs) Handles StaffDataGridView.DataSourceChanged
+		CountRecord()
+	End Sub
 End Class

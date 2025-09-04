@@ -9,10 +9,17 @@
                 fk:="charge_nurse"
             )
 
-            For Each ward In wards
-                Dim ward_str As String = $"Ward {ward.ward_number}: {ward.name}"
-                WardsComboBox.Items.Add(ward_str)
-            Next
+            Dim ward_items As List(Of WardComboBoxItem) =
+                wards.Select(
+                    Function(w)
+                        Dim ward_str As String = $"Ward {w.ward_number}: {w.name}"
+                        Return New WardComboBoxItem(ward_str, w)
+                    End Function
+                ).ToList()
+
+            WardsComboBox.DataSource = ward_items
+            WardsComboBox.DisplayMember = "Display"
+            WardsComboBox.ValueMember = "Ward"
 
         Catch ex As Exception
             MessageBox.Show("Internal SQL error.")

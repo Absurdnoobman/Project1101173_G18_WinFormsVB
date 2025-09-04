@@ -36,7 +36,7 @@ Partial Class PharmaceuticalSupplyCardWithOption
 		'
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(20, 18)
+		Me.Label1.Location = New System.Drawing.Point(20, 16)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(56, 23)
 		Me.Label1.TabIndex = 0
@@ -45,7 +45,7 @@ Partial Class PharmaceuticalSupplyCardWithOption
 		'Label2
 		'
 		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(22, 52)
+		Me.Label2.Location = New System.Drawing.Point(21, 49)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(54, 17)
 		Me.Label2.TabIndex = 1
@@ -64,7 +64,7 @@ Partial Class PharmaceuticalSupplyCardWithOption
 		'Label3
 		'
 		Me.Label3.AutoSize = True
-		Me.Label3.Location = New System.Drawing.Point(21, 79)
+		Me.Label3.Location = New System.Drawing.Point(21, 75)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(53, 17)
 		Me.Label3.TabIndex = 3

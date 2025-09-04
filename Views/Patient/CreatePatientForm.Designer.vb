@@ -28,7 +28,6 @@ Partial Class CreatePatientForm
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.Label5 = New System.Windows.Forms.Label()
-		Me.Label6 = New System.Windows.Forms.Label()
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.Label10 = New System.Windows.Forms.Label()
@@ -40,7 +39,6 @@ Partial Class CreatePatientForm
 		Me.SexComboBox = New System.Windows.Forms.ComboBox()
 		Me.MaritalStatusComboBox = New System.Windows.Forms.ComboBox()
 		Me.DateOfBirthDTP = New System.Windows.Forms.DateTimePicker()
-		Me.DateRegisteredDTP = New System.Windows.Forms.DateTimePicker()
 		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
 		Me.ResetNextOfKinButton = New System.Windows.Forms.Button()
 		Me.AddressNOKTextBox = New System.Windows.Forms.TextBox()
@@ -122,19 +120,10 @@ Partial Class CreatePatientForm
 		Me.Label5.TabIndex = 41
 		Me.Label5.Text = "Date of Birth"
 		'
-		'Label6
-		'
-		Me.Label6.AutoSize = True
-		Me.Label6.Location = New System.Drawing.Point(310, 198)
-		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(102, 17)
-		Me.Label6.TabIndex = 42
-		Me.Label6.Text = "Date Registered"
-		'
 		'Label7
 		'
 		Me.Label7.AutoSize = True
-		Me.Label7.Location = New System.Drawing.Point(20, 170)
+		Me.Label7.Location = New System.Drawing.Point(20, 159)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(68, 17)
 		Me.Label7.TabIndex = 43
@@ -184,12 +173,12 @@ Partial Class CreatePatientForm
 		Me.AddressTextBox.Location = New System.Drawing.Point(97, 87)
 		Me.AddressTextBox.Multiline = True
 		Me.AddressTextBox.Name = "AddressTextBox"
-		Me.AddressTextBox.Size = New System.Drawing.Size(185, 71)
+		Me.AddressTextBox.Size = New System.Drawing.Size(185, 57)
 		Me.AddressTextBox.TabIndex = 50
 		'
 		'TelephoneTextBox
 		'
-		Me.TelephoneTextBox.Location = New System.Drawing.Point(97, 167)
+		Me.TelephoneTextBox.Location = New System.Drawing.Point(97, 156)
 		Me.TelephoneTextBox.Name = "TelephoneTextBox"
 		Me.TelephoneTextBox.Size = New System.Drawing.Size(185, 25)
 		Me.TelephoneTextBox.TabIndex = 51
@@ -221,13 +210,6 @@ Partial Class CreatePatientForm
 		Me.DateOfBirthDTP.Size = New System.Drawing.Size(231, 25)
 		Me.DateOfBirthDTP.TabIndex = 54
 		'
-		'DateRegisteredDTP
-		'
-		Me.DateRegisteredDTP.Location = New System.Drawing.Point(422, 192)
-		Me.DateRegisteredDTP.Name = "DateRegisteredDTP"
-		Me.DateRegisteredDTP.Size = New System.Drawing.Size(231, 25)
-		Me.DateRegisteredDTP.TabIndex = 55
-		'
 		'GroupBox1
 		'
 		Me.GroupBox1.Controls.Add(Me.ResetNextOfKinButton)
@@ -240,7 +222,7 @@ Partial Class CreatePatientForm
 		Me.GroupBox1.Controls.Add(Me.FullnameNOKTextBox)
 		Me.GroupBox1.Controls.Add(Me.Label9)
 		Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.GroupBox1.Location = New System.Drawing.Point(15, 224)
+		Me.GroupBox1.Location = New System.Drawing.Point(15, 198)
 		Me.GroupBox1.Name = "GroupBox1"
 		Me.GroupBox1.Padding = New System.Windows.Forms.Padding(6)
 		Me.GroupBox1.Size = New System.Drawing.Size(670, 132)
@@ -324,7 +306,8 @@ Partial Class CreatePatientForm
 		'
 		'AddButton
 		'
-		Me.AddButton.Location = New System.Drawing.Point(600, 505)
+		Me.AddButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.AddButton.Location = New System.Drawing.Point(600, 485)
 		Me.AddButton.Name = "AddButton"
 		Me.AddButton.Size = New System.Drawing.Size(85, 30)
 		Me.AddButton.TabIndex = 58
@@ -342,7 +325,7 @@ Partial Class CreatePatientForm
 		Me.GroupBox2.Controls.Add(Me.Label17)
 		Me.GroupBox2.Controls.Add(Me.Label16)
 		Me.GroupBox2.Controls.Add(Me.Label14)
-		Me.GroupBox2.Location = New System.Drawing.Point(15, 363)
+		Me.GroupBox2.Location = New System.Drawing.Point(15, 337)
 		Me.GroupBox2.Name = "GroupBox2"
 		Me.GroupBox2.Padding = New System.Windows.Forms.Padding(6)
 		Me.GroupBox2.Size = New System.Drawing.Size(670, 136)
@@ -426,7 +409,8 @@ Partial Class CreatePatientForm
 		'
 		'ResetButton
 		'
-		Me.ResetButton.Location = New System.Drawing.Point(509, 505)
+		Me.ResetButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.ResetButton.Location = New System.Drawing.Point(509, 485)
 		Me.ResetButton.Name = "ResetButton"
 		Me.ResetButton.Size = New System.Drawing.Size(85, 30)
 		Me.ResetButton.TabIndex = 60
@@ -437,12 +421,11 @@ Partial Class CreatePatientForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(700, 542)
+		Me.ClientSize = New System.Drawing.Size(700, 522)
 		Me.Controls.Add(Me.ResetButton)
 		Me.Controls.Add(Me.GroupBox2)
 		Me.Controls.Add(Me.AddButton)
 		Me.Controls.Add(Me.GroupBox1)
-		Me.Controls.Add(Me.DateRegisteredDTP)
 		Me.Controls.Add(Me.DateOfBirthDTP)
 		Me.Controls.Add(Me.MaritalStatusComboBox)
 		Me.Controls.Add(Me.SexComboBox)
@@ -454,7 +437,6 @@ Partial Class CreatePatientForm
 		Me.Controls.Add(Me.Label10)
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.Label6)
 		Me.Controls.Add(Me.Label5)
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.Label3)
@@ -482,21 +464,19 @@ Partial Class CreatePatientForm
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents FirstnameTextBox As TextBox
-    Friend WithEvents SurnameTextBox As TextBox
-    Friend WithEvents PatientNumberTextBox As TextBox
-    Friend WithEvents AddressTextBox As TextBox
-    Friend WithEvents TelephoneTextBox As TextBox
-    Friend WithEvents SexComboBox As ComboBox
-    Friend WithEvents MaritalStatusComboBox As ComboBox
-    Friend WithEvents DateOfBirthDTP As DateTimePicker
-    Friend WithEvents DateRegisteredDTP As DateTimePicker
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents FullnameNOKTextBox As TextBox
+	Friend WithEvents Label7 As Label
+	Friend WithEvents Label8 As Label
+	Friend WithEvents Label10 As Label
+	Friend WithEvents FirstnameTextBox As TextBox
+	Friend WithEvents SurnameTextBox As TextBox
+	Friend WithEvents PatientNumberTextBox As TextBox
+	Friend WithEvents AddressTextBox As TextBox
+	Friend WithEvents TelephoneTextBox As TextBox
+	Friend WithEvents SexComboBox As ComboBox
+	Friend WithEvents MaritalStatusComboBox As ComboBox
+	Friend WithEvents DateOfBirthDTP As DateTimePicker
+	Friend WithEvents GroupBox1 As GroupBox
+	Friend WithEvents FullnameNOKTextBox As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents AddressNOKTextBox As TextBox
     Friend WithEvents TelephoneNOKTextBox As TextBox
