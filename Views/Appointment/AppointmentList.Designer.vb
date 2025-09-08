@@ -27,9 +27,6 @@ Partial Class AppointmentList
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.MakeAppointmentButton = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.Label3 = New System.Windows.Forms.Label()
-		Me.OrderByComboBox = New System.Windows.Forms.ComboBox()
-		Me.OrderComboBox = New System.Windows.Forms.ComboBox()
 		Me.SearchByComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.AppointmentDGV = New System.Windows.Forms.DataGridView()
@@ -74,40 +71,14 @@ Partial Class AppointmentList
 		Me.Label2.TabIndex = 4
 		Me.Label2.Text = "Appointments"
 		'
-		'Label3
-		'
-		Me.Label3.AutoSize = True
-		Me.Label3.Location = New System.Drawing.Point(485, 50)
-		Me.Label3.Name = "Label3"
-		Me.Label3.Size = New System.Drawing.Size(60, 17)
-		Me.Label3.TabIndex = 6
-		Me.Label3.Text = "Order By"
-		'
-		'OrderByComboBox
-		'
-		Me.OrderByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.OrderByComboBox.FormattingEnabled = True
-		Me.OrderByComboBox.Location = New System.Drawing.Point(551, 47)
-		Me.OrderByComboBox.Name = "OrderByComboBox"
-		Me.OrderByComboBox.Size = New System.Drawing.Size(105, 25)
-		Me.OrderByComboBox.TabIndex = 8
-		'
-		'OrderComboBox
-		'
-		Me.OrderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-		Me.OrderComboBox.FormattingEnabled = True
-		Me.OrderComboBox.Location = New System.Drawing.Point(662, 47)
-		Me.OrderComboBox.Name = "OrderComboBox"
-		Me.OrderComboBox.Size = New System.Drawing.Size(79, 25)
-		Me.OrderComboBox.TabIndex = 9
-		'
 		'SearchByComboBox
 		'
 		Me.SearchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.SearchByComboBox.FormattingEnabled = True
+		Me.SearchByComboBox.Items.AddRange(New Object() {"Patient Number", "Fullname"})
 		Me.SearchByComboBox.Location = New System.Drawing.Point(376, 47)
 		Me.SearchByComboBox.Name = "SearchByComboBox"
-		Me.SearchByComboBox.Size = New System.Drawing.Size(94, 25)
+		Me.SearchByComboBox.Size = New System.Drawing.Size(111, 25)
 		Me.SearchByComboBox.TabIndex = 10
 		'
 		'Label4
@@ -176,9 +147,6 @@ Partial Class AppointmentList
 		Me.Controls.Add(Me.AppointmentDGV)
 		Me.Controls.Add(Me.Label4)
 		Me.Controls.Add(Me.SearchByComboBox)
-		Me.Controls.Add(Me.OrderComboBox)
-		Me.Controls.Add(Me.OrderByComboBox)
-		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.MakeAppointmentButton)
 		Me.Controls.Add(Me.Label1)
@@ -199,9 +167,6 @@ Partial Class AppointmentList
 	Friend WithEvents Label1 As Label
 	Friend WithEvents MakeAppointmentButton As Button
 	Friend WithEvents Label2 As Label
-	Friend WithEvents Label3 As Label
-	Friend WithEvents OrderByComboBox As ComboBox
-	Friend WithEvents OrderComboBox As ComboBox
 	Friend WithEvents SearchByComboBox As ComboBox
 	Friend WithEvents Label4 As Label
 	Friend WithEvents AppointmentDGV As DataGridView

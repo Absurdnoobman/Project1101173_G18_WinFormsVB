@@ -143,9 +143,9 @@ Partial Class CreatePatientForm
 		Me.Label10.AutoSize = True
 		Me.Label10.Location = New System.Drawing.Point(399, 21)
 		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(106, 17)
+		Me.Label10.Size = New System.Drawing.Size(99, 17)
 		Me.Label10.TabIndex = 46
-		Me.Label10.Text = "Paatient Number"
+		Me.Label10.Text = "Patient Number"
 		'
 		'FirstnameTextBox
 		'

@@ -27,13 +27,13 @@ Partial Class MedicationForm
 		Me.MedicationFLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.AddButton = New System.Windows.Forms.Button()
-		Me.CreateButton = New System.Windows.Forms.Button()
+		Me.SaveButton = New System.Windows.Forms.Button()
 		Me.CancelButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'SelectPatientButton
 		'
-		Me.SelectPatientButton.Location = New System.Drawing.Point(544, 9)
+		Me.SelectPatientButton.Location = New System.Drawing.Point(551, 9)
 		Me.SelectPatientButton.Name = "SelectPatientButton"
 		Me.SelectPatientButton.Size = New System.Drawing.Size(113, 59)
 		Me.SelectPatientButton.TabIndex = 1
@@ -51,11 +51,12 @@ Partial Class MedicationForm
 		'MedicationFLP
 		'
 		Me.MedicationFLP.AutoScroll = True
+		Me.MedicationFLP.BackColor = System.Drawing.SystemColors.ActiveBorder
 		Me.MedicationFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.MedicationFLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
 		Me.MedicationFLP.Location = New System.Drawing.Point(9, 213)
 		Me.MedicationFLP.Name = "MedicationFLP"
-		Me.MedicationFLP.Size = New System.Drawing.Size(648, 301)
+		Me.MedicationFLP.Size = New System.Drawing.Size(655, 301)
 		Me.MedicationFLP.TabIndex = 3
 		Me.MedicationFLP.WrapContents = False
 		'
@@ -71,22 +72,23 @@ Partial Class MedicationForm
 		'
 		'AddButton
 		'
+		Me.AddButton.Enabled = False
 		Me.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.AddButton.Location = New System.Drawing.Point(544, 172)
+		Me.AddButton.Location = New System.Drawing.Point(551, 172)
 		Me.AddButton.Name = "AddButton"
 		Me.AddButton.Size = New System.Drawing.Size(113, 28)
 		Me.AddButton.TabIndex = 5
 		Me.AddButton.Text = "Add"
 		Me.AddButton.UseVisualStyleBackColor = True
 		'
-		'CreateButton
+		'SaveButton
 		'
-		Me.CreateButton.Location = New System.Drawing.Point(565, 532)
-		Me.CreateButton.Name = "CreateButton"
-		Me.CreateButton.Size = New System.Drawing.Size(92, 32)
-		Me.CreateButton.TabIndex = 6
-		Me.CreateButton.Text = "Save"
-		Me.CreateButton.UseVisualStyleBackColor = True
+		Me.SaveButton.Location = New System.Drawing.Point(565, 532)
+		Me.SaveButton.Name = "SaveButton"
+		Me.SaveButton.Size = New System.Drawing.Size(92, 32)
+		Me.SaveButton.TabIndex = 6
+		Me.SaveButton.Text = "Save"
+		Me.SaveButton.UseVisualStyleBackColor = True
 		'
 		'CancelButton
 		'
@@ -102,9 +104,9 @@ Partial Class MedicationForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(666, 573)
+		Me.ClientSize = New System.Drawing.Size(673, 573)
 		Me.Controls.Add(Me.CancelButton)
-		Me.Controls.Add(Me.CreateButton)
+		Me.Controls.Add(Me.SaveButton)
 		Me.Controls.Add(Me.AddButton)
 		Me.Controls.Add(Me.Label1)
 		Me.Controls.Add(Me.MedicationFLP)
@@ -115,7 +117,7 @@ Partial Class MedicationForm
 		Me.MaximizeBox = False
 		Me.Name = "MedicationForm"
 		Me.Padding = New System.Windows.Forms.Padding(6)
-		Me.Text = "Edit Medication Record"
+		Me.Text = "Medication Record"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -126,6 +128,6 @@ Partial Class MedicationForm
 	Friend WithEvents MedicationFLP As FlowLayoutPanel
 	Friend WithEvents Label1 As Label
 	Friend WithEvents AddButton As Button
-	Friend WithEvents CreateButton As Button
+	Friend WithEvents SaveButton As Button
 	Friend WithEvents CancelButton As Button
 End Class

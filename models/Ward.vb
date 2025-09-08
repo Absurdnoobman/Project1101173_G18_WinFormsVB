@@ -1,8 +1,8 @@
 ﻿Public Class Ward
-    Public ward_number As Integer
-    Public name As String
-    Public location As String
-    Public telephone_ext As String
-    Public number_of_beds As Integer
-    Public charge_nurse As Staff
+    Public Property ward_number As Integer
+    Public Property name As String
+    Public Property location As String
+    Public Property telephone_ext As String
+    Public Property number_of_beds As Integer
+    Public Property charge_nurse As Staff
 End Class

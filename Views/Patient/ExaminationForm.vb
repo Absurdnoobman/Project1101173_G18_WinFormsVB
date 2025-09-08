@@ -9,6 +9,8 @@
 
         Dim patient = f.result.First
 
+        PatientFLP.Controls.Clear()
+
         Dim card As New PatientLargeCard(patient)
 
         PatientFLP.Controls.Add(card)
@@ -38,6 +40,8 @@
                 MessageBox.Show($"Can NOT find ward with number {data("ward_num")}")
                 Exit Sub
             End If
+
+            ConsultantFLP.Controls.Clear()
 
             Dim card As New StaffConsultantCard(staff, w.First, data("week_beginning"))
 

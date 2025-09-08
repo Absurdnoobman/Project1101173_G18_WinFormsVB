@@ -1,7 +1,7 @@
 ﻿Public Class StaffQualification
-    Public id As Integer
-    Public staff As Staff
-    Public qualified_date As Date
-    Public type As String
-    Public institution As String
+    Public Property id As Integer
+    Public Property staff As Staff
+    Public Property qualified_date As Date
+    Public Property type As String
+    Public Property institution As String
 End Class

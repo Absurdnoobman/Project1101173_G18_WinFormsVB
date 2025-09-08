@@ -87,7 +87,7 @@
                 SELECT 
                     a.patient_num AS ""Patient Number"", 
                     p.firstname + ' ' + p.surname AS ""Patient Fullname"",
-                    a.bed_number  AS ""Bed NUmber"",
+                    a.bed_number  AS ""Bed Number"",
                     a.admission_date AS ""Date Placed"",
                     a.expected_duration_days AS ""Expected Stay (Days)"",
                     DATEADD(DAY, a.expected_duration_days, a.admission_date) AS ""Date Leave""

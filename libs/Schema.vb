@@ -4,6 +4,8 @@ Imports Microsoft.Extensions.Configuration
 Imports SqlConnection = Microsoft.Data.SqlClient.SqlConnection
 Imports SqlDataAdapter = Microsoft.Data.SqlClient.SqlDataAdapter
 
+Imports QueryRows = System.Collections.Generic.List(Of System.Collections.Generic.Dictionary(Of String, Object))
+
 ''' <summary>
 ''' All-in-one solution for database access in this project. Powered By <see cref="Dapper"/>
 ''' </summary>
@@ -84,7 +86,7 @@ Public Class Schema
 	''' <returns>
 	'''	a List of row as a <see cref="Dictionary(Of TKey, TValue)"/>
 	''' </returns>
-	Public Function Query(Of TParam)(command As String, Optional param As TParam = Nothing) As List(Of Dictionary(Of String, Object))
+	Public Function Query(Of TParam)(command As String, Optional param As TParam = Nothing) As QueryRows
 		Dim result As IEnumerable(Of Object)
 		Try
 			Using db_conn As New SqlConnection(_connectionString)
@@ -189,7 +191,7 @@ Public Class Schema
 		Optional selectOption As String = "",
 		Optional orderByColumns As String = "",
 		Optional orderOption As String = "ASC"
-	) As List(Of Dictionary(Of String, Object))
+	) As QueryRows
 
 		Dim result As IEnumerable(Of Object)
 

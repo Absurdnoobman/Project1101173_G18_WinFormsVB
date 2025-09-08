@@ -1,6 +1,6 @@
 ﻿Public Class PatientNextOfKin
-    Public fullname As String
-    Public relationship As String
-    Public telephone As String
-    Public address As String
+    Public Property fullname As String
+    Public Property relationship As String
+    Public Property telephone As String
+    Public Property address As String
 End Class

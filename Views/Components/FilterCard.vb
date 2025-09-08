@@ -47,9 +47,9 @@ Public Class FilterCard
         End Select
     End Sub
 
-    Public Function GetDbQueryString() As String
-        ' TODO
-    End Function
+    'Public Function GetDbQueryString() As String
+    '    ' TODO
+    'End Function
 
     Public Function GetDbQueryString(customTableNameMapping As Dictionary(Of String, String)) As (command As String, params As Object)
         ' Check for the given custom name mapping keys (Display name) that is NOT in the EntityComboBox's Items List. 

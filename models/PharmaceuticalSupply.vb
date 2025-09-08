@@ -1,9 +1,11 @@
 ﻿Public Class PharmaceuticalSupply
-    Public id As String
-    Public name As String
-    Public description As String
-    Public dosage As Double
-    Public methodOfAdmin As String
-    Public reorderLevel As Double
-    Public costPerUnit As Double
+    Public Property drug_number As String
+    Public Property supplier As Supplier
+    Public Property name As String
+    Public Property description As String
+    Public Property dosage As Double
+    Public Property method As String
+    Public Property quantity As Integer
+    Public Property reorder_level As Integer
+    Public Property cost_per_unit As Double
 End Class

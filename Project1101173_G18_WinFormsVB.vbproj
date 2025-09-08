@@ -161,6 +161,9 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.8.14.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
@@ -258,6 +261,7 @@
     <Compile Include="libs\Auth.vb" />
     <Compile Include="libs\Authenticatable.vb" />
     <Compile Include="libs\EntityAttribute.vb" />
+    <Compile Include="libs\Export.vb" />
     <Compile Include="libs\maps.vb" />
     <Compile Include="libs\Schema.vb" />
     <Compile Include="libs\Hash.vb" />
@@ -265,6 +269,7 @@
     <Compile Include="libs\WardComboBoxItem.vb" />
     <Compile Include="Models\Appointment.vb" />
     <Compile Include="Models\Admission.vb" />
+    <Compile Include="Models\Medication.vb" />
     <Compile Include="Models\PatientLocalDoctor.vb" />
     <Compile Include="Models\PatientNextOfKin.vb" />
     <Compile Include="Models\Patient.vb" />
@@ -340,10 +345,16 @@
     <Compile Include="Views\Components\Patient\PatientLargeCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.Designer.vb">
+    <Compile Include="Views\Components\PharmarceuticalSupply\PharmaceuticalCardWithCheckBox.Designer.vb">
+      <DependentUpon>PharmaceuticalCardWithCheckBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\PharmarceuticalSupply\PharmaceuticalCardWithCheckBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\PharmarceuticalSupply\PharmaceuticalSupplyCardWithOption.Designer.vb">
       <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
     </Compile>
-    <Compile Include="Views\Components\PharmaceuticalSupplyCardWithOption.vb">
+    <Compile Include="Views\Components\PharmarceuticalSupply\PharmaceuticalSupplyCardWithOption.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Components\SearchPopUp.Designer.vb">
@@ -370,6 +381,12 @@
     <Compile Include="Views\Components\Staff\StaffConsultantCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Extended module\ReviewSummaryForm.Designer.vb">
+      <DependentUpon>ReviewSummaryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Extended module\ReviewSummaryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Extended module\StaffReviewForm.Designer.vb">
       <DependentUpon>StaffReviewForm.vb</DependentUpon>
     </Compile>
@@ -386,6 +403,12 @@
       <DependentUpon>MedicationForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Medication\MedicationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Medication\MedicationReport.Designer.vb">
+      <DependentUpon>MedicationReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Medication\MedicationReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Patient\NewPatientAllocationForm.Designer.vb">
@@ -428,6 +451,12 @@
       <DependentUpon>CreateNewPharmaceuticalSupply.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalSupply\PickPharmaceuticalSupply.Designer.vb">
+      <DependentUpon>PickPharmaceuticalSupply.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PharmaceuticalSupply\PickPharmaceuticalSupply.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\StaffQualification\QualificationForm.Designer.vb">
@@ -560,7 +589,10 @@
     <EmbeddedResource Include="Views\Components\Patient\PatientLargeCard.resx">
       <DependentUpon>PatientLargeCard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Components\PharmaceuticalSupplyCardWithOption.resx">
+    <EmbeddedResource Include="Views\Components\PharmarceuticalSupply\PharmaceuticalCardWithCheckBox.resx">
+      <DependentUpon>PharmaceuticalCardWithCheckBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\PharmarceuticalSupply\PharmaceuticalSupplyCardWithOption.resx">
       <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\SearchPopUp.resx">
@@ -575,6 +607,9 @@
     <EmbeddedResource Include="Views\Components\Staff\StaffConsultantCard.resx">
       <DependentUpon>StaffConsultantCard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Extended module\ReviewSummaryForm.resx">
+      <DependentUpon>ReviewSummaryForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Extended module\StaffReviewForm.resx">
       <DependentUpon>StaffReviewForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -583,6 +618,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Medication\MedicationForm.resx">
       <DependentUpon>MedicationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Medication\MedicationReport.resx">
+      <DependentUpon>MedicationReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\NewPatientAllocationForm.resx">
       <DependentUpon>NewPatientAllocationForm.vb</DependentUpon>
@@ -604,6 +642,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.resx">
       <DependentUpon>CreateNewPharmaceuticalSupply.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PharmaceuticalSupply\PickPharmaceuticalSupply.resx">
+      <DependentUpon>PickPharmaceuticalSupply.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StaffQualification\QualificationForm.resx">
       <DependentUpon>QualificationForm.vb</DependentUpon>

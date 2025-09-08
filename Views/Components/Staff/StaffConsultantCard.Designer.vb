@@ -44,7 +44,7 @@ Partial Class StaffConsultantCard
 		'
 		Me.FullnameLabel.AutoSize = True
 		Me.FullnameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.FullnameLabel.Location = New System.Drawing.Point(112, 20)
+		Me.FullnameLabel.Location = New System.Drawing.Point(112, 19)
 		Me.FullnameLabel.Name = "FullnameLabel"
 		Me.FullnameLabel.Size = New System.Drawing.Size(80, 23)
 		Me.FullnameLabel.TabIndex = 1

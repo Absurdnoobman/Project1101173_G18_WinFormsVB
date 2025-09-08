@@ -1,3 +1,3 @@
 ﻿Public Class Appointment
-    Public id As UInteger
+    Public Property id As UInteger
 End Class

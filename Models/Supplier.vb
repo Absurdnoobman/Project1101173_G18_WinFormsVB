@@ -1,7 +1,7 @@
 ﻿Public Class Supplier
-	Public supplier_number As String
-	Public name As String
-	Public address As String
-	Public telephone As String
-	Public fax As String
+	Public Property supplier_number As String
+	Public Property name As String
+	Public Property address As String
+	Public Property telephone As String
+	Public Property fax As String
 End Class

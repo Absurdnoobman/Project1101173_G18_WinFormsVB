@@ -1,6 +1,6 @@
 ﻿Public Class PatientLocalDoctor
-    Public fullname As String
-    Public clinic_id As String
-    Public telephone As String
-    Public address As String
+    Public Property fullname As String
+    Public Property clinic_id As String
+    Public Property telephone As String
+    Public Property address As String
 End Class

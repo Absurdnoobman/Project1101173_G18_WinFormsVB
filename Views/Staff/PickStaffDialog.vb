@@ -8,6 +8,14 @@
 
     Public result As List(Of Staff)
 
+    Public Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        _isMultiplePick = False
+
+    End Sub
+
     Private Sub New(isMultiple As Boolean)
         ' This call is required by the designer.
         InitializeComponent()
@@ -98,6 +106,11 @@
         If selected_card.Count = 0 Then
             DialogResult = DialogResult.Cancel
             Close()
+            Exit Sub
+        End If
+
+        If Not _isMultiplePick And selected_card.Count > 1 Then
+            MessageBox.Show("Plaese pick only one patient." & vbNewLine & "CheckBoxDisablingUnimplemented")
             Exit Sub
         End If
 

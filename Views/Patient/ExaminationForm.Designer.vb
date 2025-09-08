@@ -72,13 +72,13 @@ Partial Class ExaminationForm
 		'
 		'AppointmentDateTimePicker
 		'
+		Me.AppointmentDateTimePicker.Checked = False
 		Me.AppointmentDateTimePicker.CustomFormat = ""
 		Me.AppointmentDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
 		Me.AppointmentDateTimePicker.Location = New System.Drawing.Point(72, 305)
 		Me.AppointmentDateTimePicker.Name = "AppointmentDateTimePicker"
 		Me.AppointmentDateTimePicker.Size = New System.Drawing.Size(187, 25)
 		Me.AppointmentDateTimePicker.TabIndex = 3
-		Me.AppointmentDateTimePicker.Value = New Date(2025, 7, 30, 0, 0, 0, 0)
 		'
 		'MeetRoomTextBox
 		'

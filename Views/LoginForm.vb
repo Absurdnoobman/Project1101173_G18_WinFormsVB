@@ -1,6 +1,15 @@
-﻿
-Public Class LoginForm
+﻿Public Class LoginForm
     Private Sub LoginButton_Click(sender As Object, e As EventArgs) Handles LoginButton.Click
+        If String.IsNullOrEmpty(StaffNumberTextBox.Text) Then
+            MessageBox.Show("Please Enter Staff Number.")
+            Exit Sub
+        End If
+
+        If String.IsNullOrEmpty(PasswordTextBox.Text) Then
+            MessageBox.Show("Please Enter Password.")
+            Exit Sub
+        End If
+
         Login()
     End Sub
 
@@ -30,7 +39,7 @@ Public Class LoginForm
             DialogResult = DialogResult.OK
             Dispose()
         Else
-            Dim dialogResult = MessageBox.Show(
+            MessageBox.Show(
                 text:="Invalid Email and password",
                 caption:="Login Failed",
                 buttons:=MessageBoxButtons.OK,
@@ -38,4 +47,5 @@ Public Class LoginForm
             )
         End If
     End Sub
+
 End Class

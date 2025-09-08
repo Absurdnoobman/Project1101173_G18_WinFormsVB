@@ -30,14 +30,18 @@
 
 		Dim patient As Patient = PatientFLP.Controls.Cast(Of PatientLargeCard).First.thisPatient
 		Dim clinic_id As String = ClinicIdTextBox.Text
-		Dim appointed_date As Date = AppointmentDTP.Value
-		Dim appointed_time As Date = MeetTimeDateTimePicker.Value
+		Dim appointed_date As DateTime = AppointmentDTP.Value
+		Dim appointed_time As DateTime = MeetTimeDateTimePicker.Value
 
-		Dim appointed_date_time As New Date(appointed_date.Year, appointed_date.Month, appointed_date.Day, appointed_date_time.Hour, appointed_time.Minute, appointed_time.Second)
+		Dim appointed_date_time As New DateTime(
+			appointed_date.Year, appointed_date.Month, appointed_date.Day,
+			appointed_time.Hour, appointed_time.Minute, appointed_time.Second,
+			DateTimeKind.Utc
+		)
 
 		Dim db As New Schema
 
-		If db.NonSelectQuery("INSERT INTO Appointments VALUES (@p, @d, @c)", New With {.p = patient.patient_number, .d = appointed_date_time, .c = clinic_id}) Then
+		If db.NonSelectQuery("INSERT INTO Appointments VALUES (@p, @d, @c)", New With {.p = patient.patient_number, .d = appointed_date_time.ToUniversalTime, .c = clinic_id}) Then
 			MessageBox.Show("Insert Successful.")
 			Dispose()
 		Else

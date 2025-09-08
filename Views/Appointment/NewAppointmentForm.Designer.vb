@@ -117,13 +117,13 @@ Partial Class NewAppointmentForm
 		'
 		'AppointmentDTP
 		'
+		Me.AppointmentDTP.Checked = False
 		Me.AppointmentDTP.CustomFormat = ""
 		Me.AppointmentDTP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
 		Me.AppointmentDTP.Location = New System.Drawing.Point(73, 164)
 		Me.AppointmentDTP.Name = "AppointmentDTP"
 		Me.AppointmentDTP.Size = New System.Drawing.Size(209, 25)
 		Me.AppointmentDTP.TabIndex = 11
-		Me.AppointmentDTP.Value = New Date(2025, 7, 30, 0, 0, 0, 0)
 		'
 		'NewAppointmentForm
 		'

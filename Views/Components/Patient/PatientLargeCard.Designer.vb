@@ -32,7 +32,7 @@ Partial Class PatientLargeCard
 		'
 		Me.FullnameLabel.AutoSize = True
 		Me.FullnameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.FullnameLabel.Location = New System.Drawing.Point(130, 16)
+		Me.FullnameLabel.Location = New System.Drawing.Point(130, 15)
 		Me.FullnameLabel.Name = "FullnameLabel"
 		Me.FullnameLabel.Size = New System.Drawing.Size(80, 23)
 		Me.FullnameLabel.TabIndex = 3

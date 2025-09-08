@@ -13,18 +13,15 @@
 		Dim db As New Schema()
 		Try
 			Dim user = db.Query(Of Staff, Object)(
-				"SELECT * FROM Staffs WHERE staff_number = @staff_num",
-				New With {.staff_num = staffNumber}
-			).First()
+				"SELECT * FROM Staffs WHERE staff_number = @n", New With {.n = staffNumber}
+			).FirstOrDefault()
 
 			Dim pwd = db.SelectQuery("Passwords", "salt, hashed", $"staff_num = '{user.staff_number}'").First
 
 			user.Salt = pwd("salt")
 			user.PasswordHash = pwd("hashed")
 
-			If Not user.AttemptLogin(password) Then
-				Return False
-			End If
+			If Not user.AttemptLogin(password) Then Return False
 
 			LoggedInUser = user
 			Return True
@@ -32,7 +29,7 @@
 			MessageBox.Show(
 				icon:=MessageBoxIcon.Error,
 				caption:="Failed!",
-				text:="Internal Logic Error" & vbNewLine,
+				text:="Internal Logic Error" & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""),
 				buttons:=MessageBoxButtons.OK
 			)
 			Return False
@@ -51,7 +48,7 @@
 		If LoggedInUser IsNot Nothing Then
 			Return LoggedInUser
 		Else
-			Throw New Exception("User is not logged in.")
+			Return Nothing
 		End If
 	End Function
 End Class

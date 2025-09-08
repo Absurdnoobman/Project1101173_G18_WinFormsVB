@@ -227,7 +227,7 @@ Partial Class CreateNewStaffForm
 		'
 		Me.PaymentTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.PaymentTypeComboBox.FormattingEnabled = True
-		Me.PaymentTypeComboBox.Items.AddRange(New Object() {"Test", "Mounthly", "Weekly"})
+		Me.PaymentTypeComboBox.Items.AddRange(New Object() {"Test", "Monthly", "Weekly"})
 		Me.PaymentTypeComboBox.Location = New System.Drawing.Point(435, 254)
 		Me.PaymentTypeComboBox.Name = "PaymentTypeComboBox"
 		Me.PaymentTypeComboBox.Size = New System.Drawing.Size(173, 25)

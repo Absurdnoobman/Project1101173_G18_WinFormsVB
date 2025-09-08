@@ -102,6 +102,11 @@
             Exit Sub
         End If
 
+        If Not _isMultiplePick And selected_card.Count > 1 Then
+            MessageBox.Show("Plaese pick only one patient." & vbNewLine & "CheckBoxDisablingUnimplemented")
+            Exit Sub
+        End If
+
         Dim selected_patient_num As List(Of String) = selected_card.Select(
             Function(c) c.PatientNumberLabel.Text
         ).ToList()
