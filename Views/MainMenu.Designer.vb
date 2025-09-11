@@ -31,12 +31,11 @@ Partial Class MainMenuForm
 		Me.MakeAppointmentButton = New System.Windows.Forms.Button()
 		Me.AppointmentButton = New System.Windows.Forms.Button()
 		Me.AllocationButton = New System.Windows.Forms.Button()
-		Me.NewSupplyButton = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.MedicationButton = New System.Windows.Forms.Button()
-		Me.NewPharmaSupplyButton = New System.Windows.Forms.Button()
 		Me.ReviewStaffButton = New System.Windows.Forms.Button()
 		Me.NewAllocationButton = New System.Windows.Forms.Button()
+		Me.MedicationReportButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'OpenStaffListButton
@@ -113,15 +112,6 @@ Partial Class MainMenuForm
 		Me.AllocationButton.Text = "Patient Allocation"
 		Me.AllocationButton.UseVisualStyleBackColor = True
 		'
-		'NewSupplyButton
-		'
-		Me.NewSupplyButton.Location = New System.Drawing.Point(44, 339)
-		Me.NewSupplyButton.Name = "NewSupplyButton"
-		Me.NewSupplyButton.Size = New System.Drawing.Size(102, 70)
-		Me.NewSupplyButton.TabIndex = 8
-		Me.NewSupplyButton.Text = "Create a Supply"
-		Me.NewSupplyButton.UseVisualStyleBackColor = True
-		'
 		'Label2
 		'
 		Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -142,15 +132,6 @@ Partial Class MainMenuForm
 		Me.MedicationButton.Text = "Medication Record"
 		Me.MedicationButton.UseVisualStyleBackColor = True
 		'
-		'NewPharmaSupplyButton
-		'
-		Me.NewPharmaSupplyButton.Location = New System.Drawing.Point(152, 339)
-		Me.NewPharmaSupplyButton.Name = "NewPharmaSupplyButton"
-		Me.NewPharmaSupplyButton.Size = New System.Drawing.Size(102, 70)
-		Me.NewPharmaSupplyButton.TabIndex = 11
-		Me.NewPharmaSupplyButton.Text = "Create a Pharmaticeul Supply"
-		Me.NewPharmaSupplyButton.UseVisualStyleBackColor = True
-		'
 		'ReviewStaffButton
 		'
 		Me.ReviewStaffButton.Location = New System.Drawing.Point(44, 415)
@@ -170,17 +151,26 @@ Partial Class MainMenuForm
 		Me.NewAllocationButton.Text = "New Allocation"
 		Me.NewAllocationButton.UseVisualStyleBackColor = True
 		'
+		'MedicationReportButton
+		'
+		Me.MedicationReportButton.Location = New System.Drawing.Point(152, 280)
+		Me.MedicationReportButton.Name = "MedicationReportButton"
+		Me.MedicationReportButton.RightToLeft = System.Windows.Forms.RightToLeft.No
+		Me.MedicationReportButton.Size = New System.Drawing.Size(102, 53)
+		Me.MedicationReportButton.TabIndex = 14
+		Me.MedicationReportButton.Text = "Medication Report"
+		Me.MedicationReportButton.UseVisualStyleBackColor = True
+		'
 		'MainMenuForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(706, 555)
+		Me.Controls.Add(Me.MedicationReportButton)
 		Me.Controls.Add(Me.NewAllocationButton)
 		Me.Controls.Add(Me.ReviewStaffButton)
-		Me.Controls.Add(Me.NewPharmaSupplyButton)
 		Me.Controls.Add(Me.MedicationButton)
 		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.NewSupplyButton)
 		Me.Controls.Add(Me.AllocationButton)
 		Me.Controls.Add(Me.AppointmentButton)
 		Me.Controls.Add(Me.MakeAppointmentButton)
@@ -208,10 +198,9 @@ Partial Class MainMenuForm
     Friend WithEvents MakeAppointmentButton As Button
     Friend WithEvents AppointmentButton As Button
     Friend WithEvents AllocationButton As Button
-    Friend WithEvents NewSupplyButton As Button
 	Friend WithEvents Label2 As Label
 	Friend WithEvents MedicationButton As Button
-	Friend WithEvents NewPharmaSupplyButton As Button
 	Friend WithEvents ReviewStaffButton As Button
 	Friend WithEvents NewAllocationButton As Button
+	Friend WithEvents MedicationReportButton As Button
 End Class

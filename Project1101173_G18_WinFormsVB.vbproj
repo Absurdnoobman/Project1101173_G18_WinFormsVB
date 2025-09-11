@@ -262,7 +262,9 @@
     <Compile Include="libs\Authenticatable.vb" />
     <Compile Include="libs\EntityAttribute.vb" />
     <Compile Include="libs\Export.vb" />
+    <Compile Include="Interfaces\IFilter.vb" />
     <Compile Include="libs\maps.vb" />
+    <Compile Include="libs\NHSJobEvaluation.vb" />
     <Compile Include="libs\Schema.vb" />
     <Compile Include="libs\Hash.vb" />
     <Compile Include="libs\TEST.vb" />
@@ -294,6 +296,30 @@
       <DependentUpon>AppointmentCard.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\Appointment\AppointmentCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterCardV2.Designer.vb">
+      <DependentUpon>FilterCardV2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterCardV2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterDateSearchMode.Designer.vb">
+      <DependentUpon>FilterDateSearchMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterDateSearchMode.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterNumberSearchMode.Designer.vb">
+      <DependentUpon>FilterNumberSearchMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterNumberSearchMode.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterTextSearchMode.Designer.vb">
+      <DependentUpon>FilterTextSearchMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\FilterV2\FilterTextSearchMode.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Components\ggggCard.Designer.vb">
@@ -564,6 +590,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Appointment\AppointmentCard.resx">
       <DependentUpon>AppointmentCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\FilterV2\FilterCardV2.resx">
+      <DependentUpon>FilterCardV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\FilterV2\FilterDateSearchMode.resx">
+      <DependentUpon>FilterDateSearchMode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\FilterV2\FilterNumberSearchMode.resx">
+      <DependentUpon>FilterNumberSearchMode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\FilterV2\FilterTextSearchMode.resx">
+      <DependentUpon>FilterTextSearchMode.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\ggggCard.resx">
       <DependentUpon>ggggCard.vb</DependentUpon>

@@ -176,9 +176,13 @@
 
                 Dim result = db.Query(sql.command, sql.params)
 
+                If result.Count = 0 Then Exit Sub
+
                 Dim result_numbers = result.Select(Function(r) r("staff_num")).ToList.Cast(Of String).ToList
-                inStaffNumberList.RemoveAll(Function(num) result_numbers.Contains(num))
-                inStaffNumberList.AddRange(result_numbers)
+                'inStaffNumberList.RemoveAll(Function(num) result_numbers.Contains(num))
+                'inStaffNumberList.AddRange(result_numbers)
+
+                inStaffNumberList = inStaffNumberList.Union(result_numbers).ToList
 
             Catch ex As Exception
                 MessageBox.Show("Error: Internal Logic." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message}{vbNewLine}{ex.StackTrace}", ""))

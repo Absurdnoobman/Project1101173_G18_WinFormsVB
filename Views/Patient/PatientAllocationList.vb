@@ -88,9 +88,10 @@
                     a.patient_num AS ""Patient Number"", 
                     p.firstname + ' ' + p.surname AS ""Patient Fullname"",
                     a.bed_number  AS ""Bed Number"",
-                    a.admission_date AS ""Date Placed"",
+                    CAST(a.admission_date AS datetime) AS ""Date Placed"",
                     a.expected_duration_days AS ""Expected Stay (Days)"",
-                    DATEADD(DAY, a.expected_duration_days, a.admission_date) AS ""Date Leave""
+                    CAST(DATEADD(DAY, a.expected_duration_days, a.admission_date) AS datetime) AS ""Date Leave"",
+                    CAST(a.actual_discharge_date AS datetime) AS ""Actual Leave""
                 FROM Admissions a
                 JOIN Patients p ON a.patient_num = p.patient_number
                 WHERE ward_num = @w AND admission_date = @d;",
@@ -101,7 +102,16 @@
             )
 
             AllocationDGV.DataSource = data_set.Tables(0)
+
+            With AllocationDGV
+                .Columns("Date Placed").DefaultCellStyle.Format = "dddd dd'/'MM'/'yyyy"
+                .Columns("Date Leave").DefaultCellStyle.Format = "dddd dd'/'MM'/'yyyy"
+                .Columns("Actual Leave").DefaultCellStyle.Format = "dddd dd'/'MM'/'yyyy"
+                .Columns("Actual Leave").DefaultCellStyle.NullValue = "Not Leave Yet"
+            End With
+
             AllocationDGV.Refresh()
+
         Catch ex As Exception
             MessageBox.Show("Internal Error." & vbNewLine & If(Debugger.IsAttached, ex.Message, ""))
         End Try
@@ -116,4 +126,5 @@
     Private Sub AllocationDGV_VisibleChanged(sender As Object, e As EventArgs) Handles AllocationDGV.VisibleChanged
         RecordsNumberLabel.Visible = AllocationDGV.Visible
     End Sub
+
 End Class

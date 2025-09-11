@@ -110,6 +110,29 @@ Public Class Schema
 
 	End Function
 
+
+	Public Function QuerySingle(Of TReturn, TParam)(command As String, Optional param As TParam = Nothing) As TReturn
+		Dim result As TReturn
+		Try
+			Using db_conn As New SqlConnection(_connectionString)
+				Dim cmd = db_conn.CreateCommand()
+				cmd.CommandText = command
+
+				db_conn.Open()
+
+				result = db_conn.QuerySingle(Of TReturn)(cmd.CommandText, param)
+
+				db_conn.Close()
+			End Using
+		Catch ex As Exception
+			If Debugger.IsAttached Then MessageBox.Show(ex.Message, "DEBUG")
+			Throw ex
+		End Try
+
+		Return result
+
+	End Function
+
 	''' <summary>
 	'''  So much stuff going on.
 	''' </summary>

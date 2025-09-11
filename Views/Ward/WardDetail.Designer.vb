@@ -32,10 +32,10 @@ Partial Class WardDetailForm
 		Me.ExtNumberLabel = New System.Windows.Forms.Label()
 		Me.WeekBeginingComboBox = New System.Windows.Forms.ComboBox()
 		Me.EditAssignmentButton = New System.Windows.Forms.Button()
-		Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Button1 = New System.Windows.Forms.Button()
 		Me.RecordCountLabel = New System.Windows.Forms.Label()
+		Me.FilterFLP = New System.Windows.Forms.FlowLayoutPanel()
 		CType(Me.StaffDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -104,13 +104,13 @@ Partial Class WardDetailForm
 		Me.StaffDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.StaffDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 		Me.StaffDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-		Me.StaffDataGridView.Location = New System.Drawing.Point(16, 150)
+		Me.StaffDataGridView.Location = New System.Drawing.Point(16, 157)
 		Me.StaffDataGridView.Name = "StaffDataGridView"
 		Me.StaffDataGridView.ReadOnly = True
 		Me.StaffDataGridView.RowHeadersWidth = 51
 		Me.StaffDataGridView.RowTemplate.DefaultCellStyle.NullValue = "(none)"
 		Me.StaffDataGridView.RowTemplate.Height = 24
-		Me.StaffDataGridView.Size = New System.Drawing.Size(669, 275)
+		Me.StaffDataGridView.Size = New System.Drawing.Size(669, 296)
 		Me.StaffDataGridView.TabIndex = 6
 		'
 		'ExtNumberLabel
@@ -134,20 +134,12 @@ Partial Class WardDetailForm
 		'EditAssignmentButton
 		'
 		Me.EditAssignmentButton.Enabled = False
-		Me.EditAssignmentButton.Location = New System.Drawing.Point(543, 431)
+		Me.EditAssignmentButton.Location = New System.Drawing.Point(543, 459)
 		Me.EditAssignmentButton.Name = "EditAssignmentButton"
 		Me.EditAssignmentButton.Size = New System.Drawing.Size(142, 32)
 		Me.EditAssignmentButton.TabIndex = 9
 		Me.EditAssignmentButton.Text = "Edit Assignment"
 		Me.EditAssignmentButton.UseVisualStyleBackColor = True
-		'
-		'FlowLayoutPanel1
-		'
-		Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-		Me.FlowLayoutPanel1.Location = New System.Drawing.Point(101, 88)
-		Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-		Me.FlowLayoutPanel1.Size = New System.Drawing.Size(584, 56)
-		Me.FlowLayoutPanel1.TabIndex = 10
 		'
 		'Label2
 		'
@@ -162,7 +154,7 @@ Partial Class WardDetailForm
 		'Button1
 		'
 		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.Button1.Location = New System.Drawing.Point(20, 109)
+		Me.Button1.Location = New System.Drawing.Point(16, 121)
 		Me.Button1.Name = "Button1"
 		Me.Button1.Size = New System.Drawing.Size(75, 23)
 		Me.Button1.TabIndex = 12
@@ -172,22 +164,33 @@ Partial Class WardDetailForm
 		'RecordCountLabel
 		'
 		Me.RecordCountLabel.AutoSize = True
-		Me.RecordCountLabel.Location = New System.Drawing.Point(16, 431)
+		Me.RecordCountLabel.Location = New System.Drawing.Point(13, 467)
 		Me.RecordCountLabel.Name = "RecordCountLabel"
 		Me.RecordCountLabel.Size = New System.Drawing.Size(75, 17)
 		Me.RecordCountLabel.TabIndex = 13
 		Me.RecordCountLabel.Text = "Records ---"
+		'
+		'FilterFLP
+		'
+		Me.FilterFLP.AutoScroll = True
+		Me.FilterFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.FilterFLP.Location = New System.Drawing.Point(97, 88)
+		Me.FilterFLP.Name = "FilterFLP"
+		Me.FilterFLP.Padding = New System.Windows.Forms.Padding(3)
+		Me.FilterFLP.Size = New System.Drawing.Size(507, 63)
+		Me.FilterFLP.TabIndex = 16
+		Me.FilterFLP.WrapContents = False
 		'
 		'WardDetailForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.Control
-		Me.ClientSize = New System.Drawing.Size(700, 478)
+		Me.ClientSize = New System.Drawing.Size(700, 506)
+		Me.Controls.Add(Me.FilterFLP)
 		Me.Controls.Add(Me.RecordCountLabel)
 		Me.Controls.Add(Me.Button1)
 		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.FlowLayoutPanel1)
 		Me.Controls.Add(Me.EditAssignmentButton)
 		Me.Controls.Add(Me.WeekBeginingComboBox)
 		Me.Controls.Add(Me.ExtNumberLabel)
@@ -220,8 +223,8 @@ Partial Class WardDetailForm
     Friend WithEvents ExtNumberLabel As Label
     Friend WithEvents WeekBeginingComboBox As ComboBox
     Friend WithEvents EditAssignmentButton As Button
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents RecordCountLabel As Label
+	Friend WithEvents Label2 As Label
+	Friend WithEvents Button1 As Button
+	Friend WithEvents RecordCountLabel As Label
+	Friend WithEvents FilterFLP As FlowLayoutPanel
 End Class

@@ -1,5 +1,5 @@
 ﻿Public Enum SearchMode As UShort
 	Text
-	Numberic
+	Numeric
 	DateTime
 End Enum

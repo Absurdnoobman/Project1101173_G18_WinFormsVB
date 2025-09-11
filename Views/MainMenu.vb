@@ -1,6 +1,4 @@
-﻿Imports Microsoft.Extensions.Configuration
-
-Public Class MainMenuForm
+﻿Public Class MainMenuForm
     '
     'f.ShowDialog() Prevents Main Menu Interaction until the f form closed
     '
@@ -47,7 +45,7 @@ Public Class MainMenuForm
 
     End Sub
 
-    Private Sub NewSupplyButton_Click(sender As Object, e As EventArgs) Handles NewSupplyButton.Click
+    Private Sub NewSupplyButton_Click(sender As Object, e As EventArgs)
         Dim f As New CreateSupplyForm
         f.ShowDialog()
     End Sub
@@ -57,7 +55,7 @@ Public Class MainMenuForm
         f.ShowDialog()
     End Sub
 
-    Private Sub NewPharmaSupplyButton_Click(sender As Object, e As EventArgs) Handles NewPharmaSupplyButton.Click
+    Private Sub NewPharmaSupplyButton_Click(sender As Object, e As EventArgs)
         Dim f As New CreateNewPharmaceuticalSupply
         f.ShowDialog()
     End Sub
@@ -74,6 +72,11 @@ Public Class MainMenuForm
 
     Private Sub NewAllocationButton_Click(sender As Object, e As EventArgs) Handles NewAllocationButton.Click
         Dim f As New NewPatientAllocationForm
+        f.ShowDialog()
+    End Sub
+
+    Private Sub MedicationReportButton_Click(sender As Object, e As EventArgs) Handles MedicationReportButton.Click
+        Dim f As New MedicationReport
         f.ShowDialog()
     End Sub
 End Class
