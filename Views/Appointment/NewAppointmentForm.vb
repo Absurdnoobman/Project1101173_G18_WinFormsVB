@@ -15,7 +15,7 @@
 		PatientFLP.Controls.Clear()
 		AppointmentDTP.Value = Date.Today
 		MeetTimeDateTimePicker.Value = Date.Now
-		ClinicIdTextBox.Clear()
+
 	End Sub
 
 	Private Sub ConfirmButton_Click(sender As Object, e As EventArgs) Handles ConfirmButton.Click
@@ -23,13 +23,8 @@
 			MessageBox.Show("Please Select a patient.")
 			Exit Sub
 		End If
-		If String.IsNullOrEmpty(ClinicIdTextBox.Text) OrElse String.IsNullOrWhiteSpace(ClinicIdTextBox.Text) Then
-			MessageBox.Show("Please enter a clinic number.")
-			Exit Sub
-		End If
 
 		Dim patient As Patient = PatientFLP.Controls.Cast(Of PatientLargeCard).First.thisPatient
-		Dim clinic_id As String = ClinicIdTextBox.Text
 		Dim appointed_date As DateTime = AppointmentDTP.Value
 		Dim appointed_time As DateTime = MeetTimeDateTimePicker.Value
 
@@ -41,7 +36,7 @@
 
 		Dim db As New Schema
 
-		If db.NonSelectQuery("INSERT INTO Appointments VALUES (@p, @d, @c)", New With {.p = patient.patient_number, .d = appointed_date_time.ToUniversalTime, .c = clinic_id}) Then
+		If db.NonSelectQuery("INSERT INTO Appointments VALUES (@p, @d)", New With {.p = patient.patient_number, .d = appointed_date_time.ToUniversalTime}) Then
 			MessageBox.Show("Insert Successful.")
 			Dispose()
 		Else

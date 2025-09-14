@@ -36,6 +36,7 @@ Partial Class MainMenuForm
 		Me.ReviewStaffButton = New System.Windows.Forms.Button()
 		Me.NewAllocationButton = New System.Windows.Forms.Button()
 		Me.MedicationReportButton = New System.Windows.Forms.Button()
+		Me.ReviewSumButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'OpenStaffListButton
@@ -161,11 +162,22 @@ Partial Class MainMenuForm
 		Me.MedicationReportButton.Text = "Medication Report"
 		Me.MedicationReportButton.UseVisualStyleBackColor = True
 		'
+		'ReviewSumButton
+		'
+		Me.ReviewSumButton.Location = New System.Drawing.Point(152, 415)
+		Me.ReviewSumButton.Name = "ReviewSumButton"
+		Me.ReviewSumButton.RightToLeft = System.Windows.Forms.RightToLeft.No
+		Me.ReviewSumButton.Size = New System.Drawing.Size(102, 53)
+		Me.ReviewSumButton.TabIndex = 15
+		Me.ReviewSumButton.Text = "Review Staff Summary"
+		Me.ReviewSumButton.UseVisualStyleBackColor = True
+		'
 		'MainMenuForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(706, 555)
+		Me.Controls.Add(Me.ReviewSumButton)
 		Me.Controls.Add(Me.MedicationReportButton)
 		Me.Controls.Add(Me.NewAllocationButton)
 		Me.Controls.Add(Me.ReviewStaffButton)
@@ -203,4 +215,5 @@ Partial Class MainMenuForm
 	Friend WithEvents ReviewStaffButton As Button
 	Friend WithEvents NewAllocationButton As Button
 	Friend WithEvents MedicationReportButton As Button
+	Friend WithEvents ReviewSumButton As Button
 End Class

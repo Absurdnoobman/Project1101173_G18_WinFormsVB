@@ -25,7 +25,7 @@ Partial Class StaffReviewForm
 		Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.StaffNumberLabel = New System.Windows.Forms.Label()
 		Me.StaffNameLabel = New System.Windows.Forms.Label()
-		Me.SelectConsultantButton = New System.Windows.Forms.Button()
+		Me.SelectStaffButton = New System.Windows.Forms.Button()
 		Me.ReviewDateDTP = New System.Windows.Forms.DateTimePicker()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
@@ -107,15 +107,15 @@ Partial Class StaffReviewForm
 		Me.StaffNameLabel.Text = "Full name"
 		Me.StaffNameLabel.Visible = False
 		'
-		'SelectConsultantButton
+		'SelectStaffButton
 		'
-		Me.SelectConsultantButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.SelectConsultantButton.Location = New System.Drawing.Point(701, 12)
-		Me.SelectConsultantButton.Name = "SelectConsultantButton"
-		Me.SelectConsultantButton.Size = New System.Drawing.Size(113, 59)
-		Me.SelectConsultantButton.TabIndex = 3
-		Me.SelectConsultantButton.Text = "Select a Staff"
-		Me.SelectConsultantButton.UseVisualStyleBackColor = True
+		Me.SelectStaffButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.SelectStaffButton.Location = New System.Drawing.Point(701, 12)
+		Me.SelectStaffButton.Name = "SelectStaffButton"
+		Me.SelectStaffButton.Size = New System.Drawing.Size(113, 59)
+		Me.SelectStaffButton.TabIndex = 3
+		Me.SelectStaffButton.Text = "Select a Staff"
+		Me.SelectStaffButton.UseVisualStyleBackColor = True
 		'
 		'ReviewDateDTP
 		'
@@ -577,7 +577,7 @@ Partial Class StaffReviewForm
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.ReviewDateDTP)
-		Me.Controls.Add(Me.SelectConsultantButton)
+		Me.Controls.Add(Me.SelectStaffButton)
 		Me.Controls.Add(Me.StaffFLP)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -592,7 +592,7 @@ Partial Class StaffReviewForm
 	End Sub
 
 	Friend WithEvents StaffFLP As FlowLayoutPanel
-	Friend WithEvents SelectConsultantButton As Button
+	Friend WithEvents SelectStaffButton As Button
 	Friend WithEvents ReviewDateDTP As DateTimePicker
 	Friend WithEvents Label2 As Label
 	Friend WithEvents Label3 As Label

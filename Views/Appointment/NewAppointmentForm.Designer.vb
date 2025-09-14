@@ -28,9 +28,7 @@ Partial Class NewAppointmentForm
 		Me.ConfirmButton = New System.Windows.Forms.Button()
 		Me.MeetTimeDateTimePicker = New System.Windows.Forms.DateTimePicker()
 		Me.Label3 = New System.Windows.Forms.Label()
-		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.ClinicIdTextBox = New System.Windows.Forms.TextBox()
 		Me.AppointmentDTP = New System.Windows.Forms.DateTimePicker()
 		Me.SuspendLayout()
 		'
@@ -90,15 +88,6 @@ Partial Class NewAppointmentForm
 		Me.Label3.TabIndex = 15
 		Me.Label3.Text = "at"
 		'
-		'Label2
-		'
-		Me.Label2.AutoSize = True
-		Me.Label2.Location = New System.Drawing.Point(422, 167)
-		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(54, 17)
-		Me.Label2.TabIndex = 14
-		Me.Label2.Text = "Clinic ID"
-		'
 		'Label1
 		'
 		Me.Label1.AutoSize = True
@@ -107,13 +96,6 @@ Partial Class NewAppointmentForm
 		Me.Label1.Size = New System.Drawing.Size(54, 17)
 		Me.Label1.TabIndex = 13
 		Me.Label1.Text = "on Date"
-		'
-		'ClinicIdTextBox
-		'
-		Me.ClinicIdTextBox.Location = New System.Drawing.Point(482, 164)
-		Me.ClinicIdTextBox.Name = "ClinicIdTextBox"
-		Me.ClinicIdTextBox.Size = New System.Drawing.Size(173, 25)
-		Me.ClinicIdTextBox.TabIndex = 12
 		'
 		'AppointmentDTP
 		'
@@ -132,9 +114,7 @@ Partial Class NewAppointmentForm
 		Me.ClientSize = New System.Drawing.Size(667, 240)
 		Me.Controls.Add(Me.MeetTimeDateTimePicker)
 		Me.Controls.Add(Me.Label3)
-		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.Label1)
-		Me.Controls.Add(Me.ClinicIdTextBox)
 		Me.Controls.Add(Me.AppointmentDTP)
 		Me.Controls.Add(Me.ResetButton)
 		Me.Controls.Add(Me.ConfirmButton)
@@ -157,8 +137,6 @@ Partial Class NewAppointmentForm
 	Friend WithEvents ConfirmButton As Button
 	Friend WithEvents MeetTimeDateTimePicker As DateTimePicker
 	Friend WithEvents Label3 As Label
-	Friend WithEvents Label2 As Label
 	Friend WithEvents Label1 As Label
-	Friend WithEvents ClinicIdTextBox As TextBox
 	Friend WithEvents AppointmentDTP As DateTimePicker
 End Class

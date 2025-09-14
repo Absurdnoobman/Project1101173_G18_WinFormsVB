@@ -271,11 +271,13 @@
     <Compile Include="libs\WardComboBoxItem.vb" />
     <Compile Include="Models\Appointment.vb" />
     <Compile Include="Models\Admission.vb" />
+    <Compile Include="Models\CriterionScore.vb" />
     <Compile Include="Models\Medication.vb" />
     <Compile Include="Models\PatientLocalDoctor.vb" />
     <Compile Include="Models\PatientNextOfKin.vb" />
     <Compile Include="Models\Patient.vb" />
     <Compile Include="Models\PharmaceuticalSupply.vb" />
+    <Compile Include="Models\Review.vb" />
     <Compile Include="Models\StaffQualification.vb" />
     <Compile Include="Models\StaffWorkExperience.vb" />
     <Compile Include="Models\Supplier.vb" />
@@ -405,6 +407,12 @@
       <DependentUpon>StaffConsultantCard.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Components\Staff\StaffConsultantCard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Components\Staff\StaffScoreCard.Designer.vb">
+      <DependentUpon>StaffScoreCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Components\Staff\StaffScoreCard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Extended module\ReviewSummaryForm.Designer.vb">
@@ -644,6 +652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Staff\StaffConsultantCard.resx">
       <DependentUpon>StaffConsultantCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Components\Staff\StaffScoreCard.resx">
+      <DependentUpon>StaffScoreCard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Extended module\ReviewSummaryForm.resx">
       <DependentUpon>ReviewSummaryForm.vb</DependentUpon>

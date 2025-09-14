@@ -79,4 +79,9 @@
         Dim f As New MedicationReport
         f.ShowDialog()
     End Sub
+
+    Private Sub ReviewSumButton_Click(sender As Object, e As EventArgs) Handles ReviewSumButton.Click
+        Dim f As New ReviewSummaryForm
+        f.ShowDialog()
+    End Sub
 End Class
