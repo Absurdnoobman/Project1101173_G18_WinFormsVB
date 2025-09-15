@@ -43,6 +43,10 @@ Public Class Schema
 
 	End Sub
 
+	''' <summary>
+	''' For custom connectionString
+	''' </summary>
+	''' <param name="connectionString"></param>
 	Public Sub New(connectionString As String)
 		_connectionString = connectionString
 	End Sub

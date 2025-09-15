@@ -28,6 +28,7 @@ Partial Class PickStaffDialog
 		Me.SearchByComboBox = New System.Windows.Forms.ComboBox()
 		Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.ConfirmButton = New System.Windows.Forms.Button()
+		Me.Label2 = New System.Windows.Forms.Label()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -43,26 +44,27 @@ Partial Class PickStaffDialog
 		'
 		Me.SearchTextBox.Location = New System.Drawing.Point(75, 15)
 		Me.SearchTextBox.Name = "SearchTextBox"
-		Me.SearchTextBox.Size = New System.Drawing.Size(261, 25)
+		Me.SearchTextBox.Size = New System.Drawing.Size(216, 25)
 		Me.SearchTextBox.TabIndex = 1
 		'
 		'SearchByLabel
 		'
-		Me.SearchByLabel.AutoSize = True
-		Me.SearchByLabel.Location = New System.Drawing.Point(352, 18)
+		Me.SearchByLabel.AutoEllipsis = True
+		Me.SearchByLabel.Location = New System.Drawing.Point(476, 18)
 		Me.SearchByLabel.Name = "SearchByLabel"
-		Me.SearchByLabel.Size = New System.Drawing.Size(64, 17)
+		Me.SearchByLabel.Size = New System.Drawing.Size(208, 17)
 		Me.SearchByLabel.TabIndex = 2
-		Me.SearchByLabel.Text = "Search By"
+		Me.SearchByLabel.Text = "Filter"
+		Me.SearchByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'SearchByComboBox
 		'
 		Me.SearchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.SearchByComboBox.FormattingEnabled = True
 		Me.SearchByComboBox.Items.AddRange(New Object() {"Staff Number", "Name", "Firstname", "Lastname"})
-		Me.SearchByComboBox.Location = New System.Drawing.Point(422, 15)
+		Me.SearchByComboBox.Location = New System.Drawing.Point(367, 15)
 		Me.SearchByComboBox.Name = "SearchByComboBox"
-		Me.SearchByComboBox.Size = New System.Drawing.Size(155, 25)
+		Me.SearchByComboBox.Size = New System.Drawing.Size(100, 25)
 		Me.SearchByComboBox.TabIndex = 3
 		'
 		'StaffFLP
@@ -85,11 +87,21 @@ Partial Class PickStaffDialog
 		Me.ConfirmButton.Text = "Confirm"
 		Me.ConfirmButton.UseVisualStyleBackColor = True
 		'
+		'Label2
+		'
+		Me.Label2.AutoSize = True
+		Me.Label2.Location = New System.Drawing.Point(297, 18)
+		Me.Label2.Name = "Label2"
+		Me.Label2.Size = New System.Drawing.Size(64, 17)
+		Me.Label2.TabIndex = 13
+		Me.Label2.Text = "Search By"
+		'
 		'PickStaffDialog
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(700, 478)
+		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.ConfirmButton)
 		Me.Controls.Add(Me.StaffFLP)
 		Me.Controls.Add(Me.SearchByComboBox)
@@ -113,4 +125,5 @@ Partial Class PickStaffDialog
     Friend WithEvents SearchByComboBox As ComboBox
     Friend WithEvents StaffFLP As FlowLayoutPanel
     Friend WithEvents ConfirmButton As Button
+	Friend WithEvents Label2 As Label
 End Class

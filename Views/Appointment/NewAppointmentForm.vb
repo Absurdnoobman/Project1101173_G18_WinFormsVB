@@ -1,5 +1,7 @@
 ﻿Public Class NewAppointmentForm
 	Private Sub SelectPatientButton_Click(sender As Object, e As EventArgs) Handles SelectPatientButton.Click
+		PatientFLP.Controls.Clear()
+
 		Dim f As New PickPatientDialog
 		Dim result = f.ShowDialog()
 		If result = DialogResult.Abort OrElse result = DialogResult.Cancel Then Exit Sub

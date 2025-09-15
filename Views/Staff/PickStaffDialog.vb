@@ -13,7 +13,10 @@
         InitializeComponent()
 
         _isMultiplePick = False
+        _filterByColumn = ""
 
+        SearchByLabel.Hide()
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
     Private Sub New(isMultiple As Boolean)
@@ -22,6 +25,8 @@
 
         _isMultiplePick = isMultiple
 
+        SearchByLabel.Hide()
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
 
@@ -33,7 +38,7 @@
         _filterValue = value
 
         SearchByLabel.Text = $"Filter: {column} == {value}"
-        SearchByComboBox.Hide()
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
     Private Sub New(isMultiple As Boolean, column As String, value As Object)
@@ -46,7 +51,7 @@
         _filterValue = value
 
         SearchByLabel.Text = $"Filter: {column} == {value}"
-        SearchByComboBox.Hide()
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
     ''' <summary>
@@ -110,7 +115,7 @@
         End If
 
         If Not _isMultiplePick And selected_card.Count > 1 Then
-            MessageBox.Show("Plaese pick only one patient." & vbNewLine & "CheckBoxDisablingUnimplemented")
+            MessageBox.Show("Plaese pick only one staff." & vbNewLine & "CheckBoxDisablingUnimplemented")
             Exit Sub
         End If
 
@@ -125,4 +130,104 @@
         DialogResult = DialogResult.OK
         Close()
     End Sub
+
+    Private Sub SearchByComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SearchByComboBox.SelectedIndexChanged
+        Dim search = SearchTextBox.Text
+        If String.IsNullOrEmpty(search) OrElse String.IsNullOrWhiteSpace(search) Then Exit Sub
+    End Sub
+
+    Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+        If String.IsNullOrEmpty(SearchTextBox.Text) OrElse String.IsNullOrWhiteSpace(SearchTextBox.Text) Then
+            Dim db As New Schema
+            Try
+                RemoveNotSelectedCard()
+
+                _staffs = db.Query(Of Staff, Object)("SELECT * FROM Staffs")
+                If _filterByColumn IsNot Nothing And _filterValue IsNot Nothing Then
+                    _staffs = db.Query(Of Staff, Object)(
+                        $"SELECT * FROM Staffs WHERE {_filterByColumn} = @v", New With {.v = _filterValue}
+                    )
+                End If
+
+                Dim selected_staff_nums As New HashSet(Of String)(
+                    StaffFLP.Controls.OfType(Of StaffCardWithCheckBox)().
+                        Where(Function(c) c.isSelected).
+                        Select(Function(c) c.StaffNumberLabel.Text))
+
+
+                For Each staff In _staffs
+                    If selected_staff_nums.Contains(staff.staff_number) Then Continue For
+                    Dim card As New StaffCardWithCheckBox
+                    card.SetData(staff)
+                    StaffFLP.Controls.Add(card)
+                Next
+
+                Exit Sub
+            Catch ex As Exception
+                MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
+                DialogResult = DialogResult.Abort
+                Dispose()
+            End Try
+        End If
+
+        RerenderList()
+    End Sub
+
+
+
+
+    Private Sub RemoveNotSelectedCard()
+        For i As Integer = StaffFLP.Controls.Count - 1 To 0 Step -1
+            Dim card = TryCast(StaffFLP.Controls(i), StaffCardWithCheckBox)
+            If card IsNot Nothing AndAlso Not card.isSelected Then
+                StaffFLP.Controls.RemoveAt(i)
+            End If
+        Next
+    End Sub
+
+    Private Sub RerenderList()
+        RemoveNotSelectedCard()
+
+        Dim search = SearchTextBox.Text
+        Dim search_clause = ""
+
+        Select Case SearchByComboBox.SelectedItem
+            Case "Staff Number"
+                search_clause = "WHERE staff_number LIKE @s"
+            Case "Name"
+                search_clause = "WHERE firstname LIKE @s OR surname LIKE @s"
+            Case "Firstname"
+                search_clause = "WHERE firstname LIKE @s"
+            Case "Lastname"
+                search_clause = "WHERE surname LIKE @s"
+        End Select
+
+        Dim db As New Schema
+        Try
+            _staffs = db.Query(Of Staff, Object)($"SELECT * FROM Staffs {search_clause}", New With {.s = $"%{search}%"})
+            If _filterByColumn IsNot Nothing And _filterValue IsNot Nothing And Not String.IsNullOrEmpty(search_clause) Then
+                _staffs = db.Query(Of Staff, Object)(
+                    $"SELECT * FROM Staffs {search_clause} AND {_filterByColumn} = @v", New With {.v = _filterValue, .s = $"%{search}%"}
+                )
+            End If
+
+            Dim selected_staff_nums As New HashSet(Of String)(
+                    StaffFLP.Controls.OfType(Of StaffCardWithCheckBox)().
+                        Where(Function(c) c.isSelected).
+                        Select(Function(c) c.StaffNumberLabel.Text))
+
+            For Each staff In _staffs
+                If selected_staff_nums.Contains(staff.staff_number) Then Continue For
+                Dim card As New StaffCardWithCheckBox
+                card.SetData(staff)
+                StaffFLP.Controls.Add(card)
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
+            DialogResult = DialogResult.Abort
+            Dispose()
+        End Try
+    End Sub
+
 End Class

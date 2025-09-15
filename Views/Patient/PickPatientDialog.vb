@@ -15,6 +15,8 @@
         _isMultiplePick = False
         _filterByColumn = ""
 
+        SearchByLabel.Hide()
+
         SearchByComboBox.SelectedIndex = 0
     End Sub
 
@@ -24,6 +26,7 @@
 
         _isMultiplePick = isMultiple
 
+        SearchByLabel.Hide()
         SearchByComboBox.SelectedIndex = 0
     End Sub
 
@@ -36,7 +39,7 @@
         _filterValue = value
 
         SearchByLabel.Text = $"Filter: '{column}' == '{value}'"
-        SearchByComboBox.Hide()
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
     Private Sub New(isMultiple As Boolean, column As String, value As Object)
@@ -49,7 +52,7 @@
         _filterValue = value
 
         SearchByLabel.Text = $"Filter: '{column}' == '{value}'"
-        SearchByComboBox.Hide()
+        SearchByComboBox.SelectedIndex = 0
     End Sub
 
     ''' <summary>
@@ -60,7 +63,7 @@
         Return New PickPatientDialog(True)
     End Function
 
-    Private Sub PickStaffDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub PickPatientDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PatientFLP.Controls.Clear()
 
         If _isMultiplePick Then
@@ -120,10 +123,98 @@
     End Sub
 
     Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+        If String.IsNullOrEmpty(SearchTextBox.Text) OrElse String.IsNullOrWhiteSpace(SearchTextBox.Text) Then
+            Dim db As New Schema
+            Try
+                RemoveNotSelectedCard()
+                _patients = db.Query(Of Patient, Object)("SELECT * FROM Patients")
+                If _filterByColumn IsNot Nothing And _filterValue IsNot Nothing Then
+                    _patients = db.Query(Of Patient, Object)(
+                        $"SELECT * FROM Patients WHERE {_filterByColumn} = @v", New With {.v = _filterValue}
+                    )
+                End If
 
+                Dim selected_patient_nums As New HashSet(Of String)(
+                    PatientFLP.Controls.OfType(Of PatientCardWithCheckBox)().
+                        Where(Function(c) c.isSelected).
+                        Select(Function(c) c.PatientNumberLabel.Text))
+
+
+                For Each patient In _patients
+                    If selected_patient_nums.Contains(patient.patient_number) Then Continue For
+                    Dim card As New PatientCardWithCheckBox
+                    card.SetData(patient)
+                    PatientFLP.Controls.Add(card)
+                Next
+
+                Exit Sub
+            Catch ex As Exception
+                MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
+                DialogResult = DialogResult.Abort
+                Dispose()
+            End Try
+        End If
+
+        RerenderList()
     End Sub
 
     Private Sub SearchByComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SearchByComboBox.SelectedIndexChanged
+        Dim search = SearchTextBox.Text
+        If String.IsNullOrEmpty(search) OrElse String.IsNullOrWhiteSpace(search) Then Exit Sub
+    End Sub
+
+    Private Sub RerenderList()
+        RemoveNotSelectedCard()
+
+        Dim search = SearchTextBox.Text
+        Dim search_clause = ""
+
+        Select Case SearchByComboBox.SelectedItem
+            Case "Patient Number"
+                search_clause = "WHERE patient_number LIKE @s"
+            Case "Name"
+                search_clause = "WHERE firstname LIKE @s OR surname LIKE @s"
+            Case "Firstname"
+                search_clause = "WHERE firstname LIKE @s"
+            Case "Lastname"
+                search_clause = "WHERE surname LIKE @s"
+        End Select
+
+        Dim db As New Schema
+        Try
+            _patients = db.Query(Of Patient, Object)($"SELECT * FROM Patients {search_clause}", New With {.s = $"%{search}%"})
+            If _filterByColumn IsNot Nothing And _filterValue IsNot Nothing And Not String.IsNullOrEmpty(search_clause) Then
+                _patients = db.Query(Of Patient, Object)(
+                    $"SELECT * FROM Patients {search_clause} AND {_filterByColumn} = @v", New With {.v = _filterValue, .s = $"%{search}%"}
+                )
+            End If
+
+            Dim selected_patient_nums As New HashSet(Of String)(
+                    PatientFLP.Controls.OfType(Of PatientCardWithCheckBox)().
+                        Where(Function(c) c.isSelected).
+                        Select(Function(c) c.PatientNumberLabel.Text))
+
+            For Each patient In _patients
+                If selected_patient_nums.Contains(patient.patient_number) Then Continue For
+                Dim card As New PatientCardWithCheckBox
+                card.SetData(patient)
+                PatientFLP.Controls.Add(card)
+            Next
+        Catch ex As Exception
+            MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
+            DialogResult = DialogResult.Abort
+            Dispose()
+        End Try
 
     End Sub
+
+    Private Sub RemoveNotSelectedCard()
+        For i As Integer = PatientFLP.Controls.Count - 1 To 0 Step -1
+            Dim card = TryCast(PatientFLP.Controls(i), PatientCardWithCheckBox)
+            If card IsNot Nothing AndAlso Not card.isSelected Then
+                PatientFLP.Controls.RemoveAt(i)
+            End If
+        Next
+    End Sub
+
 End Class
