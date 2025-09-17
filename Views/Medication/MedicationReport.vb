@@ -83,7 +83,7 @@
 			Else
 				Dim ward_num = admission_result.First.Item("ward_num")
 				Dim ward_info = db.Query(Of Object)("SELECT ward_number, name FROM Wards WHERE ward_number = @w", New With {.w = ward_num}).FirstOrDefault
-				WardLabel.Text = $"Currently: reside at ward {ward_info("ward_number")} ({ward_info("name")})"
+				WardLabel.Text = $"Recently: resided at ward {ward_info("ward_number")} ({ward_info("name")})"
 				BedNumberLabel.Text = $"Bed Number: {admission_result.First.Item("bed_number")}"
 			End If
 
@@ -97,8 +97,9 @@
 
 	Private Sub AddFilterButton_Click(sender As Object, e As EventArgs) Handles AddFilterButton.Click
 		Dim filter_card As New FilterCardV2(New List(Of EntityAttribute) From {
-			New EntityAttribute("drug name", SearchMode.Text, Nothing),
-			New EntityAttribute("drug description", SearchMode.Text, Nothing)
+			New EntityAttribute("drug name", SearchMode.Text),
+			New EntityAttribute("drug description", SearchMode.Text),
+			New EntityAttribute("start date", SearchMode.DateTime)
 		})
 		FilterFLP.Controls.Add(filter_card)
 
@@ -112,7 +113,8 @@
 
 		Dim map As New Dictionary(Of String, String) From {
 			{"drug name", "d.name"},
-			{"drug description", "d.[description]"}
+			{"drug description", "d.[description]"},
+			{"start date", "m.start_date"}
 		}
 
 		For Each filter_card In FilterFLP.Controls.Cast(Of FilterCardV2).ToList

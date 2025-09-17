@@ -24,17 +24,16 @@ Partial Class EditStaffWardAssignmentForm
 	Private Sub InitializeComponent()
 		Me.DateWeekBeginingDTP = New System.Windows.Forms.DateTimePicker()
 		Me.Label3 = New System.Windows.Forms.Label()
-		Me.ResetButton = New System.Windows.Forms.Button()
 		Me.ConfirmButton = New System.Windows.Forms.Button()
 		Me.WardsComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.PickStaffButton = New System.Windows.Forms.Button()
 		Me.StaffFLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.SuspendLayout()
 		'
 		'DateWeekBeginingDTP
 		'
+		Me.DateWeekBeginingDTP.Enabled = False
 		Me.DateWeekBeginingDTP.Location = New System.Drawing.Point(489, 67)
 		Me.DateWeekBeginingDTP.Name = "DateWeekBeginingDTP"
 		Me.DateWeekBeginingDTP.Size = New System.Drawing.Size(237, 25)
@@ -50,15 +49,6 @@ Partial Class EditStaffWardAssignmentForm
 		Me.Label3.TabIndex = 17
 		Me.Label3.Text = "Week Begining"
 		'
-		'ResetButton
-		'
-		Me.ResetButton.Location = New System.Drawing.Point(489, 204)
-		Me.ResetButton.Name = "ResetButton"
-		Me.ResetButton.Size = New System.Drawing.Size(237, 28)
-		Me.ResetButton.TabIndex = 16
-		Me.ResetButton.Text = "Reset"
-		Me.ResetButton.UseVisualStyleBackColor = True
-		'
 		'ConfirmButton
 		'
 		Me.ConfirmButton.Location = New System.Drawing.Point(489, 170)
@@ -71,6 +61,7 @@ Partial Class EditStaffWardAssignmentForm
 		'WardsComboBox
 		'
 		Me.WardsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.WardsComboBox.Enabled = False
 		Me.WardsComboBox.FormattingEnabled = True
 		Me.WardsComboBox.Location = New System.Drawing.Point(489, 129)
 		Me.WardsComboBox.Name = "WardsComboBox"
@@ -86,16 +77,6 @@ Partial Class EditStaffWardAssignmentForm
 		Me.Label2.Size = New System.Drawing.Size(122, 23)
 		Me.Label2.TabIndex = 13
 		Me.Label2.Text = "Assign to ward"
-		'
-		'PickStaffButton
-		'
-		Me.PickStaffButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.PickStaffButton.Location = New System.Drawing.Point(333, 12)
-		Me.PickStaffButton.Name = "PickStaffButton"
-		Me.PickStaffButton.Size = New System.Drawing.Size(136, 23)
-		Me.PickStaffButton.TabIndex = 12
-		Me.PickStaffButton.Text = "Pick staff"
-		Me.PickStaffButton.UseVisualStyleBackColor = True
 		'
 		'StaffFLP
 		'
@@ -123,16 +104,16 @@ Partial Class EditStaffWardAssignmentForm
 		Me.ClientSize = New System.Drawing.Size(746, 478)
 		Me.Controls.Add(Me.DateWeekBeginingDTP)
 		Me.Controls.Add(Me.Label3)
-		Me.Controls.Add(Me.ResetButton)
 		Me.Controls.Add(Me.ConfirmButton)
 		Me.Controls.Add(Me.WardsComboBox)
 		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.PickStaffButton)
 		Me.Controls.Add(Me.StaffFLP)
 		Me.Controls.Add(Me.Label1)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+		Me.MaximizeBox = False
 		Me.Name = "EditStaffWardAssignmentForm"
-		Me.Text = "EditStaffWardAssignmentForm"
+		Me.Text = "Edit Staff Ward Assignment"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -140,11 +121,9 @@ Partial Class EditStaffWardAssignmentForm
 
 	Friend WithEvents DateWeekBeginingDTP As DateTimePicker
 	Friend WithEvents Label3 As Label
-	Friend WithEvents ResetButton As Button
 	Friend WithEvents ConfirmButton As Button
 	Friend WithEvents WardsComboBox As ComboBox
 	Friend WithEvents Label2 As Label
-	Friend WithEvents PickStaffButton As Button
 	Friend WithEvents StaffFLP As FlowLayoutPanel
 	Friend WithEvents Label1 As Label
 End Class

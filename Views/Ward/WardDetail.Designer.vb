@@ -28,15 +28,18 @@ Partial Class WardDetailForm
 		Me.WeekLabel = New System.Windows.Forms.Label()
 		Me.ChargeNurseLabel = New System.Windows.Forms.Label()
 		Me.LocationLabel = New System.Windows.Forms.Label()
-		Me.StaffDataGridView = New System.Windows.Forms.DataGridView()
+		Me.WorkInDGV = New System.Windows.Forms.DataGridView()
 		Me.ExtNumberLabel = New System.Windows.Forms.Label()
 		Me.WeekBeginingComboBox = New System.Windows.Forms.ComboBox()
 		Me.EditAssignmentButton = New System.Windows.Forms.Button()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.Button1 = New System.Windows.Forms.Button()
+		Me.AddFilterButton = New System.Windows.Forms.Button()
 		Me.RecordCountLabel = New System.Windows.Forms.Label()
 		Me.FilterFLP = New System.Windows.Forms.FlowLayoutPanel()
-		CType(Me.StaffDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.RefreshButton = New System.Windows.Forms.Button()
+		Me.ApplyFilterButton = New System.Windows.Forms.Button()
+		Me.RemoveRecordButton = New System.Windows.Forms.Button()
+		CType(Me.WorkInDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -62,7 +65,7 @@ Partial Class WardDetailForm
 		'
 		Me.NameLabel.AutoSize = True
 		Me.NameLabel.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.NameLabel.Location = New System.Drawing.Point(232, 14)
+		Me.NameLabel.Location = New System.Drawing.Point(267, 14)
 		Me.NameLabel.Name = "NameLabel"
 		Me.NameLabel.Size = New System.Drawing.Size(88, 23)
 		Me.NameLabel.TabIndex = 2
@@ -70,9 +73,10 @@ Partial Class WardDetailForm
 		'
 		'WeekLabel
 		'
+		Me.WeekLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.WeekLabel.AutoSize = True
 		Me.WeekLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.WeekLabel.Location = New System.Drawing.Point(431, 18)
+		Me.WeekLabel.Location = New System.Drawing.Point(498, 18)
 		Me.WeekLabel.Name = "WeekLabel"
 		Me.WeekLabel.Size = New System.Drawing.Size(106, 17)
 		Me.WeekLabel.TabIndex = 3
@@ -90,33 +94,38 @@ Partial Class WardDetailForm
 		'LocationLabel
 		'
 		Me.LocationLabel.AutoSize = True
-		Me.LocationLabel.Location = New System.Drawing.Point(233, 56)
+		Me.LocationLabel.Location = New System.Drawing.Point(268, 56)
 		Me.LocationLabel.Name = "LocationLabel"
 		Me.LocationLabel.Size = New System.Drawing.Size(79, 17)
 		Me.LocationLabel.TabIndex = 5
 		Me.LocationLabel.Text = "Location: ---"
 		'
-		'StaffDataGridView
+		'WorkInDGV
 		'
-		Me.StaffDataGridView.AllowUserToAddRows = False
-		Me.StaffDataGridView.AllowUserToDeleteRows = False
-		Me.StaffDataGridView.AllowUserToOrderColumns = True
-		Me.StaffDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-		Me.StaffDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.StaffDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-		Me.StaffDataGridView.Location = New System.Drawing.Point(16, 157)
-		Me.StaffDataGridView.Name = "StaffDataGridView"
-		Me.StaffDataGridView.ReadOnly = True
-		Me.StaffDataGridView.RowHeadersWidth = 51
-		Me.StaffDataGridView.RowTemplate.DefaultCellStyle.NullValue = "(none)"
-		Me.StaffDataGridView.RowTemplate.Height = 24
-		Me.StaffDataGridView.Size = New System.Drawing.Size(669, 296)
-		Me.StaffDataGridView.TabIndex = 6
+		Me.WorkInDGV.AllowUserToAddRows = False
+		Me.WorkInDGV.AllowUserToDeleteRows = False
+		Me.WorkInDGV.AllowUserToOrderColumns = True
+		Me.WorkInDGV.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.WorkInDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+		Me.WorkInDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.WorkInDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+		Me.WorkInDGV.Location = New System.Drawing.Point(16, 157)
+		Me.WorkInDGV.MultiSelect = False
+		Me.WorkInDGV.Name = "WorkInDGV"
+		Me.WorkInDGV.ReadOnly = True
+		Me.WorkInDGV.RowHeadersWidth = 51
+		Me.WorkInDGV.RowTemplate.DefaultCellStyle.NullValue = "(none)"
+		Me.WorkInDGV.RowTemplate.Height = 24
+		Me.WorkInDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		Me.WorkInDGV.Size = New System.Drawing.Size(736, 296)
+		Me.WorkInDGV.TabIndex = 6
 		'
 		'ExtNumberLabel
 		'
+		Me.ExtNumberLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.ExtNumberLabel.AutoSize = True
-		Me.ExtNumberLabel.Location = New System.Drawing.Point(431, 56)
+		Me.ExtNumberLabel.Location = New System.Drawing.Point(498, 56)
 		Me.ExtNumberLabel.Name = "ExtNumberLabel"
 		Me.ExtNumberLabel.Size = New System.Drawing.Size(136, 17)
 		Me.ExtNumberLabel.TabIndex = 7
@@ -124,17 +133,18 @@ Partial Class WardDetailForm
 		'
 		'WeekBeginingComboBox
 		'
+		Me.WeekBeginingComboBox.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.WeekBeginingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.WeekBeginingComboBox.FormattingEnabled = True
-		Me.WeekBeginingComboBox.Location = New System.Drawing.Point(543, 15)
+		Me.WeekBeginingComboBox.Location = New System.Drawing.Point(610, 15)
 		Me.WeekBeginingComboBox.Name = "WeekBeginingComboBox"
 		Me.WeekBeginingComboBox.Size = New System.Drawing.Size(142, 25)
 		Me.WeekBeginingComboBox.TabIndex = 8
 		'
 		'EditAssignmentButton
 		'
-		Me.EditAssignmentButton.Enabled = False
-		Me.EditAssignmentButton.Location = New System.Drawing.Point(543, 459)
+		Me.EditAssignmentButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.EditAssignmentButton.Location = New System.Drawing.Point(610, 459)
 		Me.EditAssignmentButton.Name = "EditAssignmentButton"
 		Me.EditAssignmentButton.Size = New System.Drawing.Size(142, 32)
 		Me.EditAssignmentButton.TabIndex = 9
@@ -151,18 +161,20 @@ Partial Class WardDetailForm
 		Me.Label2.TabIndex = 11
 		Me.Label2.Text = "Filter"
 		'
-		'Button1
+		'AddFilterButton
 		'
-		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.Button1.Location = New System.Drawing.Point(16, 121)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(75, 23)
-		Me.Button1.TabIndex = 12
-		Me.Button1.Text = "add"
-		Me.Button1.UseVisualStyleBackColor = True
+		Me.AddFilterButton.Enabled = False
+		Me.AddFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.AddFilterButton.Location = New System.Drawing.Point(16, 121)
+		Me.AddFilterButton.Name = "AddFilterButton"
+		Me.AddFilterButton.Size = New System.Drawing.Size(75, 23)
+		Me.AddFilterButton.TabIndex = 12
+		Me.AddFilterButton.Text = "add"
+		Me.AddFilterButton.UseVisualStyleBackColor = True
 		'
 		'RecordCountLabel
 		'
+		Me.RecordCountLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
 		Me.RecordCountLabel.AutoSize = True
 		Me.RecordCountLabel.Location = New System.Drawing.Point(13, 467)
 		Me.RecordCountLabel.Name = "RecordCountLabel"
@@ -172,29 +184,66 @@ Partial Class WardDetailForm
 		'
 		'FilterFLP
 		'
+		Me.FilterFLP.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.FilterFLP.AutoScroll = True
 		Me.FilterFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 		Me.FilterFLP.Location = New System.Drawing.Point(97, 88)
 		Me.FilterFLP.Name = "FilterFLP"
 		Me.FilterFLP.Padding = New System.Windows.Forms.Padding(3)
-		Me.FilterFLP.Size = New System.Drawing.Size(507, 63)
+		Me.FilterFLP.Size = New System.Drawing.Size(541, 63)
 		Me.FilterFLP.TabIndex = 16
 		Me.FilterFLP.WrapContents = False
+		'
+		'RefreshButton
+		'
+		Me.RefreshButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.RefreshButton.Enabled = False
+		Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.RefreshButton.Location = New System.Drawing.Point(644, 120)
+		Me.RefreshButton.Name = "RefreshButton"
+		Me.RefreshButton.Size = New System.Drawing.Size(108, 31)
+		Me.RefreshButton.TabIndex = 19
+		Me.RefreshButton.Text = "Refresh"
+		Me.RefreshButton.UseVisualStyleBackColor = True
+		'
+		'ApplyFilterButton
+		'
+		Me.ApplyFilterButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.ApplyFilterButton.Enabled = False
+		Me.ApplyFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.System
+		Me.ApplyFilterButton.Location = New System.Drawing.Point(644, 88)
+		Me.ApplyFilterButton.Name = "ApplyFilterButton"
+		Me.ApplyFilterButton.Size = New System.Drawing.Size(108, 31)
+		Me.ApplyFilterButton.TabIndex = 18
+		Me.ApplyFilterButton.Text = "Apply"
+		Me.ApplyFilterButton.UseVisualStyleBackColor = True
+		'
+		'RemoveRecordButton
+		'
+		Me.RemoveRecordButton.Location = New System.Drawing.Point(501, 459)
+		Me.RemoveRecordButton.Name = "RemoveRecordButton"
+		Me.RemoveRecordButton.Size = New System.Drawing.Size(102, 32)
+		Me.RemoveRecordButton.TabIndex = 20
+		Me.RemoveRecordButton.Text = "Delete Record"
+		Me.RemoveRecordButton.UseVisualStyleBackColor = True
 		'
 		'WardDetailForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.Control
-		Me.ClientSize = New System.Drawing.Size(700, 506)
+		Me.ClientSize = New System.Drawing.Size(767, 506)
+		Me.Controls.Add(Me.RemoveRecordButton)
+		Me.Controls.Add(Me.RefreshButton)
+		Me.Controls.Add(Me.ApplyFilterButton)
 		Me.Controls.Add(Me.FilterFLP)
 		Me.Controls.Add(Me.RecordCountLabel)
-		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.AddFilterButton)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.EditAssignmentButton)
 		Me.Controls.Add(Me.WeekBeginingComboBox)
 		Me.Controls.Add(Me.ExtNumberLabel)
-		Me.Controls.Add(Me.StaffDataGridView)
+		Me.Controls.Add(Me.WorkInDGV)
 		Me.Controls.Add(Me.LocationLabel)
 		Me.Controls.Add(Me.ChargeNurseLabel)
 		Me.Controls.Add(Me.WeekLabel)
@@ -207,7 +256,7 @@ Partial Class WardDetailForm
 		Me.Name = "WardDetailForm"
 		Me.Padding = New System.Windows.Forms.Padding(12)
 		Me.Text = "Ward Details"
-		CType(Me.StaffDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.WorkInDGV, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -219,12 +268,15 @@ Partial Class WardDetailForm
     Friend WithEvents WeekLabel As Label
     Friend WithEvents ChargeNurseLabel As Label
     Friend WithEvents LocationLabel As Label
-    Friend WithEvents StaffDataGridView As DataGridView
+    Friend WithEvents WorkInDGV As DataGridView
     Friend WithEvents ExtNumberLabel As Label
     Friend WithEvents WeekBeginingComboBox As ComboBox
     Friend WithEvents EditAssignmentButton As Button
 	Friend WithEvents Label2 As Label
-	Friend WithEvents Button1 As Button
+	Friend WithEvents AddFilterButton As Button
 	Friend WithEvents RecordCountLabel As Label
 	Friend WithEvents FilterFLP As FlowLayoutPanel
+	Friend WithEvents RefreshButton As Button
+	Friend WithEvents ApplyFilterButton As Button
+	Friend WithEvents RemoveRecordButton As Button
 End Class

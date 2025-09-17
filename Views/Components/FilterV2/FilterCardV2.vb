@@ -21,6 +21,8 @@
 	End Sub
 
 	Private Sub AttributeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
+		SlotFLP.Controls.Clear()
+
 		Select Case AttributeComboBox.SelectedValue
 			Case SearchMode.Text
 				Dim s As New FilterTextSearchMode

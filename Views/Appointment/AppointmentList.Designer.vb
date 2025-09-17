@@ -31,8 +31,8 @@ Partial Class AppointmentList
 		Me.Label4 = New System.Windows.Forms.Label()
 		Me.AppointmentDGV = New System.Windows.Forms.DataGridView()
 		Me.RefreshButton = New System.Windows.Forms.Button()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
+		Me.EditButton = New System.Windows.Forms.Button()
+		Me.DeleteButton = New System.Windows.Forms.Button()
 		CType(Me.AppointmentDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -97,11 +97,14 @@ Partial Class AppointmentList
 		Me.AppointmentDGV.AllowUserToOrderColumns = True
 		Me.AppointmentDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.AppointmentDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+		Me.AppointmentDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
 		Me.AppointmentDGV.Location = New System.Drawing.Point(10, 87)
+		Me.AppointmentDGV.MultiSelect = False
 		Me.AppointmentDGV.Name = "AppointmentDGV"
 		Me.AppointmentDGV.ReadOnly = True
 		Me.AppointmentDGV.RowHeadersWidth = 51
 		Me.AppointmentDGV.RowTemplate.Height = 24
+		Me.AppointmentDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
 		Me.AppointmentDGV.Size = New System.Drawing.Size(731, 342)
 		Me.AppointmentDGV.TabIndex = 12
 		'
@@ -114,35 +117,33 @@ Partial Class AppointmentList
 		Me.RefreshButton.Text = "Refresh"
 		Me.RefreshButton.UseVisualStyleBackColor = True
 		'
-		'Button1
+		'EditButton
 		'
-		Me.Button1.Enabled = False
-		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.Button1.Location = New System.Drawing.Point(665, 436)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(75, 33)
-		Me.Button1.TabIndex = 14
-		Me.Button1.Text = "Edit"
-		Me.Button1.UseVisualStyleBackColor = True
+		Me.EditButton.Enabled = False
+		Me.EditButton.Location = New System.Drawing.Point(585, 435)
+		Me.EditButton.Name = "EditButton"
+		Me.EditButton.Size = New System.Drawing.Size(75, 33)
+		Me.EditButton.TabIndex = 14
+		Me.EditButton.Text = "Edit"
+		Me.EditButton.UseVisualStyleBackColor = True
 		'
-		'Button2
+		'DeleteButton
 		'
-		Me.Button2.Enabled = False
-		Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.Button2.Location = New System.Drawing.Point(587, 435)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(75, 34)
-		Me.Button2.TabIndex = 15
-		Me.Button2.Text = "Delete"
-		Me.Button2.UseVisualStyleBackColor = True
+		Me.DeleteButton.Enabled = False
+		Me.DeleteButton.Location = New System.Drawing.Point(666, 435)
+		Me.DeleteButton.Name = "DeleteButton"
+		Me.DeleteButton.Size = New System.Drawing.Size(75, 32)
+		Me.DeleteButton.TabIndex = 15
+		Me.DeleteButton.Text = "Delete"
+		Me.DeleteButton.UseVisualStyleBackColor = True
 		'
 		'AppointmentList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(750, 478)
-		Me.Controls.Add(Me.Button2)
-		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.DeleteButton)
+		Me.Controls.Add(Me.EditButton)
 		Me.Controls.Add(Me.RefreshButton)
 		Me.Controls.Add(Me.AppointmentDGV)
 		Me.Controls.Add(Me.Label4)
@@ -171,6 +172,6 @@ Partial Class AppointmentList
 	Friend WithEvents Label4 As Label
 	Friend WithEvents AppointmentDGV As DataGridView
 	Friend WithEvents RefreshButton As Button
-	Friend WithEvents Button1 As Button
-	Friend WithEvents Button2 As Button
+	Friend WithEvents EditButton As Button
+	Friend WithEvents DeleteButton As Button
 End Class

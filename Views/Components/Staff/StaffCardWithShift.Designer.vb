@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class SelectedStaffCardWithShift
+Partial Class StaffCardWithShift
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -67,7 +67,7 @@ Partial Class SelectedStaffCardWithShift
 		Me.ShiftComboBox.Size = New System.Drawing.Size(86, 25)
 		Me.ShiftComboBox.TabIndex = 3
 		'
-		'SelectedStaffCardWithShift
+		'StaffCardWithShift
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -78,7 +78,7 @@ Partial Class SelectedStaffCardWithShift
 		Me.Controls.Add(Me.FullNameLabel)
 		Me.Controls.Add(Me.StaffNumberLabel)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Name = "SelectedStaffCardWithShift"
+		Me.Name = "StaffCardWithShift"
 		Me.Padding = New System.Windows.Forms.Padding(10, 6, 10, 6)
 		Me.Size = New System.Drawing.Size(420, 46)
 		Me.ResumeLayout(False)

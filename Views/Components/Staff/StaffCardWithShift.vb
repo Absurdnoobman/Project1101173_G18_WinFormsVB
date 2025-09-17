@@ -1,4 +1,4 @@
-﻿Public Class SelectedStaffCardWithShift
+﻿Public Class StaffCardWithShift
 
     Private _staff As Staff
 
@@ -13,14 +13,12 @@
 
     Public shift As String
 
-    Public Sub SetData(staff As Staff)
+    Public Sub SetData(staff As Staff, Optional shift As String = "Early")
         _staff = staff
         StaffNumberLabel.Text = staff.staff_number
         FullNameLabel.Text = $"{staff.firstname} {staff.surname}"
-    End Sub
 
-    Private Sub SelectedStaffCardWithShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ShiftComboBox.SelectedIndex = 0
+        ShiftComboBox.SelectedItem = shift
     End Sub
 
     Private Sub RemoveButton_Click(sender As Object, e As EventArgs) Handles RemoveButton.Click

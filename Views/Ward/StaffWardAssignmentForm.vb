@@ -39,7 +39,7 @@
         StaffFLP.Controls.Clear()
 
         For Each staff In staffs
-            Dim card As New SelectedStaffCardWithShift
+            Dim card As New StaffCardWithShift
             card.SetData(staff)
             StaffFLP.Controls.Add(card)
         Next
@@ -58,17 +58,11 @@
             Exit Sub
         End If
 
-        Dim selected_card = StaffFLP.Controls.Cast(Of SelectedStaffCardWithShift).ToList()
+        Dim selected_card = StaffFLP.Controls.Cast(Of StaffCardWithShift).ToList()
         Dim selected_staff As Dictionary(Of Staff, String) = selected_card _
             .ToDictionary(Function(c) c.Staff, Function(c) c.shift)
 
-        Dim ward_title = WardsComboBox.SelectedItem.ToString()
-
-        ' ward_title format will be "Ward nn: name" where nn is ward_num
-        '                                 ^^
-        ' use Substring to get nn    0123456
-
-        Dim ward_id As Integer = ward_title.Substring(5, 2)
+        Dim ward_id As Integer = CType(WardsComboBox.SelectedItem, WardComboBoxItem).Ward.ward_number
 
         Dim db As New Schema
         Try
