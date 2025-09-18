@@ -487,6 +487,12 @@
     <Compile Include="Views\Patient\PatientAllocationList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Patient\PatientList.Designer.vb">
+      <DependentUpon>PatientList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patient\PatientList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Patient\PickPatientDialog.Designer.vb">
       <DependentUpon>PickPatientDialog.vb</DependentUpon>
     </Compile>
@@ -703,6 +709,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PatientAllocationList.resx">
       <DependentUpon>PatientAllocationList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patient\PatientList.resx">
+      <DependentUpon>PatientList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PickPatientDialog.resx">
       <DependentUpon>PickPatientDialog.vb</DependentUpon>

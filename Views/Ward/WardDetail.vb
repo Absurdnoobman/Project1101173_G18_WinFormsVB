@@ -139,7 +139,8 @@
 		Dim filter_card As New FilterCardV2(New List(Of EntityAttribute) From {
 			New EntityAttribute("staff number", SearchMode.Text),
 			New EntityAttribute("staff name", SearchMode.Text),
-			New EntityAttribute("telephone", SearchMode.Text)
+			New EntityAttribute("telephone", SearchMode.Text),
+			New EntityAttribute("shift", SearchMode.Text)
 		})
 		FilterFLP.Controls.Add(filter_card)
 	End Sub
@@ -154,7 +155,8 @@
 		Dim map As New Dictionary(Of String, String) From {
 			{"staff number", "w.staff_num"},
 			{"staff name", "s.firstname + ' ' + s.surname"},
-			{"telephone", "s.telephone"}
+			{"telephone", "s.telephone"},
+			{"shift", "w.shift"}
 		}
 
 		For Each filter_card In FilterFLP.Controls.Cast(Of FilterCardV2).ToList

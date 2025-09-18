@@ -18,7 +18,7 @@
     End Sub
 
     Private Sub OpenPatientButton_Click(sender As Object, e As EventArgs) Handles OpenPatientButton.Click
-        Dim f As New CreatePatientForm
+        Dim f As New PatientList
         f.ShowDialog()
     End Sub
 

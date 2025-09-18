@@ -74,7 +74,7 @@ Partial Class MainMenuForm
 		Me.OpenPatientButton.Name = "OpenPatientButton"
 		Me.OpenPatientButton.Size = New System.Drawing.Size(102, 54)
 		Me.OpenPatientButton.TabIndex = 3
-		Me.OpenPatientButton.Text = "Create a Patient Record"
+		Me.OpenPatientButton.Text = "Patient Records"
 		Me.OpenPatientButton.UseVisualStyleBackColor = True
 		'
 		'WardAssignmentButton
