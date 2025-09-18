@@ -391,12 +391,6 @@
     <Compile Include="Views\Components\PharmarceuticalSupply\PharmaceuticalSupplyCardWithOption.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Components\SearchPopUp.Designer.vb">
-      <DependentUpon>SearchPopUp.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Components\SearchPopUp.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Views\Components\Staff\StaffCardWithShift.Designer.vb">
       <DependentUpon>StaffCardWithShift.vb</DependentUpon>
     </Compile>
@@ -667,9 +661,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\PharmarceuticalSupply\PharmaceuticalSupplyCardWithOption.resx">
       <DependentUpon>PharmaceuticalSupplyCardWithOption.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Components\SearchPopUp.resx">
-      <DependentUpon>SearchPopUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Components\Staff\StaffCardWithShift.resx">
       <DependentUpon>StaffCardWithShift.vb</DependentUpon>

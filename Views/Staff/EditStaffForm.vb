@@ -124,6 +124,23 @@
 			MessageBox.Show("Update Successful")
 		End If
 
+		If Not (String.IsNullOrWhiteSpace(PasswordTextBox.Text) And String.IsNullOrWhiteSpace(PasswordTextBox.Text)) Then
+			Dim password = Hash.Make(PasswordTextBox.Text)
+
+			If Not db.NonSelectQuery(
+				"
+				UPDATE Passwords 
+				SET salt = @salt, hashed = @hash
+				WHERE staff_num = @staff_num
+				", New With {
+					.staff_num = staff_num, .salt = password.Salt, .hash = password.Hash
+				}
+			) Then
+				MessageBox.Show("Failed to update password.")
+				Exit Sub
+			End If
+		End If
+
 		Dim qualification_cards = QualificationFLP.Controls.Cast(Of NewQualificationCard).ToList
 
 		Dim quali_in_db = db.Query(Of StaffQualification, Object)("SELECT id FROM Qualifications WHERE staff_num = @staff", New With {.staff = staff_num})
@@ -241,5 +258,9 @@
 		) Then
 			MessageBox.Show("Update Failed." & vbNewLine & $"type: '{workExperience.position}'")
 		End If
+	End Sub
+
+	Private Sub ShowPwdCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles ShowPwdCheckBox.CheckedChanged
+		PasswordTextBox.UseSystemPasswordChar = Not ShowPwdCheckBox.Checked ' Toggle Show Password
 	End Sub
 End Class

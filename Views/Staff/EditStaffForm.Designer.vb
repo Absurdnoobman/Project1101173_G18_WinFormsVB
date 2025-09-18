@@ -22,7 +22,6 @@ Partial Class EditStaffForm
 	'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Me.Label1 = New System.Windows.Forms.Label()
 		Me.StaffNumberTextBox = New System.Windows.Forms.TextBox()
 		Me.Label16 = New System.Windows.Forms.Label()
 		Me.AddNewWorkExpButton = New System.Windows.Forms.Button()
@@ -57,18 +56,10 @@ Partial Class EditStaffForm
 		Me.FirstnameTextBox = New System.Windows.Forms.TextBox()
 		Me.SaveButton = New System.Windows.Forms.Button()
 		Me.SalaryScaleComboBox = New System.Windows.Forms.ComboBox()
+		Me.ShowPwdCheckBox = New System.Windows.Forms.CheckBox()
+		Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+		Me.Label17 = New System.Windows.Forms.Label()
 		Me.SuspendLayout()
-		'
-		'Label1
-		'
-		Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-		Me.Label1.AutoSize = True
-		Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 10.2!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(10, 625)
-		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(132, 23)
-		Me.Label1.TabIndex = 3
-		Me.Label1.Text = "Work in Progress"
 		'
 		'StaffNumberTextBox
 		'
@@ -353,7 +344,7 @@ Partial Class EditStaffForm
 		'
 		'SaveButton
 		'
-		Me.SaveButton.Location = New System.Drawing.Point(597, 621)
+		Me.SaveButton.Location = New System.Drawing.Point(597, 633)
 		Me.SaveButton.Name = "SaveButton"
 		Me.SaveButton.Size = New System.Drawing.Size(91, 26)
 		Me.SaveButton.TabIndex = 76
@@ -370,11 +361,42 @@ Partial Class EditStaffForm
 		Me.SalaryScaleComboBox.Size = New System.Drawing.Size(174, 25)
 		Me.SalaryScaleComboBox.TabIndex = 77
 		'
+		'ShowPwdCheckBox
+		'
+		Me.ShowPwdCheckBox.AutoSize = True
+		Me.ShowPwdCheckBox.Location = New System.Drawing.Point(539, 604)
+		Me.ShowPwdCheckBox.Name = "ShowPwdCheckBox"
+		Me.ShowPwdCheckBox.Size = New System.Drawing.Size(121, 21)
+		Me.ShowPwdCheckBox.TabIndex = 80
+		Me.ShowPwdCheckBox.Text = "Show Password"
+		Me.ShowPwdCheckBox.UseVisualStyleBackColor = True
+		'
+		'PasswordTextBox
+		'
+		Me.PasswordTextBox.Location = New System.Drawing.Point(137, 602)
+		Me.PasswordTextBox.Name = "PasswordTextBox"
+		Me.PasswordTextBox.Size = New System.Drawing.Size(385, 25)
+		Me.PasswordTextBox.TabIndex = 79
+		Me.PasswordTextBox.UseSystemPasswordChar = True
+		'
+		'Label17
+		'
+		Me.Label17.AutoSize = True
+		Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label17.Location = New System.Drawing.Point(34, 605)
+		Me.Label17.Name = "Label17"
+		Me.Label17.Size = New System.Drawing.Size(97, 17)
+		Me.Label17.TabIndex = 78
+		Me.Label17.Text = "New Password"
+		'
 		'EditStaffForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(700, 659)
+		Me.ClientSize = New System.Drawing.Size(700, 671)
+		Me.Controls.Add(Me.ShowPwdCheckBox)
+		Me.Controls.Add(Me.PasswordTextBox)
+		Me.Controls.Add(Me.Label17)
 		Me.Controls.Add(Me.SalaryScaleComboBox)
 		Me.Controls.Add(Me.SaveButton)
 		Me.Controls.Add(Me.StaffNumberTextBox)
@@ -409,7 +431,6 @@ Partial Class EditStaffForm
 		Me.Controls.Add(Me.AddressTextBox)
 		Me.Controls.Add(Me.SurnameTextBox)
 		Me.Controls.Add(Me.FirstnameTextBox)
-		Me.Controls.Add(Me.Label1)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
 		Me.MaximizeBox = False
@@ -419,8 +440,6 @@ Partial Class EditStaffForm
 		Me.PerformLayout()
 
 	End Sub
-
-	Friend WithEvents Label1 As Label
 	Friend WithEvents StaffNumberTextBox As TextBox
 	Friend WithEvents Label16 As Label
 	Friend WithEvents AddNewWorkExpButton As Button
@@ -455,4 +474,7 @@ Partial Class EditStaffForm
 	Friend WithEvents FirstnameTextBox As TextBox
 	Friend WithEvents SaveButton As Button
 	Friend WithEvents SalaryScaleComboBox As ComboBox
+	Friend WithEvents ShowPwdCheckBox As CheckBox
+	Friend WithEvents PasswordTextBox As TextBox
+	Friend WithEvents Label17 As Label
 End Class
