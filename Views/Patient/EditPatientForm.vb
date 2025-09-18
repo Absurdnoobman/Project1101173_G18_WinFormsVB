@@ -94,7 +94,7 @@
 			"NextOfKins", "id", _nextOfKin.id,
 			New Dictionary(Of String, Object) From {
 				{"fullname", fullnameNOK},
-				{"relation", relationship},
+				{"relationship", relationship},
 				{"address", addressNOK},
 				{"telephone", telephoneNOK}
 			}

@@ -31,6 +31,8 @@
 					where_clause = "WHERE firstname LIKE @s"
 				Case "Lastname"
 					where_clause = "WHERE surname LIKE @s"
+				Case "Address"
+					where_clause = "WHERE [Address] LIKE @s "
 			End Select
 		End If
 
@@ -85,6 +87,46 @@
 
 	Private Sub PatientsDGV_SelectionChanged(sender As Object, e As EventArgs) Handles PatientsDGV.SelectionChanged
 		EditButton.Enabled = True
-		DeleteButton.Enabled = False
+		DeleteButton.Enabled = True
+	End Sub
+
+	Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
+		If PatientsDGV.SelectedRows.Count = 0 Then Exit Sub
+
+		Dim row = PatientsDGV.SelectedRows(0)
+
+		Dim db As New Schema
+		Try
+			Dim db_p_result = db.Query(Of Patient, Object)(
+				"SELECT * FROM Patients WHERE patient_number = @n",
+				New With {.n = row.Cells("Patient Number").Value}
+			)
+
+			Dim patient = db_p_result.First
+
+			Dim db_ldt_result = db.Query(Of PatientLocalDoctor, Object)(
+				"SELECT * FROM LocalDoctors WHERE patient_num = @n",
+				New With {.n = row.Cells("Patient Number").Value}
+			)
+
+			Dim local_doctor = db_ldt_result.First
+
+			Dim db_nok_result = db.Query(Of PatientNextOfKin, Object)(
+				"SELECT * FROM NextOfKIns WHERE patient_num = @n",
+				New With {.n = row.Cells("Patient Number").Value}
+			)
+
+			Dim next_of_kin = db_nok_result.First
+
+			Dim f As New EditPatientForm(patient, local_doctor, next_of_kin)
+			Dim result = f.ShowDialog()
+
+			If result = DialogResult.Abort OrElse result = DialogResult.Cancel Then Exit Sub
+			rerenderList()
+
+		Catch ex As Exception
+			MessageBox.Show("Fatal Error: Can not get patient detail and local doctor and next-of-kin." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
+			Exit Sub
+		End Try
 	End Sub
 End Class
