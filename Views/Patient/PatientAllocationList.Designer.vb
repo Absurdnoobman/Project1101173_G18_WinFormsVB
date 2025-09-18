@@ -36,7 +36,8 @@ Partial Class PatientAllocationList
 		Me.ChargeNurseFullnameLabel = New System.Windows.Forms.Label()
 		Me.RecordsNumberLabel = New System.Windows.Forms.Label()
 		Me.AllocationDGV = New System.Windows.Forms.DataGridView()
-		Me.EditAllocationButton = New System.Windows.Forms.Button()
+		Me.EditButton = New System.Windows.Forms.Button()
+		Me.DeleteButton = New System.Windows.Forms.Button()
 		Me.ChargeNurseFLP.SuspendLayout()
 		CType(Me.AllocationDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
@@ -170,31 +171,45 @@ Partial Class PatientAllocationList
 			Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
 		Me.AllocationDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
 		Me.AllocationDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		Me.AllocationDGV.Location = New System.Drawing.Point(20, 135)
+		Me.AllocationDGV.Location = New System.Drawing.Point(20, 138)
+		Me.AllocationDGV.MultiSelect = False
 		Me.AllocationDGV.Name = "AllocationDGV"
 		Me.AllocationDGV.ReadOnly = True
 		Me.AllocationDGV.RowHeadersWidth = 51
 		Me.AllocationDGV.RowTemplate.Height = 24
-		Me.AllocationDGV.Size = New System.Drawing.Size(710, 288)
+		Me.AllocationDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+		Me.AllocationDGV.Size = New System.Drawing.Size(710, 285)
 		Me.AllocationDGV.TabIndex = 11
 		'
-		'EditAllocationButton
+		'EditButton
 		'
-		Me.EditAllocationButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.EditAllocationButton.Enabled = False
-		Me.EditAllocationButton.Location = New System.Drawing.Point(586, 430)
-		Me.EditAllocationButton.Name = "EditAllocationButton"
-		Me.EditAllocationButton.Size = New System.Drawing.Size(143, 39)
-		Me.EditAllocationButton.TabIndex = 12
-		Me.EditAllocationButton.Text = "Edit Allocation"
-		Me.EditAllocationButton.UseVisualStyleBackColor = True
+		Me.EditButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.EditButton.Enabled = False
+		Me.EditButton.Location = New System.Drawing.Point(652, 430)
+		Me.EditButton.Name = "EditButton"
+		Me.EditButton.Size = New System.Drawing.Size(77, 39)
+		Me.EditButton.TabIndex = 12
+		Me.EditButton.Text = "Edit"
+		Me.EditButton.UseVisualStyleBackColor = True
+		'
+		'DeleteButton
+		'
+		Me.DeleteButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.DeleteButton.Enabled = False
+		Me.DeleteButton.Location = New System.Drawing.Point(569, 430)
+		Me.DeleteButton.Name = "DeleteButton"
+		Me.DeleteButton.Size = New System.Drawing.Size(77, 39)
+		Me.DeleteButton.TabIndex = 13
+		Me.DeleteButton.Text = "Delete"
+		Me.DeleteButton.UseVisualStyleBackColor = True
 		'
 		'PatientAllocationList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(753, 478)
-		Me.Controls.Add(Me.EditAllocationButton)
+		Me.Controls.Add(Me.DeleteButton)
+		Me.Controls.Add(Me.EditButton)
 		Me.Controls.Add(Me.AllocationDGV)
 		Me.Controls.Add(Me.RecordsNumberLabel)
 		Me.Controls.Add(Me.ChargeNurseFLP)
@@ -234,5 +249,6 @@ Partial Class PatientAllocationList
     Friend WithEvents ChargeNurseFullnameLabel As Label
 	Friend WithEvents RecordsNumberLabel As Label
 	Friend WithEvents AllocationDGV As DataGridView
-	Friend WithEvents EditAllocationButton As Button
+	Friend WithEvents EditButton As Button
+	Friend WithEvents DeleteButton As Button
 End Class

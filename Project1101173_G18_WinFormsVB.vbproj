@@ -451,6 +451,12 @@
     <Compile Include="Views\Medication\MedicationReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\Patient\EditPatientAllocationForm.Designer.vb">
+      <DependentUpon>EditPatientAllocationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patient\EditPatientAllocationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\Patient\NewPatientAllocationForm.Designer.vb">
       <DependentUpon>NewPatientAllocationForm.vb</DependentUpon>
     </Compile>
@@ -679,6 +685,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Medication\MedicationReport.resx">
       <DependentUpon>MedicationReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patient\EditPatientAllocationForm.resx">
+      <DependentUpon>EditPatientAllocationForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\NewPatientAllocationForm.resx">
       <DependentUpon>NewPatientAllocationForm.vb</DependentUpon>

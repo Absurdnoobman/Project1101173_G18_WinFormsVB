@@ -36,7 +36,6 @@
     End Sub
 
     Private Sub RederStaffCard(staffs As List(Of Staff))
-        StaffFLP.Controls.Clear()
 
         For Each staff In staffs
             Dim card As New StaffCardWithShift
@@ -59,23 +58,22 @@
         End If
 
         Dim selected_card = StaffFLP.Controls.Cast(Of StaffCardWithShift).ToList()
-        Dim selected_staff As Dictionary(Of Staff, String) = selected_card _
-            .ToDictionary(Function(c) c.Staff, Function(c) c.shift)
-
         Dim ward_id As Integer = CType(WardsComboBox.SelectedItem, WardComboBoxItem).Ward.ward_number
 
         Dim db As New Schema
         Try
-            For Each row In selected_staff
-                db.NonSelectQuery(
+            For Each card In selected_card
+                If Not db.NonSelectQuery(
                 "INSERT INTO Works_in VALUES (@staff_num, @ward_num, @shift, @week_beginning)",
                     New With {
-                        .staff_num = row.Key.staff_number,
+                        .staff_num = card.Staff.staff_number,
                         .ward_num = ward_id,
-                        .shift = row.Value,
+                        .shift = card.shift,
                         .week_beginning = DateWeekBeginingDTP.Value
                     }
-                )
+                ) Then
+                    MessageBox.Show($"Can not insert a record for staff_num = {card.Staff.staff_number}, shift = {card.shift}" & vbNewLine & "Skipping Insert")
+                End If
             Next
             MessageBox.Show("Insert Successful.")
             Dispose()
