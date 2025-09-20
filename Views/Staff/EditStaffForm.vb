@@ -336,11 +336,6 @@ Public Class EditStaffForm
 			Return False
 		End If
 
-		If String.IsNullOrWhiteSpace(PasswordTextBox.Text) Then
-			MessageBox.Show("Password must be set.")
-			Return False
-		End If
-
 		Return True
 	End Function
 
