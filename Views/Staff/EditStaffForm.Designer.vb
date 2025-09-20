@@ -63,10 +63,11 @@ Partial Class EditStaffForm
 		'
 		'StaffNumberTextBox
 		'
+		Me.StaffNumberTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight
 		Me.StaffNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-		Me.StaffNumberTextBox.Enabled = False
 		Me.StaffNumberTextBox.Location = New System.Drawing.Point(444, 15)
 		Me.StaffNumberTextBox.Name = "StaffNumberTextBox"
+		Me.StaffNumberTextBox.ReadOnly = True
 		Me.StaffNumberTextBox.Size = New System.Drawing.Size(98, 25)
 		Me.StaffNumberTextBox.TabIndex = 75
 		'
@@ -210,7 +211,7 @@ Partial Class EditStaffForm
 		'
 		Me.PositionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.PositionComboBox.FormattingEnabled = True
-		Me.PositionComboBox.Items.AddRange(New Object() {"Charge Nurse", "Medical Director", "Personnel Officer", "Staff", "Staff Nurse", "Consultant", "Doctor", "Nurse", "Other"})
+		Me.PositionComboBox.Items.AddRange(New Object() {"Medical Director", "Consultant", "Specialty Doctor", "Junior Doctor", "Staff Nurse", "Senior Staff Nurse", "Charge Nurse", "Advanced Nurse Practitioner", "Healthcare Support Worker", "Midwife", "Physiotherapist", "Occupational Therapist", "Pharmacist", "Personnel Officer", "System Administrator", "Auxiliary"})
 		Me.PositionComboBox.Location = New System.Drawing.Point(153, 192)
 		Me.PositionComboBox.Name = "PositionComboBox"
 		Me.PositionComboBox.Size = New System.Drawing.Size(173, 25)

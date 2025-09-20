@@ -4,6 +4,8 @@
 
 	Private original_data = New Dictionary(Of String, Object)
 
+	Public Event RemoveButtonPressed(sender As Object)
+
 	Sub New(drug As PharmaceuticalSupply, Optional status As CardStatus = CardStatus.NewlyAdded)
 		' This call is required by the designer.
 		InitializeComponent()
@@ -41,15 +43,18 @@
 	End Sub
 
 	Private Sub RemoveButton_Click(sender As Object, e As EventArgs) Handles RemoveButton.Click
+		RaiseEvent RemoveButtonPressed(Me)
 		Dispose()
 	End Sub
 
 	Public Sub CheckStatus()
-		If StartDateTimePicker.Value <> CDate(original_data("start_date")) OrElse
-			FinishDateTimePicker.Value <> CDate(original_data("finish_date")) OrElse
-			UnitPerDayNumericUpDown.Value <> CDec(original_data("unit_per_day")) _
-		Then
-			cardStatus = CardStatus.Edited
+		If cardStatus = CardStatus.Original Then
+			If StartDateTimePicker.Value <> CDate(original_data("start_date")) OrElse
+				FinishDateTimePicker.Value <> CDate(original_data("finish_date")) OrElse
+				UnitPerDayNumericUpDown.Value <> CDec(original_data("unit_per_day")) _
+			Then
+				cardStatus = CardStatus.Edited
+			End If
 		End If
 	End Sub
 

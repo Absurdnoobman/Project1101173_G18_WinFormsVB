@@ -283,7 +283,8 @@ Partial Class EditPatientForm
 		'
 		'PatientNumberTextBox
 		'
-		Me.PatientNumberTextBox.BackColor = System.Drawing.SystemColors.ControlLight
+		Me.PatientNumberTextBox.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.PatientNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.PatientNumberTextBox.Location = New System.Drawing.Point(506, 16)
 		Me.PatientNumberTextBox.Name = "PatientNumberTextBox"
 		Me.PatientNumberTextBox.ReadOnly = True

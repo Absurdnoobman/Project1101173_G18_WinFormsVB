@@ -134,6 +134,8 @@
     Private Sub SearchByComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SearchByComboBox.SelectedIndexChanged
         Dim search = SearchTextBox.Text
         If String.IsNullOrEmpty(search) OrElse String.IsNullOrWhiteSpace(search) Then Exit Sub
+
+        RerenderList()
     End Sub
 
     Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
@@ -166,7 +168,7 @@
             Catch ex As Exception
                 MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
                 DialogResult = DialogResult.Abort
-                Dispose()
+                Close()
             End Try
         End If
 
@@ -195,7 +197,7 @@
             Case "Staff Number"
                 search_clause = "WHERE staff_number LIKE @s"
             Case "Name"
-                search_clause = "WHERE firstname LIKE @s OR surname LIKE @s"
+                search_clause = "WHERE firstname + ' ' + surname LIKE @s"
             Case "Firstname"
                 search_clause = "WHERE firstname LIKE @s"
             Case "Lastname"
@@ -224,7 +226,7 @@
             Next
 
         Catch ex As Exception
-            MessageBox.Show(text:="Can not create a list.", caption:="Fatal Error")
+            MessageBox.Show(text:="Can not create a list." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""), caption:="Fatal Error")
             DialogResult = DialogResult.Abort
             Dispose()
         End Try

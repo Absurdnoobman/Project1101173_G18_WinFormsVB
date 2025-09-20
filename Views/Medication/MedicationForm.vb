@@ -1,4 +1,6 @@
 ﻿Public Class MedicationForm
+	Private _patient As Patient
+	Private toRemoveMedications As New List(Of Medication)
 	Private Sub AddButton_Click(sender As Object, e As EventArgs) Handles AddButton.Click
 		Dim f = PickPharmaceuticalSupply.MultiplePick
 		f.ShowDialog()
@@ -20,16 +22,16 @@
 		Dim exit_result = f.ShowDialog
 		If exit_result = DialogResult.Abort OrElse exit_result = DialogResult.Cancel Then Exit Sub
 
-		Dim patient = f.result.First
+		_patient = f.result.First
 
 		ClearAndReset()
 
-		Dim card As New PatientLargeCard(patient)
+		Dim card As New PatientLargeCard(_patient)
 		PatientFLP.Controls.Add(card)
 
 		Dim db As New Schema
 		Try
-			Dim result = db.Query(Of Object)("SELECT * FROM MedicationRecords WHERE patient_num = @p", New With {.p = patient.patient_number})
+			Dim result = db.Query(Of Object)("SELECT * FROM MedicationRecords WHERE patient_num = @p", New With {.p = _patient.patient_number})
 			If result.Count = 0 Then Exit Sub
 
 			For Each row In result
@@ -58,6 +60,9 @@
 				}
 
 				Dim record_card As New PharmaceuticalSupplyCardWithOption(drug, row("start_date"), row("end_date"), row("unit_per_day"), CardStatus.Original)
+
+				AddHandler record_card.RemoveButtonPressed, AddressOf HandleRemove
+
 				MedicationFLP.Controls.Add(record_card)
 			Next
 		Catch ex As Exception
@@ -65,6 +70,16 @@
 			Exit Sub
 		End Try
 
+	End Sub
+
+	Private Sub HandleRemove(sender As Object)
+		Dim card = DirectCast(sender, PharmaceuticalSupplyCardWithOption)
+
+		toRemoveMedications.Add(New Medication With {
+			.drug_num = card.thisDrug.drug_number,
+			.patient_num = _patient.patient_number,
+			.start_date = card.StartDateTimePicker.Value
+		})
 	End Sub
 
 	Private Sub ClearAndReset()
@@ -86,11 +101,27 @@
 	End Sub
 
 	Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
+		If Auth.User.position <> "Charge Nurse" AndAlso Auth.User.position <> "System Administrator" Then
+			MessageBox.Show("Can not access due to your position.")
+			Exit Sub
+		End If
+
 		Dim medication_cards = MedicationFLP.Controls.Cast(Of PharmaceuticalSupplyCardWithOption).ToList
 		Dim patient_num = PatientFLP.Controls.Cast(Of PatientLargeCard).First.thisPatient.patient_number
 
 		Dim db As New Schema
 		Try
+			For Each medication In toRemoveMedications
+				If Not db.NonSelectQuery(
+					"DELETE FROM MedicationRecords 
+					WHERE patient_num = @p AND drug_num = @d AND start_date = @sd",
+					New With {.p = medication.patient_num, .d = medication.drug_num, .sd = medication.start_date}
+				) Then
+					MessageBox.Show("Can not delete a record." & vbNewLine &
+									$"patient_num = {medication.patient_num}, drug_Num = {medication.drug_num}, start_date = {medication.start_date}")
+				End If
+			Next
+
 			For Each card In medication_cards
 				card.CheckStatus()
 				Select Case card.cardStatus

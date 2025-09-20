@@ -29,11 +29,23 @@
 
 		Dim db As New Schema
 		If Not db.NonSelectQuery(
+			"DELETE FROM Appointments WHERE patient_number = @p AND appointment_date_time = @d",
+			New With {.p = patient.patient_number, .d = _original_date_time}
+		) Then
+			MessageBox.Show("Error: Deletion Failed. Abort")
+			Exit Sub
+		End If
+
+		If Not db.NonSelectQuery(
 			"UPDATE Appointments SET appointment_date_time = @v WHERE patient_num = @p AND appointment_date_time = @d",
 			New With {.v = appointed_date_time, .p = patient.patient_number, .d = _original_date_time}
 		) Then
-			MessageBox.Show("Error: Insert Failed")
+			MessageBox.Show("Error: Insert Failed. Abort")
 			Exit Sub
 		End If
+
+		DialogResult = DialogResult.OK
+		Close()
+
 	End Sub
 End Class

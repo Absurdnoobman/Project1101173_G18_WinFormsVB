@@ -48,11 +48,14 @@ Partial Class PickPharmaceuticalSupply
 		'
 		'DrugsFLP
 		'
+		Me.DrugsFLP.AutoScroll = True
 		Me.DrugsFLP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+		Me.DrugsFLP.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
 		Me.DrugsFLP.Location = New System.Drawing.Point(15, 46)
 		Me.DrugsFLP.Name = "DrugsFLP"
 		Me.DrugsFLP.Size = New System.Drawing.Size(670, 375)
 		Me.DrugsFLP.TabIndex = 2
+		Me.DrugsFLP.WrapContents = False
 		'
 		'SearchByLabel
 		'
@@ -67,6 +70,7 @@ Partial Class PickPharmaceuticalSupply
 		'
 		Me.SearchByComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.SearchByComboBox.FormattingEnabled = True
+		Me.SearchByComboBox.Items.AddRange(New Object() {"Drug Number", "Name", "Description", "Method"})
 		Me.SearchByComboBox.Location = New System.Drawing.Point(420, 15)
 		Me.SearchByComboBox.Name = "SearchByComboBox"
 		Me.SearchByComboBox.Size = New System.Drawing.Size(142, 25)

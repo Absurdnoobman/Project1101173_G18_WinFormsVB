@@ -262,6 +262,11 @@ Public Class ReviewSummaryForm
 	End Sub
 
 	Private Sub DeleteRowButton_Click(sender As Object, e As EventArgs) Handles DeleteRowButton.Click
+		If Auth.User.position <> "Personnel Officer" AndAlso Auth.User.position <> "System Administrator" Then
+			MessageBox.Show("Can not access due to your position.")
+			Exit Sub
+		End If
+
 		If ReviewsDGV.SelectedRows.Count = 0 Then Exit Sub
 
 		Dim selectedRow As DataGridViewRow = ReviewsDGV.SelectedRows(0)
@@ -348,6 +353,11 @@ Public Class ReviewSummaryForm
 	End Sub
 
 	Private Sub EditRowButton_Click(sender As Object, e As EventArgs) Handles EditRowButton.Click
+		If Auth.User.position <> "Personnel Officer" AndAlso Auth.User.position <> "System Administrator" Then
+			MessageBox.Show("Can not access due to your position.")
+			Exit Sub
+		End If
+
 		If ReviewsDGV.SelectedRows.Count = 0 Then Exit Sub
 
 		Dim selectedRow As DataGridViewRow = ReviewsDGV.SelectedRows(0)
@@ -377,6 +387,11 @@ Public Class ReviewSummaryForm
 	End Sub
 
 	Private Sub NewButton_Click(sender As Object, e As EventArgs) Handles NewButton.Click
+		If Auth.User.position <> "Personnel Officer" AndAlso Auth.User.position <> "System Administrator" Then
+			MessageBox.Show("Can not access due to your position.")
+			Exit Sub
+		End If
+
 		Dim f As New StaffReviewForm
 		f.ShowDialog()
 

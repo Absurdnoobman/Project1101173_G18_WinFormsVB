@@ -23,31 +23,6 @@
 
     End Sub
 
-
-    Private Sub New(column As String, value As Object)
-        InitializeComponent()
-
-        _isMultiplePick = False
-        _filterByColumn = column
-        _filterValue = value
-
-        SearchByLabel.Text = $"Filter: {column} == {value}"
-        SearchByComboBox.Hide()
-    End Sub
-
-    Private Sub New(isMultiple As Boolean, column As String, value As Object)
-        InitializeComponent()
-
-        _isMultiplePick = isMultiple
-        _filterByColumn = column
-
-        _filterByColumn = column
-        _filterValue = value
-
-        SearchByLabel.Text = $"Filter: {column} == {value}"
-        SearchByComboBox.Hide()
-    End Sub
-
     ''' <summary>
     '''     Return A <see cref="Form"/> which allow user to choose a multiple staff
     ''' </summary>
@@ -62,6 +37,8 @@
         Else
             Text = "Pick a Medicine"
         End If
+
+        SearchByComboBox.SelectedIndex = 0
 
         Dim db As New Schema
         Try
@@ -127,4 +104,146 @@
         Close()
 
     End Sub
+
+    Private Sub SearchByComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SearchByComboBox.SelectedIndexChanged
+        Dim search = SearchTextBox.Text
+        If String.IsNullOrEmpty(search) OrElse String.IsNullOrWhiteSpace(search) Then Exit Sub
+
+        renderList()
+    End Sub
+
+    Private Sub SearchTextBox_TextChanged(sender As Object, e As EventArgs) Handles SearchTextBox.TextChanged
+        Dim search = SearchTextBox.Text
+        Dim db As New Schema
+
+        If String.IsNullOrEmpty(search) OrElse
+            String.IsNullOrWhiteSpace(search) Then
+            Try
+                RemoveNotSelectedCard
+
+                Dim result = db.Query(Of Object)("SELECT * FROM PharmaceuticalSupplies")
+                If result.Count = 0 Then
+                    DrugsFLP.Controls.Clear()
+                    Exit Sub
+                End If
+
+                _drugs.Clear()
+                For Each row In result
+                    Dim supplier = db.Query(Of Supplier, Object)(
+                        "SELECT * FROM Suppliers WHERE supplier_number = @sn",
+                        New With {.sn = row("supplier_num")}
+                    )
+
+                    _drugs.Add(
+                        New PharmaceuticalSupply With {
+                            .drug_number = row("drug_number"),
+                            .name = row("name"),
+                            .description = row("description"),
+                            .dosage = row("dosage"),
+                            .method = row("method"),
+                            .quantity = row("quantity"),
+                            .cost_per_unit = row("cost_per_unit"),
+                            .reorder_level = row("reorder_level"),
+                            .supplier = supplier.FirstOrDefault
+                        }
+                    )
+                Next
+
+                Dim selected_drug_nums As New HashSet(Of String)(
+                    DrugsFLP.Controls.OfType(Of PharmaceuticalCardWithCheckBox)().
+                        Where(Function(c) c.isSelected).
+                        Select(Function(c) c.DrugNumberLabel.Text))
+
+                For Each drug In _drugs
+                    If selected_drug_nums.Contains(drug.drug_number) Then Continue For
+                    Dim card As New PharmaceuticalCardWithCheckBox(drug)
+                    DrugsFLP.Controls.Add(card)
+                Next
+
+            Catch ex As Exception
+                MessageBox.Show("Error: SQL failed." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
+                Close()
+            End Try
+        End If
+
+        renderList()
+    End Sub
+
+    Private Sub RemoveNotSelectedCard()
+        For i As Integer = DrugsFLP.Controls.Count - 1 To 0 Step -1
+            Dim card = TryCast(DrugsFLP.Controls(i), PharmaceuticalCardWithCheckBox)
+            If card IsNot Nothing AndAlso Not card.isSelected Then
+                DrugsFLP.Controls.RemoveAt(i)
+            End If
+        Next
+    End Sub
+    Private Sub renderList()
+
+        RemoveNotSelectedCard()
+
+        Dim search = SearchTextBox.Text
+
+        Dim db As New Schema
+
+        Dim where_clause = ""
+        Select Case CStr(SearchByComboBox.SelectedItem)
+            Case "Drug Number"
+                where_clause = "WHERE drug_number LIKE @s"
+            Case "Name"
+                where_clause = "WHERE name LIKE @s"
+            Case "Description"
+                where_clause = "WHERE description LIKE @s"
+            Case "Method"
+                where_clause = "WHERE method LIKE @s"
+        End Select
+
+        Try
+            Dim result = db.Query(Of Object)($"SELECT * FROM PharmaceuticalSupplies {where_clause}", New With {.s = $"%{search}%"})
+            If result.Count = 0 Then
+                RemoveNotSelectedCard()
+                Exit Sub
+            End If
+
+            _drugs.Clear()
+            For Each row In result
+                Dim supplier = db.Query(Of Supplier, Object)(
+                    "SELECT * FROM Suppliers WHERE supplier_number = @sn",
+                    New With {.sn = row("supplier_num")}
+                )
+
+                _drugs.Add(
+                    New PharmaceuticalSupply With {
+                        .drug_number = row("drug_number"),
+                        .name = row("name"),
+                        .description = row("description"),
+                        .dosage = row("dosage"),
+                        .method = row("method"),
+                        .quantity = row("quantity"),
+                        .cost_per_unit = row("cost_per_unit"),
+                        .reorder_level = row("reorder_level"),
+                        .supplier = supplier.FirstOrDefault
+                    }
+                )
+            Next
+
+            Dim selected_drug_nums As New HashSet(Of String)(
+                    DrugsFLP.Controls.OfType(Of PharmaceuticalCardWithCheckBox)().
+                        Where(Function(c) c.isSelected).
+                        Select(Function(c) c.DrugNumberLabel.Text))
+
+            For Each drug In _drugs
+                If selected_drug_nums.Contains(drug.drug_number) Then Continue For
+                Dim card As New PharmaceuticalCardWithCheckBox(drug)
+                DrugsFLP.Controls.Add(card)
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show(text:="Can not render a list." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""), caption:="Fatal Error")
+            DialogResult = DialogResult.Abort
+            Dispose()
+        End Try
+
+    End Sub
+
+
 End Class

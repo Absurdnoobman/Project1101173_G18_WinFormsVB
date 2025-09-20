@@ -183,7 +183,7 @@ Partial Class CreateNewStaffForm
 		'
 		Me.PositionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.PositionComboBox.FormattingEnabled = True
-		Me.PositionComboBox.Items.AddRange(New Object() {"Charge Nurse", "Staff Nurse", "Nurse", "Personnel Officer", "Medical Director", "Staff", "Consultant", "Doctor", "Other"})
+		Me.PositionComboBox.Items.AddRange(New Object() {"Medical Director", "Consultant", "Specialty Doctor", "Junior Doctor", "Staff Nurse", "Senior Staff Nurse", "Charge Nurse", "Advanced Nurse Practitioner", "Healthcare Support Worker", "Midwife", "Physiotherapist", "Occupational Therapist", "Pharmacist", "Personnel Officer", "System Administrator", "Auxiliary"})
 		Me.PositionComboBox.Location = New System.Drawing.Point(144, 192)
 		Me.PositionComboBox.Name = "PositionComboBox"
 		Me.PositionComboBox.Size = New System.Drawing.Size(173, 25)

@@ -1,4 +1,6 @@
-﻿Public Class AppointmentList
+﻿Imports Microsoft.VisualBasic.ApplicationServices
+
+Public Class AppointmentList
 	Private Sub AppointmentList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		SearchByComboBox.SelectedIndex = 0
 
@@ -18,6 +20,13 @@
 	End Sub
 
 	Private Sub MakeAppointmentButton_Click(sender As Object, e As EventArgs) Handles MakeAppointmentButton.Click
+		Dim user = Auth.User
+
+		If user.position <> "Charge Nurse" AndAlso user.position <> "System Administrator" Then
+			MessageBox.Show("Can not access due to your position.")
+			Exit Sub
+		End If
+
 		Dim f As New NewAppointmentForm
 		f.ShowDialog()
 		renderDataGridView()
@@ -62,6 +71,11 @@
 	Private Sub DeleteButton_Click(sender As Object, e As EventArgs) Handles DeleteButton.Click
 		If AppointmentDGV.SelectedRows.Count = 0 Then Exit Sub
 
+		If Auth.User.position <> "Charge Nurse" AndAlso Auth.User.position <> "System Administrator" Then
+			MessageBox.Show("Can not access due to your position.")
+			Exit Sub
+		End If
+
 		Dim selected_row As DataGridViewRow = AppointmentDGV.SelectedRows(0)
 
 		Dim db As New Schema
@@ -80,6 +94,11 @@
 	Private Sub EditButton_Click(sender As Object, e As EventArgs) Handles EditButton.Click
 		If AppointmentDGV.SelectedRows.Count = 0 Then Exit Sub
 
+		If Auth.User.position <> "Charge Nurse" AndAlso Auth.User.position <> "System Administrator" Then
+			MessageBox.Show("Can not access due to your position.")
+			Exit Sub
+		End If
+
 		Dim selected_row As DataGridViewRow = AppointmentDGV.SelectedRows(0)
 
 		Dim db As New Schema
@@ -97,8 +116,14 @@
 			Dim patient = result.First
 			Dim appointed_date_time = selected_row.Cells("Date/Time").Value
 
+			Dim f As New EditAppointmentForm(patient, appointed_date_time)
+			Dim f_result = f.ShowDialog
+			If f_result = DialogResult.Abort Or f_result = DialogResult.Cancel Then Exit Sub
+
+			renderDataGridView()
 
 		Catch ex As Exception
+			MessageBox.Show("Error: Can not get a full patient record." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
 
 		End Try
 	End Sub

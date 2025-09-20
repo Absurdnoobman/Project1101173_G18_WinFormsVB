@@ -51,7 +51,7 @@ Partial Class NewWorkExperienceCard
 		'StartDateLabel
 		'
 		Me.StartDateLabel.AutoSize = True
-		Me.StartDateLabel.Location = New System.Drawing.Point(8, 53)
+		Me.StartDateLabel.Location = New System.Drawing.Point(8, 58)
 		Me.StartDateLabel.Name = "StartDateLabel"
 		Me.StartDateLabel.Size = New System.Drawing.Size(62, 17)
 		Me.StartDateLabel.TabIndex = 2
@@ -60,7 +60,7 @@ Partial Class NewWorkExperienceCard
 		'EndDateLabel
 		'
 		Me.EndDateLabel.AutoSize = True
-		Me.EndDateLabel.Location = New System.Drawing.Point(8, 74)
+		Me.EndDateLabel.Location = New System.Drawing.Point(8, 81)
 		Me.EndDateLabel.Name = "EndDateLabel"
 		Me.EndDateLabel.Size = New System.Drawing.Size(82, 17)
 		Me.EndDateLabel.TabIndex = 3
@@ -79,7 +79,7 @@ Partial Class NewWorkExperienceCard
 		'EditButton
 		'
 		Me.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.EditButton.Location = New System.Drawing.Point(123, 81)
+		Me.EditButton.Location = New System.Drawing.Point(195, 51)
 		Me.EditButton.Name = "EditButton"
 		Me.EditButton.Size = New System.Drawing.Size(66, 24)
 		Me.EditButton.TabIndex = 5

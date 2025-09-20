@@ -97,6 +97,8 @@
     Private Sub AllocationDGV_SelectionChanged(sender As Object, e As EventArgs) Handles AllocationDGV.SelectionChanged
         If AllocationDGV.SelectedRows.Count = 0 Then Exit Sub
 
+        If Auth.User.position <> "Charge Nurse" AndAlso Auth.User.position <> "System Administrator" Then Exit Sub
+
         EditButton.Enabled = True
         DeleteButton.Enabled = True
     End Sub
@@ -105,6 +107,11 @@
         If AllocationDGV.SelectedRows.Count = 0 Then Exit Sub
 
         Dim row = AllocationDGV.SelectedRows(0)
+
+        If Auth.User.position <> "Charge Nurse" AndAlso Auth.User.position <> "System Administrator" Then
+            MessageBox.Show("Can not access due to your position.")
+            Exit Sub
+        End If
 
         Dim dict As New Dictionary(Of String, Object)
 
@@ -126,6 +133,11 @@
         If AllocationDGV.SelectedRows.Count = 0 Then Exit Sub
 
         Dim row = AllocationDGV.SelectedRows(0)
+
+        If Auth.User.position <> "Charge Nurse" AndAlso Auth.User.position <> "System Administrator" Then
+            MessageBox.Show("Can not access due to your position.")
+            Exit Sub
+        End If
 
         Dim db As New Schema
         If Not db.NonSelectQuery(
@@ -178,7 +190,7 @@
             AllocationDGV.Refresh()
 
         Catch ex As Exception
-            MessageBox.Show("Internal Error." & vbNewLine & If(Debugger.IsAttached, ex.Message, ""))
+            MessageBox.Show("Internal Error." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
         End Try
     End Sub
 

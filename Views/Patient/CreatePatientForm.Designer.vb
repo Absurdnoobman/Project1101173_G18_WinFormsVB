@@ -61,6 +61,7 @@ Partial Class CreatePatientForm
 		Me.Label16 = New System.Windows.Forms.Label()
 		Me.Label14 = New System.Windows.Forms.Label()
 		Me.ResetButton = New System.Windows.Forms.Button()
+		Me.Label6 = New System.Windows.Forms.Label()
 		Me.GroupBox1.SuspendLayout()
 		Me.GroupBox2.SuspendLayout()
 		Me.SuspendLayout()
@@ -141,7 +142,7 @@ Partial Class CreatePatientForm
 		'Label10
 		'
 		Me.Label10.AutoSize = True
-		Me.Label10.Location = New System.Drawing.Point(399, 21)
+		Me.Label10.Location = New System.Drawing.Point(340, 21)
 		Me.Label10.Name = "Label10"
 		Me.Label10.Size = New System.Drawing.Size(99, 17)
 		Me.Label10.TabIndex = 46
@@ -163,7 +164,7 @@ Partial Class CreatePatientForm
 		'
 		'PatientNumberTextBox
 		'
-		Me.PatientNumberTextBox.Location = New System.Drawing.Point(506, 18)
+		Me.PatientNumberTextBox.Location = New System.Drawing.Point(447, 18)
 		Me.PatientNumberTextBox.Name = "PatientNumberTextBox"
 		Me.PatientNumberTextBox.Size = New System.Drawing.Size(100, 25)
 		Me.PatientNumberTextBox.TabIndex = 49
@@ -417,11 +418,22 @@ Partial Class CreatePatientForm
 		Me.ResetButton.Text = "Reset"
 		Me.ResetButton.UseVisualStyleBackColor = True
 		'
+		'Label6
+		'
+		Me.Label6.AutoSize = True
+		Me.Label6.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label6.Location = New System.Drawing.Point(557, 23)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(128, 17)
+		Me.Label6.TabIndex = 61
+		Me.Label6.Text = "(Can not be changed)"
+		'
 		'CreatePatientForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(700, 522)
+		Me.Controls.Add(Me.Label6)
 		Me.Controls.Add(Me.ResetButton)
 		Me.Controls.Add(Me.GroupBox2)
 		Me.Controls.Add(Me.AddButton)
@@ -497,4 +509,5 @@ Partial Class CreatePatientForm
     Friend WithEvents ResetButton As Button
     Friend WithEvents ResetNextOfKinButton As Button
     Friend WithEvents ResetLocalDoctorButton As Button
+	Friend WithEvents Label6 As Label
 End Class

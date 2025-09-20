@@ -35,7 +35,7 @@
     Private Sub Login()
         Dim staffNumber As String = StaffNumberTextBox.Text
 
-        If Auth.Attempt(StaffNumberTextBox.Text, PasswordTextBox.Text) Then
+        If Auth.Attempt(staffNumber, PasswordTextBox.Text) Then
             DialogResult = DialogResult.OK
             Dispose()
         Else
