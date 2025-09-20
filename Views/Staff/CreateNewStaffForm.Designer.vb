@@ -39,13 +39,11 @@ Partial Class CreateNewStaffForm
 		Me.PositionComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label9 = New System.Windows.Forms.Label()
 		Me.Label10 = New System.Windows.Forms.Label()
-		Me.SalaryTextBox = New System.Windows.Forms.TextBox()
 		Me.Label11 = New System.Windows.Forms.Label()
 		Me.PaymentTypeComboBox = New System.Windows.Forms.ComboBox()
 		Me.ContractTypeComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label13 = New System.Windows.Forms.Label()
 		Me.Label14 = New System.Windows.Forms.Label()
-		Me.HPWTextBox = New System.Windows.Forms.TextBox()
 		Me.Label15 = New System.Windows.Forms.Label()
 		Me.AddNewQualiButton = New System.Windows.Forms.Button()
 		Me.AddNewWorkExpButton = New System.Windows.Forms.Button()
@@ -60,6 +58,10 @@ Partial Class CreateNewStaffForm
 		Me.PasswordTextBox = New System.Windows.Forms.TextBox()
 		Me.Label18 = New System.Windows.Forms.Label()
 		Me.ShowPwdCheckBox = New System.Windows.Forms.CheckBox()
+		Me.SalaryNumericUpDown = New System.Windows.Forms.NumericUpDown()
+		Me.HPWNumericUpDown = New System.Windows.Forms.NumericUpDown()
+		CType(Me.SalaryNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+		CType(Me.HPWNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'FirstnameTextBox
@@ -207,13 +209,6 @@ Partial Class CreateNewStaffForm
 		Me.Label10.TabIndex = 23
 		Me.Label10.Text = "Current Salary"
 		'
-		'SalaryTextBox
-		'
-		Me.SalaryTextBox.Location = New System.Drawing.Point(435, 192)
-		Me.SalaryTextBox.Name = "SalaryTextBox"
-		Me.SalaryTextBox.Size = New System.Drawing.Size(173, 25)
-		Me.SalaryTextBox.TabIndex = 22
-		'
 		'Label11
 		'
 		Me.Label11.AutoSize = True
@@ -260,13 +255,6 @@ Partial Class CreateNewStaffForm
 		Me.Label14.Size = New System.Drawing.Size(106, 17)
 		Me.Label14.TabIndex = 34
 		Me.Label14.Text = "Hours per weeks"
-		'
-		'HPWTextBox
-		'
-		Me.HPWTextBox.Location = New System.Drawing.Point(144, 254)
-		Me.HPWTextBox.Name = "HPWTextBox"
-		Me.HPWTextBox.Size = New System.Drawing.Size(173, 25)
-		Me.HPWTextBox.TabIndex = 33
 		'
 		'Label15
 		'
@@ -400,11 +388,33 @@ Partial Class CreateNewStaffForm
 		Me.ShowPwdCheckBox.Text = "Show Password"
 		Me.ShowPwdCheckBox.UseVisualStyleBackColor = True
 		'
+		'SalaryNumericUpDown
+		'
+		Me.SalaryNumericUpDown.DecimalPlaces = 2
+		Me.SalaryNumericUpDown.Location = New System.Drawing.Point(435, 192)
+		Me.SalaryNumericUpDown.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+		Me.SalaryNumericUpDown.Name = "SalaryNumericUpDown"
+		Me.SalaryNumericUpDown.Size = New System.Drawing.Size(174, 25)
+		Me.SalaryNumericUpDown.TabIndex = 48
+		Me.SalaryNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		Me.SalaryNumericUpDown.ThousandsSeparator = True
+		'
+		'HPWNumericUpDown
+		'
+		Me.HPWNumericUpDown.Location = New System.Drawing.Point(144, 255)
+		Me.HPWNumericUpDown.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
+		Me.HPWNumericUpDown.Name = "HPWNumericUpDown"
+		Me.HPWNumericUpDown.Size = New System.Drawing.Size(174, 25)
+		Me.HPWNumericUpDown.TabIndex = 49
+		Me.HPWNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+		'
 		'CreateNewStaffForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(700, 684)
+		Me.Controls.Add(Me.HPWNumericUpDown)
+		Me.Controls.Add(Me.SalaryNumericUpDown)
 		Me.Controls.Add(Me.ShowPwdCheckBox)
 		Me.Controls.Add(Me.Label18)
 		Me.Controls.Add(Me.PasswordTextBox)
@@ -419,14 +429,12 @@ Partial Class CreateNewStaffForm
 		Me.Controls.Add(Me.AddNewQualiButton)
 		Me.Controls.Add(Me.Label15)
 		Me.Controls.Add(Me.Label14)
-		Me.Controls.Add(Me.HPWTextBox)
 		Me.Controls.Add(Me.Label13)
 		Me.Controls.Add(Me.ContractTypeComboBox)
 		Me.Controls.Add(Me.PaymentTypeComboBox)
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.Label11)
 		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.SalaryTextBox)
 		Me.Controls.Add(Me.PositionComboBox)
 		Me.Controls.Add(Me.Label9)
 		Me.Controls.Add(Me.Label8)
@@ -448,6 +456,8 @@ Partial Class CreateNewStaffForm
 		Me.MaximizeBox = False
 		Me.Name = "CreateNewStaffForm"
 		Me.Text = "Create a New Staff Profile"
+		CType(Me.SalaryNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+		CType(Me.HPWNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -469,13 +479,11 @@ Partial Class CreateNewStaffForm
     Friend WithEvents PositionComboBox As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents SalaryTextBox As TextBox
 	Friend WithEvents Label11 As Label
 	Friend WithEvents PaymentTypeComboBox As ComboBox
 	Friend WithEvents ContractTypeComboBox As ComboBox
 	Friend WithEvents Label13 As Label
 	Friend WithEvents Label14 As Label
-	Friend WithEvents HPWTextBox As TextBox
 	Friend WithEvents Label15 As Label
 	Friend WithEvents AddNewQualiButton As Button
 	Friend WithEvents AddNewWorkExpButton As Button
@@ -490,4 +498,6 @@ Partial Class CreateNewStaffForm
 	Friend WithEvents PasswordTextBox As TextBox
 	Friend WithEvents Label18 As Label
 	Friend WithEvents ShowPwdCheckBox As CheckBox
+	Friend WithEvents SalaryNumericUpDown As NumericUpDown
+	Friend WithEvents HPWNumericUpDown As NumericUpDown
 End Class

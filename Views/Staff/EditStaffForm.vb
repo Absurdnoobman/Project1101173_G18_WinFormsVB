@@ -19,12 +19,12 @@
 		DateOfBrithDTP.Value = staff.date_of_birth
 		NINTextBox.Text = staff.national_insurance_num
 
-		SalaryTextBox.Text = CStr(staff.salary)
+		SalaryNumericUpDown.Value = staff.salary
 		PositionComboBox.SelectedItem = staff.position
 		SalaryScaleComboBox.SelectedItem = staff.salary_scale
 		ContractTypeComboBox.SelectedItem = staff.contract_type
 		PaymentTypeComboBox.SelectedItem = staff.payment_type
-		HPWTextBox.Text = CStr(staff.hours_per_week)
+		HPWNumericUpDown.Value = staff.hours_per_week
 
 		For Each qualification In qualifications
 			Dim card As New NewQualificationCard(qualification, CardStatus.Original)
@@ -94,10 +94,10 @@
 
 		Dim position = PositionComboBox.SelectedItem
 		Dim contract = ContractTypeComboBox.SelectedItem
-		Dim hours_per_week = HPWTextBox.Text
+		Dim hours_per_week = HPWNumericUpDown.Value
 		Dim payment = PaymentTypeComboBox.SelectedItem
 		Dim salary_scale = SalaryScaleComboBox.SelectedItem
-		Dim salary = SalaryTextBox.Text
+		Dim salary = SalaryNumericUpDown.Value
 
 		Dim db As New Schema
 

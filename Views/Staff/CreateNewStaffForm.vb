@@ -1,4 +1,7 @@
-﻿Public Class CreateNewStaffForm
+﻿Imports System.Runtime.CompilerServices
+Imports System.Text.RegularExpressions
+
+Public Class CreateNewStaffForm
 
 	Private Sub AddNewQualiButton_Click(sender As Object, e As EventArgs) Handles AddNewQualiButton.Click
 		Dim AddnewQualiForm As New QualificationForm
@@ -27,7 +30,7 @@
 	End Sub
 
 	Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
-		ValidateInput()
+		If Not ValidateInput() Then Exit Sub
 
 		Dim staff_num = StaffNumberTextBox.Text
 		Dim firstname = FirstnameTextBox.Text
@@ -40,10 +43,10 @@
 
 		Dim position = PositionComboBox.SelectedItem
 		Dim contract = ContractTypeComboBox.SelectedItem
-		Dim hours_per_week = HPWTextBox.Text
+		Dim hours_per_week = HPWNumericUpDown.Value
 		Dim payment = PaymentTypeComboBox.SelectedItem
 		Dim salary_scale = SalaryScaleComboBox.SelectedItem
-		Dim salary = SalaryTextBox.Text
+		Dim salary = SalaryNumericUpDown.Value
 
 		Dim password = Hash.Make(PasswordTextBox.Text)
 
@@ -79,8 +82,6 @@
 			Exit Sub
 		End If
 
-		' TODO: WorkExp and Qualification
-
 		For Each card In QualificationFLP.Controls
 			Dim qualification = DirectCast(card, NewQualificationCard).thisQualification
 			If Not db.NonSelectQuery(
@@ -115,15 +116,85 @@
 		Dispose()
 	End Sub
 
-	Public Sub ValidateInput()
+	Public Function ValidateInput() As Boolean
+		If String.IsNullOrWhiteSpace(StaffNumberTextBox.Text) Then
+			MessageBox.Show("Please Enter Staff Number.")
+			Return False
+		End If
 		If StaffNumberTextBox.TextLength > 4 OrElse Not StaffNumberTextBox.Text.StartsWith("S") Then
-			MessageBox.Show("Staff number must not exceed 4 characters and Start with 'S'")
+			MessageBox.Show("Staff number must not exceed 4 characters and Start with 'S'.")
+			Return False
+		End If
+
+		If String.IsNullOrWhiteSpace(FirstnameTextBox.Text) Then
+			MessageBox.Show("Please Enter firstname.")
+			Return False
+		End If
+		If String.IsNullOrWhiteSpace(SurnameTextBox.Text) Then
+			MessageBox.Show("Please Enter surname.")
+			Return False
 		End If
 		If FirstnameTextBox.TextLength > 255 OrElse SurnameTextBox.TextLength > 255 Then
-			MessageBox.Show("Firstname and Surname exceeded 255 characters")
+			MessageBox.Show("Firstname and Surname must not exceed 255 characters.")
+			Return False
 		End If
-		' More to come 
-	End Sub
+
+		If SexComboBox.SelectedIndex = -1 Then
+			MessageBox.Show("Please select gender.")
+			Return False
+		End If
+
+		If String.IsNullOrWhiteSpace(AddressTextBox.Text) Then
+			MessageBox.Show("Please Enter address.")
+			Return False
+		End If
+
+		If String.IsNullOrWhiteSpace(TelephoneTextBox.Text) Then
+			MessageBox.Show("Please Enter Telephone Number.")
+			Return False
+		End If
+		If TelephoneTextBox.TextLength > 20 Then
+			MessageBox.Show("Telephone Number must not exceed 20 characters.")
+			Return False
+		End If
+
+		If Not Regex.IsMatch(NINTextBox.Text, "^[A-CEGHJ-PR-TW-Z]{2}\d{6}[A-D]$") Then
+			MessageBox.Show("Invalid National Insurance Number format")
+			Return False
+		End If
+
+		If PositionComboBox.SelectedIndex = -1 Then
+			MessageBox.Show("Please Select Position.")
+			Return False
+		End If
+
+		If ContractTypeComboBox.SelectedIndex = -1 Then
+			MessageBox.Show("Please Select Contract type.")
+			Return False
+		End If
+
+		If SalaryScaleComboBox.SelectedIndex = -1 Then
+			MessageBox.Show("Please Select Salary scale.")
+			Return False
+		End If
+
+		If PaymentTypeComboBox.SelectedIndex = -1 Then
+			MessageBox.Show("Please Select payment type.")
+			Return False
+		End If
+
+		If QualificationFLP.Controls.Count = 0 Then
+			MessageBox.Show("Staff must have at least 1 qualification.")
+			Return False
+		End If
+
+		If String.IsNullOrWhiteSpace(PasswordTextBox.Text) Then
+			MessageBox.Show("Password must be set.")
+			Return False
+		End If
+
+		Return True
+	End Function
 
 	Private Sub ShowPwdCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles ShowPwdCheckBox.CheckedChanged
 		PasswordTextBox.UseSystemPasswordChar = Not ShowPwdCheckBox.Checked ' Toggle Show Password
