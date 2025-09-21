@@ -22,6 +22,7 @@ Partial Class PatientList
 	'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PatientList))
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.SearchByComboBox = New System.Windows.Forms.ComboBox()
 		Me.Label2 = New System.Windows.Forms.Label()
@@ -144,7 +145,8 @@ Partial Class PatientList
 		Me.Controls.Add(Me.SearchTextBox)
 		Me.Controls.Add(Me.Label1)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.Name = "PatientList"
 		Me.Text = "Patient List"

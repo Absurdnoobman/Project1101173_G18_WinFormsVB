@@ -463,12 +463,6 @@
     <Compile Include="Views\Patient\NewPatientAllocationForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Patient\PatientExaminationList.Designer.vb">
-      <DependentUpon>PatientExaminationList.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Patient\PatientExaminationList.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Views\Patient\CreatePatientForm.Designer.vb">
       <DependentUpon>CreatePatientForm.vb</DependentUpon>
     </Compile>
@@ -497,12 +491,6 @@
       <DependentUpon>PickPatientDialog.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Patient\PickPatientDialog.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.Designer.vb">
-      <DependentUpon>CreateNewPharmaceuticalSupply.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\PharmaceuticalSupply\PickPharmaceuticalSupply.Designer.vb">
@@ -574,18 +562,6 @@
       <DependentUpon>StaffList.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff\StaffList.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Supplier\SupplierList.Designer.vb">
-      <DependentUpon>SupplierList.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Supplier\SupplierList.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Supply\CreateSupplyForm.Designer.vb">
-      <DependentUpon>CreateSupplyForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Supply\CreateSupplyForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Ward\EditStaffWardAssignmentForm.Designer.vb">
@@ -698,9 +674,6 @@
     <EmbeddedResource Include="Views\Patient\NewPatientAllocationForm.resx">
       <DependentUpon>NewPatientAllocationForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Patient\PatientExaminationList.resx">
-      <DependentUpon>PatientExaminationList.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -715,9 +688,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Patient\PickPatientDialog.resx">
       <DependentUpon>PickPatientDialog.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\PharmaceuticalSupply\CreateNewPharmaceuticalSupply.resx">
-      <DependentUpon>CreateNewPharmaceuticalSupply.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PharmaceuticalSupply\PickPharmaceuticalSupply.resx">
       <DependentUpon>PickPharmaceuticalSupply.vb</DependentUpon>
@@ -751,12 +721,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Staff\StaffList.resx">
       <DependentUpon>StaffList.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Supplier\SupplierList.resx">
-      <DependentUpon>SupplierList.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Supply\CreateSupplyForm.resx">
-      <DependentUpon>CreateSupplyForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Ward\EditStaffWardAssignmentForm.resx">
       <DependentUpon>EditStaffWardAssignmentForm.vb</DependentUpon>

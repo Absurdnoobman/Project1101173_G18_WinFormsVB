@@ -26,6 +26,7 @@ Partial Class ReviewSummaryForm
 		Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
 		Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
 		Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReviewSummaryForm))
 		Me.Top3FLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.Label1 = New System.Windows.Forms.Label()
@@ -398,6 +399,7 @@ Partial Class ReviewSummaryForm
 		Me.Controls.Add(Me.Top3FLP)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.Name = "ReviewSummaryForm"
 		Me.Padding = New System.Windows.Forms.Padding(12)

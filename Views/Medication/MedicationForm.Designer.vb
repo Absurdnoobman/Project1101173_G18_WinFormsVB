@@ -22,6 +22,7 @@ Partial Class MedicationForm
 	'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
+		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedicationForm))
 		Me.SelectPatientButton = New System.Windows.Forms.Button()
 		Me.PatientFLP = New System.Windows.Forms.FlowLayoutPanel()
 		Me.MedicationFLP = New System.Windows.Forms.FlowLayoutPanel()
@@ -114,6 +115,7 @@ Partial Class MedicationForm
 		Me.Controls.Add(Me.SelectPatientButton)
 		Me.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
 		Me.Name = "MedicationForm"
 		Me.Padding = New System.Windows.Forms.Padding(6)

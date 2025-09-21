@@ -216,13 +216,4 @@
 
     End Sub
 
-    Private Sub LogicModeButton_Click(sender As Object, e As EventArgs) Handles LogicModeButton.Click
-        ' Toggle Filter Logic Mode OR / AND
-        Select Case LogicModeButton.Text
-            Case "AND"
-                LogicModeButton.Text = "OR"
-            Case "OR"
-                LogicModeButton.Text = "AND"
-        End Select
-    End Sub
 End Class

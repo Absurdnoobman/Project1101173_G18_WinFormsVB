@@ -1,27 +1,27 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class StaffList
-    Inherits System.Windows.Forms.Form
+	Inherits System.Windows.Forms.Form
 
-    'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-        Try
-            If disposing AndAlso components IsNot Nothing Then
-                components.Dispose()
-            End If
-        Finally
-            MyBase.Dispose(disposing)
-        End Try
-    End Sub
+	'Form overrides dispose to clean up the component list.
+	<System.Diagnostics.DebuggerNonUserCode()>
+	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+		Try
+			If disposing AndAlso components IsNot Nothing Then
+				components.Dispose()
+			End If
+		Finally
+			MyBase.Dispose(disposing)
+		End Try
+	End Sub
 
-    'Required by the Windows Form Designer
-    Private components As System.ComponentModel.IContainer
+	'Required by the Windows Form Designer
+	Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
+	'NOTE: The following procedure is required by the Windows Form Designer
+	'It can be modified using the Windows Form Designer.  
+	'Do not modify it using the code editor.
+	<System.Diagnostics.DebuggerStepThrough()>
+	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StaffList))
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.SearchTextBox = New System.Windows.Forms.TextBox()
@@ -38,7 +38,6 @@ Partial Class StaffList
 		Me.RefreshButton = New System.Windows.Forms.Button()
 		Me.OrderComboBox = New System.Windows.Forms.ComboBox()
 		Me.ApplyFilterButton = New System.Windows.Forms.Button()
-		Me.LogicModeButton = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -189,23 +188,11 @@ Partial Class StaffList
 		Me.ApplyFilterButton.Text = "Apply"
 		Me.ApplyFilterButton.UseVisualStyleBackColor = True
 		'
-		'LogicModeButton
-		'
-		Me.LogicModeButton.Enabled = False
-		Me.LogicModeButton.FlatStyle = System.Windows.Forms.FlatStyle.System
-		Me.LogicModeButton.Location = New System.Drawing.Point(12, 117)
-		Me.LogicModeButton.Name = "LogicModeButton"
-		Me.LogicModeButton.Size = New System.Drawing.Size(75, 23)
-		Me.LogicModeButton.TabIndex = 20
-		Me.LogicModeButton.Text = "AND"
-		Me.LogicModeButton.UseVisualStyleBackColor = True
-		'
 		'StaffList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(805, 596)
-		Me.Controls.Add(Me.LogicModeButton)
 		Me.Controls.Add(Me.ApplyFilterButton)
 		Me.Controls.Add(Me.OrderComboBox)
 		Me.Controls.Add(Me.RefreshButton)
@@ -234,19 +221,18 @@ Partial Class StaffList
 	End Sub
 
 	Friend WithEvents Label1 As Label
-    Friend WithEvents SearchTextBox As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents CreateStaffButton As Button
-    Friend WithEvents SearchByComboBox As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents StaffFLP As FlowLayoutPanel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents OrderByComboBox As ComboBox
-    Friend WithEvents FilterFLP As FlowLayoutPanel
-    Friend WithEvents Label5 As Label
-    Friend WithEvents AddFilterButton As Button
+	Friend WithEvents SearchTextBox As TextBox
+	Friend WithEvents Label2 As Label
+	Friend WithEvents CreateStaffButton As Button
+	Friend WithEvents SearchByComboBox As ComboBox
+	Friend WithEvents Label3 As Label
+	Friend WithEvents StaffFLP As FlowLayoutPanel
+	Friend WithEvents Label4 As Label
+	Friend WithEvents OrderByComboBox As ComboBox
+	Friend WithEvents FilterFLP As FlowLayoutPanel
+	Friend WithEvents Label5 As Label
+	Friend WithEvents AddFilterButton As Button
 	Friend WithEvents RefreshButton As Button
 	Friend WithEvents OrderComboBox As ComboBox
 	Friend WithEvents ApplyFilterButton As Button
-	Friend WithEvents LogicModeButton As Button
 End Class
