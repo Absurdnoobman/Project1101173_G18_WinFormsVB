@@ -32,59 +32,65 @@ Partial Class StaffConsultantCard
 		'
 		'StaffNumberLabel
 		'
-		Me.StaffNumberLabel.AutoSize = True
+		Me.StaffNumberLabel.AutoEllipsis = True
 		Me.StaffNumberLabel.Font = New System.Drawing.Font("Cascadia Code", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.StaffNumberLabel.Location = New System.Drawing.Point(16, 16)
+		Me.StaffNumberLabel.Location = New System.Drawing.Point(15, 12)
 		Me.StaffNumberLabel.Name = "StaffNumberLabel"
-		Me.StaffNumberLabel.Size = New System.Drawing.Size(60, 27)
+		Me.StaffNumberLabel.Size = New System.Drawing.Size(109, 27)
 		Me.StaffNumberLabel.TabIndex = 0
 		Me.StaffNumberLabel.Text = "S---"
+		Me.StaffNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'FullnameLabel
 		'
-		Me.FullnameLabel.AutoSize = True
+		Me.FullnameLabel.AutoEllipsis = True
 		Me.FullnameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.FullnameLabel.Location = New System.Drawing.Point(112, 19)
+		Me.FullnameLabel.Location = New System.Drawing.Point(130, 15)
 		Me.FullnameLabel.Name = "FullnameLabel"
-		Me.FullnameLabel.Size = New System.Drawing.Size(80, 23)
+		Me.FullnameLabel.Size = New System.Drawing.Size(351, 23)
 		Me.FullnameLabel.TabIndex = 1
 		Me.FullnameLabel.Text = "Fullname"
+		Me.FullnameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'AddressLabel
 		'
-		Me.AddressLabel.AutoSize = True
-		Me.AddressLabel.Location = New System.Drawing.Point(21, 60)
+		Me.AddressLabel.AutoEllipsis = True
+		Me.AddressLabel.Location = New System.Drawing.Point(17, 60)
 		Me.AddressLabel.Name = "AddressLabel"
-		Me.AddressLabel.Size = New System.Drawing.Size(56, 17)
+		Me.AddressLabel.Size = New System.Drawing.Size(201, 17)
 		Me.AddressLabel.TabIndex = 2
 		Me.AddressLabel.Text = "Address"
+		Me.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'TelephoneLabel
 		'
-		Me.TelephoneLabel.AutoSize = True
-		Me.TelephoneLabel.Location = New System.Drawing.Point(21, 91)
+		Me.TelephoneLabel.AutoEllipsis = True
+		Me.TelephoneLabel.Location = New System.Drawing.Point(17, 91)
 		Me.TelephoneLabel.Name = "TelephoneLabel"
-		Me.TelephoneLabel.Size = New System.Drawing.Size(68, 17)
+		Me.TelephoneLabel.Size = New System.Drawing.Size(201, 17)
 		Me.TelephoneLabel.TabIndex = 3
 		Me.TelephoneLabel.Text = "Telephone"
+		Me.TelephoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'WardLabel
 		'
-		Me.WardLabel.AutoSize = True
-		Me.WardLabel.Location = New System.Drawing.Point(279, 60)
+		Me.WardLabel.AutoEllipsis = True
+		Me.WardLabel.Location = New System.Drawing.Point(239, 60)
 		Me.WardLabel.Name = "WardLabel"
-		Me.WardLabel.Size = New System.Drawing.Size(39, 17)
+		Me.WardLabel.Size = New System.Drawing.Size(242, 17)
 		Me.WardLabel.TabIndex = 4
 		Me.WardLabel.Text = "Ward"
+		Me.WardLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'WeekLabel
 		'
-		Me.WeekLabel.AutoSize = True
-		Me.WeekLabel.Location = New System.Drawing.Point(279, 91)
+		Me.WeekLabel.AutoEllipsis = True
+		Me.WeekLabel.Location = New System.Drawing.Point(239, 91)
 		Me.WeekLabel.Name = "WeekLabel"
-		Me.WeekLabel.Size = New System.Drawing.Size(96, 17)
+		Me.WeekLabel.Size = New System.Drawing.Size(242, 17)
 		Me.WeekLabel.TabIndex = 5
 		Me.WeekLabel.Text = "WeekBeginning"
+		Me.WeekLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'StaffConsultantCard
 		'
@@ -101,7 +107,6 @@ Partial Class StaffConsultantCard
 		Me.Padding = New System.Windows.Forms.Padding(12)
 		Me.Size = New System.Drawing.Size(529, 141)
 		Me.ResumeLayout(False)
-		Me.PerformLayout()
 
 	End Sub
 

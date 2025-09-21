@@ -30,41 +30,45 @@ Partial Class PatientLargeCard
 		'
 		'FullnameLabel
 		'
-		Me.FullnameLabel.AutoSize = True
+		Me.FullnameLabel.AutoEllipsis = True
 		Me.FullnameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.FullnameLabel.Location = New System.Drawing.Point(130, 15)
 		Me.FullnameLabel.Name = "FullnameLabel"
-		Me.FullnameLabel.Size = New System.Drawing.Size(80, 23)
+		Me.FullnameLabel.Size = New System.Drawing.Size(341, 23)
 		Me.FullnameLabel.TabIndex = 3
 		Me.FullnameLabel.Text = "Fullname"
+		Me.FullnameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'PatientNumberLabel
 		'
-		Me.PatientNumberLabel.AutoSize = True
+		Me.PatientNumberLabel.AutoEllipsis = True
 		Me.PatientNumberLabel.Font = New System.Drawing.Font("Cascadia Code", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.PatientNumberLabel.Location = New System.Drawing.Point(15, 12)
+		Me.PatientNumberLabel.Location = New System.Drawing.Point(15, 11)
 		Me.PatientNumberLabel.Name = "PatientNumberLabel"
 		Me.PatientNumberLabel.Size = New System.Drawing.Size(84, 27)
 		Me.PatientNumberLabel.TabIndex = 2
 		Me.PatientNumberLabel.Text = "P-----"
+		Me.PatientNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'TelephoneLabel
 		'
-		Me.TelephoneLabel.AutoSize = True
+		Me.TelephoneLabel.AutoEllipsis = True
 		Me.TelephoneLabel.Location = New System.Drawing.Point(17, 89)
 		Me.TelephoneLabel.Name = "TelephoneLabel"
-		Me.TelephoneLabel.Size = New System.Drawing.Size(68, 17)
+		Me.TelephoneLabel.Size = New System.Drawing.Size(454, 17)
 		Me.TelephoneLabel.TabIndex = 5
 		Me.TelephoneLabel.Text = "Telephone"
+		Me.TelephoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'AddressLabel
 		'
-		Me.AddressLabel.AutoSize = True
+		Me.AddressLabel.AutoEllipsis = True
 		Me.AddressLabel.Location = New System.Drawing.Point(17, 58)
 		Me.AddressLabel.Name = "AddressLabel"
-		Me.AddressLabel.Size = New System.Drawing.Size(56, 17)
+		Me.AddressLabel.Size = New System.Drawing.Size(454, 17)
 		Me.AddressLabel.TabIndex = 4
 		Me.AddressLabel.Text = "Address"
+		Me.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'PatientLargeCard
 		'
@@ -79,7 +83,6 @@ Partial Class PatientLargeCard
 		Me.Padding = New System.Windows.Forms.Padding(12)
 		Me.Size = New System.Drawing.Size(529, 141)
 		Me.ResumeLayout(False)
-		Me.PerformLayout()
 
 	End Sub
 
