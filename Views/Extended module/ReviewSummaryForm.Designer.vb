@@ -368,7 +368,6 @@ Partial Class ReviewSummaryForm
 		'
 		'NewButton
 		'
-		Me.NewButton.Enabled = False
 		Me.NewButton.Location = New System.Drawing.Point(468, 519)
 		Me.NewButton.Name = "NewButton"
 		Me.NewButton.Size = New System.Drawing.Size(84, 32)
