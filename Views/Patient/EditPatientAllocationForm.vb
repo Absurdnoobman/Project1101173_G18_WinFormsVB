@@ -32,7 +32,7 @@
 
 			isLeftCheckBox.Checked = True
 			isLeftCheckBox.Enabled = False
-			ActualLeaveDTP.Value = _original_data("Actual leave")
+			ActualLeaveDTP.Value = _original_data("Actual Leave")
 
 		Else
 			isLeftCheckBox.Checked = False
