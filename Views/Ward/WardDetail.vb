@@ -93,6 +93,11 @@
 		ApplyFilterButton.Enabled = True
 		RefreshButton.Enabled = True
 
+		EditAssignmentButton.Enabled = True
+		RemoveRecordButton.Enabled = True
+
+		ExportButton.Enabled = True
+
 	End Sub
 
 	Private Sub EditAssignmentButton_Click(sender As Object, e As EventArgs) Handles EditAssignmentButton.Click
@@ -268,5 +273,23 @@
 			RefreshButton_Click(Nothing, Nothing)
 		End If
 
+	End Sub
+
+	Private Sub ExportButton_Click(sender As Object, e As EventArgs) Handles ExportButton.Click
+		Dim f As New SaveFileDialog
+		f.Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*"
+		f.FileName = $"Ward{WardComboBox.SelectedItem:00}_Staff_Allocation_{Date.Parse(WeekBeginingComboBox.SelectedItem):dd-MM-yyyy}.csv"
+		Dim result = f.ShowDialog()
+		If result = DialogResult.Abort OrElse result = DialogResult.Cancel Then Exit Sub
+
+		Dim fullpath = f.FileName
+		Dim data = WorkInDGV
+
+		Try
+			Export.ToCSV(data, fullpath)
+			MessageBox.Show("Successfully save CSV file.")
+		Catch ex As Exception
+			MessageBox.Show("Can not create a CSV file." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
+		End Try
 	End Sub
 End Class
