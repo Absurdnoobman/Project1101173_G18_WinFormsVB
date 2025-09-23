@@ -41,24 +41,24 @@ Partial Class MainMenuForm
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
 		Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-		Me.Panel1 = New System.Windows.Forms.Panel()
-		Me.Panel2 = New System.Windows.Forms.Panel()
-		Me.Panel3 = New System.Windows.Forms.Panel()
 		Me.Panel4 = New System.Windows.Forms.Panel()
-		Me.Label4 = New System.Windows.Forms.Label()
-		Me.Label5 = New System.Windows.Forms.Label()
-		Me.Label6 = New System.Windows.Forms.Label()
-		Me.Label7 = New System.Windows.Forms.Label()
-		Me.TotalStaffLabel = New System.Windows.Forms.Label()
-		Me.InPatientsLabel = New System.Windows.Forms.Label()
-		Me.TodayAppointmentLabel = New System.Windows.Forms.Label()
 		Me.TodayMedicationLabel = New System.Windows.Forms.Label()
+		Me.Label7 = New System.Windows.Forms.Label()
+		Me.Panel3 = New System.Windows.Forms.Panel()
+		Me.TodayAppointmentLabel = New System.Windows.Forms.Label()
+		Me.Label6 = New System.Windows.Forms.Label()
+		Me.Panel2 = New System.Windows.Forms.Panel()
+		Me.InPatientsLabel = New System.Windows.Forms.Label()
+		Me.Label5 = New System.Windows.Forms.Label()
+		Me.Panel1 = New System.Windows.Forms.Panel()
+		Me.TotalStaffLabel = New System.Windows.Forms.Label()
+		Me.Label4 = New System.Windows.Forms.Label()
 		Me.PositionLabel = New System.Windows.Forms.Label()
 		Me.TableLayoutPanel1.SuspendLayout()
-		Me.Panel1.SuspendLayout()
-		Me.Panel2.SuspendLayout()
-		Me.Panel3.SuspendLayout()
 		Me.Panel4.SuspendLayout()
+		Me.Panel3.SuspendLayout()
+		Me.Panel2.SuspendLayout()
+		Me.Panel1.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'OpenStaffListButton
@@ -126,13 +126,14 @@ Partial Class MainMenuForm
 		'
 		'UserLabel
 		'
-		Me.UserLabel.AutoSize = True
+		Me.UserLabel.AutoEllipsis = True
 		Me.UserLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.UserLabel.Location = New System.Drawing.Point(148, 27)
+		Me.UserLabel.Location = New System.Drawing.Point(148, 19)
 		Me.UserLabel.Name = "UserLabel"
-		Me.UserLabel.Size = New System.Drawing.Size(44, 23)
+		Me.UserLabel.Size = New System.Drawing.Size(309, 28)
 		Me.UserLabel.TabIndex = 9
 		Me.UserLabel.Text = "User"
+		Me.UserLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'MedicationButton
 		'
@@ -242,31 +243,37 @@ Partial Class MainMenuForm
 		Me.TableLayoutPanel1.Size = New System.Drawing.Size(748, 81)
 		Me.TableLayoutPanel1.TabIndex = 20
 		'
-		'Panel1
+		'Panel4
 		'
-		Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Panel1.Controls.Add(Me.TotalStaffLabel)
-		Me.Panel1.Controls.Add(Me.Label4)
-		Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.Panel1.Location = New System.Drawing.Point(3, 3)
-		Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 0, 3)
-		Me.Panel1.Name = "Panel1"
-		Me.Panel1.Padding = New System.Windows.Forms.Padding(4)
-		Me.Panel1.Size = New System.Drawing.Size(184, 75)
-		Me.Panel1.TabIndex = 0
+		Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.Panel4.Controls.Add(Me.TodayMedicationLabel)
+		Me.Panel4.Controls.Add(Me.Label7)
+		Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.Panel4.Location = New System.Drawing.Point(564, 3)
+		Me.Panel4.Name = "Panel4"
+		Me.Panel4.Padding = New System.Windows.Forms.Padding(4)
+		Me.Panel4.Size = New System.Drawing.Size(181, 75)
+		Me.Panel4.TabIndex = 21
 		'
-		'Panel2
+		'TodayMedicationLabel
 		'
-		Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Panel2.Controls.Add(Me.InPatientsLabel)
-		Me.Panel2.Controls.Add(Me.Label5)
-		Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.Panel2.Location = New System.Drawing.Point(190, 3)
-		Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 3, 0, 3)
-		Me.Panel2.Name = "Panel2"
-		Me.Panel2.Padding = New System.Windows.Forms.Padding(4)
-		Me.Panel2.Size = New System.Drawing.Size(184, 75)
-		Me.Panel2.TabIndex = 21
+		Me.TodayMedicationLabel.AutoSize = True
+		Me.TodayMedicationLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.TodayMedicationLabel.Location = New System.Drawing.Point(17, 42)
+		Me.TodayMedicationLabel.Name = "TodayMedicationLabel"
+		Me.TodayMedicationLabel.Size = New System.Drawing.Size(17, 20)
+		Me.TodayMedicationLabel.TabIndex = 25
+		Me.TodayMedicationLabel.Text = "0"
+		'
+		'Label7
+		'
+		Me.Label7.AutoSize = True
+		Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label7.Location = New System.Drawing.Point(17, 14)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(142, 20)
+		Me.Label7.TabIndex = 24
+		Me.Label7.Text = "Today Prescriptions"
 		'
 		'Panel3
 		'
@@ -281,37 +288,15 @@ Partial Class MainMenuForm
 		Me.Panel3.Size = New System.Drawing.Size(184, 75)
 		Me.Panel3.TabIndex = 1
 		'
-		'Panel4
+		'TodayAppointmentLabel
 		'
-		Me.Panel4.BackColor = System.Drawing.SystemColors.ControlLightLight
-		Me.Panel4.Controls.Add(Me.TodayMedicationLabel)
-		Me.Panel4.Controls.Add(Me.Label7)
-		Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-		Me.Panel4.Location = New System.Drawing.Point(564, 3)
-		Me.Panel4.Name = "Panel4"
-		Me.Panel4.Padding = New System.Windows.Forms.Padding(4)
-		Me.Panel4.Size = New System.Drawing.Size(181, 75)
-		Me.Panel4.TabIndex = 21
-		'
-		'Label4
-		'
-		Me.Label4.AutoSize = True
-		Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label4.Location = New System.Drawing.Point(17, 14)
-		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(77, 20)
-		Me.Label4.TabIndex = 21
-		Me.Label4.Text = "Staff Total"
-		'
-		'Label5
-		'
-		Me.Label5.AutoSize = True
-		Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label5.Location = New System.Drawing.Point(17, 14)
-		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(74, 20)
-		Me.Label5.TabIndex = 22
-		Me.Label5.Text = "In Patient"
+		Me.TodayAppointmentLabel.AutoSize = True
+		Me.TodayAppointmentLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.TodayAppointmentLabel.Location = New System.Drawing.Point(17, 42)
+		Me.TodayAppointmentLabel.Name = "TodayAppointmentLabel"
+		Me.TodayAppointmentLabel.Size = New System.Drawing.Size(17, 20)
+		Me.TodayAppointmentLabel.TabIndex = 24
+		Me.TodayAppointmentLabel.Text = "0"
 		'
 		'Label6
 		'
@@ -323,25 +308,18 @@ Partial Class MainMenuForm
 		Me.Label6.TabIndex = 23
 		Me.Label6.Text = "Today Appointment"
 		'
-		'Label7
+		'Panel2
 		'
-		Me.Label7.AutoSize = True
-		Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label7.Location = New System.Drawing.Point(17, 14)
-		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(142, 20)
-		Me.Label7.TabIndex = 24
-		Me.Label7.Text = "Today Prescriptions"
-		'
-		'TotalStaffLabel
-		'
-		Me.TotalStaffLabel.AutoSize = True
-		Me.TotalStaffLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.TotalStaffLabel.Location = New System.Drawing.Point(17, 42)
-		Me.TotalStaffLabel.Name = "TotalStaffLabel"
-		Me.TotalStaffLabel.Size = New System.Drawing.Size(17, 20)
-		Me.TotalStaffLabel.TabIndex = 22
-		Me.TotalStaffLabel.Text = "0"
+		Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.Panel2.Controls.Add(Me.InPatientsLabel)
+		Me.Panel2.Controls.Add(Me.Label5)
+		Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.Panel2.Location = New System.Drawing.Point(190, 3)
+		Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 3, 0, 3)
+		Me.Panel2.Name = "Panel2"
+		Me.Panel2.Padding = New System.Windows.Forms.Padding(4)
+		Me.Panel2.Size = New System.Drawing.Size(184, 75)
+		Me.Panel2.TabIndex = 21
 		'
 		'InPatientsLabel
 		'
@@ -353,25 +331,48 @@ Partial Class MainMenuForm
 		Me.InPatientsLabel.TabIndex = 23
 		Me.InPatientsLabel.Text = "0"
 		'
-		'TodayAppointmentLabel
+		'Label5
 		'
-		Me.TodayAppointmentLabel.AutoSize = True
-		Me.TodayAppointmentLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.TodayAppointmentLabel.Location = New System.Drawing.Point(17, 42)
-		Me.TodayAppointmentLabel.Name = "TodayAppointmentLabel"
-		Me.TodayAppointmentLabel.Size = New System.Drawing.Size(17, 20)
-		Me.TodayAppointmentLabel.TabIndex = 24
-		Me.TodayAppointmentLabel.Text = "0"
+		Me.Label5.AutoSize = True
+		Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label5.Location = New System.Drawing.Point(17, 14)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(74, 20)
+		Me.Label5.TabIndex = 22
+		Me.Label5.Text = "In Patient"
 		'
-		'TodayMedicationLabel
+		'Panel1
 		'
-		Me.TodayMedicationLabel.AutoSize = True
-		Me.TodayMedicationLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.TodayMedicationLabel.Location = New System.Drawing.Point(17, 42)
-		Me.TodayMedicationLabel.Name = "TodayMedicationLabel"
-		Me.TodayMedicationLabel.Size = New System.Drawing.Size(17, 20)
-		Me.TodayMedicationLabel.TabIndex = 25
-		Me.TodayMedicationLabel.Text = "0"
+		Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight
+		Me.Panel1.Controls.Add(Me.TotalStaffLabel)
+		Me.Panel1.Controls.Add(Me.Label4)
+		Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+		Me.Panel1.Location = New System.Drawing.Point(3, 3)
+		Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 0, 3)
+		Me.Panel1.Name = "Panel1"
+		Me.Panel1.Padding = New System.Windows.Forms.Padding(4)
+		Me.Panel1.Size = New System.Drawing.Size(184, 75)
+		Me.Panel1.TabIndex = 0
+		'
+		'TotalStaffLabel
+		'
+		Me.TotalStaffLabel.AutoSize = True
+		Me.TotalStaffLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.TotalStaffLabel.Location = New System.Drawing.Point(17, 42)
+		Me.TotalStaffLabel.Name = "TotalStaffLabel"
+		Me.TotalStaffLabel.Size = New System.Drawing.Size(17, 20)
+		Me.TotalStaffLabel.TabIndex = 22
+		Me.TotalStaffLabel.Text = "0"
+		'
+		'Label4
+		'
+		Me.Label4.AutoSize = True
+		Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label4.Location = New System.Drawing.Point(17, 14)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(77, 20)
+		Me.Label4.TabIndex = 21
+		Me.Label4.Text = "Staff Total"
 		'
 		'PositionLabel
 		'
@@ -414,14 +415,14 @@ Partial Class MainMenuForm
 		Me.Padding = New System.Windows.Forms.Padding(12)
 		Me.Text = "Main Menu"
 		Me.TableLayoutPanel1.ResumeLayout(False)
-		Me.Panel1.ResumeLayout(False)
-		Me.Panel1.PerformLayout()
-		Me.Panel2.ResumeLayout(False)
-		Me.Panel2.PerformLayout()
-		Me.Panel3.ResumeLayout(False)
-		Me.Panel3.PerformLayout()
 		Me.Panel4.ResumeLayout(False)
 		Me.Panel4.PerformLayout()
+		Me.Panel3.ResumeLayout(False)
+		Me.Panel3.PerformLayout()
+		Me.Panel2.ResumeLayout(False)
+		Me.Panel2.PerformLayout()
+		Me.Panel1.ResumeLayout(False)
+		Me.Panel1.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
