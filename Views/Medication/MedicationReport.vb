@@ -79,7 +79,7 @@
 
 			If admission_result.Count = 0 Then
 				BedNumberLabel.Text = ""
-				WardLabel.Text = "have not been in admission."
+				WardLabel.Text = "Have not been in admission."
 			Else
 				Dim ward_num = admission_result.First.Item("ward_num")
 				Dim ward_info = db.Query(Of Object)("SELECT ward_number, name FROM Wards WHERE ward_number = @w", New With {.w = ward_num}).FirstOrDefault
@@ -202,6 +202,25 @@
 		Catch ex As Exception
 			MessageBox.Show("Error: SQL error" & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
 			Exit Sub
+		End Try
+
+	End Sub
+
+	Private Sub ExportButton_Click(sender As Object, e As EventArgs) Handles ExportButton.Click
+		Dim f As New SaveFileDialog
+		f.Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*"
+		f.FileName = $"{PatientNumberLabel.Text}_Medication_{Date.Today:dd-MM-yyyy}.csv"
+		Dim result = f.ShowDialog()
+		If result = DialogResult.Abort OrElse result = DialogResult.Cancel Then Exit Sub
+
+		Dim fullpath = f.FileName
+		Dim data = MedicationsDGV
+
+		Try
+			Export.ToCSV(data, fullpath)
+			MessageBox.Show("Successfully save CSV file.")
+		Catch ex As Exception
+			MessageBox.Show("Can not create a CSV file." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
 		End Try
 
 	End Sub

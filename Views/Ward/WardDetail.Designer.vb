@@ -40,6 +40,7 @@ Partial Class WardDetailForm
 		Me.RefreshButton = New System.Windows.Forms.Button()
 		Me.ApplyFilterButton = New System.Windows.Forms.Button()
 		Me.RemoveRecordButton = New System.Windows.Forms.Button()
+		Me.ExportButton = New System.Windows.Forms.Button()
 		CType(Me.WorkInDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -145,6 +146,7 @@ Partial Class WardDetailForm
 		'EditAssignmentButton
 		'
 		Me.EditAssignmentButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.EditAssignmentButton.Enabled = False
 		Me.EditAssignmentButton.Location = New System.Drawing.Point(610, 459)
 		Me.EditAssignmentButton.Name = "EditAssignmentButton"
 		Me.EditAssignmentButton.Size = New System.Drawing.Size(142, 32)
@@ -177,7 +179,7 @@ Partial Class WardDetailForm
 		'
 		Me.RecordCountLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
 		Me.RecordCountLabel.AutoSize = True
-		Me.RecordCountLabel.Location = New System.Drawing.Point(13, 467)
+		Me.RecordCountLabel.Location = New System.Drawing.Point(123, 467)
 		Me.RecordCountLabel.Name = "RecordCountLabel"
 		Me.RecordCountLabel.Size = New System.Drawing.Size(75, 17)
 		Me.RecordCountLabel.TabIndex = 13
@@ -221,6 +223,7 @@ Partial Class WardDetailForm
 		'
 		'RemoveRecordButton
 		'
+		Me.RemoveRecordButton.Enabled = False
 		Me.RemoveRecordButton.Location = New System.Drawing.Point(501, 459)
 		Me.RemoveRecordButton.Name = "RemoveRecordButton"
 		Me.RemoveRecordButton.Size = New System.Drawing.Size(102, 32)
@@ -228,12 +231,23 @@ Partial Class WardDetailForm
 		Me.RemoveRecordButton.Text = "Delete Record"
 		Me.RemoveRecordButton.UseVisualStyleBackColor = True
 		'
+		'ExportButton
+		'
+		Me.ExportButton.Enabled = False
+		Me.ExportButton.Location = New System.Drawing.Point(15, 459)
+		Me.ExportButton.Name = "ExportButton"
+		Me.ExportButton.Size = New System.Drawing.Size(102, 32)
+		Me.ExportButton.TabIndex = 21
+		Me.ExportButton.Text = "Export to CSV"
+		Me.ExportButton.UseVisualStyleBackColor = True
+		'
 		'WardDetailForm
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.Control
 		Me.ClientSize = New System.Drawing.Size(767, 506)
+		Me.Controls.Add(Me.ExportButton)
 		Me.Controls.Add(Me.RemoveRecordButton)
 		Me.Controls.Add(Me.RefreshButton)
 		Me.Controls.Add(Me.ApplyFilterButton)
@@ -281,4 +295,5 @@ Partial Class WardDetailForm
 	Friend WithEvents RefreshButton As Button
 	Friend WithEvents ApplyFilterButton As Button
 	Friend WithEvents RemoveRecordButton As Button
+	Friend WithEvents ExportButton As Button
 End Class

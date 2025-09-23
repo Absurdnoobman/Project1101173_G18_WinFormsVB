@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic.ApplicationServices
-
-Public Class AppointmentList
+﻿Public Class AppointmentList
 	Private Sub AppointmentList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		SearchByComboBox.SelectedIndex = 0
 
@@ -125,6 +123,25 @@ Public Class AppointmentList
 		Catch ex As Exception
 			MessageBox.Show("Error: Can not get a full patient record." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
 
+		End Try
+	End Sub
+
+	Private Sub ExportButton_Click(sender As Object, e As EventArgs) Handles ExportButton.Click
+		Dim f As New SaveFileDialog With {
+			.Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*",
+			.FileName = $"Appointments_{Date.Today:dd-MM-yyyy}.csv"
+		}
+		Dim result = f.ShowDialog()
+		If result = DialogResult.Abort OrElse result = DialogResult.Cancel Then Exit Sub
+
+		Dim fullpath = f.FileName
+		Dim data = AppointmentDGV
+
+		Try
+			Export.ToCSV(data, fullpath)
+			MessageBox.Show("Successfully save CSV file.")
+		Catch ex As Exception
+			MessageBox.Show("Can not create a CSV file." & vbNewLine & If(Debugger.IsAttached, $"{ex.Message} {vbNewLine}{ex.StackTrace}", ""))
 		End Try
 	End Sub
 End Class

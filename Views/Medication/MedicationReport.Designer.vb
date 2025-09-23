@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MedicationReport
 	Inherits System.Windows.Forms.Form
 
 	'Form overrides dispose to clean up the component list.
-	<System.Diagnostics.DebuggerNonUserCode()> _
+	<System.Diagnostics.DebuggerNonUserCode()>
 	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 		Try
 			If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MedicationReport
 	'NOTE: The following procedure is required by the Windows Form Designer
 	'It can be modified using the Windows Form Designer.  
 	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()> _
+	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedicationReport))
 		Me.PickPatientButton = New System.Windows.Forms.Button()
@@ -36,6 +36,7 @@ Partial Class MedicationReport
 		Me.FilterLabel = New System.Windows.Forms.Label()
 		Me.AddFilterButton = New System.Windows.Forms.Button()
 		Me.FilterFLP = New System.Windows.Forms.FlowLayoutPanel()
+		Me.ExportButton = New System.Windows.Forms.Button()
 		Me.FlowLayoutPanel.SuspendLayout()
 		CType(Me.MedicationsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
@@ -97,7 +98,7 @@ Partial Class MedicationReport
 		Me.MedicationsDGV.ReadOnly = True
 		Me.MedicationsDGV.RowHeadersWidth = 51
 		Me.MedicationsDGV.RowTemplate.Height = 24
-		Me.MedicationsDGV.Size = New System.Drawing.Size(766, 299)
+		Me.MedicationsDGV.Size = New System.Drawing.Size(766, 300)
 		Me.MedicationsDGV.TabIndex = 2
 		'
 		'PlzLabel
@@ -180,11 +181,21 @@ Partial Class MedicationReport
 		Me.FilterFLP.TabIndex = 15
 		Me.FilterFLP.WrapContents = False
 		'
+		'ExportButton
+		'
+		Me.ExportButton.Location = New System.Drawing.Point(666, 503)
+		Me.ExportButton.Name = "ExportButton"
+		Me.ExportButton.Size = New System.Drawing.Size(114, 23)
+		Me.ExportButton.TabIndex = 20
+		Me.ExportButton.Text = "Export to CSV"
+		Me.ExportButton.UseVisualStyleBackColor = True
+		'
 		'MedicationReport
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(796, 540)
+		Me.Controls.Add(Me.ExportButton)
 		Me.Controls.Add(Me.AddFilterButton)
 		Me.Controls.Add(Me.FilterLabel)
 		Me.Controls.Add(Me.RefreshButton)
@@ -223,4 +234,5 @@ Partial Class MedicationReport
 	Friend WithEvents FilterLabel As Label
 	Friend WithEvents AddFilterButton As Button
 	Friend WithEvents FilterFLP As FlowLayoutPanel
+	Friend WithEvents ExportButton As Button
 End Class

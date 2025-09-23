@@ -33,6 +33,7 @@ Partial Class AppointmentList
 		Me.RefreshButton = New System.Windows.Forms.Button()
 		Me.EditButton = New System.Windows.Forms.Button()
 		Me.DeleteButton = New System.Windows.Forms.Button()
+		Me.ExportButton = New System.Windows.Forms.Button()
 		CType(Me.AppointmentDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -137,11 +138,21 @@ Partial Class AppointmentList
 		Me.DeleteButton.Text = "Delete"
 		Me.DeleteButton.UseVisualStyleBackColor = True
 		'
+		'ExportButton
+		'
+		Me.ExportButton.Location = New System.Drawing.Point(106, 436)
+		Me.ExportButton.Name = "ExportButton"
+		Me.ExportButton.Size = New System.Drawing.Size(111, 33)
+		Me.ExportButton.TabIndex = 16
+		Me.ExportButton.Text = "Export To CSV"
+		Me.ExportButton.UseVisualStyleBackColor = True
+		'
 		'AppointmentList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(750, 478)
+		Me.Controls.Add(Me.ExportButton)
 		Me.Controls.Add(Me.DeleteButton)
 		Me.Controls.Add(Me.EditButton)
 		Me.Controls.Add(Me.RefreshButton)
@@ -174,4 +185,5 @@ Partial Class AppointmentList
 	Friend WithEvents RefreshButton As Button
 	Friend WithEvents EditButton As Button
 	Friend WithEvents DeleteButton As Button
+	Friend WithEvents ExportButton As Button
 End Class

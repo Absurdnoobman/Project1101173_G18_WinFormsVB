@@ -38,6 +38,7 @@ Partial Class PatientAllocationList
 		Me.AllocationDGV = New System.Windows.Forms.DataGridView()
 		Me.EditButton = New System.Windows.Forms.Button()
 		Me.DeleteButton = New System.Windows.Forms.Button()
+		Me.ExportButton = New System.Windows.Forms.Button()
 		Me.ChargeNurseFLP.SuspendLayout()
 		CType(Me.AllocationDGV, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
@@ -155,7 +156,7 @@ Partial Class PatientAllocationList
 		'
 		Me.RecordsNumberLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
 		Me.RecordsNumberLabel.AutoSize = True
-		Me.RecordsNumberLabel.Location = New System.Drawing.Point(29, 436)
+		Me.RecordsNumberLabel.Location = New System.Drawing.Point(139, 441)
 		Me.RecordsNumberLabel.Name = "RecordsNumberLabel"
 		Me.RecordsNumberLabel.Size = New System.Drawing.Size(95, 17)
 		Me.RecordsNumberLabel.TabIndex = 10
@@ -203,11 +204,23 @@ Partial Class PatientAllocationList
 		Me.DeleteButton.Text = "Delete"
 		Me.DeleteButton.UseVisualStyleBackColor = True
 		'
+		'ExportButton
+		'
+		Me.ExportButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.ExportButton.Enabled = False
+		Me.ExportButton.Location = New System.Drawing.Point(19, 430)
+		Me.ExportButton.Name = "ExportButton"
+		Me.ExportButton.Size = New System.Drawing.Size(114, 39)
+		Me.ExportButton.TabIndex = 14
+		Me.ExportButton.Text = "Export To CSV"
+		Me.ExportButton.UseVisualStyleBackColor = True
+		'
 		'PatientAllocationList
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(753, 478)
+		Me.Controls.Add(Me.ExportButton)
 		Me.Controls.Add(Me.DeleteButton)
 		Me.Controls.Add(Me.EditButton)
 		Me.Controls.Add(Me.AllocationDGV)
@@ -251,4 +264,5 @@ Partial Class PatientAllocationList
 	Friend WithEvents AllocationDGV As DataGridView
 	Friend WithEvents EditButton As Button
 	Friend WithEvents DeleteButton As Button
+	Friend WithEvents ExportButton As Button
 End Class
