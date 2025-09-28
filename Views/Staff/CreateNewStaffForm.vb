@@ -1,5 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 
 Public Class CreateNewStaffForm
 
@@ -32,7 +31,7 @@ Public Class CreateNewStaffForm
 	Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
 		If Not ValidateInput() Then Exit Sub
 
-		Dim staff_num = StaffNumberTextBox.Text
+		Dim staff_num = StaffNumberTextBox.Text.ToUpper
 		Dim firstname = FirstnameTextBox.Text
 		Dim surname = SurnameTextBox.Text
 		Dim sex = SexComboBox.SelectedItem
@@ -121,8 +120,8 @@ Public Class CreateNewStaffForm
 			MessageBox.Show("Please Enter Staff Number.")
 			Return False
 		End If
-		If StaffNumberTextBox.TextLength > 4 OrElse Not StaffNumberTextBox.Text.StartsWith("S") Then
-			MessageBox.Show("Staff number must not exceed 4 characters and Start with 'S'.")
+		If Not Regex.IsMatch(StaffNumberTextBox.Text, "(?i)^S\d{3}$") Then
+			MessageBox.Show("Invalid Forat: Staff number must not exceed 4 characters and Start with 'S'.")
 			Return False
 		End If
 
