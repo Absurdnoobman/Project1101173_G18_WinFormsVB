@@ -115,7 +115,7 @@
         End If
 
         If Not _isMultiplePick And selected_card.Count > 1 Then
-            MessageBox.Show("Plaese pick only one staff." & vbNewLine & "CheckBoxDisablingUnimplemented")
+            MessageBox.Show("Please pick only one staff." & vbNewLine & "CheckBoxDisablingUnimplemented")
             Exit Sub
         End If
 
