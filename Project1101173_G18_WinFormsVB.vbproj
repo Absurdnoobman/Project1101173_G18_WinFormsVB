@@ -523,9 +523,7 @@
     <Compile Include="Views\Staff\EditStaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MainMenu.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Views\MainMenu.vb" />
     <Compile Include="Views\MainMenu.Designer.vb">
       <DependentUpon>MainMenu.vb</DependentUpon>
       <SubType>Form</SubType>
