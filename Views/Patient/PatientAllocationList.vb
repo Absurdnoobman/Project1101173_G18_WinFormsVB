@@ -84,6 +84,11 @@
         RenderList()
 
         AllocationDGV.Show()
+
+        ExportButton.Visible = True
+        ExportButton.Enabled = True
+        EditButton.Visible = True
+        DeleteButton.Visible = True
     End Sub
 
     Private Sub AllocationDGV_DataSourceChanged(sender As Object, e As EventArgs) Handles AllocationDGV.DataSourceChanged

@@ -161,7 +161,7 @@ Partial Class MainMenuForm
 		Me.NewAllocationButton.Name = "NewAllocationButton"
 		Me.NewAllocationButton.Size = New System.Drawing.Size(102, 54)
 		Me.NewAllocationButton.TabIndex = 13
-		Me.NewAllocationButton.Text = "New Allocation"
+		Me.NewAllocationButton.Text = "New Patient Allocation"
 		Me.NewAllocationButton.UseVisualStyleBackColor = True
 		'
 		'MedicationReportButton

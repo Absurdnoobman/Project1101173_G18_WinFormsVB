@@ -192,6 +192,7 @@ Partial Class PatientAllocationList
 		Me.EditButton.TabIndex = 12
 		Me.EditButton.Text = "Edit"
 		Me.EditButton.UseVisualStyleBackColor = True
+		Me.EditButton.Visible = False
 		'
 		'DeleteButton
 		'
@@ -203,6 +204,7 @@ Partial Class PatientAllocationList
 		Me.DeleteButton.TabIndex = 13
 		Me.DeleteButton.Text = "Delete"
 		Me.DeleteButton.UseVisualStyleBackColor = True
+		Me.DeleteButton.Visible = False
 		'
 		'ExportButton
 		'
@@ -214,6 +216,7 @@ Partial Class PatientAllocationList
 		Me.ExportButton.TabIndex = 14
 		Me.ExportButton.Text = "Export To CSV"
 		Me.ExportButton.UseVisualStyleBackColor = True
+		Me.ExportButton.Visible = False
 		'
 		'PatientAllocationList
 		'

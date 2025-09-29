@@ -46,8 +46,13 @@
             Dim card As New StaffConsultantCard(staff, w.First, data("week_beginning"))
 
             ConsultantFLP.Controls.Add(card)
-        End If
+        Else
+            ConsultantFLP.Controls.Clear()
 
+            Dim card As New StaffConsultantCard(staff)
+
+            ConsultantFLP.Controls.Add(card)
+        End If
 
     End Sub
 
