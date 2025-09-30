@@ -73,8 +73,8 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Azure.Core, Version=1.48.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\Azure.Core.1.48.0\lib\net472\Azure.Core.dll</HintPath>
+    <Reference Include="Azure.Core, Version=1.49.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>packages\Azure.Core.1.49.0\lib\net472\Azure.Core.dll</HintPath>
     </Reference>
     <Reference Include="Azure.Identity, Version=1.16.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>packages\Azure.Identity.1.16.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
@@ -137,11 +137,11 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.9, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Primitives.9.0.9\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Identity.Client, Version=4.77.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Client.4.77.0\lib\net472\Microsoft.Identity.Client.dll</HintPath>
+    <Reference Include="Microsoft.Identity.Client, Version=4.77.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.4.77.1\lib\net472\Microsoft.Identity.Client.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=4.77.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.4.77.0\lib\netstandard2.0\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=4.77.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.4.77.1\lib\netstandard2.0\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Abstractions, Version=8.14.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Abstractions.8.14.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
@@ -168,8 +168,8 @@
     <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
     </Reference>
-    <Reference Include="System.ClientModel, Version=1.6.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
-      <HintPath>packages\System.ClientModel.1.6.1\lib\netstandard2.0\System.ClientModel.dll</HintPath>
+    <Reference Include="System.ClientModel, Version=1.7.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>packages\System.ClientModel.1.7.0\lib\netstandard2.0\System.ClientModel.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -523,7 +523,9 @@
     <Compile Include="Views\Staff\EditStaffForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MainMenu.vb" />
+    <Compile Include="Views\MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\MainMenu.Designer.vb">
       <DependentUpon>MainMenu.vb</DependentUpon>
       <SubType>Form</SubType>
