@@ -1,7 +1,8 @@
 ﻿## ก่อนติดตั้ง
-ต้องมีโปรแกรมดังต่อไปนี้
+ต้องมีสิ่งหรือโปรแกรมดังต่อไปนี้
 1. Microsoft Visual Studio 2022
 2. .NET desktop development Workloads
+3. ฐานข้อมูล Wellmeadows  
 
 จากนั้นรันคำสั่งใน Command Prompt ดังนี้
 `setx CONNECTION_STRING <connection-string>`
